@@ -130,22 +130,17 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
           </motion.div>
 
           {/* COLUNA DIREITA: Card Flutuante Lateral com Retrato Oficial de Dayane Lima */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-            className="hidden lg:flex lg:col-span-4 justify-end"
-          >
-            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
+          <div className="hidden lg:flex lg:col-span-4 justify-end">
+            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900 group">
               <img 
                 src="/midias/foto-paratopodosite-dayane.jpg" 
                 alt="Dayane Lima • Especialista em Mega Hair" 
-                className="w-full h-full object-cover object-[center_35%] scale-150 brightness-90 contrast-110 pointer-events-none" 
+                className="w-full h-full object-cover object-[center_30%] scale-150 brightness-[0.75] contrast-125 filter saturate-[0.85] pointer-events-none transition-all duration-500" 
                 loading="eager" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141211]/60 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141211]/80 via-[#141211]/20 to-transparent pointer-events-none"></div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
