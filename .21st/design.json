@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "project": {
+    "name": "dayane-lima-web",
+    "productType": null,
+    "stack": [
+      "nextjs",
+      "react",
+      "tailwind-v3"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/app/globals.css"
+    ],
+    "components": [],
+    "assets": [],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "--background": {
+        "value": "#FBF9F5",
+        "source": "src/app/globals.css"
+      },
+      "--foreground": {
+        "value": "#0F0E0D",
+        "source": "src/app/globals.css"
+      }
+    },
+    "typography": {
+      "--font-serif": {
+        "value": "'Playfair Display', 'Cormorant Garamond', Georgia, serif",
+        "source": "src/app/globals.css"
+      },
+      "--font-sans": {
+        "value": "'Montserrat', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+        "source": "src/app/globals.css"
+      }
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [],
+  "evidence": [
+    {
+      "fact": "design.colorMode:light",
+      "source": "src/app/globals.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "src/app/globals.css"
+    },
+    {
+      "fact": "project.stack:nextjs",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v3",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-09-26T22:55:12.325Z"
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --background: #F7EAE5;
+  --foreground: #1C1917;
+  --card: #FFF8F6;
+  --card-foreground: #1C1917;
+  --border: #E8D0C8;
+  --rose-signature: #EFD4CD;
+  --rose-deep: #C58B7E;
+  --champagne: #C5A880;
+  --graphite: #1C1917;
+}
+
+@layer base {
+  * {
+    border-color: #E8D0C8;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Foco de acessibilidade visível e refinado */
+:focus-visible {
+  outline: 2px solid #C5A880;
+  outline-offset: 3px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   SB ESTÉTICA & BELEZA — ARQUITETURA VISUAL AUTORAL (HAUTE COUTURE)
+   Formas geométricas, arcos de ateliê, recortes e silhuetas exclusivas
+   ========================================================================== */
+
+/* Moldura de Arco Romano / Espelho de Camarim Francês */
+.arch-mirror {
+  border-radius: 120px 120px 16px 16px;
+}
+
+.arch-mirror-sm {
+  border-radius: 80px 80px 12px 12px;
+}
+
+/* Cartões com Recorte Geométrico Esculpido Asimétrico */
+.sculpted-card {
+  border-radius: 40px 12px 40px 12px;
+}
+
+.sculpted-card-rev {
+  border-radius: 12px 40px 12px 40px;
+}
+
+/* Borda Fio de Ouro Champanhe de Alta Joalheria */
+.hairline-gold {
+  border: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.hairline-gold-hover:hover {
+  border-color: rgba(197, 168, 128, 0.75);
+}
+
+/* Efeito Vidro Acetinado Haute Couture */
+.glass-atelier {
+  background: rgba(255, 248, 246, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-atelier-dark {
+  background: rgba(28, 25, 23, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Marcas Gráficas de Registro Editorial */
+.crosshair-mark {
+  position: relative;
+}
+.crosshair-mark::before,
+.crosshair-mark::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(197, 168, 128, 0.4);
+}
+.crosshair-mark::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+.crosshair-mark::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
