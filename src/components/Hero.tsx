@@ -136,13 +136,14 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
             className="hidden lg:flex lg:col-span-4 justify-end"
           >
-            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
-              <img
-                src="/midias/foto-paratopodosite-dayane.jpg"
-                alt="Dayane Lima • Especialista em Mega Hair e Alta Costura Capilar"
-                className="w-full h-full object-cover object-[center_25%] scale-150 pointer-events-none"
-                loading="eager"
+            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
+              <img 
+                src="/midias/foto-paratopodosite-dayane.jpg" 
+                alt="Dayane Lima • Especialista em Mega Hair" 
+                className="w-full h-full object-cover object-[center_35%] scale-150 brightness-90 contrast-110 pointer-events-none" 
+                loading="eager" 
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141211]/60 via-transparent to-transparent pointer-events-none"></div>
             </div>
           </motion.div>
 
