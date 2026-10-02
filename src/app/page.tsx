@@ -15,10 +15,11 @@ import SpaceCarousel from "@/components/SpaceCarousel";
 import AuthoritySection from "@/components/AuthoritySection";
 import ReviewsSection from "@/components/ReviewsSection";
 import LocationAndFooter from "@/components/LocationAndFooter";
-import InteractivePortfolioGrid from "@/components/InteractivePortfolioGrid";
+import { CarouselStacked, Slide } from "@/components/ui/carousel-07";
 import WhatsAppTriageDrawer, { ServiceCategory } from "@/components/WhatsAppTriageDrawer";
 import { MessageCircle, MapPin } from "lucide-react";
 import {
+  GalleryItem,
   MEGAHAIR_GALLERY_ITEMS,
   MECHAS_GALLERY_ITEMS,
   OLHAR_GALLERY_ITEMS,
@@ -27,6 +28,21 @@ import {
   LASER_GALLERY_ITEMS,
   ESPACO_GALLERY_ITEMS,
 } from "@/data/mediaCatalog";
+
+// Converte itens do acervo para o padrão de slides do CarouselStacked
+const toSlides = (
+  items: GalleryItem[],
+  badge: string,
+  description: string
+): Slide[] =>
+  items.map((item) => ({
+    type: item.type,
+    src: item.src,
+    image: item.src,
+    title: item.label,
+    description,
+    badge,
+  }));
 
 export default function HomePage() {
   const [isTriageOpen, setIsTriageOpen] = useState(false);
@@ -61,61 +77,85 @@ export default function HomePage() {
       {/* ===================== ESPECIALIDADE MESTRE: MEGA HAIR DE NANOCÁPSULAS ===================== */}
       <MegaHairShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== GRID INTERATIVO: MEGA HAIR ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: MEGA HAIR ===================== */}
+      <CarouselStacked
         title="Mega Hair de Nanocápsulas"
         subtitle="HAUTE COIFFURE · DAYANE LIMA"
-        items={MEGAHAIR_GALLERY_ITEMS}
+        slides={toSlides(
+          MEGAHAIR_GALLERY_ITEMS,
+          "Mega Hair",
+          "Aplicação artesanal com microcápsulas indetectáveis e preservação capilar."
+        )}
       />
 
       {/* ===================== COLORIMETRIA & BALAYAGE: MECHAS & LOIROS NOBRES ===================== */}
       <MechasShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== GRID INTERATIVO: MECHAS & COLORIMETRIA ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: MECHAS & COLORIMETRIA ===================== */}
+      <CarouselStacked
         title="Mechas & Balayage de Luxo"
         subtitle="COLORIMETRIA AVANÇADA · DAYANE LIMA"
-        items={MECHAS_GALLERY_ITEMS}
+        slides={toSlides(
+          MECHAS_GALLERY_ITEMS,
+          "Mechas & Balayage",
+          "Tons nobres, contraste sofisticado e saúde dos fios pós-descoloração."
+        )}
       />
 
       {/* ===================== HARMONIZAÇÃO DO OLHAR: CÍLIOS & SOBRANCELHAS ===================== */}
       <OlharShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== GRID INTERATIVO: CÍLIOS & SOBRANCELHAS ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: CÍLIOS & SOBRANCELHAS ===================== */}
+      <CarouselStacked
         title="Cílios & Sobrancelhas"
         subtitle="VISAGISMO DO OLHAR · RAYSSA & HILLERY"
-        items={OLHAR_GALLERY_ITEMS}
+        slides={toSlides(
+          OLHAR_GALLERY_ITEMS,
+          "Visagismo do Olhar",
+          "Extensão fio a fio e micropigmentação personalizada conforme o formato do rosto."
+        )}
       />
 
       {/* ===================== ARQUITETURA UNGUEAL: UNHAS EM FIBRA & GEL ===================== */}
       <UnhasShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== GRID INTERATIVO: ARQUITETURA UNGUEAL ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: ARQUITETURA UNGUEAL ===================== */}
+      <CarouselStacked
         title="Alongamento em Gel & Fibra"
         subtitle="ENGENHARIA UNGUEAL · EMILY LIMA NAILS"
-        items={UNHAS_GALLERY_ITEMS}
+        slides={toSlides(
+          UNHAS_GALLERY_ITEMS,
+          "Nails & Fibra",
+          "Estruturação duradoura, curvatura natural e acabamento de alta joalheria."
+        )}
       />
 
       {/* ===================== BRONZEAMENTO EM CABINE TECNOLÓGICA ===================== */}
       <BronzeShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== GRID INTERATIVO: BRONZEAMENTO EM CABINE ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: BRONZEAMENTO EM CABINE ===================== */}
+      <CarouselStacked
         title="Cabine Tecnológica & Marquinha"
         subtitle="SOL & BRONZE · CABINE TECNOLÓGICA"
-        items={BRONZE_GALLERY_ITEMS}
+        slides={toSlides(
+          BRONZE_GALLERY_ITEMS,
+          "Bronze Tecnológico",
+          "Tom dourado uniforme, proteção dermatológica e ativação acelerada."
+        )}
       />
 
       {/* ===================== ESTÉTICA CORPORAL & DEPILAÇÃO A LASER SUBZERO ===================== */}
       <LaserShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== GRID INTERATIVO: DEPILAÇÃO A LASER SUBZERO ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: DEPILAÇÃO A LASER SUBZERO ===================== */}
+      <CarouselStacked
         title="Depilação a Laser Subzero"
         subtitle="TECNOLOGIA CLÍNICA · HAKON SUBZERO"
-        items={LASER_GALLERY_ITEMS}
+        slides={toSlides(
+          LASER_GALLERY_ITEMS,
+          "Laser Subzero",
+          "Ponteira resfriada a -12°C para eliminação definitiva com máximo conforto."
+        )}
       />
 
       {/* ===================== TRIAGEM INTELIGENTE DE QUALIFICAÇÃO ===================== */}
@@ -130,11 +170,15 @@ export default function HomePage() {
       {/* ===================== TOUR IMERSIVO PELO ATELIÊ NO MONTE CARMELO ===================== */}
       <SpaceCarousel onOpenTriage={handleOpenGeneralTriage} />
 
-      {/* ===================== GRID INTERATIVO: O ATELIÊ & FACHADA ===================== */}
-      <InteractivePortfolioGrid
+      {/* ===================== CARROSSEL 3D EMPILHADO: O ATELIÊ & FACHADA ===================== */}
+      <CarouselStacked
         title="Tour pelo Ateliê Monte Carmelo"
         subtitle="ESTRUTURA FÍSICA · RUA CALCEDÔNIA, 155"
-        items={ESPACO_GALLERY_ITEMS}
+        slides={toSlides(
+          ESPACO_GALLERY_ITEMS,
+          "Ateliê Privado",
+          "Ambiente acolhedor e privativo planejado para atendimento com hora marcada."
+        )}
       />
 
       {/* ===================== AUTORIDADE INSTITUCIONAL: 20+ ANOS DE EXPERIÊNCIA ===================== */}

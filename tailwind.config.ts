@@ -119,8 +119,11 @@ const config: Config = {
       spacing: {
         "safe-top": "env(safe-area-inset-top)",
         "safe-bottom": "env(safe-area-inset-bottom)",
+        "112": "28rem",
+        "128": "32rem",
       },
       boxShadow: {
+        xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
         mist: "0 20px 50px rgba(0, 0, 0, 0.04)",
         luxury: "0 20px 50px -10px rgba(15, 14, 13, 0.07), 0 10px 20px -5px rgba(15, 14, 13, 0.03)",
         "luxury-lg": "0 30px 60px -15px rgba(15, 14, 13, 0.12), 0 12px 24px -6px rgba(15, 14, 13, 0.05)",
