@@ -113,15 +113,15 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           </motion.div>
 
-          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Retrato oficial em tons quentes) */}
+          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Refinamento com borda translúcida e glow quente) */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
-            <div className="w-full max-w-[340px] rounded-3xl overflow-hidden border border-[#C5A880]/40 shadow-2xl bg-neutral-900 flex items-center justify-center p-2">
+            <div className="w-full max-w-[340px] rounded-3xl overflow-hidden border border-[#f5e6e0]/20 shadow-[0_20px_45px_-15px_rgba(220,180,160,0.18)] bg-neutral-900 flex items-center justify-center p-2">
               <Image 
                 src="/midias/dayane-perfil.png" 
                 alt="Dayane Lima" 
-                width={1121}
-                height={1403}
-                priority
+                width={1121} 
+                height={1403} 
+                priority 
                 className="w-full h-auto object-cover rounded-2xl filter brightness-[0.95] contrast-110 pointer-events-none" 
               />
             </div>
