@@ -112,15 +112,22 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           </motion.div>
 
-          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Altura fixa e corte absoluto) */}
+          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Correção blindada com tarja sólida e transição suave) */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
-            <div className="w-full max-w-sm h-[380px] rounded-3xl overflow-hidden relative border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
+            <div className="w-full max-w-sm rounded-3xl overflow-hidden relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-[#141211]">
+              {/* Imagem limpa com foco no busto e contraste ajustado para o modo dark */}
               <img 
                 src="/midias/foto-paratopodosite-dayane.jpg" 
                 alt="Dayane Lima • Especialista em Mega Hair" 
-                className="absolute -top-12 left-0 w-full h-[120%] object-cover object-center filter brightness-[0.85] contrast-110 pointer-events-none" 
+                className="absolute inset-0 w-full h-full object-cover object-[center_30%] scale-110 filter brightness-[0.8] contrast-125 saturate-[0.9] pointer-events-none" 
                 loading="eager" 
               />
+              
+              {/* Tarja opaca sólida na base que apaga completamente qualquer vestígio de texto da imagem original */}
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-[#141211] pointer-events-none"></div>
+              
+              {/* Sutil gradiente de transição para unir a tarja preta à foto com elegância */}
+              <div className="absolute inset-x-0 bottom-28 h-10 bg-gradient-to-t from-[#141211] to-transparent pointer-events-none"></div>
             </div>
           </div>
 
