@@ -10,16 +10,15 @@ import {
   type MotionValue,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Volume2, VolumeX, Sparkles } from "lucide-react";
 
 export interface Slide {
   type?: 'image' | 'video';
   image?: string;
   src?: string;
-  title: string;
-  description: string;
-  badge: string;
+  title?: string;
+  description?: string;
+  badge?: string;
 }
 
 export interface CarouselConfig {
@@ -77,6 +76,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   const startProgress = React.useRef(0);
   const [windowWidth, setWindowWidth] = React.useState(0);
   const [isMuted, setIsMuted] = React.useState(true);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const total = slides && slides.length > 0 ? slides.length : 1;
 
@@ -87,23 +87,63 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Rotação automática a cada 5 segundos para destaque imersivo
+  // Monitora o progresso do scroll e atualiza o índice do card central/ativo
+  React.useEffect(() => {
+    const unsubscribe = scrollProgress.on("change", (latest) => {
+      const rounded = Math.round(latest);
+      let mod = rounded % total;
+      if (mod < 0) mod += total;
+      setCurrentIndex(mod);
+    });
+    return () => unsubscribe();
+  }, [scrollProgress, total]);
+
+  // Função para avançar suavemente ao próximo slide com física spring
+  const handleNext = React.useCallback(() => {
+    const current = scrollProgress.get();
+    animate(scrollProgress, Math.round(current) + 1, {
+      type: "spring",
+      stiffness: 150,
+      damping: 25,
+    });
+  }, [scrollProgress]);
+
+  // Sincronização Dinâmica do Tempo de Transição:
+  // - Para imagens estáticas: timer padrão de 3.5s
+  // - Para vídeos: o timer é suspenso, e o avanço ocorre no evento onEnded do vídeo ativo
   React.useEffect(() => {
     if (!slides || slides.length === 0) return;
-    const timer = setInterval(() => {
-      const current = scrollProgress.get();
-      animate(scrollProgress, Math.round(current) + 1, {
-        type: "spring",
-        stiffness: 150,
-        damping: 25,
-      });
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [scrollProgress, slides]);
+    const currentSlide = slides[currentIndex];
+    const isVideo =
+      currentSlide?.type === "video" ||
+      (currentSlide?.src || currentSlide?.image || "").endsWith(".mp4");
+
+    if (!isVideo) {
+      const timer = setTimeout(() => {
+        handleNext();
+      }, 3500);
+      return () => clearTimeout(timer);
+    } else {
+      // Fallback de segurança prolongado (caso o vídeo tenha falha de autoplay do browser)
+      const safetyTimer = setTimeout(() => {
+        handleNext();
+      }, 25000);
+      return () => clearTimeout(safetyTimer);
+    }
+  }, [currentIndex, slides, handleNext]);
+
+  const handleVideoEnded = React.useCallback(
+    (index: number) => {
+      if (index === currentIndex) {
+        handleNext();
+      }
+    },
+    [currentIndex, handleNext]
+  );
 
   const config = React.useMemo(
     () => getCarouselConfig(windowWidth),
-    [windowWidth],
+    [windowWidth]
   );
 
   const handleDragStart = () => {
@@ -112,7 +152,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
 
   const handleDragEnd = (
     _: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
+    info: PanInfo
   ) => {
     const dragDistance = info.offset.x;
     const velocity = info.velocity.x;
@@ -168,7 +208,11 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/75 hover:bg-black text-white text-xs backdrop-blur-md border border-[#C5A880]/40 transition-all shadow-md cursor-pointer"
             aria-label="Controlar som dos vídeos"
           >
-            {isMuted ? <VolumeX className="w-3.5 h-3.5 text-neutral-300"/> : <Volume2 className="w-3.5 h-3.5 text-[#C5A880]"/>}
+            {isMuted ? (
+              <VolumeX className="w-3.5 h-3.5 text-neutral-300" />
+            ) : (
+              <Volume2 className="w-3.5 h-3.5 text-[#C5A880]" />
+            )}
             <span>{isMuted ? "Ativar Áudio" : "Mutado"}</span>
           </button>
         </div>
@@ -195,6 +239,8 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               progress={scrollProgress}
               config={config}
               isMuted={isMuted}
+              isActive={currentIndex === i}
+              onVideoEnded={handleVideoEnded}
             />
           ))}
         </div>
@@ -210,11 +256,37 @@ interface CardProps {
   progress: MotionValue<number>;
   config: CarouselConfig;
   isMuted: boolean;
+  isActive: boolean;
+  onVideoEnded?: (index: number) => void;
 }
 
-const Card = ({ slide, index, total, progress, config, isMuted }: CardProps) => {
+const Card = ({
+  slide,
+  index,
+  total,
+  progress,
+  config,
+  isMuted,
+  isActive,
+  onVideoEnded,
+}: CardProps) => {
   const mediaSrc = slide.src || slide.image || "";
-  const isVideo = slide.type === 'video' || mediaSrc.endsWith('.mp4');
+  const isVideo = slide.type === "video" || mediaSrc.endsWith(".mp4");
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  // Controla reprodução do vídeo: se for o card ativo, reproduz do início; caso contrário, pausa
+  React.useEffect(() => {
+    if (!isVideo || !videoRef.current) return;
+    if (isActive) {
+      videoRef.current.currentTime = 0;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    } else {
+      videoRef.current.pause();
+    }
+  }, [isActive, isVideo]);
 
   const offset = useTransform(progress, (p) => {
     let diff = (index - p) % total;
@@ -236,15 +308,15 @@ const Card = ({ slide, index, total, progress, config, isMuted }: CardProps) => 
   });
   const scale = useTransform(
     offset,
-    (o) => 1 - Math.abs(o) * config.scaleReduction,
+    (o) => 1 - Math.abs(o) * config.scaleReduction
   );
   const opacity = useTransform(
     offset,
     [-total / 2, -total / 2 + 0.5, 0, total / 2 - 0.5, total / 2],
-    [0, 1, 1, 1, 0],
+    [0, 1, 1, 1, 0]
   );
   const zIndex = useTransform(offset, (o) =>
-    Math.round(100 - Math.abs(o) * 10),
+    Math.round(100 - Math.abs(o) * 10)
   );
 
   return (
@@ -258,54 +330,37 @@ const Card = ({ slide, index, total, progress, config, isMuted }: CardProps) => 
         zIndex,
       }}
       className={cn(
-        "absolute rounded-3xl overflow-hidden bg-neutral-900 shadow-2xl border border-[#C5A880]/30 pointer-events-none",
-        "w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px]",
+        "absolute rounded-3xl overflow-hidden bg-neutral-900 shadow-2xl border border-[#C5A880]/30 pointer-events-none select-none",
+        "w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px]"
       )}
     >
       {isVideo ? (
         <video
+          ref={videoRef}
           src={mediaSrc}
-          autoPlay
-          loop
+          autoPlay={isActive}
+          loop={false}
           muted={isMuted}
           playsInline
           preload="auto"
+          onEnded={() => {
+            if (isActive && onVideoEnded) {
+              onVideoEnded(index);
+            }
+          }}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
       ) : (
         <img
           src={mediaSrc}
-          alt={slide.title}
+          alt={slide.title || "Procedimento Dayane Lima"}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          loading="lazy"
         />
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
-
-      {slide.badge && (
-        <Badge className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold uppercase tracking-widest text-[#1C1917] border border-[#C5A880]/30 shadow-md">
-          {slide.badge}
-        </Badge>
-      )}
-
-      <div className="absolute bottom-6 left-5 right-5 text-white text-left pointer-events-none">
-        <motion.p
-          style={{
-            opacity: useTransform(offset, [-0.5, 0, 0.5], [0, 1, 0]),
-          }}
-          className="text-base sm:text-xl font-serif font-bold leading-tight mb-1 drop-shadow-md text-white"
-        >
-          {slide.title}
-        </motion.p>
-        <motion.p
-          style={{
-            opacity: useTransform(offset, [-0.5, 0, 0.5], [0, 1, 0]),
-          }}
-          className="hidden sm:block text-xs text-neutral-200 line-clamp-2 font-sans font-medium"
-        >
-          {slide.description}
-        </motion.p>
-      </div>
+      {/* Borda interna sutil para acabamento acetinado de joalheria, sem nenhuma camada de texto */}
+      <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
     </motion.div>
   );
 };

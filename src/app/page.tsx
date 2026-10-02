@@ -29,19 +29,12 @@ import {
   ESPACO_GALLERY_ITEMS,
 } from "@/data/mediaCatalog";
 
-// Converte itens do acervo para o padrão de slides do CarouselStacked
-const toSlides = (
-  items: GalleryItem[],
-  badge: string,
-  description: string
-): Slide[] =>
+// Converte itens do acervo para o padrão visual do CarouselStacked (sem textos/tags)
+const toSlides = (items: GalleryItem[]): Slide[] =>
   items.map((item) => ({
     type: item.type,
     src: item.src,
     image: item.src,
-    title: item.label,
-    description,
-    badge,
   }));
 
 export default function HomePage() {
@@ -81,11 +74,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Mega Hair de Nanocápsulas"
         subtitle="HAUTE COIFFURE · DAYANE LIMA"
-        slides={toSlides(
-          MEGAHAIR_GALLERY_ITEMS,
-          "Mega Hair",
-          "Aplicação artesanal com microcápsulas indetectáveis e preservação capilar."
-        )}
+        slides={toSlides(MEGAHAIR_GALLERY_ITEMS)}
       />
 
       {/* ===================== COLORIMETRIA & BALAYAGE: MECHAS & LOIROS NOBRES ===================== */}
@@ -95,11 +84,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Mechas & Balayage de Luxo"
         subtitle="COLORIMETRIA AVANÇADA · DAYANE LIMA"
-        slides={toSlides(
-          MECHAS_GALLERY_ITEMS,
-          "Mechas & Balayage",
-          "Tons nobres, contraste sofisticado e saúde dos fios pós-descoloração."
-        )}
+        slides={toSlides(MECHAS_GALLERY_ITEMS)}
       />
 
       {/* ===================== HARMONIZAÇÃO DO OLHAR: CÍLIOS & SOBRANCELHAS ===================== */}
@@ -109,11 +94,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Cílios & Sobrancelhas"
         subtitle="VISAGISMO DO OLHAR · RAYSSA & HILLERY"
-        slides={toSlides(
-          OLHAR_GALLERY_ITEMS,
-          "Visagismo do Olhar",
-          "Extensão fio a fio e micropigmentação personalizada conforme o formato do rosto."
-        )}
+        slides={toSlides(OLHAR_GALLERY_ITEMS)}
       />
 
       {/* ===================== ARQUITETURA UNGUEAL: UNHAS EM FIBRA & GEL ===================== */}
@@ -123,11 +104,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Alongamento em Gel & Fibra"
         subtitle="ENGENHARIA UNGUEAL · EMILY LIMA NAILS"
-        slides={toSlides(
-          UNHAS_GALLERY_ITEMS,
-          "Nails & Fibra",
-          "Estruturação duradoura, curvatura natural e acabamento de alta joalheria."
-        )}
+        slides={toSlides(UNHAS_GALLERY_ITEMS)}
       />
 
       {/* ===================== BRONZEAMENTO EM CABINE TECNOLÓGICA ===================== */}
@@ -137,11 +114,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Cabine Tecnológica & Marquinha"
         subtitle="SOL & BRONZE · CABINE TECNOLÓGICA"
-        slides={toSlides(
-          BRONZE_GALLERY_ITEMS,
-          "Bronze Tecnológico",
-          "Tom dourado uniforme, proteção dermatológica e ativação acelerada."
-        )}
+        slides={toSlides(BRONZE_GALLERY_ITEMS)}
       />
 
       {/* ===================== ESTÉTICA CORPORAL & DEPILAÇÃO A LASER SUBZERO ===================== */}
@@ -151,11 +124,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Depilação a Laser Subzero"
         subtitle="TECNOLOGIA CLÍNICA · HAKON SUBZERO"
-        slides={toSlides(
-          LASER_GALLERY_ITEMS,
-          "Laser Subzero",
-          "Ponteira resfriada a -12°C para eliminação definitiva com máximo conforto."
-        )}
+        slides={toSlides(LASER_GALLERY_ITEMS)}
       />
 
       {/* ===================== TRIAGEM INTELIGENTE DE QUALIFICAÇÃO ===================== */}
@@ -174,11 +143,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Tour pelo Ateliê Monte Carmelo"
         subtitle="ESTRUTURA FÍSICA · RUA CALCEDÔNIA, 155"
-        slides={toSlides(
-          ESPACO_GALLERY_ITEMS,
-          "Ateliê Privado",
-          "Ambiente acolhedor e privativo planejado para atendimento com hora marcada."
-        )}
+        slides={toSlides(ESPACO_GALLERY_ITEMS)}
       />
 
       {/* ===================== AUTORIDADE INSTITUCIONAL: 20+ ANOS DE EXPERIÊNCIA ===================== */}
