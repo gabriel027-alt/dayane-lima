@@ -136,12 +136,12 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
                 <img 
                   src="/midias/foto-paratopodosite-dayane.jpg" 
                   alt="Dayane Lima • Especialista em Mega Hair" 
-                  className="w-full h-full object-cover object-[center_18%] scale-160 filter brightness-[0.75] contrast-125 saturate-[0.85] pointer-events-none" 
+                  className="w-full h-full object-cover object-[center_28%] scale-150 filter brightness-[0.7] contrast-125 saturate-[0.8] pointer-events-none" 
                   loading="eager" 
                 />
               </div>
-              {/* Gradiente escuro cobrindo toda a base para apagar 100% qualquer texto restante */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141211] via-[#141211]/30 to-transparent pointer-events-none"></div>
+              {/* Gradiente escuro opaco na base que cobre 100% da área inferior, apagando qualquer vestígio de copy */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#141211] via-[#141211]/90 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
