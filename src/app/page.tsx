@@ -15,7 +15,7 @@ import SpaceCarousel from "@/components/SpaceCarousel";
 import AuthoritySection from "@/components/AuthoritySection";
 import ReviewsSection from "@/components/ReviewsSection";
 import LocationAndFooter from "@/components/LocationAndFooter";
-import InfiniteMarqueeGallery from "@/components/InfiniteMarqueeGallery";
+import InteractivePortfolioGrid from "@/components/InteractivePortfolioGrid";
 import WhatsAppTriageDrawer, { ServiceCategory } from "@/components/WhatsAppTriageDrawer";
 import { MessageCircle, MapPin } from "lucide-react";
 import {
@@ -61,8 +61,8 @@ export default function HomePage() {
       {/* ===================== ESPECIALIDADE MESTRE: MEGA HAIR DE NANOCÁPSULAS ===================== */}
       <MegaHairShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL: MEGA HAIR ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: MEGA HAIR ===================== */}
+      <InteractivePortfolioGrid
         title="Mega Hair de Nanocápsulas"
         subtitle="HAUTE COIFFURE · DAYANE LIMA"
         items={MEGAHAIR_GALLERY_ITEMS}
@@ -71,8 +71,8 @@ export default function HomePage() {
       {/* ===================== COLORIMETRIA & BALAYAGE: MECHAS & LOIROS NOBRES ===================== */}
       <MechasShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL: MECHAS & COLORIMETRIA ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: MECHAS & COLORIMETRIA ===================== */}
+      <InteractivePortfolioGrid
         title="Mechas & Balayage de Luxo"
         subtitle="COLORIMETRIA AVANÇADA · DAYANE LIMA"
         items={MECHAS_GALLERY_ITEMS}
@@ -81,8 +81,8 @@ export default function HomePage() {
       {/* ===================== HARMONIZAÇÃO DO OLHAR: CÍLIOS & SOBRANCELHAS ===================== */}
       <OlharShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL: CÍLIOS & SOBRANCELHAS ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: CÍLIOS & SOBRANCELHAS ===================== */}
+      <InteractivePortfolioGrid
         title="Cílios & Sobrancelhas"
         subtitle="VISAGISMO DO OLHAR · RAYSSA & HILLERY"
         items={OLHAR_GALLERY_ITEMS}
@@ -91,8 +91,8 @@ export default function HomePage() {
       {/* ===================== ARQUITETURA UNGUEAL: UNHAS EM FIBRA & GEL ===================== */}
       <UnhasShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL: ARQUITETURA UNGUEAL ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: ARQUITETURA UNGUEAL ===================== */}
+      <InteractivePortfolioGrid
         title="Alongamento em Gel & Fibra"
         subtitle="ENGENHARIA UNGUEAL · EMILY LIMA NAILS"
         items={UNHAS_GALLERY_ITEMS}
@@ -101,8 +101,8 @@ export default function HomePage() {
       {/* ===================== BRONZEAMENTO EM CABINE TECNOLÓGICA ===================== */}
       <BronzeShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL: BRONZEAMENTO EM CABINE ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: BRONZEAMENTO EM CABINE ===================== */}
+      <InteractivePortfolioGrid
         title="Cabine Tecnológica & Marquinha"
         subtitle="SOL & BRONZE · CABINE TECNOLÓGICA"
         items={BRONZE_GALLERY_ITEMS}
@@ -111,8 +111,8 @@ export default function HomePage() {
       {/* ===================== ESTÉTICA CORPORAL & DEPILAÇÃO A LASER SUBZERO ===================== */}
       <LaserShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL: DEPILAÇÃO A LASER SUBZERO ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: DEPILAÇÃO A LASER SUBZERO ===================== */}
+      <InteractivePortfolioGrid
         title="Depilação a Laser Subzero"
         subtitle="TECNOLOGIA CLÍNICA · HAKON SUBZERO"
         items={LASER_GALLERY_ITEMS}
@@ -130,8 +130,8 @@ export default function HomePage() {
       {/* ===================== TOUR IMERSIVO PELO ATELIÊ NO MONTE CARMELO ===================== */}
       <SpaceCarousel onOpenTriage={handleOpenGeneralTriage} />
 
-      {/* ===================== CARROSSEL: O ATELIÊ & FACHADA ===================== */}
-      <InfiniteMarqueeGallery
+      {/* ===================== GRID INTERATIVO: O ATELIÊ & FACHADA ===================== */}
+      <InteractivePortfolioGrid
         title="Tour pelo Ateliê Monte Carmelo"
         subtitle="ESTRUTURA FÍSICA · RUA CALCEDÔNIA, 155"
         items={ESPACO_GALLERY_ITEMS}
