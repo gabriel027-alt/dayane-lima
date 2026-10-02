@@ -15,35 +15,18 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
       aria-labelledby="hero-title"
       className="relative min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] md:h-[90vh] md:max-h-[820px] flex items-center bg-[#1C1917] overflow-hidden border-b border-[#C5A880]/30"
     >
-      {/* ===================== 1. VÍDEO OFICIAL DE FUNDO (2.7K WIDESCREEN) ===================== */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        poster="/midias/foto-paratopodosite-dayane.jpg"
-        className="absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
-      >
-        <source src="/midias/hero-dayane.mp4" type="video/mp4" />
-      </video>
-
-      {/* ===================== 2. GRADIENTES DE SOBREPOSIÇÃO ESCURA (CONFORMIDADE WCAG 2.2 AA) ===================== */}
-      {/* Gradiente Lateral: Garante legibilidade absoluta da copy e botões */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-r from-[#141211]/95 via-[#141211]/80 to-[#141211]/30 pointer-events-none"
-        aria-hidden="true" 
-      />
-      {/* Gradiente Vertical: Suaviza a transição com a navbar e a base */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-t from-[#141211] via-transparent to-[#141211]/60 pointer-events-none"
-        aria-hidden="true" 
-      />
-      {/* Reflexo Dourado Acetinado Sutil */}
-      <div 
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(197,168,128,0.12),transparent_60%)] pointer-events-none"
-        aria-hidden="true"
-      />
+      {/* VÍDEO DE FUNDO DA HERO (Restaurado e intocado) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <video 
+          src="/midias/hero-dayane.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover opacity-40 filter brightness-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#141211] via-[#141211]/80 to-transparent"></div>
+      </div>
 
       {/* ===================== 3. CONTEÚDO EDITORIAL EM PRIMEIRA DOBRA (SEM SCROLL) ===================== */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full py-6 md:py-10">
@@ -129,19 +112,17 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           </motion.div>
 
-          {/* COLUNA DIREITA: Card Flutuante Lateral com Retrato Oficial de Dayane Lima */}
-          <div className="hidden lg:flex lg:col-span-4 justify-end">
-            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-[#141211]">
-              {/* Imagem com proporção e zoom milimetricamente ajustados para mostrar o busto completo */}
+          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Com máscara inferior de cobertura de texto) */}
+          <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
+            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
               <img 
                 src="/midias/foto-paratopodosite-dayane.jpg" 
                 alt="Dayane Lima • Especialista em Mega Hair" 
-                className="absolute inset-0 w-full h-[115%] object-cover object-[center_22%] scale-110 filter brightness-[0.75] contrast-125 pointer-events-none" 
+                className="w-full h-full object-cover object-[center_28%] scale-125 filter brightness-[0.8] contrast-110 pointer-events-none" 
                 loading="eager" 
               />
-              
-              {/* Máscara de gradiente suave na base apenas para cobrir o texto residual sem cortar o busto */}
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#141211] via-[#141211]/80 to-transparent pointer-events-none"></div>
+              {/* Máscara sólida inferior cobrindo rigorosamente a área da copy sem afetar o busto */}
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#141211] via-[#141211]/90 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
