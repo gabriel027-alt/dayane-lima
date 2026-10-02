@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import Image from "next/image";
 import { Award, ShieldCheck, HeartHandshake, Sparkles, CheckCircle2, Calendar, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 interface AuthoritySectionProps {
@@ -71,7 +72,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                       loop
                       playsInline
                       muted={isMuted}
-                      poster="/midias/foto-paratopodosite-dayane.jpg"
+                      poster="/midias/dayane-perfil.png"
                       className="w-full h-full object-cover"
                     >
                       <source src="/midias/video-dayane-apresentação-serviços1.mp4" type="video/mp4" />
@@ -100,10 +101,12 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   </div>
                 ) : (
                   <div className="relative w-full h-full overflow-hidden">
-                    <img
-                      src="/midias/foto-paratopodosite-dayane.jpg"
-                      alt="Dayane Lima, fundadora da SB Estética e Beleza em Montes Claros"
-                      className="w-full h-full object-cover object-[center_20%] scale-135 transition-transform duration-700 ease-out group-hover:scale-140 pointer-events-none"
+                    <Image
+                      src="/midias/dayane-perfil.png"
+                      alt="Dayane Lima"
+                      width={1121}
+                      height={1403}
+                      className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
                     />
 
                     {/* Botão Play Institucional Centralizado */}
