@@ -138,6 +138,7 @@ const config: Config = {
         monumental: "0.04em",
       },
       scale: {
+        "160": "1.6",
         "175": "1.75",
       },
       keyframes: {
