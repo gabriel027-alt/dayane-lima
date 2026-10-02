@@ -112,13 +112,13 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           </motion.div>
 
-          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Harmonização sem espaços max-w-[300px] e aspect-[3/2.7]) */}
+          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Formato flexível sob medida com p-2 e h-auto) */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
-            <div className="w-full max-w-[300px] overflow-hidden rounded-3xl relative aspect-[3/2.7] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
+            <div className="w-full max-w-[340px] rounded-3xl overflow-hidden border border-[#C5A880]/40 shadow-2xl bg-neutral-900 flex items-center justify-center p-2">
               <img 
                 src="/midias/foto-editada-dayane.png" 
                 alt="Dayane Lima • Especialista em Mega Hair" 
-                className="w-full h-full object-cover object-center filter brightness-[0.9] contrast-115 pointer-events-none" 
+                className="w-full h-auto object-cover rounded-2xl filter brightness-[0.95] contrast-110 pointer-events-none" 
                 loading="eager" 
               />
             </div>
