@@ -112,17 +112,16 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           </motion.div>
 
-          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Com máscara inferior de cobertura de texto) */}
+          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Encurtado cirurgicamente antes da copy) */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
-            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
+            {/* Reduzimos ligeiramente a altura da proporção do container para parar antes da copy */}
+            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/3.3] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
               <img 
                 src="/midias/foto-paratopodosite-dayane.jpg" 
                 alt="Dayane Lima • Especialista em Mega Hair" 
-                className="w-full h-full object-cover object-[center_28%] scale-125 filter brightness-[0.8] contrast-110 pointer-events-none" 
+                className="w-full h-full object-cover object-top scale-100 filter brightness-[0.85] contrast-110 pointer-events-none" 
                 loading="eager" 
               />
-              {/* Máscara sólida inferior cobrindo rigorosamente a área da copy sem afetar o busto */}
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#141211] via-[#141211]/90 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
