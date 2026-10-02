@@ -137,6 +137,9 @@ const config: Config = {
         editorial: "0.12em",
         monumental: "0.04em",
       },
+      scale: {
+        "175": "1.75",
+      },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0%)" },

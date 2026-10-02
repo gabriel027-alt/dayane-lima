@@ -131,14 +131,17 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           {/* COLUNA DIREITA: Card Flutuante Lateral com Retrato Oficial de Dayane Lima */}
           <div className="hidden lg:flex lg:col-span-4 justify-end">
-            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900 group">
-              <img 
-                src="/midias/foto-paratopodosite-dayane.jpg" 
-                alt="Dayane Lima • Especialista em Mega Hair" 
-                className="w-full h-full object-cover object-[center_30%] scale-150 brightness-[0.75] contrast-125 filter saturate-[0.85] pointer-events-none transition-all duration-500" 
-                loading="eager" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141211]/80 via-[#141211]/20 to-transparent pointer-events-none"></div>
+            <div className="w-full max-w-sm overflow-hidden rounded-3xl relative aspect-[3/4] border border-[#C5A880]/40 shadow-2xl bg-neutral-900">
+              <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <img 
+                  src="/midias/foto-paratopodosite-dayane.jpg" 
+                  alt="Dayane Lima • Especialista em Mega Hair" 
+                  className="w-full h-full object-cover object-[center_20%] scale-175 filter brightness-[0.7] contrast-125 saturate-[0.8] pointer-events-none" 
+                  loading="eager" 
+                />
+              </div>
+              {/* Gradiente escuro pesado na base para apagar 100% qualquer vestígio de texto e harmonizar com o dark */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141211] via-[#141211]/40 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
