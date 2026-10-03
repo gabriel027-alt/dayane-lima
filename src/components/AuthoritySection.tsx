@@ -25,13 +25,15 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Coluna Visual: Foto Estática de Perfil Perfeitamente Enquadrada */}
+          {/* Coluna Visual: Foto Estática de Perfil Perfeitamente Enquadrada com Retrato Elegante */}
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative mx-auto max-w-md lg:max-w-none">
+              
+              {/* Moldura Principal com Retrato Oficial em Tons Quentes */}
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-[#C5A880]/30 shadow-lg bg-neutral-900 group">
                 <div className="relative w-full h-full overflow-hidden">
                   <img 
-                    src="/midias/dayane-perfil.png" 
+                    src="/midias/Retratoeleganteemtonsquentes-dayane.png" 
                     alt="Dayane Lima • Especialista Titular" 
                     className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
                   />
@@ -43,6 +45,26 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   <p className="text-xs text-white/85 mt-1 font-sans">Fundadora da SB Estética e Beleza • Montes Claros - MG</p>
                 </div>
               </div>
+
+              {/* Card Flutuante de Apresentação com Segunda Foto de Perfil */}
+              <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-white/95 backdrop-blur-md border border-[#C5A880]/40 rounded-2xl p-2.5 shadow-xl flex items-center gap-3 max-w-[260px] z-20">
+                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl overflow-hidden shrink-0 border border-[#C5A880]/40 shadow-sm">
+                  <img 
+                    src="/midias/segunda-foto-perfil-dayane.jpg" 
+                    alt="Dayane Lima • Atendimento Consultivo" 
+                    className="w-full h-full object-cover object-top" 
+                  />
+                </div>
+                <div>
+                  <span className="block text-xs font-serif font-bold text-[#1C1917] leading-tight">
+                    Atendimento Exclusivo
+                  </span>
+                  <span className="block text-[10px] text-neutral-600 font-sans mt-0.5 leading-tight">
+                    Consultoria direta com Dayane Lima
+                  </span>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -110,11 +132,21 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
               </div>
             </div>
 
-            {/* Chamada para Ação */}
+            {/* Chamada para Ação com Assinatura */}
             <div className="mt-8 pt-6 border-t border-[#E8D0C8] w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <p className="text-xs text-[#574F4A] font-sans">
-                Sinta a tranquilidade de ser acolhida por quem tem duas décadas de reputação consolidada.
-              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-[#C5A880]/60 shadow-sm shrink-0">
+                  <img 
+                    src="/midias/segunda-foto-perfil-dayane.jpg" 
+                    alt="Dayane Lima" 
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#1C1917] font-sans">Dayane Lima</p>
+                  <p className="text-[11px] text-[#574F4A] font-sans">Atendimento exclusivo com hora marcada</p>
+                </div>
+              </div>
               <button
                 type="button"
                 onClick={onOpenTriage}

@@ -119,7 +119,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
             <div className="w-full max-w-[340px] rounded-3xl overflow-hidden border border-[#C5A880]/40 shadow-2xl bg-neutral-900 flex items-center justify-center p-2">
               <img 
-                src="/midias/foto-editada-dayane.png" 
+                src="/midias/Retratoeleganteemtonsquentes-dayane.png" 
                 alt="Dayane Lima • Especialista em Mega Hair" 
                 className="w-full h-auto object-cover rounded-2xl filter brightness-[0.95] contrast-110 pointer-events-none" 
                 loading="eager" 
