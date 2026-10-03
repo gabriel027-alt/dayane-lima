@@ -402,6 +402,8 @@ const Card = ({
     }
   };
 
+  if (!mediaSrc) return null;
+
   return (
     <motion.div
       style={{
@@ -412,7 +414,7 @@ const Card = ({
         opacity,
         zIndex,
       }}
-      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
+      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
       <div className="relative w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl">
         {isVideo ? (
