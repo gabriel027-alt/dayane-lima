@@ -72,7 +72,8 @@ export default function HomePage() {
       <Hero 
         onOpenTriage={handleOpenGeneralTriage} 
         onExploreServices={() => {
-          document.getElementById("megahair")?.scrollIntoView({ behavior: "smooth" });
+          const target = document.getElementById("procedimentos") || document.getElementById("megahair");
+          target?.scrollIntoView({ behavior: "smooth" });
         }}
       />
 

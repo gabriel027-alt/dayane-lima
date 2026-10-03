@@ -3,12 +3,13 @@
 import React, { useState, useRef } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, ArrowRight, Clock, CheckCircle2, ChevronRight, Play, Pause, Camera } from "lucide-react";
+import { Sparkles, ArrowRight, ArrowUpRight, Clock, CheckCircle2, ChevronRight, Play, Pause, Camera } from "lucide-react";
 import { ServiceCategory } from "./WhatsAppTriageDrawer";
 
 interface RitualDetail {
   id: ServiceCategory;
   tabValue: string;
+  anchorId: string;
   number: string;
   name: string;
   category: string;
@@ -27,6 +28,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "megahair",
     tabValue: "megahair",
+    anchorId: "megahair",
     number: "01",
     name: "Mega Hair Invisível & Nanocápsulas",
     category: "Alongamento & Densidade Imperceptível",
@@ -47,6 +49,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "mechas",
     tabValue: "mechas",
+    anchorId: "mechas",
     number: "02",
     name: "Mechas, Loiros Nobres, Cabelos Lisos & Balayage de Luxo",
     category: "Loiros Nobres & Morenas Iluminadas",
@@ -68,6 +71,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "cilios",
     tabValue: "cilios",
+    anchorId: "cilios",
     number: "03",
     name: "Extensão de Cílios Fio a Fio",
     category: "Harmonização do Olhar • Rayssa Lash",
@@ -89,6 +93,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "sobrancelhas",
     tabValue: "sobrancelhas",
+    anchorId: "sobrancelhas",
     number: "04",
     name: "Design de Sobrancelhas & Visagismo",
     category: "Simetria Facial • Hillery Thauanne",
@@ -109,6 +114,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "unhas",
     tabValue: "unhas",
+    anchorId: "unhas",
     number: "05",
     name: "Alongamento de Unhas em Gel & Fibra",
     category: "Alta Resistência • Emily Lima Nails",
@@ -130,6 +136,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "bronze",
     tabValue: "bronze",
+    anchorId: "bronze",
     number: "06",
     name: "Bronzeamento em Cabine Tecnológica",
     category: "Cabine Privativa • Sol & Bronze",
@@ -151,6 +158,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "laser",
     tabValue: "laser",
+    anchorId: "laser",
     number: "07",
     name: "Depilação a Laser & Estética Corporal",
     category: "Alta Tecnologia • Pele Lisa",
@@ -171,6 +179,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
   {
     id: "terapia",
     tabValue: "terapia",
+    anchorId: "terapia",
     number: "08",
     name: "Terapias Capilares & Cronograma",
     category: "Regeneração & Saúde da Fibra",
@@ -282,10 +291,19 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                     </div>
                   </div>
 
-                  <ChevronRight 
-                    className="w-4 h-4 shrink-0 text-[#4D4642] group-data-active:text-[#1C1917]"
-                    aria-hidden="true" 
-                  />
+                  <a
+                    href={`#${ritual.anchorId}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      document.getElementById(ritual.anchorId)?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    title={`Rolar até a seção de ${ritual.name}`}
+                    className="p-1.5 rounded-xl text-[#C5A880] hover:text-[#1C1917] hover:bg-[#C5A880]/20 transition-all shrink-0 flex items-center gap-1 text-[11px] font-sans font-medium"
+                    aria-label={`Rolar para a seção de ${ritual.name}`}
+                  >
+                    <span className="hidden sm:inline text-[10px] uppercase tracking-wider font-semibold">Ver Seção</span>
+                    <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -301,7 +319,21 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                   <Card className="rounded-3xl border border-[#E8D0C8] shadow-xs overflow-hidden bg-white min-h-[520px] p-0 gap-0">
                     
                     {/* Container de Mídia: Vídeo Real ou Fotografia Macro */}
-                    <div className="relative aspect-[16/10] sm:aspect-[16/10] w-full overflow-hidden bg-neutral-900">
+                    <div className="relative aspect-[16/10] sm:aspect-[16/10] w-full overflow-hidden bg-neutral-900 group/media">
+                      {/* Link Flutuante de Âncora para Rolar até a Seção da Especialidade */}
+                      <a
+                        href={`#${ritual.anchorId}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          document.getElementById(ritual.anchorId)?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/65 hover:bg-black/85 text-white text-xs font-semibold backdrop-blur-md border border-white/20 transition-all hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+                        title={`Rolar até a seção de ${ritual.name}`}
+                      >
+                        <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" aria-hidden="true" />
+                        <span>Ver Galeria & Especialidade</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#C5A880]" aria-hidden="true" />
+                      </a>
                       {ritual.mediaType === "video" ? (
                         <>
                           <video
@@ -391,21 +423,38 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                         </div>
                       </div>
 
-                      {/* Botão de Ação para Triagem Direta */}
+                      {/* Botões de Ação: Conexão por Âncora + Triagem VIP */}
                       <div className="mt-8 pt-6 border-t border-[#F0EAE1] flex flex-col sm:flex-row items-center justify-between gap-4">
                         <span className="text-xs text-[#574F4A] font-sans">
                           Atendimento sob agendamento prévio com Dayane Lima
                         </span>
 
-                        <button
-                          type="button"
-                          onClick={() => onSelectService(ritual.id)}
-                          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-xs tracking-wide shadow-sm hover:shadow transition-all duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer"
-                          aria-label={`Consultar disponibilidade para ${ritual.name}`}
-                        >
-                          <span>Consultar Disponibilidade</span>
-                          <ArrowRight className="w-4 h-4 text-[#C5A880] transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                        </button>
+                        <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                          {/* Link de Âncora para Rolar Suavemente até a Seção de Especialidades */}
+                          <a
+                            href={`#${ritual.anchorId}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              document.getElementById(ritual.anchorId)?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-5 rounded-full bg-white hover:bg-[#FAF3F0] text-[#1C1917] border border-[#C5A880]/50 font-sans font-semibold text-xs tracking-wide shadow-xs hover:shadow transition-all duration-200 cursor-pointer"
+                            aria-label={`Rolar até a seção correspondente de ${ritual.name}`}
+                          >
+                            <span>Ver Seção Completa</span>
+                            <ArrowUpRight className="w-4 h-4 text-[#C5A880]" aria-hidden="true" />
+                          </a>
+
+                          {/* Botão de Triagem WhatsApp */}
+                          <button
+                            type="button"
+                            onClick={() => onSelectService(ritual.id)}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-xs tracking-wide shadow-sm hover:shadow transition-all duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer"
+                            aria-label={`Consultar disponibilidade para ${ritual.name}`}
+                          >
+                            <span>Consultar Disponibilidade</span>
+                            <ArrowRight className="w-4 h-4 text-[#C5A880] transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                          </button>
+                        </div>
                       </div>
                     </CardContent>
 

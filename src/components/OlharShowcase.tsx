@@ -44,8 +44,8 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         {/* ===================== 1. APRESENTAÇÃO DAS ESPECIALISTAS ===================== */}
         <div className="mb-16 sm:mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          {/* Card: Rayssa Lash */}
-          <div className="bg-white rounded-3xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
+          {/* Card: Rayssa Lash (Cílios) */}
+          <div id="cilios" className="bg-white rounded-3xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#6E501E]">
@@ -73,8 +73,8 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
             </div>
           </div>
 
-          {/* Card: Hillery Thauanne */}
-          <div className="bg-white rounded-3xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
+          {/* Card: Hillery Thauanne (Sobrancelhas) */}
+          <div id="sobrancelhas" className="bg-white rounded-3xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#6E501E]">

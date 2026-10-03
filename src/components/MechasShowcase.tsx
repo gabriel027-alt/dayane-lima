@@ -61,8 +61,8 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
             </div>
           </div>
 
-          {/* Pilares Técnicos de Segurança Capilar */}
-          <div className="lg:col-span-6 bg-white p-8 rounded-3xl border border-[#E8D0C8] shadow-xs space-y-4">
+          {/* Pilares Técnicos de Segurança Capilar & Terapias */}
+          <div id="terapia" className="lg:col-span-6 bg-white p-8 rounded-3xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
             <h4 className="font-serif font-bold text-xl text-[#1C1917]">
               Critérios Inegociáveis de Clareamento Seguro
             </h4>
