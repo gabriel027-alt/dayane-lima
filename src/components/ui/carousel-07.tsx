@@ -413,12 +413,12 @@ const Card = ({
         zIndex,
       }}
       className={cn(
-        "absolute rounded-3xl overflow-hidden bg-neutral-900 shadow-2xl border border-[#C5A880]/30 pointer-events-none select-none",
+        "absolute rounded-3xl overflow-hidden bg-[#1C1917] shadow-2xl border border-[#C5A880]/40 pointer-events-none select-none",
         "w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px]"
       )}
     >
       {isVideo ? (
-        <div className="relative w-full h-full flex items-center justify-center bg-neutral-900 p-1.5 sm:p-2 overflow-hidden">
+        <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden">
           <video
             ref={videoRef}
             src={mediaSrc}
@@ -429,15 +429,15 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="relative z-10 w-full h-full object-contain rounded-2xl pointer-events-none"
+            className="relative z-10 w-full h-full object-contain rounded-2xl pointer-events-none bg-[#1C1917]"
           />
         </div>
       ) : (
-        <div className="relative w-full h-full flex items-center justify-center bg-neutral-900 overflow-hidden">
+        <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-cover object-center pointer-events-none"
+            className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917]"
             loading="lazy"
           />
         </div>
