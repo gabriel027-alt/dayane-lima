@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, Calendar, ArrowRight, Star, ShieldCheck } from "lucide-react";
 
@@ -118,17 +117,13 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           {/* CARD LATERAL DIREITO DA FOTO EDITADA DA DAYANE */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
-            <div className="w-full max-w-[340px] xl:max-w-[360px] rounded-3xl overflow-hidden border border-[#f5e6e0]/20 shadow-[0_20px_45px_-15px_rgba(220,180,160,0.18)] bg-neutral-900/90 backdrop-blur-sm flex items-center justify-center p-2 group transition-all duration-500 hover:border-[#C5A880]/40">
-              <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                <Image 
-                  src="/midias/foto-editada-dayane.png" 
-                  alt="Dayane Lima • Especialista em Mega Hair e Mechas" 
-                  width={1080} 
-                  height={1350} 
-                  priority 
-                  className="w-full h-auto object-cover rounded-2xl filter brightness-[0.96] contrast-105 pointer-events-none transition-transform duration-700 group-hover:scale-105" 
-                />
-              </div>
+            <div className="w-full max-w-[340px] rounded-3xl overflow-hidden border border-[#C5A880]/40 shadow-2xl bg-neutral-900 flex items-center justify-center p-2">
+              <img 
+                src="/midias/foto-editada-dayane.png" 
+                alt="Dayane Lima • Especialista em Mega Hair" 
+                className="w-full h-auto object-cover rounded-2xl filter brightness-[0.95] contrast-110 pointer-events-none" 
+                loading="eager" 
+              />
             </div>
           </div>
 
