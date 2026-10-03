@@ -418,10 +418,7 @@ const Card = ({
       )}
     >
       {isVideo ? (
-        <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-b from-[#1C1917] via-[#141211] to-[#0D0B0A] p-1.5 sm:p-2 overflow-hidden">
-          {/* Fundo de preenchimento elegante com brilho quente sutil de alta costura */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,168,128,0.15)_0%,transparent_75%)] pointer-events-none" />
-
+        <div className="relative w-full h-full flex items-center justify-center bg-neutral-900 p-1.5 sm:p-2 overflow-hidden">
           <video
             ref={videoRef}
             src={mediaSrc}
@@ -436,12 +433,14 @@ const Card = ({
           />
         </div>
       ) : (
-        <img
-          src={mediaSrc}
-          alt={slide.title || "Procedimento Dayane Lima"}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          loading="lazy"
-        />
+        <div className="relative w-full h-full flex items-center justify-center bg-neutral-900 overflow-hidden">
+          <img
+            src={mediaSrc}
+            alt={slide.title || "Procedimento Dayane Lima"}
+            className="w-full h-full object-cover object-center pointer-events-none"
+            loading="lazy"
+          />
+        </div>
       )}
 
       {/* Borda interna sutil para acabamento acetinado de joalheria, sem nenhuma camada de texto */}
