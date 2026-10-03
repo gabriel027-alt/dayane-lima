@@ -19,8 +19,10 @@ export function ImmersiveHero({ onOpenTriage, onExploreServices }: ImmersiveHero
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Armazena as imagens pré-carregadas
+  // Armazena as imagens pré-carregadas e o estado de interpolação suave
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
+  const targetFrameRef = useRef<number>(0);
+  const smoothFrameRef = useRef<number>(0);
   const currentFrameRef = useRef<number>(0);
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -183,99 +185,129 @@ export function ImmersiveHero({ onOpenTriage, onExploreServices }: ImmersiveHero
     return () => window.removeEventListener("resize", handleResize);
   }, [updateCanvasSize]);
 
+  // Interpolação suave e contínua dos frames com amortecimento / inércia (lerp)
+  useEffect(() => {
+    // Fator de lerp: no mobile 0.12 para responder com agilidade e fluidez ao touch nativo;
+    // No desktop 0.07 para conferir amortecimento cinematográfico de alta costura sem saltos.
+    const lerpFactor = isMobile ? 0.12 : 0.07;
+
+    const updateSmoothFrame = () => {
+      const diff = targetFrameRef.current - smoothFrameRef.current;
+
+      if (Math.abs(diff) > 0.005) {
+        smoothFrameRef.current += diff * lerpFactor;
+        const frameToDraw = Math.min(
+          totalFrames - 1,
+          Math.max(0, Math.round(smoothFrameRef.current))
+        );
+        if (frameToDraw !== currentFrameRef.current) {
+          drawFrame(frameToDraw);
+        }
+      } else if (smoothFrameRef.current !== targetFrameRef.current) {
+        smoothFrameRef.current = targetFrameRef.current;
+        const frameToDraw = Math.min(
+          totalFrames - 1,
+          Math.max(0, Math.round(smoothFrameRef.current))
+        );
+        if (frameToDraw !== currentFrameRef.current) {
+          drawFrame(frameToDraw);
+        }
+      }
+    };
+
+    gsap.ticker.add(updateSmoothFrame);
+
+    return () => {
+      gsap.ticker.remove(updateSmoothFrame);
+    };
+  }, [isMobile, totalFrames, drawFrame]);
+
   // Animação GSAP ScrollTrigger vinculada ao Canvas e Textos
   useEffect(() => {
     if (!containerRef.current || !canvasRef.current) return;
 
     const ctx = gsap.context(() => {
-      const frameTracker = { frame: 0 };
-
-      // 1. Scrub contínuo dos frames WebP no Canvas
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.4,
-        onUpdate: (self) => {
-          const frameIndex = Math.min(
-            totalFrames - 1,
-            Math.floor(self.progress * (totalFrames - 1))
-          );
-          if (frameIndex !== currentFrameRef.current) {
-            drawFrame(frameIndex);
-          }
-        },
-      });
-
-      // 2. Fade Out do Bloco 1 (Hero Principal) ao iniciar o scroll
-      gsap.to(".hero-phase-1", {
+      // Timeline com scrub suave controlando progresso e fases editoriais
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "28% top",
-          scrub: true,
+          end: isMobile ? "+=700%" : "+=1000%",
+          scrub: 0.5,
+          pin: !isMobile,
+          pinSpacing: false,
+          onUpdate: (self) => {
+            targetFrameRef.current = self.progress * (totalFrames - 1);
+          },
         },
-        opacity: 0,
-        y: -40,
-        pointerEvents: "none",
       });
 
-      // 3. Fade In e Fade Out do Bloco 2 (Arte & Tecnologia de Nanocápsulas)
-      gsap.fromTo(
-        ".hero-phase-2",
-        { opacity: 0, y: 50 },
+      // Inicializa os blocos 2 e 3 como transparentes e sem clique
+      gsap.set(".hero-phase-2", { opacity: 0, y: 40, pointerEvents: "none" });
+      gsap.set(".hero-phase-3", { opacity: 0, y: 40, pointerEvents: "none" });
+
+      // Fase 1: Hero Principal (visível em 0%, fade out entre 10% e 25%)
+      tl.to(
+        ".hero-phase-1",
         {
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "25% top",
-            end: "45% top",
-            scrub: true,
-          },
+          opacity: 0,
+          y: -35,
+          ease: "power1.out",
+          duration: 15,
+        },
+        10
+      );
+      tl.set(".hero-phase-1", { pointerEvents: "none" }, 25);
+
+      // Fase 2: Arte & Tecnologia de Nanocápsulas (fade in 28%-42%, fade out 55%-68%)
+      tl.to(
+        ".hero-phase-2",
+        {
           opacity: 1,
           y: 0,
-        }
+          ease: "power1.out",
+          duration: 14,
+          pointerEvents: "auto",
+        },
+        28
+      );
+      tl.to(
+        ".hero-phase-2",
+        {
+          opacity: 0,
+          y: -35,
+          ease: "power1.in",
+          duration: 13,
+          pointerEvents: "none",
+        },
+        55
       );
 
-      gsap.to(".hero-phase-2", {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "52% top",
-          end: "68% top",
-          scrub: true,
-        },
-        opacity: 0,
-        y: -40,
-        pointerEvents: "none",
-      });
-
-      // 4. Fade In do Bloco 3 (Convite VIP e Agendamento Exclusivo)
-      gsap.fromTo(
+      // Fase 3: Convite VIP e Triagem WhatsApp (fade in 70%-85%, permanece ativo até 100%)
+      tl.to(
         ".hero-phase-3",
-        { opacity: 0, y: 50 },
         {
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "68% top",
-            end: "88% top",
-            scrub: true,
-          },
           opacity: 1,
           y: 0,
-        }
+          ease: "power1.out",
+          duration: 15,
+          pointerEvents: "auto",
+        },
+        70
       );
     }, containerRef);
 
     return () => {
       ctx.revert();
     };
-  }, [totalFrames, drawFrame]);
+  }, [isMobile, totalFrames]);
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[320vh] bg-[#1C1917] text-white select-none"
+      className={`relative w-full ${isMobile ? "h-[750vh]" : "h-[1050vh]"} bg-[#1C1917] text-white select-none`}
     >
-      {/* CONTAINER FIXO (PINNED VIEWPORT) */}
+      {/* CONTAINER FIXO (PINNED VIEWPORT / STICKY VIEWPORT) */}
       <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
         
         {/* CANVAS DE ALTA PERFORMANCE */}
