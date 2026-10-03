@@ -34,7 +34,6 @@ const RITUALS_CATALOG: RitualDetail[] = [
     mediaType: "video",
     mediaSrc: "/midias/video-megahair-dayane1.mp4",
     mediaClassName: "object-cover object-center",
-    poster: "/midias/cabelo1-dayane.jpg",
     alt: "Aplicação técnica de Nanocápsulas de Mega Hair na raiz no ateliê SB Estética",
     headline: "União milimétrica na raiz com liberdade e preservação total",
     description:

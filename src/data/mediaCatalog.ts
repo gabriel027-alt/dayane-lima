@@ -31,7 +31,7 @@ export interface MediaCatalogItem {
 }
 
 // =========================================================================
-// 1. MEGA HAIR DE NANOCÁPSULAS (4 mídias exclusivas)
+// 1. MEGA HAIR DE NANOCÁPSULAS (3 vídeos exclusivos de nanocápsulas e alongamento)
 // =========================================================================
 export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -51,12 +51,6 @@ export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
     src: "/midias/video-megahair-dayane3.mp4",
     alt: "Finalização com densidade nobre e preservação da raiz folicular",
     label: "Densidade Nobre & Preservação da Raiz",
-  },
-  {
-    type: "image",
-    src: "/midias/cabelo1-dayane.jpg",
-    alt: "Resultado fotográfico de Mega Hair por Dayane Lima",
-    label: "Alinhamento & Integração da Raiz",
   },
 ];
 
@@ -386,7 +380,6 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     id: "mh-01",
     type: "video",
     src: "/midias/video-megahair-dayane1.mp4",
-    poster: "/midias/cabelo1-dayane.jpg",
     title: "Aplicação em Nanocápsulas Invisíveis",
     subtitle: "Junções milimétricas moldadas artesanalmente mecha a mecha com zero tração na raiz.",
     category: "megahair",
@@ -398,7 +391,6 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     id: "mh-02",
     type: "video",
     src: "/midias/video-megahair-dayane2.mp4",
-    poster: "/midias/cabelo3-dayane.jpg",
     title: "Movimento Fluido & Balanço Indetectável",
     subtitle: "Caimento orgânico com fios brasileiros selecionados sob luz natural.",
     category: "megahair",
@@ -410,34 +402,11 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     id: "mh-03",
     type: "video",
     src: "/midias/video-megahair-dayane3.mp4",
-    poster: "/midias/cabelo1-dayane.jpg",
     title: "Densidade Nobre & Preservação Folicular",
     subtitle: "Divisão geométrica que respeita o ciclo biológico de crescimento do cabelo natural.",
     category: "megahair",
     categoryLabel: "Mega Hair de Nanocápsulas",
     sourceUrl: "https://www.instagram.com/dayanelimaestetica/reel/DIBdXRpR6Q-/",
-    author: "Dayane Lima",
-  },
-  {
-    id: "mh-04",
-    type: "image",
-    src: "/midias/cabelo1-dayane.jpg",
-    title: "Alinhamento & Integração da Raiz",
-    subtitle: "Harmonização de pontas com caimento indistinguível e toque sedoso.",
-    category: "megahair",
-    categoryLabel: "Mega Hair de Nanocápsulas",
-    sourceUrl: "https://www.instagram.com/dayanelimaestetica/p/DLvjygHy-sF/",
-    author: "Dayane Lima",
-  },
-  {
-    id: "mh-05",
-    type: "image",
-    src: "/midias/cabelo3-dayane.jpg",
-    title: "Harmonização de Comprimento & Textura",
-    subtitle: "Fixação biocompatível que viabiliza coques altos e rotina ativa com discrição.",
-    category: "megahair",
-    categoryLabel: "Mega Hair de Nanocápsulas",
-    sourceUrl: "https://www.instagram.com/dayanelimaestetica/p/Bv1bFuNj8h8/",
     author: "Dayane Lima",
   },
 
