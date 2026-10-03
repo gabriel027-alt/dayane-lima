@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Sparkles, Calendar, ArrowRight, Star, ShieldCheck, MapPin } from "lucide-react";
+import { Sparkles, Calendar, ArrowRight, Star, ShieldCheck } from "lucide-react";
 
 interface HeroProps {
   onOpenTriage: () => void;
@@ -16,7 +16,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
       aria-labelledby="hero-title"
       className="relative min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] md:h-[90vh] md:max-h-[820px] flex items-center bg-[#1C1917] overflow-hidden border-b border-[#C5A880]/30"
     >
-      {/* VÍDEO DE FUNDO DA HERO (Restaurado e intocado) */}
+      {/* VÍDEO DE FUNDO EM LOOP CONTÍNUO (Alta performance e estabilidade nativa) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video 
           src="/midias/hero-dayane.mp4" 
@@ -24,16 +24,19 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
           loop 
           muted 
           playsInline 
-          className="w-full h-full object-cover opacity-40 filter brightness-90"
+          preload="auto"
+          className="w-full h-full object-cover opacity-45 filter brightness-95 contrast-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#141211] via-[#141211]/80 to-transparent"></div>
+        {/* Overlays escuros de contraste cinematográfico e atmosfera de luxo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#141211] via-[#141211]/85 to-transparent/30" />
+        <div className="absolute inset-0 bg-[#141211]/40 sm:bg-transparent" />
       </div>
 
-      {/* ===================== 3. CONTEÚDO EDITORIAL EM PRIMEIRA DOBRA (SEM SCROLL) ===================== */}
+      {/* CONTEÚDO EDITORIAL EM PRIMEIRA DOBRA */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full py-6 md:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* COLUNA ESQUERDA: Texto Editorial de Alta Precisão & CTA Imediato */}
+          {/* COLUNA ESQUERDA: Tipografia Serifada de Luxo & CTAs */}
           <motion.div 
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +44,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
             className="lg:col-span-8 flex flex-col items-start text-left"
           >
             
-            {/* Badge Oficial da Marca */}
+            {/* Badge Oficial de Alta Costura */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-[#C5A880]/50 text-[#C5A880] shadow-sm mb-3 sm:mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" aria-hidden="true" />
               <span className="text-[11px] sm:text-xs font-sans font-semibold tracking-wider uppercase text-white">
@@ -49,7 +52,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
               </span>
             </div>
 
-            {/* H1 com Presença Editorial e Tipografia Nobre */}
+            {/* H1 com Presença Editorial e Tipografia Serifada de Luxo */}
             <h1 
               id="hero-title"
               className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white tracking-tight leading-[1.14] [text-wrap:balance]"
@@ -66,7 +69,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
               Atendimento consultivo e personalizado no Monte Carmelo. Preservação biológica da sua raiz folicular, mechas iluminadas sob luz natural e acervo exclusivo de cabelos 100% humanos selecionados.
             </p>
 
-            {/* Botão Primário 100% Visível Imediatamente Sem Necessidade de Rolagem */}
+            {/* Botões de Conversão e CTA Imediato */}
             <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               <motion.button
                 type="button"
@@ -113,17 +116,19 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
 
           </motion.div>
 
-          {/* CARD LATERAL DIREITO DA FOTO DA DAYANE (Refinamento com borda translúcida e glow quente) */}
+          {/* CARD LATERAL DIREITO DA FOTO EDITADA DA DAYANE */}
           <div className="hidden lg:flex lg:col-span-4 justify-end relative z-10">
-            <div className="w-full max-w-[340px] rounded-3xl overflow-hidden border border-[#f5e6e0]/20 shadow-[0_20px_45px_-15px_rgba(220,180,160,0.18)] bg-neutral-900 flex items-center justify-center p-2">
-              <Image 
-                src="/midias/dayane-perfil.png" 
-                alt="Dayane Lima" 
-                width={1121} 
-                height={1403} 
-                priority 
-                className="w-full h-auto object-cover rounded-2xl filter brightness-[0.95] contrast-110 pointer-events-none" 
-              />
+            <div className="w-full max-w-[340px] xl:max-w-[360px] rounded-3xl overflow-hidden border border-[#f5e6e0]/20 shadow-[0_20px_45px_-15px_rgba(220,180,160,0.18)] bg-neutral-900/90 backdrop-blur-sm flex items-center justify-center p-2 group transition-all duration-500 hover:border-[#C5A880]/40">
+              <div className="w-full h-full rounded-2xl overflow-hidden relative">
+                <Image 
+                  src="/midias/foto-editada-dayane.png" 
+                  alt="Dayane Lima • Especialista em Mega Hair e Mechas" 
+                  width={1080} 
+                  height={1350} 
+                  priority 
+                  className="w-full h-auto object-cover rounded-2xl filter brightness-[0.96] contrast-105 pointer-events-none transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
             </div>
           </div>
 
