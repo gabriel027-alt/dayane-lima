@@ -415,43 +415,29 @@ const Card = ({
         zIndex,
         backgroundColor: "#1C1917",
       }}
-      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] shrink-0 bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
+      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl pointer-events-none select-none"
     >
-      {/* Container interno imediato com dimensões fixas rigorosas e moldura escura champagne padronizada */}
-      <div 
-        style={{ backgroundColor: "#1C1917" }}
-        className="relative w-full h-full w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] shrink-0 bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl"
-      >
+      <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
         {isVideo ? (
-          <div 
-            style={{ backgroundColor: "#1C1917" }}
-            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden rounded-3xl"
-          >
-            <video
-              ref={videoRef}
-              src={mediaSrc}
-              autoPlay={isActive}
-              loop={false}
-              muted={isMuted}
-              playsInline
-              preload="auto"
-              onEnded={handleEnded}
-              onError={handleError}
-              className="relative z-10 w-full h-full object-contain pointer-events-none bg-[#1C1917]"
-            />
-          </div>
+          <video
+            ref={videoRef}
+            src={mediaSrc}
+            autoPlay={isActive}
+            loop={false}
+            muted={isMuted}
+            playsInline
+            preload="auto"
+            onEnded={handleEnded}
+            onError={handleError}
+            className="w-full h-full object-cover pointer-events-none bg-[#1C1917]"
+          />
         ) : (
-          <div 
-            style={{ backgroundColor: "#1C1917" }}
-            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden rounded-3xl"
-          >
-            <img
-              src={mediaSrc}
-              alt={slide.title || "Procedimento Dayane Lima"}
-              className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917]"
-              loading="lazy"
-            />
-          </div>
+          <img
+            src={mediaSrc}
+            alt={slide.title || "Procedimento Dayane Lima"}
+            className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917]"
+            loading="lazy"
+          />
         )}
 
         {/* Borda interna sutil para acabamento acetinado de joalheria, sem nenhuma camada de texto */}
