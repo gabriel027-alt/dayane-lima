@@ -63,7 +63,7 @@ export function SbLogo({
             />
           </g>
 
-          {/* MONOGRAMA CURSIVO ENTRELAÇADO 'SB' */}
+          {/* MONOGRAMA CURSIVO ENTRELAÇADO DE ALTA COSTURA */}
           <path
             d="M 38 42 C 33 34 26 36 21 41 C 15 48 18 57 26 61 C 34 65 41 71 39 79 C 37 87 27 90 19 86 C 13 83 10 77 11 74"
             stroke={primaryColor}
@@ -102,20 +102,14 @@ export function SbLogo({
           >
             Dayane Lima
           </span>
-          <span
-            className="text-[10px] font-sans font-semibold tracking-wider uppercase opacity-90"
-            style={{ color: accentColor }}
-          >
-            • SB
-          </span>
         </div>
 
         {showSubtitle && (
           <span
-            className="text-[9px] sm:text-[10px] font-sans font-medium tracking-[0.22em] uppercase mt-1 leading-tight"
+            className="text-[9px] sm:text-[10px] font-sans font-medium tracking-[0.25em] uppercase mt-1 leading-tight"
             style={{ color: subtitleColor }}
           >
-            Estética e Beleza
+            Ateliê Boutique
           </span>
         )}
       </div>

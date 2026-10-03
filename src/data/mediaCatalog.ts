@@ -1,4 +1,4 @@
-// Acervo Oficial Auditado: SB Estética e Beleza • Dayane Lima
+// Acervo Oficial Auditado: Dayane Lima — Ateliê Boutique
 // Mapeamento estrito baseado exclusivamente nos ficheiros existentes em public/midias/
 
 export type MediaCategory = 
@@ -61,7 +61,7 @@ export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
   {
     type: "image",
     src: "/midias/cabelo-dayane11.jpg",
-    alt: "Cabelos lisos e alinhamento nobre com brilho espelhado na SB Estética e Beleza",
+    alt: "Cabelos lisos e alinhamento nobre com brilho espelhado no Ateliê Dayane Lima",
     label: "Cabelos Lisos & Alinhamento de Alta Precisão",
   },
   {
@@ -535,7 +535,7 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     src: "/midias/cabelo-dayane11.jpg",
     poster: "/midias/cabelo-dayane11.jpg",
     title: "Cabelos Lisos & Alinhamento de Alta Precisão",
-    subtitle: "Acabamento espelhado, toque sedoso e alinhamento milimétrico na SB Estética e Beleza.",
+    subtitle: "Acabamento espelhado, toque sedoso e alinhamento milimétrico no Ateliê Dayane Lima.",
     category: "mechas",
     categoryLabel: "Colorimetria & Balayage",
     author: "Dayane Lima",
@@ -948,7 +948,7 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     category: "espaco",
     categoryLabel: "Ateliê Monte Carmelo",
     sourceUrl: "https://www.instagram.com/dayanelimaestetica/p/C6V_kN2rb6w/",
-    author: "SB Estética e Beleza",
+    author: "Dayane Lima — Ateliê Boutique",
   },
   {
     id: "es-02",
@@ -967,12 +967,12 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     type: "video",
     src: "/midias/minivideo-logo.mp4",
     poster: "/midias/cabelo1-dayane.jpg",
-    title: "Identidade Oficial SB Estética e Beleza",
+    title: "Identidade Oficial Dayane Lima — Ateliê Boutique",
     subtitle: "Selo de excelência e tradição em Monte Carmelo, Montes Claros.",
     category: "espaco",
     categoryLabel: "Ateliê Monte Carmelo",
     sourceUrl: "https://www.instagram.com/dayanelimaestetica/",
-    author: "SB Estética e Beleza",
+    author: "Dayane Lima — Ateliê Boutique",
   },
 ];
 

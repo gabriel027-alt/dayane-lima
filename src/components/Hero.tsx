@@ -102,7 +102,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <span className="font-semibold text-white">Nota 4.9</span>
+                <span className="font-semibold text-white">Nota 5.0</span>
                 <span className="text-neutral-300">no Google Reviews</span>
               </div>
               <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-white/30" />

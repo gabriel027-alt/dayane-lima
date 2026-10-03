@@ -67,7 +67,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                     <MapPin className="w-5 h-5" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm text-[#1C1917]">Endereço Oficial SB Estética e Beleza</h3>
+                    <h3 className="font-bold text-sm text-[#1C1917]">Dayane Lima — Ateliê Boutique</h3>
                     <p className="text-sm text-[#44403C] mt-0.5">
                       Rua Calcedônia, 155 – Bairro Monte Carmelo
                     </p>
@@ -142,7 +142,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             <div className="lg:col-span-6">
               <div className="relative w-full h-[360px] sm:h-[420px] rounded-3xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
                 <iframe
-                  title="Localização do Espaço SB Estética e Beleza no Google Maps"
+                  title="Localização do Ateliê Boutique Dayane Lima no Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.2372227188734!2d-43.8647035!3d-16.7455823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x752dd71787d558b%3A0x7d0fa284ef755f11!2sR.%20Calced%C3%B4nia%2C%20155%20-%20Monte%20Carmelo%2C%20Montes%20Claros%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
                   width="100%"
                   height="100%"
@@ -166,12 +166,12 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-neutral-800">
             
-            {/* Coluna 1: Logotipo Oficial SB Estética e Beleza & Propósito */}
+            {/* Coluna 1: Logotipo Oficial Dayane Lima & Propósito */}
             <div className="lg:col-span-5 space-y-4">
               <SbLogo variant="light" className="h-10 sm:h-12" />
 
               <p className="text-xs text-neutral-400 leading-relaxed max-w-sm pt-1">
-                Duas décadas dedicadas à arte do Mega Hair invisível, mechas de alto contraste sob medida e estética avançada no Monte Carmelo, Montes Claros.
+                Duas décadas dedicadas à arte do Mega Hair invisível, mechas nobres sob medida e preservação biológica da raiz no Monte Carmelo, Montes Claros.
               </p>
 
               <div className="pt-2 flex items-center gap-3">
@@ -188,7 +188,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 <button
                   type="button"
                   onClick={onOpenTriage}
-                  className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-emerald-600 hover:text-white text-neutral-300 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-emerald-600 hover:text-white text-neutral-300 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
                   aria-label="Iniciar triagem via WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -196,35 +196,64 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
               </div>
             </div>
 
-            {/* Coluna 2: Navegação com os 7 Procedimentos Oficiais */}
-            <div className="lg:col-span-3 space-y-2">
+            {/* Coluna 2: Sumário Executivo de Navegação Rápida (Âncoras Diretas) */}
+            <div className="lg:col-span-3 space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-[#C5A880]">
-                Especialidades Oficiais
+                Sumário do Ateliê
               </p>
-              <ul className="space-y-1.5 text-xs text-neutral-400">
-                <li>Mega Hair em Nanocápsulas</li>
-                <li>Mechas & Balayage de Luxo</li>
-                <li>Extensão de Cílios Fio a Fio</li>
-                <li>Design de Sobrancelhas & Visagismo</li>
-                <li>Alongamento de Unhas em Gel & Fibra</li>
-                <li>Bronzeamento em Cabine Tecnológica</li>
-                <li>Depilação a Laser & Estética Corporal</li>
-                <li>Terapias Capilares & Cronograma</li>
-              </ul>
+              <nav aria-label="Navegação secundária do rodapé">
+                <ul className="space-y-2 text-xs text-neutral-400">
+                  <li>
+                    <a href="#procedimentos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Rituais de Alta Costura
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#megahair" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Mega Hair & Nanocápsulas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#mechas" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Mechas & Balayage de Luxo
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#autoridade" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Autoridade & 20+ Anos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#casos-clinicos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Diagnóstico & Casos Clínicos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#triagem-inteligente" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Triagem Inteligente VIP
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#localizacao" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                      Localização no Monte Carmelo
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
 
             {/* Coluna 3: Conformidade e Contato Formal */}
             <div className="lg:col-span-4 space-y-2 text-xs text-neutral-400">
               <p className="text-xs font-bold uppercase tracking-wider text-[#C5A880]">
-                Atendimento & Segurança
+                Atendimento & Biossegurança
               </p>
               <p className="text-neutral-200 font-medium">
                 Rua Calcedônia, 155 – Bairro Monte Carmelo, Montes Claros - MG
               </p>
-              <p>Recepção VIP: (38) 99999-9999 (WhatsApp)</p>
+              <p>Recepção VIP: Atendimento com hora marcada</p>
               <div className="pt-2 flex items-center gap-2 text-[11px] text-neutral-400">
                 <ShieldCheck className="w-4 h-4 text-[#C5A880] shrink-0" aria-hidden="true" />
-                <span>Protocolos de biossegurança e esterilização hospitalar.</span>
+                <span>Esterilização hospitalar em autoclave médica e teste de mecha prévio.</span>
               </div>
             </div>
 
@@ -233,7 +262,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
           {/* Rodapé Legal & Declaração de Acessibilidade WCAG 2.2 */}
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-neutral-400">
             <p>
-              © {new Date().getFullYear()} Dayane Lima – SB Estética e Beleza. Todos os direitos reservados.
+              © {new Date().getFullYear()} Dayane Lima — Ateliê Boutique • Alta Costura Capilar. Todos os direitos reservados.
             </p>
 
             <div className="flex items-center gap-4">

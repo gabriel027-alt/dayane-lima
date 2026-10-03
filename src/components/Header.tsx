@@ -13,11 +13,11 @@ export function Header({ onOpenTriage }: HeaderProps) {
     <header className="sticky top-0 z-40 bg-[#F7EAE5]/95 backdrop-blur-md border-b border-[#E8D0C8] transition-all">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-20 flex items-center justify-between">
         
-        {/* Logotipo Oficial SB Estética e Beleza com Monograma e Flor de Lótus */}
+        {/* Logotipo Oficial Dayane Lima Ateliê Boutique */}
         <a 
           href="#" 
           className="flex items-center group rounded-xl p-1 transition-transform hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] min-h-[48px] min-w-[48px]"
-          aria-label="Página inicial Dayane Lima SB Estética e Beleza"
+          aria-label="Página inicial Dayane Lima — Ateliê Boutique"
         >
           <SbLogo variant="dark" className="h-10 sm:h-12" />
         </a>

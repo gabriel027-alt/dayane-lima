@@ -117,6 +117,33 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     });
   }, [scrollProgress, total]);
 
+  // Função para retroceder suavemente ao slide anterior
+  const handlePrev = React.useCallback(() => {
+    if (total <= 1) return;
+    if (isAdvancingRef.current) return;
+    isAdvancingRef.current = true;
+
+    const current = scrollProgress.get();
+    animate(scrollProgress, Math.round(current) - 1, {
+      type: "spring",
+      stiffness: 150,
+      damping: 25,
+      onComplete: () => {
+        isAdvancingRef.current = false;
+      },
+    });
+  }, [scrollProgress, total]);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      handleNext();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      handlePrev();
+    }
+  };
+
   // Sincronização Dinâmica do Tempo de Transição:
   // - Para imagens estáticas: timer padrão de 3.8s por slide
   // - Para vídeos: o temporizador fixo é TOTALMENTE DESATIVADO.
@@ -209,7 +236,13 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   if (!slides || slides.length === 0) return null;
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-20 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden">
+    <section 
+      ref={sectionRef} 
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={title ? `Galeria de ${title}` : "Galeria de procedimentos Dayane Lima Ateliê"}
+      className="py-16 md:py-20 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden"
+    >
       {(title || subtitle) && (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-8 md:mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -227,7 +260,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             </div>
             <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs self-start md:self-auto">
               <Sparkles className="w-4 h-4 text-[#C5A880]" />
-              <span>Arraste para folhear • Toque para focar</span>
+              <span>Arraste ou use as setas • Toque para focar</span>
             </div>
           </div>
         </div>
@@ -240,7 +273,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             type="button"
             onClick={handleToggleAudio}
             className={cn(
-              "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-sans font-medium backdrop-blur-md transition-all shadow-xl cursor-pointer touch-manipulation",
+              "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-sans font-medium backdrop-blur-md transition-all shadow-xl cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]",
               isMuted
                 ? "bg-black/85 hover:bg-black text-neutral-300 border border-[#C5A880]/50 hover:border-[#C5A880]"
                 : "bg-black/95 text-[#C5A880] border border-[#C5A880] shadow-[0_0_16px_rgba(197,168,128,0.35)]"
@@ -262,13 +295,17 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
           <motion.div
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
+            role="button"
+            aria-label="Controle interativo do carrossel: use as setas do teclado ou arraste"
             onDragStart={handleDragStart}
             onDrag={(_, info) => {
               const delta = -info.delta.x / config.sensitivity;
               scrollProgress.set(scrollProgress.get() + delta);
             }}
             onDragEnd={handleDragEnd}
-            className="absolute inset-0 z-50 cursor-grab active:cursor-grabbing"
+            className="absolute inset-0 z-50 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
           />
 
           {slides.map((slide, i) => (
@@ -415,7 +452,7 @@ const Card = ({
         zIndex,
         backgroundColor: "#1C1917",
       }}
-      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl pointer-events-none select-none"
+      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
       <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
         {isVideo ? (

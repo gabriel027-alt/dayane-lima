@@ -33,17 +33,18 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl bg-[#1C1917] group">
                 <div className="relative w-full h-full overflow-hidden">
                   <img 
-                    src="/midias/Retratoeleganteemtonsquentes-dayane.png" 
-                    alt="Dayane Lima • Especialista Titular" 
+                    src="/midias/foto-dayane-lima.png" 
+                    srcSet="/midias/foto-dayane-lima.png 1x, /midias/Retratoeleganteemtonsquentes-dayane.png 2x"
+                    alt="Dayane Lima • Especialista Titular em Alta Costura Capilar" 
                     className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" aria-hidden="true" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
-                  <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">Especialista Titular</p>
+                  <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">Diretora Criativa & Master Educator</p>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">Dayane Lima</h3>
-                  <p className="text-xs text-white/85 mt-1 font-sans">Fundadora da SB Estética e Beleza • Montes Claros - MG</p>
+                  <p className="text-xs text-white/90 mt-1 font-sans">Dayane Lima — Ateliê Boutique • Montes Claros - MG</p>
                 </div>
               </div>
 
@@ -105,10 +106,10 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base text-[#1C1917]">
-                    Biossegurança Hospitalar Mecha a Mecha
+                    Biossegurança Hospitalar & Anti-Tração Folicular
                   </h4>
                   <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed mt-1">
-                    Autoclave médica, materiais esterilizados e cosmecêuticos que preservam a integridade da pele e raiz.
+                    Autoclave médica para esterilização de ferramentas, distribuição geométrica com peso calibrado anti-tração e preservação biológica integral do couro cabeludo.
                   </p>
                 </div>
               </div>

@@ -121,7 +121,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer"
+              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
             >
               <Navigation className="w-3.5 h-3.5 text-[#C5A880]" />
               <span>Traçar Rota no Google Maps</span>
@@ -132,7 +132,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
               <button
                 type="button"
                 onClick={onOpenTriage}
-                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-white border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-xs transition-colors shadow-xs touch-manipulation cursor-pointer"
+                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-white border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-xs transition-colors shadow-xs touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
               >
                 <span>Agendar Recepção VIP</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />

@@ -166,7 +166,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
     const namePart = clientName.trim() ? `Meu nome é *${clientName.trim()}* e preenchi` : "Preenchi";
     
     const message = [
-      `Olá, equipe Dayane Lima SB Estética! ${namePart} a *Triagem Inteligente* no site oficial:`,
+      `Olá, equipe Dayane Lima — Ateliê Boutique! ${namePart} a *Triagem Inteligente* no site oficial:`,
       ``,
       `✨ *Procedimento Selecionado:* ${selectedProcedure.name}`,
       `📋 *Diagnóstico Atual:* ${diagnosticAnswer || "Não informado"}`,

@@ -97,7 +97,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("bronze")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full bg-[#C5A880] hover:bg-[#b8976b] text-[#1C1917] font-sans font-bold text-xs tracking-wider uppercase transition-all shadow-md touch-manipulation cursor-pointer"
+            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full bg-[#C5A880] hover:bg-[#b8976b] text-[#1C1917] font-sans font-bold text-xs tracking-wider uppercase transition-all shadow-md touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1C1917]"
           >
             <span>Reservar Sessão no WhatsApp</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#1C1917]" />

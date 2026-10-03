@@ -240,7 +240,7 @@ export function WhatsAppTriageDrawer({
 
     return (
       `*SOLICITAÇÃO DE AGENDAMENTO & TRIAGEM VIP*\n` +
-      `*Espaço Dayane Lima – SB Estética & Beleza*\n` +
+      `*Dayane Lima — Ateliê Boutique • Alta Costura Capilar*\n` +
       `-----------------------------------------\n` +
       `👤 *Cliente:* ${clientName.trim() || "Não informado"}\n` +
       `✨ *Procedimento de Interesse:* ${serviceName}\n` +
@@ -285,7 +285,7 @@ export function WhatsAppTriageDrawer({
             </div>
             <div>
               <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-brand-champagne-dark">
-                Dayane Lima • SB Estética
+                Dayane Lima — Ateliê Boutique
               </p>
               <h2 id="triage-title" className="text-base sm:text-lg font-serif font-bold text-brand-graphite-950 leading-tight">
                 Triagem Prévia de Agendamento

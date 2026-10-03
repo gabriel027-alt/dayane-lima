@@ -110,7 +110,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("mechas")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer"
+            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             <span>Agendar Teste de Mecha</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />

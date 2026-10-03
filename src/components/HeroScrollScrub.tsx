@@ -9,10 +9,6 @@ export interface HeroScrollScrubProps {
 }
 
 const TOTAL_FRAMES = 120;
-const FRAME_PATHS = Array.from(
-  { length: TOTAL_FRAMES },
-  (_, i) => `/midias/frames/hair_frame_${i}.webp`
-);
 
 export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -93,12 +89,15 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
     }
   }, [drawFrame]);
 
-  // Preloading Engine: Carrega os 120 frames para a memória antes de liberar a visualização
+  // Preloading Engine Adaptativo: 720p em dispositivos móveis e 1080p em desktops
   useEffect(() => {
     let loadedCount = 0;
+    const isMobile = window.innerWidth < 768;
+    const basePath = isMobile ? "/midias/frames_mobile/hair_frame_" : "/midias/frames/hair_frame_";
+    const paths = Array.from({ length: TOTAL_FRAMES }, (_, i) => `${basePath}${i}.webp`);
     const images: HTMLImageElement[] = new Array(TOTAL_FRAMES);
 
-    FRAME_PATHS.forEach((path, i) => {
+    paths.forEach((path, i) => {
       const img = new Image();
       img.src = path;
       img.onload = () => {
@@ -106,7 +105,7 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
         const percent = Math.round((loadedCount / TOTAL_FRAMES) * 100);
         setLoadProgress(percent);
 
-        // Assim que o frame 0 carrega, renderiza imediatamente para evitar flash em branco
+        // Assim que o frame 0 carrega, renderiza imediatamente para evitar tela em branco
         if (i === 0 && currentFrameRef.current === -1) {
           currentFrameRef.current = 0;
           drawFrame(img);
@@ -117,7 +116,6 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
         }
       };
       img.onerror = () => {
-        // Fallback em caso de erro individual para não travar a barra
         loadedCount += 1;
         if (loadedCount === TOTAL_FRAMES) setIsReady(true);
       };
@@ -173,7 +171,7 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
     <div
       ref={containerRef}
       className="relative h-[350vh] w-full bg-[#FBFBFC]"
-      aria-label="Apresentação Interativa em Canvas • Scrubbing de Vídeo por Scroll"
+      aria-label="Apresentação Interativa • Dayane Lima Ateliê Boutique"
     >
       {/* Viewport Fixa (Sticky) Conectada ao Scroll */}
       <div className="sticky top-0 h-screen h-[100dvh] w-full overflow-hidden bg-[#FBFBFC] flex items-center justify-center select-none">
@@ -191,7 +189,7 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
         />
         <div 
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.45)_0%,transparent_70%)] pointer-events-none z-10"
-          aria-hidden="true"
+          aria-hidden="true" 
         />
 
         {/* ===================== CONTEÚDO EDITORIAL CENTRALIZADO (SINCRONIZADO) ===================== */}
@@ -204,11 +202,11 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             
-            {/* Micro-tag Editorial em Vidro Escuro & Letras Claras */}
+            {/* Micro-tag Editorial Oficial */}
             <div className="inline-flex items-center gap-2 mb-4 sm:mb-5 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-lg">
               <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
               <span className="font-mono text-[10px] sm:text-xs tracking-[0.35em] uppercase text-white/90">
-                BIOTECNOLOGIA & ALTA COSTURA CAPILAR
+                ALTA COSTURA CAPILAR
               </span>
             </div>
 
@@ -221,9 +219,9 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
               e mechas nobres.
             </h1>
 
-            {/* Sub-text / Location */}
-            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-white/70 mt-5 sm:mt-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.60)]">
-              DAYANE LIMA // MONTES CLAROS
+            {/* Assinatura Corporativa da Marca Mestre */}
+            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-white/75 mt-5 sm:mt-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.60)]">
+              DAYANE LIMA — ATELIÊ BOUTIQUE
             </p>
 
           </div>
@@ -234,7 +232,7 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
           type="button"
           onClick={handleScrollDown}
           style={{ opacity: textOpacity }}
-          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-white/70 hover:text-white transition-colors cursor-pointer group pointer-events-auto px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/15 hover:border-white/30 shadow-lg"
+          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-white/70 hover:text-white transition-colors cursor-pointer group pointer-events-auto px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/15 hover:border-white/30 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           aria-label="Rolar para controlar a linha do tempo do vídeo"
         >
           <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-white/80 group-hover:text-white transition-colors">
@@ -260,9 +258,9 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
               className="absolute inset-0 z-50 bg-[#FBFBFC] flex flex-col items-center justify-center p-6 text-center select-none"
             >
               <div className="flex flex-col items-center max-w-xs w-full">
-                {/* Monograma de Marca */}
+                {/* Monograma de Marca Mestre */}
                 <span className="font-serif italic text-2xl text-[#1C1C1E] mb-4 tracking-wider">
-                  Rayssa Lash & Hair
+                  Dayane Lima • Ateliê Boutique
                 </span>
 
                 {/* Barra de Progresso Minimalista */}

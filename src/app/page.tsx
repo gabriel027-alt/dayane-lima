@@ -74,7 +74,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* ===================== 1. CABEÇALHO CONDENSADO COM LOGOTIPO SB OFICIAL (STICKY) ===================== */}
+      {/* ===================== 1. CABEÇALHO CONDENSADO COM LOGOTIPO OFICIAL DAYANE LIMA (STICKY) ===================== */}
       <Header onOpenTriage={handleOpenGeneralTriage} />
 
       {/* ===================== 2. SEÇÃO 2: A REVELAÇÃO DA MARCA & CONVERSÃO (HERO LIGHT) ===================== */}
@@ -207,7 +207,7 @@ export default function HomePage() {
         isOpen={isTriageOpen}
         initialServiceId={initialService}
         onClose={() => setIsTriageOpen(false)}
-        whatsappPhone="5538999999999" // Número comercial da recepção Dayane Lima SB Estética
+        whatsappPhone="5538999999999" // Número comercial da recepção Dayane Lima — Ateliê Boutique
       />
 
     </div>

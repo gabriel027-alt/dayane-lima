@@ -117,6 +117,72 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
           </div>
         </div>
 
+        {/* ===================== QUEBRA DE OBJEÇÕES CIRÚRGICAS & DIFERENCIAIS ===================== */}
+        <div className="mb-16 sm:mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#6E501E] block mb-2">
+              Transparência & Rigor Técnico
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917]">
+              Mitos Desmistificados: A Verdade Sobre o Mega Hair de Luxo
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold font-sans text-rose-800 uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-rose-500" />
+                Mito Frequente
+              </div>
+              <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917] mb-2">
+                "Mega Hair quebra ou enfraquece a raiz natural?"
+              </h4>
+              <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
+                <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> A divisão geométrica mecha a mecha distribui o peso milimetricamente. A fixação a 0.5cm do couro cabeludo elimina qualquer tração folicular, permitindo que seus fios biológicos cresçam com oxigenação plena.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold font-sans text-rose-800 uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-rose-500" />
+                Mito Frequente
+              </div>
+              <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917] mb-2">
+                "As cápsulas ficam visíveis ao prender ou sob sol forte?"
+              </h4>
+              <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
+                <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> Nossas nanocápsulas de 0.5mm são polímeros biocompatíveis translúcidos que imitam a cor exata da sua raiz. Garantem invisibilidade 360° em rabos de cavalo, coques altos e sob qualquer iluminação.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold font-sans text-rose-800 uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-rose-500" />
+                Mito Frequente
+              </div>
+              <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917] mb-2">
+                "A manutenção é dolorosa ou puxa os fios?"
+              </h4>
+              <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
+                <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> Utilizamos solvente orgânico nutritivo que dissolve a queratina suavemente sem força mecânica ou tração. Seus fios são penteados com condicionamento profundo, saindo 100% intactos.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs">
+              <div className="flex items-center gap-2 text-xs font-bold font-sans text-rose-800 uppercase tracking-wider mb-2">
+                <span className="w-2 h-2 rounded-full bg-rose-500" />
+                Mito Frequente
+              </div>
+              <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917] mb-2">
+                "Terei privacidade ou terei que esperar com várias pessoas?"
+              </h4>
+              <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
+                <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> Recusamos o formato de esteira industrial. Atendemos com hora marcada exclusiva no Monte Carmelo: uma única bancada, ambiente climatizado e total discrição para você.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* ===================== CONVITE EDITORIAL DISCRETO ===================== */}
         <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
@@ -136,7 +202,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("megahair")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-6 py-3 rounded-full bg-[#FAF3F0] hover:bg-[#F2DDD6] text-[#1C1917] border border-[#C5A880]/40 font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer"
+            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-6 py-3 rounded-full bg-[#FAF3F0] hover:bg-[#F2DDD6] text-[#1C1917] border border-[#C5A880]/40 font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             <span>Consultar Disponibilidade</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />

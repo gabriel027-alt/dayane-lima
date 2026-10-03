@@ -25,7 +25,7 @@ export function BrandRevelationHero({
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Badge de Posicionamento */}
-            <div className="text-[10px] font-mono tracking-[0.3em] text-stone-500 bg-stone-200/40 px-3 py-1 rounded-full w-max mb-6 uppercase">
+            <div className="text-[10px] font-mono tracking-[0.3em] text-stone-700 bg-stone-200/70 font-semibold px-3.5 py-1.5 rounded-full w-max mb-6 uppercase">
               ATELIÊ PRIVADO • ALTA COSTURA CAPILAR • 20+ ANOS
             </div>
 
@@ -42,7 +42,7 @@ export function BrandRevelationHero({
             </h2>
 
             {/* Parágrafo Descritivo */}
-            <p className="text-stone-600 text-base font-light leading-relaxed max-w-md mb-8 [text-wrap:pretty]">
+            <p className="text-stone-700 text-base font-normal leading-relaxed max-w-md mb-8 [text-wrap:pretty]">
               Atendimento consultivo e personalizado no Monte Carmelo. Preservação biológica da sua raiz folicular, mechas iluminadas sob luz natural e acervo exclusivo de cabelos 100% humanos selecionados.
             </p>
 
@@ -51,7 +51,7 @@ export function BrandRevelationHero({
               <button
                 type="button"
                 onClick={onOpenTriage}
-                className="px-8 py-3.5 bg-stone-900 text-white font-mono text-xs uppercase tracking-[0.2em] rounded-full shadow-lg shadow-stone-900/10 hover:bg-stone-800 transition-all cursor-pointer inline-flex items-center gap-2 active:scale-95"
+                className="px-8 py-3.5 bg-stone-900 text-white font-mono text-xs uppercase tracking-[0.2em] rounded-full shadow-lg shadow-stone-900/10 hover:bg-stone-800 transition-all cursor-pointer inline-flex items-center gap-2 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
                 aria-label="Agendar Avaliação VIP no WhatsApp"
               >
                 <span>Agendar Avaliação VIP</span>
@@ -62,7 +62,7 @@ export function BrandRevelationHero({
                 <button
                   type="button"
                   onClick={onExploreServices}
-                  className="px-6 py-3.5 border border-stone-300 text-stone-700 font-mono text-xs uppercase tracking-[0.2em] rounded-full hover:bg-stone-50 transition-all cursor-pointer active:scale-95"
+                  className="px-6 py-3.5 border border-stone-300 text-stone-700 font-mono text-xs uppercase tracking-[0.2em] rounded-full hover:bg-stone-50 transition-all cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
                 >
                   Explorar Procedimentos
                 </button>
@@ -70,10 +70,10 @@ export function BrandRevelationHero({
             </div>
 
             {/* Selos de Confiança e Localização */}
-            <div className="pt-5 border-t border-stone-200/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-stone-600 font-sans">
-              <div className="flex items-center gap-1.5" aria-label="Avaliação 4.9 estrelas no Google">
+            <div className="pt-5 border-t border-stone-200/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-stone-700 font-sans">
+              <div className="flex items-center gap-1.5" aria-label="Avaliação consolidada 5.0 estrelas no Google">
                 <span className="text-amber-500 tracking-wider">★★★★★</span>
-                <span className="font-semibold text-stone-900">Nota 4.9</span>
+                <span className="font-semibold text-stone-900">Nota 5.0</span>
                 <span>no Google Reviews</span>
               </div>
 
@@ -90,7 +90,7 @@ export function BrandRevelationHero({
 
           {/* ===================== COLUNA DIREITA (RETRATO OFICIAL DA AUTORIDADE) ===================== */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <div className="w-full max-w-sm rounded-[32px] overflow-hidden shadow-2xl border border-white/10 bg-[#1C1917] relative aspect-[4/5] group">
+            <div className="w-full max-w-sm rounded-[32px] overflow-hidden shadow-2xl border border-[#C5A880]/50 bg-[#1C1917] relative aspect-[4/5] group">
               <img
                 src="/midias/foto-dayane-lima.png"
                 alt="Dayane Lima • Alta Costura Capilar e Mega Hair"

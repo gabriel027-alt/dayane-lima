@@ -49,7 +49,7 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
     <div
       ref={containerRef}
       className="relative h-[200vh] w-full bg-[#FBFBFC]"
-      aria-label="Apresentação Imersiva • Rayssa Lash & Hair"
+      aria-label="Apresentação Imersiva • Dayane Lima — Ateliê Boutique"
     >
       {/* Viewport Fixa (Sticky) de Alta Fidelidade */}
       <div className="sticky top-0 h-screen h-[100dvh] w-full overflow-hidden bg-[#FBFBFC] flex items-center justify-center select-none">
@@ -80,7 +80,7 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
           {/* Véu Translúcido Editorial para Realce de Contraste Tipográfico */}
           <div 
             className="absolute inset-0 bg-gradient-to-b from-[#FBFBFC]/40 via-transparent to-[#FBFBFC]/50 pointer-events-none" 
-            aria-hidden="true"
+            aria-hidden="true" 
           />
 
           {/* Borda de Luxo Acetinada Ativada Durante o Scroll */}
@@ -106,7 +106,7 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
             
             {/* Micro-tag Editorial */}
             <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] uppercase text-stone-500 mb-3 sm:mb-4 drop-shadow-xs">
-              BIOTECNOLOGIA & ALTA COSTURA CAPILAR
+              ALTA COSTURA CAPILAR
             </span>
 
             {/* Headline Principal */}
@@ -114,9 +114,9 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
               A arquitetura da densidade imperceptível.
             </h1>
 
-            {/* Subtítulo da Marca */}
+            {/* Subtítulo da Marca Mestre */}
             <p className="font-light text-[11px] sm:text-[13px] tracking-[0.2em] uppercase text-stone-500 sm:text-stone-400 mt-5 sm:mt-6 drop-shadow-xs">
-              RAYSSA LASH & HAIR — ESTÚDIO BOUTIQUE
+              DAYANE LIMA — ATELIÊ BOUTIQUE
             </p>
 
           </div>
