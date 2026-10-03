@@ -210,12 +210,12 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
 
             {/* Headline Principal */}
             <h1 className="font-light tracking-tighter text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1C1C1E] text-center leading-[1.12] [text-wrap:balance] max-w-3xl drop-shadow-xs">
-              A arquitetura da densidade imperceptível.
+              Sua melhor versão com Mega Hair invisível e mechas nobres.
             </h1>
 
-            {/* Subtítulo da Marca */}
-            <p className="font-light text-[11px] sm:text-[13px] tracking-[0.2em] uppercase text-stone-500 mt-5 sm:mt-6 drop-shadow-xs">
-              RAYSSA LASH & HAIR — ESTÚDIO BOUTIQUE
+            {/* Sub-text / Location */}
+            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-stone-500 mt-5 sm:mt-6 drop-shadow-xs">
+              DAYANE LIMA // MONTES CLAROS
             </p>
 
           </div>

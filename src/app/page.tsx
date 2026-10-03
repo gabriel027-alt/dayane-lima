@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import HeroScrollScrub from "@/components/HeroScrollScrub";
-import Hero from "@/components/Hero";
+import BrandRevelationHero from "@/components/BrandRevelationHero";
 import MegaHairShowcase from "@/components/MegaHairShowcase";
 import MechasShowcase from "@/components/MechasShowcase";
 import OlharShowcase from "@/components/OlharShowcase";
@@ -69,16 +69,16 @@ export default function HomePage() {
       {/* ===================== 0. ULTRA-PREMIUM SCROLL-LINKED FRAME SCRUBBING (CANVAS HERO) ===================== */}
       <HeroScrollScrub 
         onExplore={() => {
-          const target = document.getElementById("procedimentos") || document.getElementById("megahair");
+          const target = document.getElementById("revelacao") || document.getElementById("procedimentos");
           target?.scrollIntoView({ behavior: "smooth" });
         }}
       />
 
-      {/* ===================== 1. CABEÇALHO CONDENSADO COM LOGOTIPO SB OFICIAL ===================== */}
+      {/* ===================== 1. CABEÇALHO CONDENSADO COM LOGOTIPO SB OFICIAL (STICKY) ===================== */}
       <Header onOpenTriage={handleOpenGeneralTriage} />
 
-      {/* ===================== 2. HERO PRINCIPAL (VÍDEO DE FUNDO EM LOOP & CARD LATERAL) ===================== */}
-      <Hero 
+      {/* ===================== 2. SEÇÃO 2: A REVELAÇÃO DA MARCA & CONVERSÃO (HERO LIGHT) ===================== */}
+      <BrandRevelationHero 
         onOpenTriage={handleOpenGeneralTriage} 
         onExploreServices={() => {
           const target = document.getElementById("procedimentos") || document.getElementById("megahair");
