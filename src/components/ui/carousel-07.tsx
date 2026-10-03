@@ -415,17 +415,17 @@ const Card = ({
         zIndex,
         backgroundColor: "#1C1917",
       }}
-      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
+      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] shrink-0 bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
-      {/* Container interno imediato com classes fixas de moldura escura e borda champagne */}
+      {/* Container interno imediato com dimensões fixas rigorosas e moldura escura champagne padronizada */}
       <div 
         style={{ backgroundColor: "#1C1917" }}
-        className="relative w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl"
+        className="relative w-full h-full w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] shrink-0 bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl"
       >
         {isVideo ? (
           <div 
             style={{ backgroundColor: "#1C1917" }}
-            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden rounded-2xl"
+            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden rounded-3xl"
           >
             <video
               ref={videoRef}
@@ -437,13 +437,13 @@ const Card = ({
               preload="auto"
               onEnded={handleEnded}
               onError={handleError}
-              className="relative z-10 w-full h-full object-contain rounded-2xl pointer-events-none bg-[#1C1917]"
+              className="relative z-10 w-full h-full object-contain pointer-events-none bg-[#1C1917]"
             />
           </div>
         ) : (
           <div 
             style={{ backgroundColor: "#1C1917" }}
-            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden rounded-2xl"
+            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden rounded-3xl"
           >
             <img
               src={mediaSrc}
