@@ -372,8 +372,8 @@ const Card = ({
   );
   const opacity = useTransform(
     offset,
-    [-total / 2, -total / 2 + 0.3, 0, total / 2 - 0.3, total / 2],
-    [0.35, 0.9, 1, 0.9, 0.35]
+    [-total / 2, -total / 2 + 0.2, 0, total / 2 - 0.2, total / 2],
+    [0, 1, 1, 1, 0]
   );
   const zIndex = useTransform(offset, (o) =>
     Math.round(100 - Math.abs(o) * 10)
@@ -413,12 +413,20 @@ const Card = ({
         scale,
         opacity,
         zIndex,
+        backgroundColor: "#1C1917",
       }}
       className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
-      <div className="relative w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl">
+      {/* Container interno imediato com classes fixas de moldura escura e borda champagne */}
+      <div 
+        style={{ backgroundColor: "#1C1917" }}
+        className="relative w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl"
+      >
         {isVideo ? (
-          <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden">
+          <div 
+            style={{ backgroundColor: "#1C1917" }}
+            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden rounded-2xl"
+          >
             <video
               ref={videoRef}
               src={mediaSrc}
@@ -433,7 +441,10 @@ const Card = ({
             />
           </div>
         ) : (
-          <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
+          <div 
+            style={{ backgroundColor: "#1C1917" }}
+            className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden rounded-2xl"
+          >
             <img
               src={mediaSrc}
               alt={slide.title || "Procedimento Dayane Lima"}
