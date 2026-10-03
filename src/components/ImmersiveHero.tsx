@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,230 +17,70 @@ interface ImmersiveHeroProps {
 
 export function ImmersiveHero({ onOpenTriage, onExploreServices }: ImmersiveHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoReady, setIsVideoReady] = useState<boolean>(false);
 
-  // Armazena as imagens pré-carregadas e o estado de interpolação suave
-  const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
-  const targetFrameRef = useRef<number>(0);
-  const smoothFrameRef = useRef<number>(0);
-  const currentFrameRef = useRef<number>(0);
-
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [loadProgress, setLoadProgress] = useState<number>(0);
-  const [isInitialReady, setIsInitialReady] = useState<boolean>(false);
-
-  // Configurações de frames conforme dispositivo
-  const totalFrames = isMobile ? 60 : 120;
-  const frameFolder = isMobile ? "/midias/frames-mobile" : "/midias/frames-desktop";
-
-  // Formata o nome do frame: frame_001.webp até frame_120.webp
-  const getFramePath = useCallback(
-    (index: number) => {
-      const paddedNumber = String(index + 1).padStart(3, "0");
-      return `${frameFolder}/frame_${paddedNumber}.webp`;
-    },
-    [frameFolder]
-  );
-
-  // Detecta se é mobile
+  // Aguarda os metadados do vídeo carregarem para obter a duração precisa
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedMetadata = () => {
+      setIsVideoReady(true);
+      // Garante a renderização do primeiro frame no topo
+      video.currentTime = 0;
     };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+
+    if (video.readyState >= 1) {
+      handleLoadedMetadata();
+    } else {
+      video.addEventListener("loadedmetadata", handleLoadedMetadata);
+      video.addEventListener("canplay", handleLoadedMetadata);
+      return () => {
+        video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+        video.removeEventListener("canplay", handleLoadedMetadata);
+      };
+    }
   }, []);
 
-  // Função para desenhar no canvas preservando proporção (object-fit: cover)
-  const drawFrame = useCallback((frameIndex: number) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Busca o frame requisitado ou o mais próximo já carregado
-    let img: HTMLImageElement | null = imagesRef.current[frameIndex] || null;
-    if (!img) {
-      for (let i = frameIndex - 1; i >= 0; i--) {
-        if (imagesRef.current[i]) {
-          img = imagesRef.current[i];
-          break;
-        }
-      }
-    }
-    if (!img) {
-      for (let i = frameIndex + 1; i < imagesRef.current.length; i++) {
-        if (imagesRef.current[i]) {
-          img = imagesRef.current[i];
-          break;
-        }
-      }
-    }
-
-    if (!img || !img.complete || img.naturalWidth === 0) return;
-
-    const canvasWidth = canvas.width;
-    const canvasHeight = canvas.height;
-    const imgWidth = img.naturalWidth;
-    const imgHeight = img.naturalHeight;
-
-    const hRatio = canvasWidth / imgWidth;
-    const vRatio = canvasHeight / imgHeight;
-    const ratio = Math.max(hRatio, vRatio);
-
-    const drawW = imgWidth * ratio;
-    const drawH = imgHeight * ratio;
-    const shiftX = (canvasWidth - drawW) / 2;
-    const shiftY = (canvasHeight - drawH) / 2;
-
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-    ctx.drawImage(img, 0, 0, imgWidth, imgHeight, shiftX, shiftY, drawW, drawH);
-
-    currentFrameRef.current = frameIndex;
-  }, []);
-
-  // Ajusta dimensões do canvas para retina display
-  const updateCanvasSize = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const rect = canvas.getBoundingClientRect();
-
-    if (canvas.width !== rect.width * dpr || canvas.height !== rect.height * dpr) {
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      drawFrame(currentFrameRef.current);
-    }
-  }, [drawFrame]);
-
-  // Carregamento em Lote (Batch Loading) de Frames WebP
+  // GSAP ScrollTrigger Video Scrubbing & Sincronização Editorial
   useEffect(() => {
-    let isCancelled = false;
-    imagesRef.current = new Array(totalFrames).fill(null);
-    setLoadProgress(0);
-    setIsInitialReady(false);
-
-    // Carrega uma única imagem
-    const loadImage = (index: number): Promise<HTMLImageElement> => {
-      return new Promise((resolve) => {
-        const img = new window.Image();
-        img.src = getFramePath(index);
-        img.onload = () => {
-          if (!isCancelled) {
-            imagesRef.current[index] = img;
-          }
-          resolve(img);
-        };
-        img.onerror = () => {
-          resolve(img);
-        };
-      });
-    };
-
-    // Sequência de carregamento: primeiro o frame 0 (imediato), depois lotes progressivos
-    const loadAllBatches = async () => {
-      // 1. Frame Inicial Imediato
-      const firstImg = await loadImage(0);
-      if (isCancelled) return;
-
-      setIsInitialReady(true);
-      updateCanvasSize();
-      drawFrame(0);
-
-      // 2. Lotes subsequentes (tamanho do lote: 12 frames)
-      const batchSize = 12;
-      let loadedCount = 1;
-
-      for (let start = 1; start < totalFrames; start += batchSize) {
-        if (isCancelled) break;
-        const end = Math.min(start + batchSize, totalFrames);
-        const batchPromises: Promise<HTMLImageElement>[] = [];
-
-        for (let i = start; i < end; i++) {
-          batchPromises.push(loadImage(i));
-        }
-
-        await Promise.all(batchPromises);
-        loadedCount += end - start;
-        if (!isCancelled) {
-          setLoadProgress(Math.round((loadedCount / totalFrames) * 100));
-        }
-      }
-    };
-
-    loadAllBatches();
-
-    return () => {
-      isCancelled = true;
-    };
-  }, [totalFrames, getFramePath, updateCanvasSize, drawFrame]);
-
-  // Redimensionamento de tela
-  useEffect(() => {
-    const handleResize = () => {
-      updateCanvasSize();
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [updateCanvasSize]);
-
-  // Interpolação suave e contínua dos frames com amortecimento / inércia (lerp)
-  useEffect(() => {
-    // Fator de lerp: no mobile 0.12 para responder com agilidade e fluidez ao touch nativo;
-    // No desktop 0.07 para conferir amortecimento cinematográfico de alta costura sem saltos.
-    const lerpFactor = isMobile ? 0.12 : 0.07;
-
-    const updateSmoothFrame = () => {
-      const diff = targetFrameRef.current - smoothFrameRef.current;
-
-      if (Math.abs(diff) > 0.005) {
-        smoothFrameRef.current += diff * lerpFactor;
-        const frameToDraw = Math.min(
-          totalFrames - 1,
-          Math.max(0, Math.round(smoothFrameRef.current))
-        );
-        if (frameToDraw !== currentFrameRef.current) {
-          drawFrame(frameToDraw);
-        }
-      } else if (smoothFrameRef.current !== targetFrameRef.current) {
-        smoothFrameRef.current = targetFrameRef.current;
-        const frameToDraw = Math.min(
-          totalFrames - 1,
-          Math.max(0, Math.round(smoothFrameRef.current))
-        );
-        if (frameToDraw !== currentFrameRef.current) {
-          drawFrame(frameToDraw);
-        }
-      }
-    };
-
-    gsap.ticker.add(updateSmoothFrame);
-
-    return () => {
-      gsap.ticker.remove(updateSmoothFrame);
-    };
-  }, [isMobile, totalFrames, drawFrame]);
-
-  // Animação GSAP ScrollTrigger vinculada ao Canvas e Textos
-  useEffect(() => {
-    if (!containerRef.current || !canvasRef.current) return;
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return;
 
     const ctx = gsap.context(() => {
-      // Timeline com scrub suave controlando progresso e fases editoriais
+      const videoDuration = video.duration && !isNaN(video.duration) && video.duration > 0 ? video.duration : 30;
+
+      // Timeline mestre com Video Scrubbing de alta performance
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: container,
           start: "top top",
-          end: isMobile ? "+=700%" : "+=1000%",
-          scrub: 0.5,
-          pin: !isMobile,
-          pinSpacing: false,
+          end: "+=450%", // Altura confortável para navegação fluida e sem engasgos
+          pin: true,
+          scrub: 1, // Amortecimento suave com inércia visual impecável
           onUpdate: (self) => {
-            targetFrameRef.current = self.progress * (totalFrames - 1);
+            if (video && !isNaN(video.duration) && video.duration > 0) {
+              const targetTime = self.progress * video.duration;
+              // Atualiza o tempo do vídeo suavemente conforme o scroll
+              video.currentTime = targetTime;
+            }
           },
         },
       });
+
+      // Sincroniza diretamente a propriedade currentTime do vídeo na timeline GSAP
+      tl.fromTo(
+        video,
+        { currentTime: 0 },
+        {
+          currentTime: videoDuration,
+          ease: "none",
+          duration: 100,
+        },
+        0
+      );
 
       // Inicializa os blocos 2 e 3 como transparentes e sem clique
       gsap.set(".hero-phase-2", { opacity: 0, y: 40, pointerEvents: "none" });
@@ -295,39 +135,35 @@ export function ImmersiveHero({ onOpenTriage, onExploreServices }: ImmersiveHero
         },
         70
       );
-    }, containerRef);
+    }, container);
 
     return () => {
       ctx.revert();
     };
-  }, [isMobile, totalFrames]);
+  }, [isVideoReady]);
 
   return (
     <div
       ref={containerRef}
-      className={`relative w-full ${isMobile ? "h-[750vh]" : "h-[1050vh]"} bg-[#1C1917] text-white select-none`}
+      className="relative w-full h-screen bg-[#1C1917] text-white select-none overflow-hidden"
     >
-      {/* CONTAINER FIXO (PINNED VIEWPORT / STICKY VIEWPORT) */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
+      <div className="w-full h-screen overflow-hidden flex items-center justify-center relative">
         
-        {/* CANVAS DE ALTA PERFORMANCE */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover z-0"
+        {/* VÍDEO CINEMATOGRÁFICO DE ALTA PERFORMANCE (VIDEO SCRUBBING) */}
+        <video
+          ref={videoRef}
+          src="/midias/hero-dayane.mp4"
+          playsInline
+          muted
+          loop={false}
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
 
         {/* OVERLAYS DE LUXO & CONTRASTE CINEMATOGRÁFICO */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#141211]/90 via-[#141211]/70 to-[#141211]/40 z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-radial-[ellipse_at_center,transparent_40%,rgba(20,18,17,0.85)_100%] z-10 pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#1C1917] via-[#1C1917]/80 to-transparent z-10 pointer-events-none" />
-
-        {/* BARRA DE PROGRESSO DE BATCH LOADING DISCRETA */}
-        {loadProgress < 100 && (
-          <div className="absolute top-20 right-6 z-30 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#C5A880]/30 text-[11px] font-sans text-neutral-300 pointer-events-none transition-opacity duration-500">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880] animate-pulse" />
-            <span>Sincronizando alta definição ({loadProgress}%)</span>
-          </div>
-        )}
 
         {/* =========================================================================
             FASE 1 (0% a 25% do Scroll): HERO PRINCIPAL COM CTA IMEDIATO
