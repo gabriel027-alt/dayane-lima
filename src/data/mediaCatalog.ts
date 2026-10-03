@@ -35,12 +35,6 @@ export interface MediaCatalogItem {
 // =========================================================================
 export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
   {
-    type: "image",
-    src: "/midias/cabelo-dayane11.jpg",
-    alt: "Alongamento e Mega Hair de Nanocápsulas com volume nobre e caimento natural na SB Estética e Beleza",
-    label: "Alongamento com Densidade & Volume Nobre",
-  },
-  {
     type: "video",
     src: "/midias/video-megahair-dayane1.mp4",
     alt: "Aplicação técnica de Mega Hair de Nanocápsulas por Dayane Lima",
@@ -61,9 +55,15 @@ export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
 ];
 
 // =========================================================================
-// 2. MECHAS, LOIROS NOBRES & BALAYAGE DE LUXO (12 mídias exclusivas)
+// 2. MECHAS, LOIROS NOBRES, CABELOS LISOS & BALAYAGE DE LUXO (12 mídias exclusivas)
 // =========================================================================
 export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
+  {
+    type: "image",
+    src: "/midias/cabelo-dayane11.jpg",
+    alt: "Cabelos lisos e alinhamento nobre com brilho espelhado na SB Estética e Beleza",
+    label: "Cabelos Lisos & Alinhamento de Alta Precisão",
+  },
   {
     type: "image",
     src: "/midias/cabelo-dayane12.jpg",
@@ -421,17 +421,6 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     sourceUrl: "https://www.instagram.com/dayanelimaestetica/reel/DIBdXRpR6Q-/",
     author: "Dayane Lima",
   },
-  {
-    id: "mh-04",
-    type: "image",
-    src: "/midias/cabelo-dayane11.jpg",
-    poster: "/midias/cabelo-dayane11.jpg",
-    title: "Alongamento com Densidade & Volume Nobre",
-    subtitle: "Acabamento sofisticado com preenchimento de pontas e caimento natural.",
-    category: "megahair",
-    categoryLabel: "Mega Hair de Nanocápsulas",
-    author: "Dayane Lima",
-  },
 
   // --- Mechas & Balayage ---
   {
@@ -536,6 +525,17 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     poster: "/midias/cabelo-dayane12.jpg",
     title: "Mechas Iluminadas & Movimento Natural",
     subtitle: "Morena iluminada com balanço sedoso e luminosidade radiante sob luz natural.",
+    category: "mechas",
+    categoryLabel: "Colorimetria & Balayage",
+    author: "Dayane Lima",
+  },
+  {
+    id: "mc-11",
+    type: "image",
+    src: "/midias/cabelo-dayane11.jpg",
+    poster: "/midias/cabelo-dayane11.jpg",
+    title: "Cabelos Lisos & Alinhamento de Alta Precisão",
+    subtitle: "Acabamento espelhado, toque sedoso e alinhamento milimétrico na SB Estética e Beleza.",
     category: "mechas",
     categoryLabel: "Colorimetria & Balayage",
     author: "Dayane Lima",
