@@ -54,14 +54,14 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
               <div 
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`relative rounded-3xl overflow-hidden border transition-all duration-700 cursor-pointer bg-white shadow-md flex flex-col group ${
+                className={`relative rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl transition-all duration-700 cursor-pointer bg-[#1C1917] flex flex-col group ${
                   isActive 
-                    ? 'ring-2 ring-[#C5A880] scale-[1.03] shadow-xl border-[#C5A880]' 
-                    : 'border-[#E8D0C8] hover:border-[#C5A880]/60 opacity-90'
+                    ? 'ring-2 ring-[#C5A880] scale-[1.03]' 
+                    : 'hover:border-[#C5A880]'
                 }`}
               >
                 {/* Container de Mídia */}
-                <div className="relative aspect-[4/5] w-full bg-[#FAF3F0] overflow-hidden flex items-center justify-center">
+                <div className="relative aspect-[4/5] w-full bg-[#1C1917] overflow-hidden flex items-center justify-center">
                   {item.type === 'video' ? (
                     <>
                       <video 
@@ -106,9 +106,12 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
                 </div>
 
                 {/* Legenda */}
-                <div className="p-5 bg-white flex-1 flex flex-col justify-between">
-                  <p className="font-serif font-bold text-base text-[#1C1917] leading-snug">{item.label}</p>
+                <div className="p-5 bg-[#1C1917] border-t border-[#C5A880]/20 flex-1 flex flex-col justify-between">
+                  <p className="font-serif font-bold text-base text-white leading-snug">{item.label}</p>
                 </div>
+
+                {/* Borda interna acetinada */}
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
               </div>
             );
           })}

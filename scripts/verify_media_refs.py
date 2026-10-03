@@ -12,7 +12,7 @@ for root, dirs, files in os.walk('src'):
             p = os.path.join(root, f)
             with open(p, 'r', encoding='utf-8', errors='ignore') as fh:
                 for idx, line in enumerate(fh, 1):
-                    for m in re.finditer(r'/midias/([a-zA-Z0-9_\-\.\%]+)', line):
+                    for m in re.finditer(r'/midias/([^"\'\)\s>]+)', line):
                         fn = m.group(1)
                         references.append((p, idx, fn))
                         if fn not in public_files:

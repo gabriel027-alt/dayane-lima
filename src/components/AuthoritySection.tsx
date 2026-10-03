@@ -29,16 +29,17 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Moldura Principal com Retrato Oficial da Especialista */}
-              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-[#C5A880]/30 shadow-lg bg-neutral-900 group">
+              {/* Moldura Principal com Retrato Oficial da Especialista (Exclusivo, sem cortes e sem tarjas pretas) */}
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl bg-[#1C1917] group">
                 <div className="relative w-full h-full overflow-hidden">
                   <img 
-                    src="/midias/segunda-foto-perfil-dayane.jpg" 
+                    src="/midias/Retratoeleganteemtonsquentes-dayane.png" 
                     alt="Dayane Lima • Especialista Titular" 
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" aria-hidden="true" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
                   <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">Especialista Titular</p>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">Dayane Lima</h3>

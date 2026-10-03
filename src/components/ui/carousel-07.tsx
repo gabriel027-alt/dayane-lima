@@ -372,8 +372,8 @@ const Card = ({
   );
   const opacity = useTransform(
     offset,
-    [-total / 2, -total / 2 + 0.5, 0, total / 2 - 0.5, total / 2],
-    [0, 1, 1, 1, 0]
+    [-total / 2, -total / 2 + 0.3, 0, total / 2 - 0.3, total / 2],
+    [0.35, 0.9, 1, 0.9, 0.35]
   );
   const zIndex = useTransform(offset, (o) =>
     Math.round(100 - Math.abs(o) * 10)
@@ -413,7 +413,7 @@ const Card = ({
         zIndex,
       }}
       className={cn(
-        "absolute rounded-3xl overflow-hidden bg-[#1C1917] shadow-2xl border border-[#C5A880]/40 pointer-events-none select-none",
+        "absolute rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl pointer-events-none select-none",
         "w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px]"
       )}
     >
