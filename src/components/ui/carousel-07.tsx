@@ -418,18 +418,23 @@ const Card = ({
       )}
     >
       {isVideo ? (
-        <video
-          ref={videoRef}
-          src={mediaSrc}
-          autoPlay={isActive}
-          loop={false}
-          muted={isMuted}
-          playsInline
-          preload="auto"
-          onEnded={handleEnded}
-          onError={handleError}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        />
+        <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-b from-[#1C1917] via-[#141211] to-[#0D0B0A] p-1.5 sm:p-2 overflow-hidden">
+          {/* Fundo de preenchimento elegante com brilho quente sutil de alta costura */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,168,128,0.15)_0%,transparent_75%)] pointer-events-none" />
+
+          <video
+            ref={videoRef}
+            src={mediaSrc}
+            autoPlay={isActive}
+            loop={false}
+            muted={isMuted}
+            playsInline
+            preload="auto"
+            onEnded={handleEnded}
+            onError={handleError}
+            className="relative z-10 w-full h-full object-contain rounded-2xl pointer-events-none"
+          />
+        </div>
       ) : (
         <img
           src={mediaSrc}
