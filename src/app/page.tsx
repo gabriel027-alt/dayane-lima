@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Header from "@/components/Header";
-import HeroVideoIntro from "@/components/HeroVideoIntro";
+import HeroScrollScrub from "@/components/HeroScrollScrub";
 import Hero from "@/components/Hero";
 import MegaHairShowcase from "@/components/MegaHairShowcase";
 import MechasShowcase from "@/components/MechasShowcase";
@@ -66,8 +66,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#F7EAE5] text-[#1C1917] font-sans selection:bg-[#C5A880]/30 selection:text-[#1C1917]">
       
-      {/* ===================== 0. ULTRA-PREMIUM SCROLL-DRIVEN VIDEO HERO (INTRO CAPA) ===================== */}
-      <HeroVideoIntro 
+      {/* ===================== 0. ULTRA-PREMIUM SCROLL-LINKED FRAME SCRUBBING (CANVAS HERO) ===================== */}
+      <HeroScrollScrub 
         onExplore={() => {
           const target = document.getElementById("procedimentos") || document.getElementById("megahair");
           target?.scrollIntoView({ behavior: "smooth" });
