@@ -208,12 +208,8 @@ export default function HorizontalGallery({
                   />
                 )}
               </div>
-              <div className={`p-4 ${isDark ? 'bg-[#241F1C]' : 'bg-white'}`}>
-                <p 
-                  className={`font-serif font-bold text-base leading-snug ${
-                    isDark ? 'text-white' : 'text-[#1C1917]'
-                  }`}
-                >
+              <div className="p-4 bg-[#1C1917] border-t border-[#C5A880]/20">
+                <p className="font-serif font-bold text-base leading-snug text-white">
                   {item.label}
                 </p>
               </div>

@@ -412,10 +412,7 @@ const Card = ({
         opacity,
         zIndex,
       }}
-      className={cn(
-        "absolute rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl pointer-events-none select-none",
-        "w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px]"
-      )}
+      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl pointer-events-none select-none"
     >
       {isVideo ? (
         <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden">

@@ -54,11 +54,7 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
               <div 
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`relative rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl transition-all duration-700 cursor-pointer bg-[#1C1917] flex flex-col group ${
-                  isActive 
-                    ? 'ring-2 ring-[#C5A880] scale-[1.03]' 
-                    : 'hover:border-[#C5A880]'
-                }`}
+                className="relative rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl transition-all duration-500 cursor-pointer bg-[#1C1917] flex flex-col group"
               >
                 {/* Container de Mídia */}
                 <div className="relative aspect-[4/5] w-full bg-[#1C1917] overflow-hidden flex items-center justify-center">

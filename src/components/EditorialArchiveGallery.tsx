@@ -204,27 +204,15 @@ export function EditorialArchiveGallery({
               </div>
 
               {/* Informações Editoriais */}
-              <div className={`p-4 flex-1 flex flex-col justify-between ${isDark ? "bg-[#241F1C]" : "bg-white"}`}>
+              <div className="p-4 flex-1 flex flex-col justify-between bg-[#1C1917] border-t border-[#C5A880]/20">
                 <div>
-                  <span
-                    className={`text-[10px] font-sans font-bold uppercase tracking-wider block mb-1 ${
-                      isDark ? "text-[#C5A880]" : "text-[#8C5448]"
-                    }`}
-                  >
+                  <span className="text-[10px] font-sans font-bold uppercase tracking-wider block mb-1 text-[#C5A880]">
                     {item.author}
                   </span>
-                  <p
-                    className={`font-serif font-bold text-base leading-snug line-clamp-2 ${
-                      isDark ? "text-white" : "text-[#1C1917]"
-                    }`}
-                  >
+                  <p className="font-serif font-bold text-base leading-snug line-clamp-2 text-white">
                     {item.title}
                   </p>
-                  <p
-                    className={`font-sans text-xs mt-1.5 leading-relaxed line-clamp-2 ${
-                      isDark ? "text-neutral-300" : "text-[#574F4A]"
-                    }`}
-                  >
+                  <p className="font-sans text-xs mt-1.5 leading-relaxed line-clamp-2 text-neutral-300">
                     {item.subtitle}
                   </p>
                 </div>
