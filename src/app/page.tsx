@@ -37,6 +37,15 @@ const toSlides = (items: GalleryItem[]): Slide[] =>
     image: item.src,
   }));
 
+// Coleções estáticas de slides pré-computadas para estabilidade referencial perfeita nos carrosséis
+const MEGAHAIR_SLIDES = toSlides(MEGAHAIR_GALLERY_ITEMS);
+const MECHAS_SLIDES = toSlides(MECHAS_GALLERY_ITEMS);
+const OLHAR_SLIDES = toSlides(OLHAR_GALLERY_ITEMS);
+const UNHAS_SLIDES = toSlides(UNHAS_GALLERY_ITEMS);
+const BRONZE_SLIDES = toSlides(BRONZE_GALLERY_ITEMS);
+const LASER_SLIDES = toSlides(LASER_GALLERY_ITEMS);
+const ESPACO_SLIDES = toSlides(ESPACO_GALLERY_ITEMS);
+
 export default function HomePage() {
   const [isTriageOpen, setIsTriageOpen] = useState(false);
   const [initialService, setInitialService] = useState<ServiceCategory | null>(null);
@@ -74,17 +83,17 @@ export default function HomePage() {
       <CarouselStacked
         title="Mega Hair de Nanocápsulas"
         subtitle="HAUTE COIFFURE · DAYANE LIMA"
-        slides={toSlides(MEGAHAIR_GALLERY_ITEMS)}
+        slides={MEGAHAIR_SLIDES}
       />
 
       {/* ===================== COLORIMETRIA & BALAYAGE: MECHAS & LOIROS NOBRES ===================== */}
       <MechasShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL 3D EMPILHADO: MECHAS & COLORIMETRIA ===================== */}
+      {/* ===================== CARROSSEL 3D EMPILHADO: MECHAS, LOIROS NOBRES & BALAYAGE ===================== */}
       <CarouselStacked
-        title="Mechas & Balayage de Luxo"
+        title="Mechas, Loiros Nobres & Balayage de Luxo"
         subtitle="COLORIMETRIA AVANÇADA · DAYANE LIMA"
-        slides={toSlides(MECHAS_GALLERY_ITEMS)}
+        slides={MECHAS_SLIDES}
       />
 
       {/* ===================== HARMONIZAÇÃO DO OLHAR: CÍLIOS & SOBRANCELHAS ===================== */}
@@ -94,7 +103,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Cílios & Sobrancelhas"
         subtitle="VISAGISMO DO OLHAR · RAYSSA & HILLERY"
-        slides={toSlides(OLHAR_GALLERY_ITEMS)}
+        slides={OLHAR_SLIDES}
       />
 
       {/* ===================== ARQUITETURA UNGUEAL: UNHAS EM FIBRA & GEL ===================== */}
@@ -104,7 +113,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Alongamento em Gel & Fibra"
         subtitle="ENGENHARIA UNGUEAL · EMILY LIMA NAILS"
-        slides={toSlides(UNHAS_GALLERY_ITEMS)}
+        slides={UNHAS_SLIDES}
       />
 
       {/* ===================== BRONZEAMENTO EM CABINE TECNOLÓGICA ===================== */}
@@ -114,7 +123,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Cabine Tecnológica & Marquinha"
         subtitle="SOL & BRONZE · CABINE TECNOLÓGICA"
-        slides={toSlides(BRONZE_GALLERY_ITEMS)}
+        slides={BRONZE_SLIDES}
       />
 
       {/* ===================== ESTÉTICA CORPORAL & DEPILAÇÃO A LASER SUBZERO ===================== */}
@@ -124,7 +133,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Depilação a Laser Subzero"
         subtitle="TECNOLOGIA CLÍNICA · HAKON SUBZERO"
-        slides={toSlides(LASER_GALLERY_ITEMS)}
+        slides={LASER_SLIDES}
       />
 
       {/* ===================== TRIAGEM INTELIGENTE DE QUALIFICAÇÃO ===================== */}
@@ -143,7 +152,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Tour pelo Ateliê Monte Carmelo"
         subtitle="ESTRUTURA FÍSICA · RUA CALCEDÔNIA, 155"
-        slides={toSlides(ESPACO_GALLERY_ITEMS)}
+        slides={ESPACO_SLIDES}
       />
 
       {/* ===================== AUTORIDADE INSTITUCIONAL: 20+ ANOS DE EXPERIÊNCIA ===================== */}

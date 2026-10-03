@@ -31,7 +31,7 @@ export interface MediaCatalogItem {
 }
 
 // =========================================================================
-// 1. MEGA HAIR DE NANOCÁPSULAS (5 mídias exclusivas)
+// 1. MEGA HAIR DE NANOCÁPSULAS (4 mídias exclusivas)
 // =========================================================================
 export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -58,18 +58,18 @@ export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
     alt: "Resultado fotográfico de Mega Hair por Dayane Lima",
     label: "Alinhamento & Integração da Raiz",
   },
-  {
-    type: "image",
-    src: "/midias/cabelo3-dayane.jpg",
-    alt: "Harmonização de cor e comprimento impecável",
-    label: "Harmonização de Cor & Comprimento",
-  },
 ];
 
 // =========================================================================
-// 2. MECHAS & COLORIMETRIA NOBRE (8 mídias exclusivas)
+// 2. MECHAS, LOIROS NOBRES & BALAYAGE DE LUXO (9 mídias exclusivas)
 // =========================================================================
 export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
+  {
+    type: "image",
+    src: "/midias/cabelo3-dayane.jpg",
+    alt: "Balayage de luxo e cabelos iluminados com mechas douradas por Dayane Lima",
+    label: "Mechas, Loiros Nobres & Balayage de Luxo",
+  },
   {
     type: "video",
     src: "/midias/cabelo2-dayane.mp4",
@@ -270,7 +270,7 @@ export const UNHAS_GALLERY_ITEMS: GalleryItem[] = [
 ];
 
 // =========================================================================
-// 4. BRONZEAMENTO EM CABINE (12 mídias exclusivas)
+// 4. BRONZEAMENTO EM CABINE & MARQUINHA DE SOL (12 mídias exclusivas)
 // =========================================================================
 export const BRONZE_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -280,10 +280,22 @@ export const BRONZE_GALLERY_ITEMS: GalleryItem[] = [
     label: "Bronzeamento em Cabine Tecnológica",
   },
   {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane1.jpg",
+    alt: "Marquinha anatômica milimétrica com fita cirúrgica",
+    label: "Marquinha Anatômica Sob Medida",
+  },
+  {
     type: "video",
     src: "/midias/video-bronzeamento-dayane2.mp4",
     alt: "Cabine privativa com climatização e biossegurança total",
     label: "Cabine Privativa & Conforto Térmico",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane2.jpg",
+    alt: "Tom dourado natural e homogêneo",
+    label: "Tom Dourado Homogêneo",
   },
   {
     type: "video",
@@ -291,22 +303,64 @@ export const BRONZE_GALLERY_ITEMS: GalleryItem[] = [
     alt: "Tom dourado homogêneo e bronzeado saudável o ano todo",
     label: "Tom Dourado Uniforme e Duradouro",
   },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane3.jpg",
+    alt: "Protocolo nutritivo pós-bronze com hidratação",
+    label: "Nutrição & Fixação do Bronze",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane4.jpg",
+    alt: "Exposição controlada e biossegura em cabine",
+    label: "Exposição Segura por Fototipo",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane5.jpg",
+    alt: "Pele iluminada e radiante pós-sessão de bronze",
+    label: "Pele Iluminada & Radiante",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane6.jpg",
+    alt: "Definição milimétrica da marquinha de biquíni de fita",
+    label: "Definição de Marquinha Perfeita",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane7.jpg",
+    alt: "Acabamento acetinado e dourado profundo",
+    label: "Acabamento Dourado Acetinado",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane8.jpg",
+    alt: "Calibragem rigorosa respeitando o tom da pele",
+    label: "Calibragem Personalizada",
+  },
+  {
+    type: "image",
+    src: "/midias/foto-bronzeamento-dayane9.jpg",
+    alt: "Viço e brilho dourado saudável sob a luz",
+    label: "Glow Dourado Saudável",
+  },
 ];
 
 // =========================================================================
-// 5. DEPILAÇÃO A LASER SUBZERO (1 mídia confirmada)
+// 5. DEPILAÇÃO A LASER SUBZERO (Vídeo de demonstração clínica)
 // =========================================================================
 export const LASER_GALLERY_ITEMS: GalleryItem[] = [
   {
     type: "video",
     src: "/midias/video-depilação-lazer-dayane1.mp4",
     alt: "Sessão de depilação a laser com ponteira Subzero resfriada a -10°C",
-    label: "Laser Subzero Resfriado a -10°C • Sessão Confortável",
+    label: "Laser Subzero Resfriado a -10°C • Demonstração Clínica",
   },
 ];
 
 // =========================================================================
-// 6. ESPAÇO, FACHADA & ATELIÊ (3 mídias exclusivas)
+// 6. ESPAÇO, FACHADA & ATELIÊ (Vídeos reais do ateliê)
 // =========================================================================
 export const ESPACO_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -320,12 +374,6 @@ export const ESPACO_GALLERY_ITEMS: GalleryItem[] = [
     src: "/midias/video-dayane-apresentação-serviços1.mp4",
     alt: "Apresentação oficial dos rituais de beleza por Dayane Lima",
     label: "Boas-vindas & Apresentação Institucional",
-  },
-  {
-    type: "video",
-    src: "/midias/minivideo-logo.mp4",
-    alt: "Identidade visual oficial do ateliê SB Estética e Beleza",
-    label: "Selo Oficial SB Estética e Beleza",
   },
 ];
 

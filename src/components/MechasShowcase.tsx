@@ -30,14 +30,14 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
             id="mechas-heading"
             className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#1C1917] tracking-tight leading-[1.1] [text-wrap:balance]"
           >
-            Loiros Nobres, Morena Iluminada &{" "}
+            Mechas, Loiros Nobres &{" "}
             <span className="italic font-normal font-serif text-[#C58B7E]">
-              Saúde da Fibra
+              Balayage de Luxo
             </span>
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Clareamento com proteção lipídica e degradês sem marcação. Cada tonalidade é formulada para harmonizar com seu tom de pele e refletir brilho acetinado sob a luz natural de Montes Claros.
+            Clareamento estratégico, balayage personalizada e cabelos iluminados com máxima preservação da saúde da fibra capilar. Tons nobres e degradês sem marcação que acendem a beleza sob a luz natural de Montes Claros.
           </p>
         </div>
 

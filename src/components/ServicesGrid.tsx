@@ -49,7 +49,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
     id: "mechas",
     tabValue: "mechas",
     number: "02",
-    name: "Mechas & Balayage de Luxo",
+    name: "Mechas, Loiros Nobres & Balayage de Luxo",
     category: "Loiros Nobres & Morenas Iluminadas",
     duration: "Ritual de 4h a 6h",
     mediaType: "video",
@@ -159,7 +159,6 @@ const RITUALS_CATALOG: RitualDetail[] = [
     mediaType: "video",
     mediaSrc: "/midias/video-depilação-lazer-dayane1.mp4",
     mediaClassName: "object-cover object-center",
-    poster: "/midias/brevecapa-depilação-lazer-dayane.jpg",
     alt: "Depilação a laser Hakon 4D com ponteira subzero e feixe de alta precisão",
     headline: "Eliminação definitiva dos pelos com ponteira ultra-resfriada",
     description:

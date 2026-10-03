@@ -98,21 +98,31 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     return () => unsubscribe();
   }, [scrollProgress, total]);
 
+  const isAdvancingRef = React.useRef(false);
+
   // Função para avançar suavemente ao próximo slide com física spring
   const handleNext = React.useCallback(() => {
+    if (total <= 1) return;
+    if (isAdvancingRef.current) return;
+    isAdvancingRef.current = true;
+
     const current = scrollProgress.get();
     animate(scrollProgress, Math.round(current) + 1, {
       type: "spring",
       stiffness: 150,
       damping: 25,
+      onComplete: () => {
+        isAdvancingRef.current = false;
+      },
     });
-  }, [scrollProgress]);
+  }, [scrollProgress, total]);
 
   // Sincronização Dinâmica do Tempo de Transição:
-  // - Para imagens estáticas: timer padrão de 3.5s
-  // - Para vídeos: o timer é suspenso, e o avanço ocorre no evento onEnded do vídeo ativo
+  // - Para imagens estáticas: timer padrão de 3.8s por slide
+  // - Para vídeos: o temporizador fixo é TOTALMENTE DESATIVADO.
+  //   O vídeo é reproduzido por completo até o término (onEnded), evitando qualquer corte prematuro.
   React.useEffect(() => {
-    if (!slides || slides.length === 0) return;
+    if (!slides || slides.length === 0 || total <= 1) return;
     const currentSlide = slides[currentIndex];
     const isVideo =
       currentSlide?.type === "video" ||
@@ -121,16 +131,10 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     if (!isVideo) {
       const timer = setTimeout(() => {
         handleNext();
-      }, 3500);
+      }, 3800);
       return () => clearTimeout(timer);
-    } else {
-      // Fallback de segurança prolongado (caso o vídeo tenha falha de autoplay do browser)
-      const safetyTimer = setTimeout(() => {
-        handleNext();
-      }, 25000);
-      return () => clearTimeout(safetyTimer);
     }
-  }, [currentIndex, slides, handleNext]);
+  }, [currentIndex, slides, total, handleNext]);
 
   const handleVideoEnded = React.useCallback(
     (index: number) => {
@@ -319,6 +323,29 @@ const Card = ({
     Math.round(100 - Math.abs(o) * 10)
   );
 
+  const handleEnded = () => {
+    if (!isActive) return;
+    if (total <= 1) {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      }
+      return;
+    }
+    if (onVideoEnded) {
+      onVideoEnded(index);
+    }
+  };
+
+  const handleError = () => {
+    if (isActive && total > 1 && onVideoEnded) {
+      onVideoEnded(index);
+    }
+  };
+
   return (
     <motion.div
       style={{
@@ -343,11 +370,8 @@ const Card = ({
           muted={isMuted}
           playsInline
           preload="auto"
-          onEnded={() => {
-            if (isActive && onVideoEnded) {
-              onVideoEnded(index);
-            }
-          }}
+          onEnded={handleEnded}
+          onError={handleError}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
       ) : (
