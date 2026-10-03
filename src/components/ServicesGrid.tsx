@@ -48,7 +48,7 @@ const RITUALS_CATALOG: RitualDetail[] = [
     id: "mechas",
     tabValue: "mechas",
     number: "02",
-    name: "Mechas, Loiros Nobres & Balayage de Luxo",
+    name: "Mechas, Loiros Nobres, Cabelos Lisos & Balayage de Luxo",
     category: "Loiros Nobres & Morenas Iluminadas",
     duration: "Ritual de 4h a 6h",
     mediaType: "video",

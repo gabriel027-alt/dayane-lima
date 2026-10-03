@@ -30,7 +30,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
             id="mechas-heading"
             className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#1C1917] tracking-tight leading-[1.1] [text-wrap:balance]"
           >
-            Mechas, Loiros Nobres &{" "}
+            Mechas, Loiros Nobres, Cabelos Lisos &{" "}
             <span className="italic font-normal font-serif text-[#C58B7E]">
               Balayage de Luxo
             </span>

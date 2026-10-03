@@ -89,9 +89,9 @@ export default function HomePage() {
       {/* ===================== COLORIMETRIA & BALAYAGE: MECHAS & LOIROS NOBRES ===================== */}
       <MechasShowcase onSelectService={handleSelectService} />
 
-      {/* ===================== CARROSSEL 3D EMPILHADO: MECHAS, LOIROS NOBRES & BALAYAGE ===================== */}
+      {/* ===================== CARROSSEL 3D EMPILHADO: MECHAS, LOIROS NOBRES, CABELOS LISOS & BALAYAGE ===================== */}
       <CarouselStacked
-        title="Mechas, Loiros Nobres & Balayage de Luxo"
+        title="Mechas, Loiros Nobres, Cabelos Lisos & Balayage de Luxo"
         subtitle="COLORIMETRIA AVANÇADA · DAYANE LIMA"
         slides={MECHAS_SLIDES}
       />
