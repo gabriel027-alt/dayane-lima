@@ -407,11 +407,10 @@ const Card = ({
     offset,
     (o) => 1 - Math.abs(o) * config.scaleReduction
   );
-  const opacity = useTransform(
-    offset,
-    [-total / 2, -total / 2 + 0.2, 0, total / 2 - 0.2, total / 2],
-    [0, 1, 1, 1, 0]
-  );
+  // Blindagem visual absoluta: opacidade sólida fixa (1.0) em todos os cards visíveis,
+  // eliminando qualquer transparência gradual que enfraqueça o fundo escuro #1C1917 ou a borda champagne #C5A880/60.
+  // Cards laterais e em perspectiva mantêm a mesma integridade visual sólida do card ativo.
+  const opacity = useTransform(offset, (o) => (Math.abs(o) > 2.5 ? 0 : 1));
   const zIndex = useTransform(offset, (o) =>
     Math.round(100 - Math.abs(o) * 10)
   );
@@ -454,7 +453,7 @@ const Card = ({
       }}
       className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
-      <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
+      <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] rounded-3xl overflow-hidden">
         {isVideo ? (
           <video
             ref={videoRef}
@@ -466,13 +465,13 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="w-full h-full object-cover pointer-events-none bg-[#1C1917]"
+            className="w-full h-full object-cover object-center pointer-events-none bg-[#1C1917] block"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917]"
+            className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917] block"
             loading="lazy"
           />
         )}
