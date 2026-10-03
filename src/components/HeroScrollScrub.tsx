@@ -184,10 +184,14 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-[0.96] contrast-[1.02] transform-gpu"
         />
 
-        {/* Véu Translúcido Editorial para Máxima Legibilidade Tipográfica */}
+        {/* ===================== OVERLAY GRADIENT SHIELD (CONTRASTE CINEMATOGRÁFICO DE LUXO) ===================== */}
         <div 
-          className="absolute inset-0 bg-gradient-to-b from-[#FBFBFC]/35 via-transparent to-[#FBFBFC]/50 pointer-events-none" 
+          className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50 pointer-events-none z-10" 
           aria-hidden="true" 
+        />
+        <div 
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.45)_0%,transparent_70%)] pointer-events-none z-10"
+          aria-hidden="true"
         />
 
         {/* ===================== CONTEÚDO EDITORIAL CENTRALIZADO (SINCRONIZADO) ===================== */}
@@ -200,21 +204,25 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             
-            {/* Micro-tag Editorial */}
-            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3.5 py-1 rounded-full bg-white/70 backdrop-blur-md border border-stone-200/60 shadow-xs">
-              <Sparkles className="w-3 h-3 text-[#C5A880]" />
-              <span className="font-mono text-[10px] sm:text-xs tracking-[0.35em] uppercase text-stone-600">
+            {/* Micro-tag Editorial em Vidro Escuro & Letras Claras */}
+            <div className="inline-flex items-center gap-2 mb-4 sm:mb-5 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-lg">
+              <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+              <span className="font-mono text-[10px] sm:text-xs tracking-[0.35em] uppercase text-white/90">
                 BIOTECNOLOGIA & ALTA COSTURA CAPILAR
               </span>
             </div>
 
-            {/* Headline Principal */}
-            <h1 className="font-light tracking-tighter text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1C1C1E] text-center leading-[1.12] [text-wrap:balance] max-w-3xl drop-shadow-xs">
-              Sua melhor versão com Mega Hair invisível e mechas nobres.
+            {/* Headline Principal de Alto Contraste */}
+            <h1 className="font-light tracking-tighter text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white/95 text-center leading-[1.12] [text-wrap:balance] max-w-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.60)]">
+              Sua melhor versão com{" "}
+              <span className="font-serif italic font-normal text-[#E8D0B3] drop-shadow-[0_2px_12px_rgba(197,168,128,0.45)]">
+                Mega Hair invisível
+              </span>{" "}
+              e mechas nobres.
             </h1>
 
             {/* Sub-text / Location */}
-            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-stone-500 mt-5 sm:mt-6 drop-shadow-xs">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-white/70 mt-5 sm:mt-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.60)]">
               DAYANE LIMA // MONTES CLAROS
             </p>
 
@@ -226,13 +234,13 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
           type="button"
           onClick={handleScrollDown}
           style={{ opacity: textOpacity }}
-          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-[#1C1C1E]/60 hover:text-[#1C1C1E] transition-colors cursor-pointer group pointer-events-auto"
+          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-white/70 hover:text-white transition-colors cursor-pointer group pointer-events-auto px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/15 hover:border-white/30 shadow-lg"
           aria-label="Rolar para controlar a linha do tempo do vídeo"
         >
-          <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-stone-500 group-hover:text-stone-700 transition-colors">
+          <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-white/80 group-hover:text-white transition-colors">
             Role para folhear frames
           </span>
-          <ChevronDown className="w-4 h-4 text-stone-500 animate-bounce group-hover:text-stone-800 transition-colors" />
+          <ChevronDown className="w-4 h-4 text-white/70 animate-bounce group-hover:text-white transition-colors" />
         </motion.button>
 
         {/* ===================== NÉVOA DE TRANSIÇÃO INFERIOR ===================== */}
