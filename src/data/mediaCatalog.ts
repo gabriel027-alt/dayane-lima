@@ -90,12 +90,6 @@ export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     type: "video",
-    src: "/midias/cabelo2-dayane.mp4",
-    alt: "Morena iluminada com reflexos avelã e caramelo sob luz natural",
-    label: "Morena Iluminada sob a Luz Natural",
-  },
-  {
-    type: "video",
     src: "/midias/cabelo4-dayane.mp4",
     alt: "Ondas sofisticadas e reflexo vitrificado pós-mechas",
     label: "Ondas Nobres & Brilho Acetinado",
@@ -440,18 +434,6 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
   },
 
   // --- Mechas & Balayage ---
-  {
-    id: "mc-01",
-    type: "video",
-    src: "/midias/cabelo2-dayane.mp4",
-    poster: "/midias/cabelo3-dayane.jpg",
-    title: "Morena Iluminada em Luz Natural",
-    subtitle: "Degradê orgânico com transição imperceptível e controle estrito de oxidação.",
-    category: "mechas",
-    categoryLabel: "Colorimetria & Balayage",
-    sourceUrl: "https://www.instagram.com/dayanelimaestetica/reel/DJVbQxJM8rK/",
-    author: "Dayane Lima",
-  },
   {
     id: "mc-02",
     type: "video",

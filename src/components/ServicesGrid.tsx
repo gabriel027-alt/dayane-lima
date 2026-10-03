@@ -52,9 +52,9 @@ const RITUALS_CATALOG: RitualDetail[] = [
     category: "Loiros Nobres & Morenas Iluminadas",
     duration: "Ritual de 4h a 6h",
     mediaType: "video",
-    mediaSrc: "/midias/cabelo2-dayane.mp4",
+    mediaSrc: "/midias/cabelo-dayane10.mp4",
     mediaClassName: "object-cover object-center",
-    poster: "/midias/cabelo3-dayane.jpg",
+    poster: "/midias/cabelo-dayane12.jpg",
     alt: "Mechas e morena iluminada com reflexos e brilho sob luz natural",
     headline: "Clareamento estratégico com proteção total das pontes de queratina",
     description:
