@@ -55,7 +55,7 @@ export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
 ];
 
 // =========================================================================
-// 2. MECHAS, LOIROS NOBRES & BALAYAGE DE LUXO (9 mídias exclusivas)
+// 2. MECHAS, LOIROS NOBRES & BALAYAGE DE LUXO (10 mídias exclusivas)
 // =========================================================================
 export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -63,6 +63,12 @@ export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
     src: "/midias/cabelo3-dayane.jpg",
     alt: "Balayage de luxo e cabelos iluminados com mechas douradas por Dayane Lima",
     label: "Mechas, Loiros Nobres & Balayage de Luxo",
+  },
+  {
+    type: "image",
+    src: "/midias/cabelo1-dayane.jpg",
+    alt: "Balayage e mechas com ondas nobres e reflexos dourados por Dayane Lima",
+    label: "Balayage com Ondas & Brilho Acetinado",
   },
   {
     type: "video",
@@ -264,7 +270,7 @@ export const UNHAS_GALLERY_ITEMS: GalleryItem[] = [
 ];
 
 // =========================================================================
-// 4. BRONZEAMENTO EM CABINE & MARQUINHA DE SOL (12 mídias exclusivas)
+// 4. BRONZEAMENTO EM CABINE & MARQUINHA DE SOL (11 mídias exclusivas)
 // =========================================================================
 export const BRONZE_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -278,12 +284,6 @@ export const BRONZE_GALLERY_ITEMS: GalleryItem[] = [
     src: "/midias/foto-bronzeamento-dayane1.jpg",
     alt: "Marquinha anatômica milimétrica com fita cirúrgica",
     label: "Marquinha Anatômica Sob Medida",
-  },
-  {
-    type: "video",
-    src: "/midias/video-bronzeamento-dayane2.mp4",
-    alt: "Cabine privativa com climatização e biossegurança total",
-    label: "Cabine Privativa & Conforto Térmico",
   },
   {
     type: "image",
@@ -777,18 +777,6 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     category: "bronze",
     categoryLabel: "Bronzeamento em Cabine",
     sourceUrl: "https://www.instagram.com/dayanelimaestetica/reel/DQaWhG5DGMF/",
-    author: "Sol & Bronze",
-  },
-  {
-    id: "br-02",
-    type: "video",
-    src: "/midias/video-bronzeamento-dayane2.mp4",
-    poster: "/midias/foto-bronzeamento-dayane2.jpg",
-    title: "Cabine Privativa & Conforto Térmico",
-    subtitle: "Sala reservada com ventilação direcionada e biossegurança estrita.",
-    category: "bronze",
-    categoryLabel: "Bronzeamento em Cabine",
-    sourceUrl: "https://www.instagram.com/dayanelimaestetica/reel/CWI2VoTlFlV/",
     author: "Sol & Bronze",
   },
   {

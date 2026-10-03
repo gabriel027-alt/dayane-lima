@@ -177,10 +177,39 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     });
   };
 
+  const sectionRef = React.useRef<HTMLElement>(null);
+
+  // Alterna o áudio e sincroniza todos os vídeos no carrossel e na página
+  const handleToggleAudio = React.useCallback(() => {
+    setIsMuted((prevMuted) => {
+      const nextMuted = !prevMuted;
+
+      // Executa no ciclo de clique do usuário para garantir reprodução com som autorizada pelo navegador
+      try {
+        const root = sectionRef.current || document;
+        const videos = root.querySelectorAll<HTMLVideoElement>("video");
+        videos.forEach((video) => {
+          video.muted = nextMuted;
+          if (!nextMuted) {
+            video.volume = 1;
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          }
+        });
+      } catch (e) {
+        console.error("Erro ao alterar áudio:", e);
+      }
+
+      return nextMuted;
+    });
+  }, []);
+
   if (!slides || slides.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-20 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden">
+    <section ref={sectionRef} className="py-16 md:py-20 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden">
       {(title || subtitle) && (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-8 md:mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -205,19 +234,27 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
       )}
 
       <div className="flex flex-col items-center justify-center w-full overflow-hidden select-none relative">
-        <div className="absolute top-2 right-6 z-40">
+        {/* BOTÃO FLUTUANTE DE ÁUDIO COM Z-INDEX ELEVADO PARA NUNCA FICAR ENCOBERTO EM MOBILE OU PC */}
+        <div className="absolute top-2 right-4 sm:top-2 sm:right-6 z-[120] pointer-events-auto">
           <button
             type="button"
-            onClick={() => setIsMuted(!isMuted)}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/75 hover:bg-black text-white text-xs backdrop-blur-md border border-[#C5A880]/40 transition-all shadow-md cursor-pointer"
-            aria-label="Controlar som dos vídeos"
+            onClick={handleToggleAudio}
+            className={cn(
+              "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-sans font-medium backdrop-blur-md transition-all shadow-xl cursor-pointer touch-manipulation",
+              isMuted
+                ? "bg-black/85 hover:bg-black text-neutral-300 border border-[#C5A880]/50 hover:border-[#C5A880]"
+                : "bg-black/95 text-[#C5A880] border border-[#C5A880] shadow-[0_0_16px_rgba(197,168,128,0.35)]"
+            )}
+            aria-label={isMuted ? "Ativar áudio dos vídeos" : "Silenciar áudio dos vídeos"}
           >
             {isMuted ? (
-              <VolumeX className="w-3.5 h-3.5 text-neutral-300" />
+              <VolumeX className="w-3.5 h-3.5 text-neutral-400" />
             ) : (
-              <Volume2 className="w-3.5 h-3.5 text-[#C5A880]" />
+              <Volume2 className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
             )}
-            <span>{isMuted ? "Ativar Áudio" : "Mutado"}</span>
+            <span className={isMuted ? "text-neutral-200" : "text-[#C5A880] font-semibold"}>
+              {isMuted ? "Ativar Áudio" : "Áudio Ativado"}
+            </span>
           </button>
         </div>
 
@@ -283,6 +320,10 @@ const Card = ({
     if (!isVideo || !videoRef.current) return;
     if (isActive) {
       videoRef.current.currentTime = 0;
+      videoRef.current.muted = isMuted;
+      if (!isMuted) {
+        videoRef.current.volume = 1;
+      }
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {});
@@ -290,7 +331,22 @@ const Card = ({
     } else {
       videoRef.current.pause();
     }
-  }, [isActive, isVideo]);
+  }, [isActive, isVideo, isMuted]);
+
+  // Sincroniza dinamicamente o status de áudio (mutado/desmutado)
+  React.useEffect(() => {
+    if (!isVideo || !videoRef.current) return;
+    videoRef.current.muted = isMuted;
+    if (!isMuted) {
+      videoRef.current.volume = 1;
+      if (isActive) {
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      }
+    }
+  }, [isMuted, isActive, isVideo]);
 
   const offset = useTransform(progress, (p) => {
     let diff = (index - p) % total;
