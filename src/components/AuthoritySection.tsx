@@ -1,46 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Image from "next/image";
-import { Award, ShieldCheck, HeartHandshake, Sparkles, CheckCircle2, Calendar, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import React from "react";
+import { ShieldCheck, Sparkles, CheckCircle2, Calendar } from "lucide-react";
 
 interface AuthoritySectionProps {
   onOpenTriage: () => void;
 }
 
 export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [showVideo, setShowVideo] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleStartVideo = () => {
-    setShowVideo(true);
-    setIsPlaying(true);
-    setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.play().catch(() => {});
-      }
-    }, 50);
-  };
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play().catch(() => {});
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !videoRef.current.muted;
-    setIsMuted(videoRef.current.muted);
-  };
-
   return (
     <section 
       id="autoridade"
@@ -58,110 +25,24 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Coluna Visual: Retrato Oficial Studio / Player do Vídeo Mestre com Microfone de Lapela */}
+          {/* Coluna Visual: Foto Estática de Perfil Perfeitamente Enquadrada */}
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              
-              {/* Moldura Principal com Retrato Oficial ou Player Institucional */}
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-[#C5A880]/30 shadow-lg bg-neutral-900 group">
-                
-                {showVideo ? (
-                  <div className="relative w-full h-full">
-                    <video
-                      ref={videoRef}
-                      loop
-                      playsInline
-                      muted={isMuted}
-                      poster="/midias/dayane-perfil.png"
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/midias/video-dayane-apresentação-serviços1.mp4" type="video/mp4" />
-                    </video>
-
-                    {/* Controles de Vídeo e Áudio */}
-                    <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={toggleMute}
-                        className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-black/60 hover:bg-white hover:text-neutral-900 text-white backdrop-blur-md border border-white/20 transition-all shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
-                        aria-label={isMuted ? "Ativar som do vídeo" : "Mutar áudio"}
-                      >
-                        {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={togglePlay}
-                        className="inline-flex items-center justify-center min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-black/60 hover:bg-white hover:text-neutral-900 text-white backdrop-blur-md border border-white/20 transition-all shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
-                        aria-label={isPlaying ? "Pausar vídeo institucional" : "Reproduzir vídeo"}
-                      >
-                        {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current ml-0.5" />}
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="relative w-full h-full overflow-hidden">
-                    <Image
-                      src="/midias/dayane-perfil.png"
-                      alt="Dayane Lima"
-                      width={1121}
-                      height={1403}
-                      className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
-                    />
-
-                    {/* Botão Play Institucional Centralizado */}
-                    <div className="absolute inset-0 flex items-center justify-center z-20">
-                      <button
-                        type="button"
-                        onClick={handleStartVideo}
-                        className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-black/60 hover:bg-[#C5A880] text-white hover:text-[#1C1917] backdrop-blur-md border border-white/30 transition-all duration-300 shadow-xl active:scale-95 group/btn cursor-pointer"
-                        aria-label="Assistir apresentação institucional de Dayane Lima"
-                      >
-                        <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-[#1C1917]/20">
-                          <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
-                        </div>
-                        <span className="font-sans font-semibold text-xs tracking-wide">
-                          Ver Apresentação Oficial
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                )}
-                
-                {/* Gradiente sutil na base */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" 
-                  aria-hidden="true" 
-                />
-                
+                <div className="relative w-full h-full overflow-hidden">
+                  <img 
+                    src="/midias/dayane-perfil.png" 
+                    alt="Dayane Lima • Especialista Titular" 
+                    className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" aria-hidden="true" />
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
-                  <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">
-                    Especialista Titular
-                  </p>
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">
-                    Dayane Lima
-                  </h3>
-                  <p className="text-xs text-white/85 mt-1 font-sans">
-                    Fundadora da SB Estética e Beleza • Montes Claros - MG
-                  </p>
+                  <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">Especialista Titular</p>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">Dayane Lima</h3>
+                  <p className="text-xs text-white/85 mt-1 font-sans">Fundadora da SB Estética e Beleza • Montes Claros - MG</p>
                 </div>
               </div>
-
-              {/* Card Flutuante de 20 Anos de Autoridade */}
-              <div className="absolute -top-5 -left-3 sm:-left-5 bg-white border border-[#C5A880]/30 rounded-2xl p-4 shadow-md flex items-center gap-3.5 max-w-[240px] z-20">
-                <div className="w-11 h-11 rounded-xl bg-[#C5A880]/15 flex items-center justify-center shrink-0 border border-[#C5A880]/30 text-[#6E501E]">
-                  <Award className="w-5 h-5 text-[#6E501E]" aria-hidden="true" />
-                </div>
-                <div>
-                  <span className="block text-xl font-serif font-bold text-[#1C1917] leading-none">
-                    20+ Anos
-                  </span>
-                  <span className="block text-[11px] text-neutral-500 font-sans mt-0.5 leading-tight">
-                    de Dedicação e Aperfeiçoamento Contínuo
-                  </span>
-                </div>
-              </div>
-
             </div>
           </div>
 
