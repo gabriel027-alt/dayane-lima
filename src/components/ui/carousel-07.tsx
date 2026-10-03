@@ -412,36 +412,38 @@ const Card = ({
         opacity,
         zIndex,
       }}
-      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl pointer-events-none select-none"
+      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
-      {isVideo ? (
-        <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden">
-          <video
-            ref={videoRef}
-            src={mediaSrc}
-            autoPlay={isActive}
-            loop={false}
-            muted={isMuted}
-            playsInline
-            preload="auto"
-            onEnded={handleEnded}
-            onError={handleError}
-            className="relative z-10 w-full h-full object-contain rounded-2xl pointer-events-none bg-[#1C1917]"
-          />
-        </div>
-      ) : (
-        <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
-          <img
-            src={mediaSrc}
-            alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917]"
-            loading="lazy"
-          />
-        </div>
-      )}
+      <div className="relative w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl">
+        {isVideo ? (
+          <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] p-1.5 sm:p-2 overflow-hidden">
+            <video
+              ref={videoRef}
+              src={mediaSrc}
+              autoPlay={isActive}
+              loop={false}
+              muted={isMuted}
+              playsInline
+              preload="auto"
+              onEnded={handleEnded}
+              onError={handleError}
+              className="relative z-10 w-full h-full object-contain rounded-2xl pointer-events-none bg-[#1C1917]"
+            />
+          </div>
+        ) : (
+          <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] overflow-hidden">
+            <img
+              src={mediaSrc}
+              alt={slide.title || "Procedimento Dayane Lima"}
+              className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917]"
+              loading="lazy"
+            />
+          </div>
+        )}
 
-      {/* Borda interna sutil para acabamento acetinado de joalheria, sem nenhuma camada de texto */}
-      <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
+        {/* Borda interna sutil para acabamento acetinado de joalheria, sem nenhuma camada de texto */}
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
+      </div>
     </motion.div>
   );
 };

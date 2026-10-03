@@ -187,7 +187,7 @@ export default function HorizontalGallery({
           {items.map((item, index) => (
             <div 
               key={index} 
-              className="flex-[0_0_280px] sm:flex-[0_0_340px] snap-start rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl flex flex-col transition-all duration-300 bg-[#1C1917]"
+              className="relative w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl flex-[0_0_280px] sm:flex-[0_0_340px] snap-start flex flex-col transition-all duration-300"
             >
               <div className="relative aspect-[4/5] w-full bg-[#1C1917] overflow-hidden">
                 {item.type === 'video' ? (
