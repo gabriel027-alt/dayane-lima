@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import ImmersiveHero from "@/components/ImmersiveHero";
 import MegaHairShowcase from "@/components/MegaHairShowcase";
 import MechasShowcase from "@/components/MechasShowcase";
 import OlharShowcase from "@/components/OlharShowcase";
@@ -68,8 +68,8 @@ export default function HomePage() {
       {/* ===================== 1. CABEÇALHO CONDENSADO COM LOGOTIPO SB OFICIAL ===================== */}
       <Header onOpenTriage={handleOpenGeneralTriage} />
 
-      {/* ===================== 2. HERO SPLIT 50/50 COM VÍDEO OFICIAL INTACTO E CTA IMEDIATO ===================== */}
-      <Hero 
+      {/* ===================== 2. HERO IMERSIVA BASEADA EM SCROLL (CANVAS + GSAP) ===================== */}
+      <ImmersiveHero 
         onOpenTriage={handleOpenGeneralTriage} 
         onExploreServices={() => {
           document.getElementById("megahair")?.scrollIntoView({ behavior: "smooth" });
