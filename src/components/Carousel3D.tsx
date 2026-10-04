@@ -470,12 +470,12 @@ const Card = ({
         backgroundColor: "#1C1917",
         display: displayValue,
       }}
-      className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] pointer-events-none select-none"
+      className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none"
     >
-      {/* Container interno unificado com contenção estrita e borda champagne */}
+      {/* Container interno unificado com contenção estrita, proporção fixa aspect-[4/5] e borda champagne */}
       <div 
         style={{ backgroundColor: "#1C1917" }}
-        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full flex items-center justify-center"
+        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center"
       >
         {isVideo ? (
           <video
@@ -489,14 +489,14 @@ const Card = ({
             onEnded={handleEnded}
             onError={handleError}
             style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center block"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
             style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center block select-none pointer-events-none"
             loading="lazy"
           />
         )}
