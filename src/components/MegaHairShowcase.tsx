@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { ServiceCategory } from "./WhatsAppTriageDrawer";
 
 interface MegaHairShowcaseProps {
@@ -161,63 +161,107 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
+            {/* Card 1: Quebra da Raiz */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-sans bg-rose-50 text-[#881337] border border-rose-200 mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600" />
-                  Mito #1: Quebra da Raiz
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
+                    Objeção #1 • Saúde da Raiz
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Protocolo Seguro</span>
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
-                  "O Mega Hair quebra ou enfraquece a raiz natural?"
+                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
+                  "O Mega Hair danifica ou enfraquece a raiz natural?"
                 </h4>
-                <p className="text-sm text-[#292524] font-sans leading-relaxed">
-                  <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> A fixação a 0.5cm do couro cabeludo com divisão folicular geométrica distribui o peso com precisão. O folículo permanece livre de tração mecânica e com oxigenação plena para crescer saudável.
-                </p>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
+                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
+                    Preservação Folicular Biológica:
+                  </strong>
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
+                    Fixação milimétrica a 0.5cm do couro cabeludo com divisão geométrica anti-tração. O bulbo permanece 100% oxigenado e saudável.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
+            {/* Card 2: Visibilidade das Cápsulas */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-sans bg-rose-50 text-[#881337] border border-rose-200 mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600" />
-                  Mito #2: Visibilidade das Cápsulas
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
+                    Objeção #2 • Discrição Total
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Fusão 0.5mm</span>
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
+                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
                   "As cápsulas ficam visíveis ao prender ou sob o sol?"
                 </h4>
-                <p className="text-sm text-[#292524] font-sans leading-relaxed">
-                  <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> As nanocápsulas de 0.5mm são polímeros biocompatíveis translúcidos que se fundem ao tom exato da raiz, garantindo invisibilidade 360° em rabos de cavalo, coques e luz natural.
-                </p>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
+                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
+                    Invisibilidade Óptica 360°:
+                  </strong>
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
+                    Nanocápsulas de queratina biocompatível de 0.5mm translúcidas que mimetizam a cor da raiz. Liberdade total para coques e rabos de cavalo.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
+            {/* Card 3: Dor na Manutenção */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-sans bg-rose-50 text-[#881337] border border-rose-200 mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600" />
-                  Mito #3: Dor na Manutenção
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
+                    Objeção #3 • Conforto Físico
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Remoção Suave</span>
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
+                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
                   "A manutenção é dolorosa ou repuxa os fios?"
                 </h4>
-                <p className="text-sm text-[#292524] font-sans leading-relaxed">
-                  <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> Usamos solvente orgânico nutritivo que dissolve o polímero suavemente por emulsão, sem força mecânica ou puxões. Os fios são penteados com condicionamento profundo e saem 100% intactos.
-                </p>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
+                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
+                    Dissolução por Emulsão Orgânica:
+                  </strong>
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
+                    Uso de solvente nutritivo orgânico que amolece a fusão sem qualquer puxão mecânico. Os fios são desembaraçados e saem 100% íntegros.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
+            {/* Card 4: Falta de Privacidade */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-sans bg-rose-50 text-[#881337] border border-rose-200 mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600" />
-                  Mito #4: Falta de Privacidade
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
+                    Objeção #4 • Exclusividade
+                  </span>
+                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Monte Carmelo</span>
                 </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
+                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
                   "Terei privacidade ou terei que esperar com várias pessoas?"
                 </h4>
-                <p className="text-sm text-[#292524] font-sans leading-relaxed">
-                  <strong className="text-[#1C1917] font-semibold">A Ciência no Ateliê:</strong> Recusamos o formato de esteira industrial. Atendemos com hora marcada exclusiva no Monte Carmelo: bancada única, ambiente climatizado sereno e total discrição para você.
-                </p>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
+                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
+                    Atendimento Privativo VIP:
+                  </strong>
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
+                    Zero esteira coletiva. Atendimento em bancada única com hora marcada na Rua Calcedônia, 155: calma, conforto térmico e total discrição.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -67,24 +67,27 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
               Critérios Inegociáveis de Clareamento Seguro
             </h4>
             
-            <div className="space-y-3 pt-2 text-sm font-sans text-[#292524]">
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#6E501E] shrink-0 mt-0.5" />
-                <p>
-                  <strong className="text-[#1C1917] font-semibold">Teste de Mecha Prévio Obrigatório:</strong> Análise de elasticidade folicular para determinar com precisão a capacidade de abertura de tom sem riscos.
-                </p>
+            <div className="space-y-3 pt-2 text-sm font-sans">
+              <div className="p-3.5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Teste de Mecha Prévio Obrigatório:</strong>
+                  <p className="text-[#44403C] leading-relaxed">Análise de elasticidade folicular para determinar com precisão a capacidade de abertura de tom sem riscos.</p>
+                </div>
               </div>
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#6E501E] shrink-0 mt-0.5" />
-                <p>
-                  <strong className="text-[#1C1917] font-semibold">Blindagem Lipídica Durante a Descoloração:</strong> Cosmecêuticos com aminoácidos que selam as pontes de enxofre em tempo real.
-                </p>
+              <div className="p-3.5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Blindagem Lipídica Durante a Descoloração:</strong>
+                  <p className="text-[#44403C] leading-relaxed">Cosmecêuticos com aminoácidos biomiméticos que selam as pontes de enxofre em tempo real.</p>
+                </div>
               </div>
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#6E501E] shrink-0 mt-0.5" />
-                <p>
-                  <strong className="text-[#1C1917] font-semibold">Pigmentos Nobres Sem Metais Pesados:</strong> Neutralização estável que não oxida para tons indesejados após as lavagens.
-                </p>
+              <div className="p-3.5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Pigmentos Nobres Sem Metais Pesados:</strong>
+                  <p className="text-[#44403C] leading-relaxed">Neutralização estável que não oxida para tons indesejados após as lavagens residenciais.</p>
+                </div>
               </div>
             </div>
           </div>
