@@ -10,6 +10,7 @@ import OlharShowcase from "@/components/OlharShowcase";
 import UnhasShowcase from "@/components/UnhasShowcase";
 import BronzeShowcase from "@/components/BronzeShowcase";
 import LaserShowcase from "@/components/LaserShowcase";
+import WellnessShowcase from "@/components/WellnessShowcase";
 import SmartTriageSection from "@/components/SmartTriageSection";
 import ServicesGrid from "@/components/ServicesGrid";
 import SpaceCarousel from "@/components/SpaceCarousel";
@@ -146,6 +147,9 @@ export default function HomePage() {
         subtitle="TECNOLOGIA CLÍNICA · HAKON SUBZERO"
         slides={LASER_SLIDES}
       />
+
+      {/* ===================== RITUAIS DE BEM-ESTAR, CABINE PRIVATIVA & AUTOCUIDADO ===================== */}
+      <WellnessShowcase onSelectService={handleSelectService} />
 
       {/* ===================== TRIAGEM INTELIGENTE DE QUALIFICAÇÃO ===================== */}
       <SmartTriageSection 
