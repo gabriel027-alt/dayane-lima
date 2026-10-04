@@ -473,11 +473,31 @@ const Card = ({
       }}
       className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none"
     >
-      {/* Container interno unificado com dimensões estritas aspect-[4/5] e fundo escuro sólido fixo */}
+      {/* Container interno unificado com fundo escuro sólido, proporção estrita aspect-[4/5] e moldura champagne */}
       <div 
         style={{ backgroundColor: "#1C1917" }}
         className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center"
       >
+        {/* Elemento de fundo duplicado com baixa opacidade e desfoque intenso (Ambient Blur) */}
+        {isVideo ? (
+          <video
+            src={mediaSrc}
+            muted
+            playsInline
+            preload="none"
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-40 scale-110 pointer-events-none"
+          />
+        ) : (
+          <img
+            src={mediaSrc}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-40 scale-110 pointer-events-none"
+          />
+        )}
+
+        {/* Mídia principal em primeiro plano inteiramente visível sem cortes */}
         {isVideo ? (
           <video
             ref={videoRef}
@@ -489,15 +509,13 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-cover object-center block pointer-events-none"
+            className="relative z-10 w-full h-full object-contain object-center block pointer-events-none"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-cover object-center block select-none pointer-events-none"
+            className="relative z-10 w-full h-full object-contain object-center block select-none pointer-events-none"
             loading="lazy"
           />
         )}
