@@ -181,10 +181,10 @@ export default function HomePage() {
       >
         <div className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-[#E8D0C8] rounded-2xl p-2.5 shadow-lg flex items-center justify-between gap-3">
           <div className="pl-2">
-            <p className="text-xs font-serif font-bold text-[#1C1917]">
+            <p className="text-sm font-serif font-bold text-[#1C1917]">
               Dayane Lima • Monte Carmelo
             </p>
-            <p className="text-xs text-[#3D3835] flex items-center gap-1 font-sans">
+            <p className="text-sm text-[#3D3835] flex items-center gap-1 font-sans">
               <MapPin className="w-3.5 h-3.5 text-[#6E501E]" />
               Rua Calcedônia, 155
             </p>

@@ -316,7 +316,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="inline-flex items-center gap-1.5 text-xs font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] shrink-0 min-h-[48px] px-2"
+                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] shrink-0 min-h-[48px] px-2"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Trocar</span>
@@ -356,7 +356,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                         key={idx}
                         type="button"
                         onClick={() => setSubAnswer(sub)}
-                        className={`text-left p-3.5 rounded-xl border text-xs font-sans transition-all min-h-[48px] flex items-center justify-between ${
+                        className={`text-left p-3.5 rounded-xl border text-sm font-sans transition-all min-h-[48px] flex items-center justify-between ${
                           subAnswer === sub
                             ? "bg-[#C58B7E] text-white border-[#C58B7E] font-semibold"
                             : "bg-white text-[#3D3835] border-[#E8D0C8] hover:border-[#C5A880]"
@@ -374,7 +374,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="inline-flex items-center gap-2 min-h-[48px] px-5 rounded-full border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-xs transition-colors"
+                  className="inline-flex items-center gap-2 min-h-[48px] px-5 rounded-full border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-sm transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Voltar</span>
@@ -443,7 +443,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
 
               {/* Campo de Nome (Opcional) */}
               <div className="space-y-1.5">
-                <label htmlFor="client-triage-name" className="text-xs font-sans font-bold text-[#1C1917] flex items-center gap-1.5">
+                <label htmlFor="client-triage-name" className="text-sm font-sans font-bold text-[#1C1917] flex items-center gap-1.5">
                   <User className="w-3.5 h-3.5 text-[#6E501E]" />
                   <span>Como podemos te chamar? (Opcional)</span>
                 </label>
@@ -462,7 +462,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="inline-flex items-center gap-1.5 text-xs font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] min-h-[48px] px-2"
+                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] min-h-[48px] px-2"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                   <span>Refazer Triagem</span>

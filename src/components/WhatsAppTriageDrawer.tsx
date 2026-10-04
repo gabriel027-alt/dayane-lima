@@ -343,7 +343,7 @@ export function WhatsAppTriageDrawer({
                 <h3 className="font-serif text-lg font-bold text-brand-graphite-950">
                   Para qual procedimento você deseja atendimento exclusivo?
                 </h3>
-                <p className="text-xs sm:text-sm text-brand-graphite-600 mt-1 font-sans">
+                <p className="text-sm text-[#44403C] mt-1 font-sans">
                   Selecione a especialidade principal para reservar o tempo adequado de consultoria.
                 </p>
               </div>
@@ -409,17 +409,17 @@ export function WhatsAppTriageDrawer({
                 <span className="text-xs font-bold uppercase tracking-wider text-brand-champagne-dark">
                   {selectedService.title}
                 </span>
-                <h3 className="font-serif text-lg font-bold text-brand-graphite-950 mt-0.5">
+                <h3 className="font-serif text-lg font-bold text-[#1C1917] mt-0.5">
                   Diagnóstico Técnico Pré-Atendimento
                 </h3>
-                <p className="text-xs sm:text-sm text-brand-graphite-600 mt-1 font-sans">
+                <p className="text-sm text-[#44403C] mt-1 font-sans">
                   Permite planejar produtos, teste de mechas ou a quantidade ideal de gramas de cabelo.
                 </p>
               </div>
 
               {selectedService.diagnosticQuestions.map((diag, idx) => (
                 <div key={idx} className="space-y-2">
-                  <label className="block text-xs sm:text-sm font-semibold text-brand-graphite-800 font-sans">
+                  <label className="block text-sm font-semibold text-[#1C1917] font-sans">
                     {diag.questionLabel}
                   </label>
                   <div className="space-y-2">
@@ -432,10 +432,10 @@ export function WhatsAppTriageDrawer({
                           onClick={() => {
                             setDiagnosticAnswers((prev) => ({ ...prev, [diag.questionLabel]: opt }));
                           }}
-                          className={`w-full min-h-touch px-4 py-2.5 rounded-xl border text-left text-xs sm:text-sm font-sans flex items-center justify-between transition-all ${
+                          className={`w-full min-h-touch px-4 py-2.5 rounded-xl border text-left text-sm font-sans flex items-center justify-between transition-all ${
                             isChosen
-                              ? "bg-brand-cream border-brand-champagne text-brand-graphite-950 font-semibold ring-1 ring-brand-champagne"
-                              : "bg-white border-brand-nude-200 text-brand-graphite-700 hover:border-brand-nude-300"
+                              ? "bg-brand-cream border-brand-champagne text-[#1C1917] font-semibold ring-1 ring-brand-champagne"
+                              : "bg-white border-brand-nude-200 text-[#44403C] hover:border-brand-nude-300"
                           }`}
                         >
                           <span>{opt}</span>
@@ -448,7 +448,7 @@ export function WhatsAppTriageDrawer({
               ))}
 
               <div className="space-y-1.5 pt-1">
-                <label htmlFor="additional-notes" className="block text-xs font-semibold text-brand-graphite-700 font-sans">
+                <label htmlFor="additional-notes" className="block text-sm font-semibold text-[#1C1917] font-sans">
                   Observações ou histórico recente adicional (Opcional):
                 </label>
                 <textarea
@@ -457,7 +457,7 @@ export function WhatsAppTriageDrawer({
                   value={additionalNotes}
                   onChange={(e) => setAdditionalNotes(e.target.value)}
                   placeholder="Ex: Fiz selagem há 4 meses, cabelo com pontas finas..."
-                  className="w-full rounded-xl border border-brand-nude-300 bg-white p-3 text-xs sm:text-sm text-brand-graphite-900 placeholder-brand-graphite-400 focus:border-brand-champagne focus:ring-1 focus:ring-brand-champagne focus:outline-none"
+                  className="w-full rounded-xl border border-brand-nude-300 bg-white p-3 text-sm text-[#1C1917] placeholder-[#78716C] focus:border-brand-champagne focus:ring-1 focus:ring-brand-champagne focus:outline-none"
                 />
               </div>
             </div>
@@ -467,16 +467,16 @@ export function WhatsAppTriageDrawer({
           {currentStep === 3 && (
             <div className="space-y-5">
               <div>
-                <h3 className="font-serif text-lg font-bold text-brand-graphite-950">
+                <h3 className="font-serif text-lg font-bold text-[#1C1917]">
                   Preferência de Horário & Contato
                 </h3>
-                <p className="text-xs sm:text-sm text-brand-graphite-600 mt-1 font-sans">
+                <p className="text-sm text-[#44403C] mt-1 font-sans">
                   A equipe de recepção confirmará os horários exatos no WhatsApp.
                 </p>
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor="client-name" className="block text-xs font-semibold text-brand-graphite-800 font-sans">
+                <label htmlFor="client-name" className="block text-sm font-semibold text-[#1C1917] font-sans">
                   Como Dayane Lima e a equipe podem te chamar? *
                 </label>
                 <div className="relative">
@@ -488,13 +488,13 @@ export function WhatsAppTriageDrawer({
                     value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                     placeholder="Seu nome completo"
-                    className="w-full min-h-touch pl-10 pr-4 rounded-xl border border-brand-nude-300 bg-white text-sm text-brand-graphite-950 placeholder-brand-graphite-400 focus:border-brand-champagne focus:ring-1 focus:ring-brand-champagne focus:outline-none"
+                    className="w-full min-h-touch pl-10 pr-4 rounded-xl border border-brand-nude-300 bg-white text-sm text-[#1C1917] placeholder-[#78716C] focus:border-brand-champagne focus:ring-1 focus:ring-brand-champagne focus:outline-none"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="block text-xs font-semibold text-brand-graphite-800 font-sans">
+                <label className="block text-sm font-semibold text-[#1C1917] font-sans">
                   Melhor período para seu atendimento: *
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -507,12 +507,12 @@ export function WhatsAppTriageDrawer({
                         onClick={() => setSelectedPeriod(period.label)}
                         className={`min-h-touch p-3 rounded-xl border text-left sm:text-center transition-all ${
                           isSelected
-                            ? "bg-brand-cream border-brand-champagne ring-1 ring-brand-champagne text-brand-graphite-950 font-semibold"
-                            : "bg-white border-brand-nude-200 text-brand-graphite-700 hover:border-brand-nude-300"
+                            ? "bg-brand-cream border-brand-champagne ring-1 ring-brand-champagne text-[#1C1917] font-semibold"
+                            : "bg-white border-brand-nude-200 text-[#44403C] hover:border-brand-nude-300"
                         }`}
                       >
-                        <p className="text-xs sm:text-sm font-bold">{period.label}</p>
-                        <p className="text-xs text-brand-graphite-600 mt-0.5">{period.time}</p>
+                        <p className="text-sm font-bold text-[#1C1917]">{period.label}</p>
+                        <p className="text-sm text-[#44403C] mt-0.5">{period.time}</p>
                       </button>
                     );
                   })}
@@ -521,11 +521,11 @@ export function WhatsAppTriageDrawer({
 
               {/* Preview Transparente */}
               <div className="p-3.5 rounded-xl bg-brand-nude-100/70 border border-brand-nude-200/80">
-                <p className="text-xs font-bold uppercase tracking-wider text-brand-graphite-700 mb-1 flex items-center gap-1.5">
+                <p className="text-sm font-bold uppercase tracking-wider text-[#1C1917] mb-1 flex items-center gap-1.5">
                   <HelpCircle className="w-3.5 h-3.5" />
                   Mensagem que será enviada para a recepção:
                 </p>
-                <div className="bg-white p-3 rounded-lg border border-brand-nude-200 text-xs font-mono text-brand-graphite-700 whitespace-pre-wrap leading-relaxed max-h-32 overflow-y-auto">
+                <div className="bg-white p-3 rounded-lg border border-brand-nude-200 text-xs font-mono text-[#1C1917] whitespace-pre-wrap leading-relaxed max-h-32 overflow-y-auto">
                   {generateWhatsAppMessage()}
                 </div>
               </div>

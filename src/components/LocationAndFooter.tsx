@@ -251,7 +251,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 Rua Calcedônia, 155 – Bairro Monte Carmelo, Montes Claros - MG
               </p>
               <p className="text-neutral-300">Recepção VIP: Atendimento com hora marcada</p>
-              <div className="pt-2 flex items-center gap-2 text-xs text-neutral-300">
+              <div className="pt-2 flex items-center gap-2 text-sm text-neutral-300">
                 <ShieldCheck className="w-4 h-4 text-[#E6C99B] shrink-0" aria-hidden="true" />
                 <span>Esterilização hospitalar em autoclave médica e teste de mecha prévio.</span>
               </div>
@@ -260,7 +260,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
           </div>
 
           {/* Rodapé Legal & Declaração de Acessibilidade WCAG 2.2 */}
-          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-300">
+          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-300">
             <p>
               © {new Date().getFullYear()} Dayane Lima — Ateliê Boutique • Alta Costura Capilar. Todos os direitos reservados.
             </p>
