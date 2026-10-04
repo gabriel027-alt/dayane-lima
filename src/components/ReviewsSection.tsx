@@ -123,7 +123,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
     <section 
       id="casos-clinicos"
       aria-labelledby="casos-clinicos-heading"
-      className="py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden relative scroll-mt-20 sm:scroll-mt-24"
+      className="relative z-10 py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         

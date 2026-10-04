@@ -12,7 +12,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
     <section 
       id="autoridade"
       aria-labelledby="authority-heading"
-      className="py-20 md:py-28 bg-[#FAF3F0] text-[#1C1917] relative overflow-hidden border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
+      className="relative z-10 py-20 md:py-28 bg-[#FAF3F0] text-[#1C1917] overflow-hidden border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         

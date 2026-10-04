@@ -104,7 +104,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
     <section 
       id="procedimentos"
       aria-labelledby="services-heading"
-      className="py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24 select-none"
+      className="relative z-10 py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24 select-none"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         

@@ -16,7 +16,7 @@ export function BrandRevelationHero({
     <section
       id="revelacao"
       aria-labelledby="brand-revelation-title"
-      className="relative py-16 sm:py-20 md:py-24 bg-[#FAF3F0] text-[#1C1917] border-b border-[#E8D0C8] overflow-hidden select-none"
+      className="relative z-10 py-16 sm:py-20 md:py-24 bg-[#FAF3F0] text-[#1C1917] border-b border-[#E8D0C8] overflow-hidden select-none"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">

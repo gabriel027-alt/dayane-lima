@@ -204,8 +204,9 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   };
 
   const sectionRef = React.useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = React.useState(true);
 
-  // Controle inteligente de áudio: pausa ao rolar para fora da seção do carrossel
+  // Controle inteligente de áudio e visibilidade ao rolar para fora da seção do carrossel
   React.useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -213,12 +214,13 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          setIsInView(entry.isIntersecting);
           if (!entry.isIntersecting) {
             setIsMuted(true);
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.05, rootMargin: "60px 0px 60px 0px" }
     );
 
     observer.observe(section);
@@ -258,7 +260,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
       role="region"
       aria-roledescription="carousel"
       aria-label={title ? `Galeria de ${title}` : "Galeria de procedimentos Dayane Lima Ateliê"}
-      className="py-16 md:py-20 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden"
+      className="relative z-10 isolate py-16 md:py-20 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden [contain:paint] [clip-path:inset(0)] select-none"
     >
       {(title || subtitle) && (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-8 md:mb-12">
@@ -275,40 +277,73 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                 </h3>
               )}
             </div>
-            <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs self-start md:self-auto">
-              <Sparkles className="w-4 h-4 text-[#C5A880]" />
-              <span>Arraste ou use as setas • Toque para focar</span>
+
+            <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
+              <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs">
+                <Sparkles className="w-4 h-4 text-[#C5A880]" />
+                <span>Arraste ou use as setas</span>
+              </div>
+
+              {/* Botão de Áudio integrado no cabeçalho sem vazamento de z-index */}
+              <button
+                type="button"
+                onClick={handleToggleAudio}
+                className={cn(
+                  "inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-sans font-medium transition-all shadow-xs cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]",
+                  isMuted
+                    ? "bg-white hover:bg-neutral-50 text-[#1C1917] border border-[#E8D0C8]"
+                    : "bg-[#1C1917] text-[#C5A880] border border-[#C5A880] shadow-[0_0_12px_rgba(197,168,128,0.3)]"
+                )}
+                aria-label={isMuted ? "Ativar áudio dos vídeos" : "Silenciar áudio dos vídeos"}
+              >
+                {isMuted ? (
+                  <VolumeX className="w-3.5 h-3.5 text-[#6E501E]" />
+                ) : (
+                  <Volume2 className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
+                )}
+                <span className={isMuted ? "text-[#1C1917]" : "text-[#C5A880] font-semibold"}>
+                  {isMuted ? "Ativar Som" : "Som Ativado"}
+                </span>
+              </button>
             </div>
           </div>
         </div>
       )}
 
-      <div className="flex flex-col items-center justify-center w-full overflow-hidden select-none relative">
-        {/* BOTÃO FLUTUANTE DE ÁUDIO COM Z-INDEX ELEVADO PARA NUNCA FICAR ENCOBERTO EM MOBILE OU PC */}
-        <div className="absolute top-2 right-4 sm:top-2 sm:right-6 z-[120] pointer-events-auto">
-          <button
-            type="button"
-            onClick={handleToggleAudio}
-            className={cn(
-              "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-sans font-medium backdrop-blur-md transition-all shadow-xl cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]",
-              isMuted
-                ? "bg-black/85 hover:bg-black text-neutral-300 border border-[#C5A880]/50 hover:border-[#C5A880]"
-                : "bg-black/95 text-[#C5A880] border border-[#C5A880] shadow-[0_0_16px_rgba(197,168,128,0.35)]"
-            )}
-            aria-label={isMuted ? "Ativar áudio dos vídeos" : "Silenciar áudio dos vídeos"}
-          >
-            {isMuted ? (
-              <VolumeX className="w-3.5 h-3.5 text-neutral-400" />
-            ) : (
-              <Volume2 className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
-            )}
-            <span className={isMuted ? "text-neutral-200" : "text-[#C5A880] font-semibold"}>
-              {isMuted ? "Ativar Áudio" : "Áudio Ativado"}
-            </span>
-          </button>
-        </div>
+      {/* Container Confinado com Isolamento e Containment Rígido */}
+      <div 
+        className={cn(
+          "flex flex-col items-center justify-center w-full overflow-hidden select-none relative [contain:paint] [clip-path:inset(0)] transition-opacity duration-300",
+          isInView ? "opacity-100" : "opacity-0 pointer-events-none"
+        )}
+      >
+        {/* Fallback de Botão de Áudio caso não haja título nem subtítulo */}
+        {!(title || subtitle) && (
+          <div className="absolute top-2 right-4 sm:top-2 sm:right-6 z-30 pointer-events-auto">
+            <button
+              type="button"
+              onClick={handleToggleAudio}
+              className={cn(
+                "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-sans font-medium backdrop-blur-md transition-all shadow-md cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]",
+                isMuted
+                  ? "bg-black/85 hover:bg-black text-neutral-300 border border-[#C5A880]/50"
+                  : "bg-black/95 text-[#C5A880] border border-[#C5A880] shadow-[0_0_16px_rgba(197,168,128,0.35)]"
+              )}
+              aria-label={isMuted ? "Ativar áudio dos vídeos" : "Silenciar áudio dos vídeos"}
+            >
+              {isMuted ? (
+                <VolumeX className="w-3.5 h-3.5 text-neutral-400" />
+              ) : (
+                <Volume2 className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
+              )}
+              <span className={isMuted ? "text-neutral-200" : "text-[#C5A880] font-semibold"}>
+                {isMuted ? "Ativar Som" : "Som Ativado"}
+              </span>
+            </button>
+          </div>
+        )}
 
-        <div className="relative w-full max-w-7xl h-80 sm:h-112 lg:h-128 flex items-center justify-center">
+        <div className="relative w-full max-w-7xl h-80 sm:h-112 lg:h-128 flex items-center justify-center overflow-hidden [contain:paint] [clip-path:inset(0)]">
           <motion.div
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -322,7 +357,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               scrollProgress.set(scrollProgress.get() + delta);
             }}
             onDragEnd={handleDragEnd}
-            className="absolute inset-0 z-50 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
+            className="absolute inset-0 z-20 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
           />
 
           {slides.map((slide, i) => (
@@ -335,6 +370,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               config={config}
               isMuted={isMuted}
               isActive={currentIndex === i}
+              isInView={isInView}
               onVideoEnded={handleVideoEnded}
             />
           ))}
@@ -352,6 +388,7 @@ interface CardProps {
   config: CarouselConfig;
   isMuted: boolean;
   isActive: boolean;
+  isInView: boolean;
   onVideoEnded?: (index: number) => void;
 }
 
@@ -363,6 +400,7 @@ const Card = ({
   config,
   isMuted,
   isActive,
+  isInView,
   onVideoEnded,
 }: CardProps) => {
   const mediaSrc = slide.src || slide.image || "";
@@ -374,10 +412,10 @@ const Card = ({
   };
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  // Controla reprodução do vídeo: se for o card ativo, reproduz do início; caso contrário, pausa
+  // Controla reprodução do vídeo: se for o card ativo E a seção estiver visível, reproduz do início; caso contrário, pausa
   React.useEffect(() => {
     if (!isVideo || !videoRef.current) return;
-    if (isActive) {
+    if (isActive && isInView) {
       videoRef.current.currentTime = 0;
       videoRef.current.muted = isMuted;
       if (!isMuted) {
@@ -390,7 +428,7 @@ const Card = ({
     } else {
       videoRef.current.pause();
     }
-  }, [isActive, isVideo, isMuted]);
+  }, [isActive, isVideo, isMuted, isInView]);
 
   // Sincroniza dinamicamente o status de áudio (mutado/desmutado)
   React.useEffect(() => {
@@ -398,14 +436,14 @@ const Card = ({
     videoRef.current.muted = isMuted;
     if (!isMuted) {
       videoRef.current.volume = 1;
-      if (isActive) {
+      if (isActive && isInView) {
         const playPromise = videoRef.current.play();
         if (playPromise !== undefined) {
           playPromise.catch(() => {});
         }
       }
     }
-  }, [isMuted, isActive, isVideo]);
+  }, [isMuted, isActive, isVideo, isInView]);
 
   const offset = useTransform(progress, (p) => {
     let diff = (index - p) % total;
@@ -435,7 +473,7 @@ const Card = ({
     Math.abs(o) > 2.5 ? "none" : "block"
   );
   const zIndex = useTransform(offset, (o) =>
-    Math.round(100 - Math.abs(o) * 10)
+    Math.round(10 - Math.abs(o) * 2)
   );
 
   const handleEnded = () => {
