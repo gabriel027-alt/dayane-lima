@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Header from "@/components/Header";
 import HeroScrollScrub from "@/components/HeroScrollScrub";
 import BrandRevelationHero from "@/components/BrandRevelationHero";
@@ -22,6 +22,8 @@ import { CarouselStacked, Slide } from "@/components/ui/carousel-07";
 import WhatsAppTriageDrawer, { ServiceCategory } from "@/components/WhatsAppTriageDrawer";
 import {
   GalleryItem,
+  AtelierContentData,
+  ATELIER_CONTENT,
   MEGAHAIR_GALLERY_ITEMS,
   MECHAS_GALLERY_ITEMS,
   OLHAR_GALLERY_ITEMS,
@@ -39,18 +41,74 @@ const toSlides = (items: GalleryItem[]): Slide[] =>
     image: item.src,
   }));
 
-// Coleções estáticas de slides pré-computadas para estabilidade referencial perfeita nos carrosséis
-const MEGAHAIR_SLIDES = toSlides(MEGAHAIR_GALLERY_ITEMS);
-const MECHAS_SLIDES = toSlides(MECHAS_GALLERY_ITEMS);
-const OLHAR_SLIDES = toSlides(OLHAR_GALLERY_ITEMS);
-const UNHAS_SLIDES = toSlides(UNHAS_GALLERY_ITEMS);
-const BRONZE_SLIDES = toSlides(BRONZE_GALLERY_ITEMS);
-const LASER_SLIDES = toSlides(LASER_GALLERY_ITEMS);
-const ESPACO_SLIDES = toSlides(ESPACO_GALLERY_ITEMS);
-
 export default function HomePage() {
   const [isTriageOpen, setIsTriageOpen] = useState(false);
   const [initialService, setInitialService] = useState<ServiceCategory | null>(null);
+
+  // Estado dinâmico do conteúdo do ateliê
+  const [content, setContent] = useState<AtelierContentData>(ATELIER_CONTENT);
+
+  // Sincronização automática com localStorage e API do painel administrativo
+  useEffect(() => {
+    const syncLocal = () => {
+      try {
+        const stored = localStorage.getItem("atelier_content_override");
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (parsed && typeof parsed === "object") {
+            setContent(parsed);
+          }
+        }
+      } catch {}
+    };
+
+    // 1. Carregamento imediato do cache local
+    syncLocal();
+
+    // 2. Sincronização em background com a API do servidor
+    fetch("/api/admin/content", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && data.content) {
+          setContent(data.content);
+        }
+      })
+      .catch(() => {});
+
+    // 3. Ouvir atualizações de outras abas ou do painel admin
+    window.addEventListener("storage", syncLocal);
+    return () => window.removeEventListener("storage", syncLocal);
+  }, []);
+
+  // Slides dinâmicos computados com memoização de alta performance
+  const megahairSlides = useMemo(
+    () => toSlides(content.megahair || MEGAHAIR_GALLERY_ITEMS),
+    [content.megahair]
+  );
+  const mechasSlides = useMemo(
+    () => toSlides(content.mechas || MECHAS_GALLERY_ITEMS),
+    [content.mechas]
+  );
+  const olharSlides = useMemo(
+    () => toSlides(content.olhar || OLHAR_GALLERY_ITEMS),
+    [content.olhar]
+  );
+  const unhasSlides = useMemo(
+    () => toSlides(content.unhas || UNHAS_GALLERY_ITEMS),
+    [content.unhas]
+  );
+  const bronzeSlides = useMemo(
+    () => toSlides(content.bronze || BRONZE_GALLERY_ITEMS),
+    [content.bronze]
+  );
+  const laserSlides = useMemo(
+    () => toSlides(content.laser || LASER_GALLERY_ITEMS),
+    [content.laser]
+  );
+  const espacoSlides = useMemo(
+    () => toSlides(content.espaco || ESPACO_GALLERY_ITEMS),
+    [content.espaco]
+  );
 
   // Abertura genérica da triagem (Passo 1: Selecionar Serviço)
   const handleOpenGeneralTriage = () => {
@@ -95,7 +153,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Mega Hair de Nanocápsulas"
         subtitle="HAUTE COIFFURE · DAYANE LIMA"
-        slides={MEGAHAIR_SLIDES}
+        slides={megahairSlides}
       />
 
       {/* ===================== COLORIMETRIA & BALAYAGE: MECHAS & LOIROS NOBRES ===================== */}
@@ -105,7 +163,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Ruivos Luminosos, Loiros Nobres, Cabelos Pretos & Balayage de Luxo"
         subtitle="COLORIMETRIA AVANÇADA · DAYANE LIMA"
-        slides={MECHAS_SLIDES}
+        slides={mechasSlides}
       />
 
       {/* ===================== HARMONIZAÇÃO DO OLHAR: CÍLIOS & SOBRANCELHAS ===================== */}
@@ -115,7 +173,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Cílios & Sobrancelhas"
         subtitle="VISAGISMO DO OLHAR · RAYSSA & HILLERY"
-        slides={OLHAR_SLIDES}
+        slides={olharSlides}
       />
 
       {/* ===================== ARQUITETURA UNGUEAL: UNHAS EM FIBRA & GEL ===================== */}
@@ -125,7 +183,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Alongamento em Gel & Fibra"
         subtitle="ENGENHARIA UNGUEAL · EMILY LIMA NAILS"
-        slides={UNHAS_SLIDES}
+        slides={unhasSlides}
       />
 
       {/* ===================== BRONZEAMENTO EM CABINE TECNOLÓGICA ===================== */}
@@ -135,7 +193,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Cabine Tecnológica & Marquinha"
         subtitle="SOL & BRONZE · CABINE TECNOLÓGICA"
-        slides={BRONZE_SLIDES}
+        slides={bronzeSlides}
       />
 
       {/* ===================== ESTÉTICA CORPORAL & DEPILAÇÃO A LASER SUBZERO ===================== */}
@@ -145,7 +203,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Depilação a Laser Subzero"
         subtitle="TECNOLOGIA CLÍNICA · HAKON SUBZERO"
-        slides={LASER_SLIDES}
+        slides={laserSlides}
       />
 
       {/* ===================== RITUAIS DE BEM-ESTAR, CABINE PRIVATIVA & AUTOCUIDADO ===================== */}
@@ -167,7 +225,7 @@ export default function HomePage() {
       <CarouselStacked
         title="Tour pelo Ateliê Monte Carmelo"
         subtitle="ESTRUTURA FÍSICA · RUA CALCEDÔNIA, 155"
-        slides={ESPACO_SLIDES}
+        slides={espacoSlides}
       />
 
       {/* ===================== AUTORIDADE INSTITUCIONAL: 20+ ANOS DE EXPERIÊNCIA ===================== */}

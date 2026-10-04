@@ -294,9 +294,20 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 Gabriel Batista — Estratégista Digital (@gabrielp.batista_)
               </a>
             </span>
-            <span className="text-neutral-500 text-[11px]">
-              Desenvolvimento & SEO Estratégico
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-neutral-500 text-[11px]">
+                Desenvolvimento & SEO Estratégico
+              </span>
+              <span className="text-neutral-700">•</span>
+              <a
+                href="/admin"
+                className="text-neutral-500 hover:text-[#E6C99B] transition-colors text-[11px] flex items-center gap-1"
+                title="Gestão de Mídias e Galerias"
+              >
+                <span>🔒</span>
+                <span>Painel</span>
+              </a>
+            </div>
           </div>
 
         </div>
