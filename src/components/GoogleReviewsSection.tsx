@@ -9,11 +9,8 @@ import {
   Heart, 
   Sparkles, 
   MessageSquareHeart, 
-  Video, 
-  MessageCircle, 
   Maximize2, 
-  X,
-  Play
+  X 
 } from "lucide-react";
 
 interface GoogleReviewsSectionProps {
@@ -298,35 +295,33 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
           <div className="flex items-center gap-1.5 bg-white p-1 rounded-full border border-[#E8D0C8] shadow-xs">
             <button
               onClick={() => setActiveFilter("all")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
                 activeFilter === "all"
                   ? "bg-[#1C1917] text-white shadow-xs"
                   : "text-[#6E501E] hover:text-[#1C1917]"
               }`}
             >
-              Todos ({TESTIMONIALS.length})
+              Todos
             </button>
             <button
               onClick={() => setActiveFilter("video")}
-              className={`flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
                 activeFilter === "video"
                   ? "bg-[#1C1917] text-white shadow-xs"
                   : "text-[#6E501E] hover:text-[#1C1917]"
               }`}
             >
-              <Video className="w-3.5 h-3.5" />
-              <span>Vídeos (9)</span>
+              Vídeos
             </button>
             <button
               onClick={() => setActiveFilter("print")}
-              className={`flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
                 activeFilter === "print"
                   ? "bg-[#1C1917] text-white shadow-xs"
                   : "text-[#6E501E] hover:text-[#1C1917]"
               }`}
             >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span>Prints WhatsApp (3)</span>
+              Fotos
             </button>
           </div>
         </div>
@@ -338,7 +333,7 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
               key={item.id}
               className="bg-white rounded-3xl p-4 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880] hover:shadow-md transition-all flex flex-col justify-between group"
             >
-              {/* Contêiner da Mídia (Vídeo ou Foto) */}
+              {/* Contêiner da Mídia Pura (Vídeo ou Foto) */}
               <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/20 shadow-inner">
                 {item.type === "video" ? (
                   <video
@@ -367,29 +362,6 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                     </div>
                   </div>
                 )}
-
-                {/* Selo de Categoria Superior */}
-                <div className="absolute top-2.5 left-2.5 pointer-events-none">
-                  <span
-                    className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-sans font-bold uppercase tracking-wider backdrop-blur-md shadow-md ${
-                      item.type === "video"
-                        ? "bg-rose-950/80 text-rose-200 border border-rose-700/50"
-                        : "bg-emerald-950/80 text-emerald-200 border border-emerald-700/50"
-                    }`}
-                  >
-                    {item.type === "video" ? (
-                      <>
-                        <Video className="w-3 h-3" />
-                        <span>Vídeo Real</span>
-                      </>
-                    ) : (
-                      <>
-                        <MessageCircle className="w-3 h-3" />
-                        <span>Print WhatsApp</span>
-                      </>
-                    )}
-                  </span>
-                </div>
               </div>
 
               {/* Informações e Legenda de Veracidade */}
