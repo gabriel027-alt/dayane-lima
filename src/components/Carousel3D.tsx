@@ -11,7 +11,7 @@ import {
   type MotionValue,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Volume2, VolumeX, Sparkles, X } from "lucide-react";
+import { Volume2, VolumeX, Sparkles, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface Slide {
   type?: 'image' | 'video';
@@ -80,6 +80,8 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [selectedModalSlide, setSelectedModalSlide] = React.useState<Slide | null>(null);
   const isDraggingRef = React.useRef(false);
+  const sectionRef = React.useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = React.useState(true);
 
   const total = slides && slides.length > 0 ? slides.length : 1;
 
@@ -147,32 +149,51 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     }
   };
 
-  // Sincronização Dinâmica do Tempo de Transição:
-  // - Para imagens estáticas: timer padrão de 3.8s por slide
-  // - Para vídeos: o temporizador fixo é TOTALMENTE DESATIVADO.
-  //   O vídeo é reproduzido por completo até o término (onEnded), evitando qualquer corte prematuro.
+  // Reativação do Auto-Play Inteligente e Fluido:
+  // - Avança suavemente os slides (4.2s para fotos, 5.5s para vídeos)
+  // - Pausa temporariamente por 7s quando a usuária clica nas setas ou arrasta manualmente
+  // - Pausa quando o carrossel sai de viewport ou o modal de mídia está aberto
+  const [isPaused, setIsPaused] = React.useState(false);
+  const pauseTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const pauseAutoPlayTemporarily = React.useCallback(() => {
+    setIsPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 7000);
+  }, []);
+
   React.useEffect(() => {
-    if (!slides || slides.length === 0 || total <= 1) return;
+    return () => {
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (!slides || slides.length === 0 || total <= 1 || !isInView || isPaused || selectedModalSlide) return;
+
     const currentSlide = slides[currentIndex];
     const isVideo =
       currentSlide?.type === "video" ||
       (currentSlide?.src || currentSlide?.image || "").endsWith(".mp4");
 
-    if (!isVideo) {
-      const timer = setTimeout(() => {
-        handleNext();
-      }, 3800);
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, slides, total, handleNext]);
+    const duration = isVideo ? 5500 : 4200;
+
+    const timer = setTimeout(() => {
+      handleNext();
+    }, duration);
+
+    return () => clearTimeout(timer);
+  }, [currentIndex, slides, total, isInView, isPaused, selectedModalSlide, handleNext]);
 
   const handleVideoEnded = React.useCallback(
     (index: number) => {
-      if (index === currentIndex) {
+      if (index === currentIndex && !isPaused) {
         handleNext();
       }
     },
-    [currentIndex, handleNext]
+    [currentIndex, isPaused, handleNext]
   );
 
   const config = React.useMemo(
@@ -181,6 +202,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   );
 
   const handleDragStart = () => {
+    pauseAutoPlayTemporarily();
     isDraggingRef.current = true;
     startProgress.current = scrollProgress.get();
   };
@@ -223,9 +245,6 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     window.addEventListener("keydown", handleModalKey);
     return () => window.removeEventListener("keydown", handleModalKey);
   }, [selectedModalSlide]);
-
-  const sectionRef = React.useRef<HTMLElement>(null);
-  const [isInView, setIsInView] = React.useState(true);
 
   // Controle inteligente de áudio e visibilidade ao rolar para fora da seção do carrossel
   React.useEffect(() => {
@@ -366,6 +385,34 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
         )}
 
         <div className="relative w-full max-w-7xl h-80 sm:h-112 lg:h-128 flex items-center justify-center overflow-hidden [contain:paint] [clip-path:inset(0)]">
+          {/* Botão Lateral Esquerdo (Flutuante com Fundo Escuro Translúcido e Borda Champagne) */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              pauseAutoPlayTemporarily();
+              handlePrev();
+            }}
+            className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            aria-label="Slide anterior"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          {/* Botão Lateral Direito (Flutuante com Fundo Escuro Translúcido e Borda Champagne) */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              pauseAutoPlayTemporarily();
+              handleNext();
+            }}
+            className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            aria-label="Próximo slide"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
           <motion.div
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -401,6 +448,41 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               onVideoEnded={handleVideoEnded}
             />
           ))}
+        </div>
+
+        {/* Barra de Navegação Inferior (Mobile & Desktop) com Setas e Contador de Slides */}
+        <div className="mt-4 sm:mt-5 flex items-center justify-center gap-3 z-30 pointer-events-auto">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              pauseAutoPlayTemporarily();
+              handlePrev();
+            }}
+            className="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-md flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            aria-label="Slide anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#E8D0C8] text-xs font-mono font-bold text-[#6E501E] shadow-2xs">
+            <span>0{currentIndex + 1}</span>
+            <span className="text-[#C5A880]">/</span>
+            <span className="text-neutral-400">0{total}</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              pauseAutoPlayTemporarily();
+              handleNext();
+            }}
+            className="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-md flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            aria-label="Próximo slide"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
 
