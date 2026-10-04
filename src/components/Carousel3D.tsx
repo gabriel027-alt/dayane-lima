@@ -424,9 +424,11 @@ const Card = ({
     offset,
     (o) => 1 - Math.abs(o) * config.scaleReduction
   );
-  // Blindagem visual absoluta: opacidade sólida fixa (1.0) em todos os cards visíveis,
-  // eliminando qualquer transparência gradual que enfraqueça o fundo escuro #1C1917 ou a borda champagne #C5A880/60.
-  const opacity = useTransform(offset, (o) => (Math.abs(o) > 2.5 ? 0 : 1));
+  // Blindagem visual absoluta: sem opacidade inline ou background transparente nos cards em perspectiva.
+  // Fundo basalto escuro #1C1917 cobre 100% da área em todos os cards visíveis.
+  const displayValue = useTransform(offset, (o) =>
+    Math.abs(o) > 2.5 ? "none" : "block"
+  );
   const zIndex = useTransform(offset, (o) =>
     Math.round(100 - Math.abs(o) * 10)
   );
@@ -459,20 +461,21 @@ const Card = ({
   return (
     <motion.div
       style={{
+        position: "absolute",
         x,
         rotate,
         y,
         scale,
-        opacity,
         zIndex,
         backgroundColor: "#1C1917",
+        display: displayValue,
       }}
-      className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none isolate"
+      className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] pointer-events-none select-none"
     >
-      {/* Container interno unificado com cantos arredondados e contenção estrita */}
+      {/* Container interno unificado com contenção estrita e borda champagne */}
       <div 
         style={{ backgroundColor: "#1C1917" }}
-        className="relative w-full h-full rounded-3xl overflow-hidden bg-[#1C1917] flex items-center justify-center"
+        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full flex items-center justify-center"
       >
         {isVideo ? (
           <video
@@ -485,13 +488,13 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="w-full h-full object-cover object-center rounded-3xl pointer-events-none bg-[#1C1917] block"
+            className="w-full h-full object-cover"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-cover object-center rounded-3xl pointer-events-none select-none bg-[#1C1917] block"
+            className="w-full h-full object-cover"
             loading="lazy"
           />
         )}
