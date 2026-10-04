@@ -280,13 +280,13 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             <span>
               Design & Web Engineering por{' '}
               <a
-                href="https://github.com/gabriel027-alt"
+                href="https://www.instagram.com/gabrielp.batista_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-300 hover:text-[#E6C99B] transition-colors font-medium underline underline-offset-4 decoration-neutral-600 hover:decoration-[#E6C99B]"
-                aria-label="Perfil profissional de Gabriel Pereira"
+                aria-label="Perfil de Gabriel Batista — Estratégista Digital"
               >
-                Gabriel Pereira
+                Gabriel Batista — Estratégista Digital (@gabrielp.batista_)
               </a>
             </span>
             <span className="text-neutral-500 text-[11px]">

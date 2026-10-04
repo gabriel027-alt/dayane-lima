@@ -247,15 +247,15 @@ export function HeroScrollScrub({ onExplore, onOpenTriage }: HeroScrollScrubProp
             </div>
 
             {/* Instrução Solta e Limpa de Rolagem com Setinhas Contínuas (Sem Moldura) */}
-            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-2 pointer-events-auto">
+            <div className="mt-10 sm:mt-14 flex flex-col items-center justify-center gap-2.5 pointer-events-auto">
               <span className="font-sans font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-[#E8D0B3] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-                <span className="hidden sm:inline">Role a página para explorar</span>
-                <span className="sm:hidden">Deslize na tela para explorar</span>
+                <span className="hidden sm:inline">ROLE A PÁGINA PARA EXPLORAR</span>
+                <span className="sm:hidden">DESLIZE NA TELA PARA EXPLORAR</span>
               </span>
               <motion.div
-                animate={{ y: [0, 6, 0] }}
+                animate={{ y: [0, 7, 0], opacity: [0.65, 1, 0.65] }}
                 transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                className="flex flex-col items-center -space-y-1.5 text-[#C5A880] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+                className="flex flex-col items-center -space-y-2 text-[#C5A880] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
               >
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
