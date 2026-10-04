@@ -478,7 +478,7 @@ const Card = ({
         style={{ backgroundColor: "#1C1917" }}
         className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center"
       >
-        {/* Elemento de fundo duplicado com baixa opacidade e desfoque intenso (Ambient Blur) */}
+        {/* Elemento de fundo duplicado com desfoque e opacidade reduzida (Ambient Blur) */}
         {isVideo ? (
           <video
             src={mediaSrc}
@@ -486,18 +486,18 @@ const Card = ({
             playsInline
             preload="none"
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-40 scale-110 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-50 scale-110 pointer-events-none"
           />
         ) : (
           <img
             src={mediaSrc}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-40 scale-110 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-50 scale-110 pointer-events-none"
           />
         )}
 
-        {/* Mídia principal em primeiro plano inteiramente visível sem cortes */}
+        {/* Mídia principal em primeiro plano estritamente sem cortes */}
         {isVideo ? (
           <video
             ref={videoRef}
@@ -509,13 +509,13 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="relative z-10 w-full h-full object-contain object-center block pointer-events-none"
+            className="relative z-10 w-full h-full object-contain block pointer-events-none"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="relative z-10 w-full h-full object-contain object-center block select-none pointer-events-none"
+            className="relative z-10 w-full h-full object-contain block select-none pointer-events-none"
             loading="lazy"
           />
         )}
