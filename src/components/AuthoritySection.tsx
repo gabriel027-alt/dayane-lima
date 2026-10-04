@@ -33,10 +33,9 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl bg-[#1C1917] group">
                 <div className="relative w-full h-full overflow-hidden">
                   <img 
-                    src="/midias/foto-dayane-lima.png" 
-                    srcSet="/midias/foto-dayane-lima.png 1x, /midias/Retratoeleganteemtonsquentes-dayane.png 2x"
+                    src="/midias/segunda-foto-perfil-dayane.jpg" 
                     alt="Dayane Lima • Especialista Titular em Alta Costura Capilar" 
-                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none" 
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" aria-hidden="true" />

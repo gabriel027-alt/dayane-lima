@@ -31,9 +31,15 @@ export interface MediaCatalogItem {
 }
 
 // =========================================================================
-// 1. MEGA HAIR DE NANOCÁPSULAS (3 vídeos exclusivos de nanocápsulas e alongamento)
+// 1. MEGA HAIR DE NANOCÁPSULAS (Fotografia de resultado real e vídeos exclusivos)
 // =========================================================================
 export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
+  {
+    type: "image",
+    src: "/midias/foto-megahair4-dayane.jpg",
+    alt: "Resultado de Mega Hair de Nanocápsulas com fusão invisível por Dayane Lima",
+    label: "Mega Hair de Nanocápsulas • Resultado Fotográfico Real",
+  },
   {
     type: "video",
     src: "/midias/video-megahair-dayane1.mp4",
@@ -419,6 +425,16 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     category: "megahair",
     categoryLabel: "Mega Hair de Nanocápsulas",
     sourceUrl: "https://www.instagram.com/dayanelimaestetica/reel/DIBdXRpR6Q-/",
+    author: "Dayane Lima",
+  },
+  {
+    id: "mh-04",
+    type: "image",
+    src: "/midias/foto-megahair4-dayane.jpg",
+    title: "Fusão Invisível & Volume Nobre",
+    subtitle: "Nanocápsulas de 0.5mm moldadas artesanalmente com preservação total da saúde capilar.",
+    category: "megahair",
+    categoryLabel: "Mega Hair de Nanocápsulas",
     author: "Dayane Lima",
   },
 

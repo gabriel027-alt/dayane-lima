@@ -65,55 +65,87 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
           </p>
         </div>
 
-        {/* ===================== MANIFESTO TÉCNICO DE ENGENHARIA CAPILAR ===================== */}
-        <div className="mb-16 sm:mb-20 bg-white rounded-3xl p-6 sm:p-12 border border-[#E8D0C8] shadow-xs">
-          <div className="max-w-3xl mb-8">
-            <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#6E501E] block mb-2">
-              O Manifesto Técnico • Ateliê Dayane Lima
-            </span>
-            <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#1C1917] leading-tight">
-              A Fusão Milimétrica que Protege a Saúde da Sua Raiz
-            </h3>
-            <p className="mt-3 text-sm sm:text-base font-sans text-[#44403C] leading-relaxed">
-              Cada mecha é calculada com paquímetro digital a 0.5cm do couro cabeludo, garantindo leveza absoluta e preservação do ciclo folicular biológico.
-            </p>
-          </div>
-
-          <div className="divide-y divide-[#F0EAE1]">
-            {MEGAHAIR_LEDGER.map((item, idx) => (
-              <div key={idx} className="py-5 first:pt-0 last:pb-0 flex items-start gap-4 sm:gap-6">
-                <div className="w-8 h-8 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <Sparkles className="w-4 h-4 text-[#C5A880]" />
-                </div>
-                <div>
-                  <div className="flex flex-wrap items-baseline gap-2 mb-1.5">
-                    <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
-                      {item.title}
-                    </h4>
-                    <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#8C5448]">
-                      • {item.meta}
-                    </span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed">
-                    {item.description}
+        {/* ===================== MANIFESTO TÉCNICO DE ENGENHARIA CAPILAR & DESTAQUE VISUAL ===================== */}
+        <div className="mb-16 sm:mb-20 bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Coluna Visual de Destaque Fotográfico: Mega Hair */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl group">
+                <img 
+                  src="/midias/foto-megahair4-dayane.jpg"
+                  alt="Resultado de Mega Hair de Nanocápsulas por Dayane Lima"
+                  className="object-cover w-full h-full object-center transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" aria-hidden="true" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
+                  <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#C5A880] block mb-1">
+                    Alta Costura Capilar • Monte Carmelo
+                  </span>
+                  <h4 className="font-serif font-bold text-lg sm:text-xl text-white leading-snug">
+                    Fusão Invisível & Balanço Natural
+                  </h4>
+                  <p className="text-xs text-white/80 font-sans mt-1">
+                    Nanocápsulas de 0.5mm com distribuição milimétrica e preservação integral da raiz.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="pt-8 mt-6 border-t border-[#F0EAE1] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-[#574F4A] font-sans">
-              Atendimento com hora marcada e diagnóstico com teste de mecha prévio.
-            </p>
-            <button
-              type="button"
-              onClick={() => onSelectService("megahair")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] touch-manipulation cursor-pointer"
-            >
-              <span>Agendar Avaliação de Mega Hair</span>
-              <ArrowRight className="w-4 h-4 text-[#C5A880]" />
-            </button>
+            {/* Coluna com os Pilares Técnicos */}
+            <div className="lg:col-span-7 flex flex-col justify-between">
+              <div className="mb-6">
+                <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#6E501E] block mb-2">
+                  O Manifesto Técnico • Ateliê Dayane Lima
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917] leading-tight">
+                  A Fusão Milimétrica que Protege a Saúde da Sua Raiz
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm font-sans text-[#44403C] leading-relaxed">
+                  Cada mecha é calculada com paquímetro digital a 0.5cm do couro cabeludo, garantindo leveza absoluta e preservação do ciclo folicular biológico.
+                </p>
+              </div>
+
+              <div className="divide-y divide-[#F0EAE1]">
+                {MEGAHAIR_LEDGER.map((item, idx) => (
+                  <div key={idx} className="py-4 first:pt-0 last:pb-0 flex items-start gap-3 sm:gap-4">
+                    <div className="w-7 h-7 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
+                      <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+                    </div>
+                    <div>
+                      <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                        <h4 className="font-serif font-bold text-sm sm:text-base text-[#1C1917]">
+                          {item.title}
+                        </h4>
+                        <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#8C5448]">
+                          • {item.meta}
+                        </span>
+                      </div>
+                      <p className="text-xs text-[#574F4A] font-sans leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-[#F0EAE1] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p className="text-xs text-[#574F4A] font-sans">
+                  Atendimento com hora marcada e diagnóstico com teste de mecha prévio.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => onSelectService("megahair")}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] touch-manipulation cursor-pointer"
+                >
+                  <span>Agendar Avaliação de Mega Hair</span>
+                  <ArrowRight className="w-4 h-4 text-[#C5A880]" />
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
 
