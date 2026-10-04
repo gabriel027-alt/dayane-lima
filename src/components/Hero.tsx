@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Calendar, ArrowRight, Star, ShieldCheck } from "lucide-react";
+import { Sparkles, Calendar, ArrowRight, Star, ShieldCheck, ChevronDown } from "lucide-react";
 
 interface HeroProps {
   onOpenTriage: () => void;
@@ -94,11 +94,16 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
               )}
             </div>
 
-            {/* Micro-orientação Sutil e Refinada de Interação (Luxury Minimal) */}
-            <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-[11px] font-sans text-neutral-300 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880] animate-pulse" />
-              <span className="hidden sm:inline">Role com o mouse para navegar pelo ateliê</span>
-              <span className="sm:hidden">Deslize com o dedo na tela para explorar</span>
+            {/* Instrução de Rolagem em Destaque com Setas Contínuas para Baixo (Luxury Minimal) */}
+            <div className="mt-6 inline-flex items-center gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-black/60 backdrop-blur-md border border-[#C5A880]/60 shadow-xl">
+              <span className="font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase text-[#E8D0B3]">
+                <span className="hidden sm:inline">Role a página com o mouse para explorar</span>
+                <span className="sm:hidden">Deslize na tela para explorar</span>
+              </span>
+              <div className="flex flex-col items-center -space-y-1.5 text-[#C5A880] shrink-0">
+                <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+              </div>
             </div>
 
             {/* Micro-avaliações e Selos de Confiança (WCAG 2.2 AA) */}
