@@ -112,12 +112,18 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
         }
 
         if (loadedCount === TOTAL_FRAMES) {
-          setIsReady(true);
+          setTimeout(() => {
+            setIsReady(true);
+          }, 300);
         }
       };
       img.onerror = () => {
         loadedCount += 1;
-        if (loadedCount === TOTAL_FRAMES) setIsReady(true);
+        if (loadedCount === TOTAL_FRAMES) {
+          setTimeout(() => {
+            setIsReady(true);
+          }, 300);
+        }
       };
       images[i] = img;
     });
@@ -254,10 +260,23 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
             <motion.div
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute inset-0 z-50 bg-[#FBFBFC] flex flex-col items-center justify-center p-6 text-center select-none"
             >
               <div className="flex flex-col items-center max-w-xs w-full">
+                {/* Elemento de Mídia da Logo em Container Circular Elegante */}
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border border-[#C5A880]/50 shadow-md bg-[#FAF8F5] mb-5 flex items-center justify-center shrink-0">
+                  <video
+                    src="/midias/minivideo-logo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-[#C5A880]/20 pointer-events-none" />
+                </div>
+
                 {/* Monograma de Marca Mestre */}
                 <span className="font-serif italic text-2xl text-[#1C1C1E] mb-4 tracking-wider">
                   Dayane Lima • Ateliê Boutique

@@ -104,6 +104,19 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
         >
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             
+            {/* Elemento de Mídia da Logo em Container Circular Elegante */}
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border border-[#C5A880]/50 shadow-md bg-[#FAF8F5] mb-5 flex items-center justify-center shrink-0">
+              <video
+                src="/midias/minivideo-logo.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-[#C5A880]/20 pointer-events-none" />
+            </div>
+
             {/* Micro-tag Editorial */}
             <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] uppercase text-stone-500 mb-3 sm:mb-4 drop-shadow-xs">
               ALTA COSTURA CAPILAR
@@ -116,7 +129,7 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
 
             {/* Subtítulo da Marca Mestre */}
             <p className="font-light text-[11px] sm:text-[13px] tracking-[0.2em] uppercase text-stone-500 sm:text-stone-400 mt-5 sm:mt-6 drop-shadow-xs">
-              DAYANE LIMA — ATELIÊ BOUTIQUE
+              Dayane Lima • Ateliê Boutique
             </p>
 
           </div>
