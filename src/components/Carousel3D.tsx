@@ -473,18 +473,12 @@ const Card = ({
       }}
       className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none"
     >
-      {/* Container interno unificado com fundo escuro sólido, proporção estrita aspect-[4/5] e moldura champagne */}
+      {/* Container interno unificado com fundo escuro sólido e moldura champagne */}
       <div 
-        style={{ backgroundColor: "#1C1917" }}
-        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center"
+        style={{ backgroundColor: '#1C1917' }}
+        className="w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative flex items-center justify-center"
       >
-        {/* Camada 1 (Fundo Absoluto): Container com bg-[#1C1917] cobrindo todo o card */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-[#1C1917] pointer-events-none" 
-          style={{ backgroundColor: "#1C1917" }} 
-        />
-
-        {/* Camada 2 (Fundo Desfocado de Preenchimento): Elimina tarjas pretas vazias nas laterais */}
+        {/* Camada 1: Fundo desfocado para preencher a moldura sem tarjas vazias */}
         {isVideo ? (
           <video
             src={mediaSrc}
@@ -492,18 +486,18 @@ const Card = ({
             playsInline
             preload="none"
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover filter blur-md opacity-60 scale-110 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover filter blur-md opacity-50 scale-110 pointer-events-none"
           />
         ) : (
           <img
             src={mediaSrc}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover filter blur-md opacity-60 scale-110 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover filter blur-md opacity-50 scale-110 pointer-events-none"
           />
         )}
 
-        {/* Camada 3 (Mídia Principal Nítida): Visualização integral de ponta a ponta sem cortes */}
+        {/* Camada 2: Mídia principal nítida e integral em primeiro plano (sem cortes de copy/rostos) */}
         {isVideo ? (
           <video
             ref={videoRef}
@@ -515,19 +509,18 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="relative z-10 w-full h-full object-contain block pointer-events-none"
+            className="relative z-10 w-full h-full object-contain object-center block"
           />
         ) : (
           <img
             src={mediaSrc}
-            alt={slide.title || "Procedimento Dayane Lima"}
-            className="relative z-10 w-full h-full object-contain block select-none pointer-events-none"
+            alt={slide.title || "Dayane Lima"}
+            className="relative z-10 w-full h-full object-contain object-center block"
             loading="lazy"
           />
         )}
 
-        {/* Anel de acabamento interno Haute Couture unificado em todos os cards */}
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none z-20" />
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none z-20"></div>
       </div>
     </motion.div>
   );
