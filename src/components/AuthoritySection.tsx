@@ -65,50 +65,50 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
               Duas Décadas Transformando a Autoestima Feminina em Montes Claros.
             </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-[#44403C] leading-relaxed font-sans [text-wrap:pretty]">
-              Em mais de vinte anos de trajetória, <strong className="text-[#1C1917] font-semibold">Dayane Lima</strong> consolidou uma autoridade que vai muito além de um único procedimento. Com rigor técnico e atendimento privativo no Monte Carmelo, sua expertise integra a alta costura em Mega Hair e mechas à harmonização do olhar, unhas em gel, bronzeamento tecnológico e estética avançada. Cada cliente encontra um santuário completo de transformação com padrão de excelência inegociável.
+            <p className="mt-4 text-base sm:text-lg text-[#44403C] leading-relaxed font-sans [text-wrap:pretty]">
+              Com mais de 20 anos de tradição e atendimento privativo no Monte Carmelo, <strong className="text-[#1C1917] font-semibold">Dayane Lima</strong> une alta costura capilar, colorimetria e estética avançada com dedicação exclusiva a cada cliente.
             </p>
 
             {/* O Manifesto de Autoridade: 3 Princípios Inegociáveis (Grid Modular CRO) */}
             <div className="mt-8 grid grid-cols-1 gap-3.5 w-full">
-              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs flex items-start gap-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
                   <Sparkles className="w-5 h-5 text-[#8F6E32]" />
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
-                    Atendimento Consultivo VIP Sem Esteira
+                    Atendimento VIP Sem Esteira
                   </h4>
                   <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
-                    Agenda planejada com calma e dedicação exclusiva para diagnóstico e execução sem pressa no Monte Carmelo.
+                    Dedicação exclusiva a uma cliente por horário, com diagnóstico calmo e sem pressa.
                   </p>
                 </div>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs flex items-start gap-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
                   <ShieldCheck className="w-5 h-5 text-[#8F6E32]" />
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
-                    Fios 100% Humanos de Cutícula Intacta
+                    Fios 100% Humanos Selecionados
                   </h4>
                   <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
-                    Trabalho exclusivo com cabelos brasileiros virgens de alta pureza, alinhados na mesma direção anatômica.
+                    Cabelos brasileiros virgens de alta pureza com cutícula intacta e caimento sedoso.
                   </p>
                 </div>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs flex items-start gap-4">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
                   <CheckCircle2 className="w-5 h-5 text-[#8F6E32]" />
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
-                    Biossegurança Hospitalar & Anti-Tração Folicular
+                    Biossegurança Hospitalar
                   </h4>
                   <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
-                    Autoclave médica para esterilização de ferramentas, distribuição com peso calibrado anti-tração e preservação biológica da raiz.
+                    Autoclave médica, dosimetria segura e distribuição milimétrica anti-tração folicular.
                   </p>
                 </div>
               </div>

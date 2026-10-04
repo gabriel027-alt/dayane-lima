@@ -215,7 +215,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed [text-wrap:pretty]">
-            Em apenas 3 passos rápidos, identifique o protocolo ideal para o seu perfil e chegue ao WhatsApp com seu plano de atendimento preparado para a especialista.
+            Em 3 passos rápidos, identifique o protocolo ideal e inicie seu atendimento exclusivo no WhatsApp.
           </p>
         </div>
 

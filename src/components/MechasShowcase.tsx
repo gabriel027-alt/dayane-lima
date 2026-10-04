@@ -37,7 +37,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Dominamos a transição de cor e a integridade da fibra capilar para qualquer curvatura e tonalidade — de ruivos vibrantes e pretos profundos a castanhos nobres e loiros iluminados. Pigmentos de alta fidelidade e degradês sem marcação que revelam sua luminosidade autêntica sob a luz natural de Montes Claros.
+            Transição de cor precisa e preservação absoluta da fibra capilar. Nuances personalizadas que revelam sua luminosidade autêntica com naturalidade e sofisticação.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         <div className="mb-16 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* Box de Citação de Visagismo Solar */}
-          <div className="lg:col-span-6 p-5 sm:p-8 md:p-10 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
+          <div className="lg:col-span-6 p-6 sm:p-8 md:p-10 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
             <span className="font-serif text-6xl text-[#C5A880]/30 absolute top-4 left-6 select-none pointer-events-none">
               “
             </span>
@@ -62,31 +62,36 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           </div>
 
           {/* Pilares Técnicos de Segurança Capilar & Terapias */}
-          <div id="terapia" className="lg:col-span-6 bg-white p-5 sm:p-7 md:p-8 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
-            <h4 className="font-serif font-bold text-lg sm:text-xl text-[#1C1917]">
-              Critérios Inegociáveis de Clareamento Seguro
-            </h4>
+          <div id="terapia" className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
+            <div>
+              <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E] block mb-1">
+                Segurança Folicular • Monte Carmelo
+              </span>
+              <h4 className="font-serif font-bold text-lg sm:text-xl text-[#1C1917]">
+                Critérios Inegociáveis de Clareamento
+              </h4>
+            </div>
             
             <div className="space-y-3 pt-2 text-sm font-sans">
-              <div className="p-3.5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#1C1917] font-bold block mb-0.5">Teste de Mecha Prévio Obrigatório:</strong>
-                  <p className="text-[#44403C] leading-relaxed">Análise de elasticidade folicular para determinar com precisão a capacidade de abertura de tom sem riscos.</p>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Teste de Mecha Prévio:</strong>
+                  <p className="text-[#44403C] leading-relaxed">Diagnóstico de resistência e elasticidade para clareamento 100% seguro.</p>
                 </div>
               </div>
-              <div className="p-3.5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#1C1917] font-bold block mb-0.5">Blindagem Lipídica Durante a Descoloração:</strong>
-                  <p className="text-[#44403C] leading-relaxed">Cosmecêuticos com aminoácidos biomiméticos que selam as pontes de enxofre em tempo real.</p>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Blindagem Lipídica com Plex:</strong>
+                  <p className="text-[#44403C] leading-relaxed">Proteção profunda das pontes de queratina durante todo o processo químico.</p>
                 </div>
               </div>
-              <div className="p-3.5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
+              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#1C1917] font-bold block mb-0.5">Pigmentos Nobres Sem Metais Pesados:</strong>
-                  <p className="text-[#44403C] leading-relaxed">Neutralização estável que não oxida para tons indesejados após as lavagens residenciais.</p>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Pigmentos Nobres Estáveis:</strong>
+                  <p className="text-[#44403C] leading-relaxed">Nuances luminosas de alta fidelidade sem oxidação indesejada pós-lavagem.</p>
                 </div>
               </div>
             </div>

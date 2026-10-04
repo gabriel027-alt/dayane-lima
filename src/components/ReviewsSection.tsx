@@ -21,64 +21,64 @@ const CLINICAL_CASES: ClinicalCase[] = [
     id: "caso-01",
     tag: "Alta Costura Capilar • Nanocápsulas",
     title: "Recuperação Pós-Corte Químico & Extensão em Nanocápsulas Biocompatíveis",
-    specialist: "Dayane Lima • Especialista em Mega Hair e Tricologia Prática",
-    protocol: "Protocolo Folicular de Tração Zero (Nanocápsulas 0.5mm)",
-    diagnosis: "Haste capilar com perda severa de massa cortical após descoloração agressiva em salão anterior. Pontas afinadas, corte químico e fragilidade nos bulbos occipitais.",
-    intervention: "Reconstrução lipídica profunda com aminoácidos biomiméticos, seguida de fusão precisa mecha a mecha com microcápsulas de queratina biocompatível de 0.5mm, respeitando a inclinação anatômica natural dos fios.",
-    outcome: "Densidade restaurada de forma homogênea, sem qualquer ponto de tração na raiz biológica. A cliente recuperou comprimento e peso mantendo o crescimento saudável dos fios originais.",
+    specialist: "Dayane Lima • Mega Hair & Tricologia",
+    protocol: "Tração Zero em Nanocápsulas 0.5mm",
+    diagnosis: "Perda severa de massa cortical e corte químico pós-descoloração em salão anterior.",
+    intervention: "Reconstrução lipídica profunda e extensão mecha a mecha com nanocápsulas de 0.5mm.",
+    outcome: "Densidade e comprimento restaurados com tração zero e crescimento natural preservado.",
     metrics: [
       { label: "Técnica", value: "Nanocápsulas 0.5mm" },
       { label: "Segurança Folicular", value: "100% Preservada" },
-      { label: "Tempo de Aplicação", value: "4h com foco exclusivo" },
-      { label: "Ciclo de Retorno", value: "90 a 110 dias" },
+      { label: "Aplicação", value: "Foco Exclusivo" },
+      { label: "Manutenção", value: "90 a 110 dias" },
     ],
   },
   {
     id: "caso-02",
     tag: "Colorimetria de Precisão • Plex",
-    title: "Transição para Loiro Nobre & Morena Iluminada com Preservação de Pontes Cistínicas",
+    title: "Transição para Loiro Nobre & Morena Iluminada com Preservação da Fibra",
     specialist: "Dayane Lima • Colorista Sênior",
-    protocol: "Clareamento Fisiológico com Plex Reconstrutor Contínuo",
-    diagnosis: "Cabelo castanho escuro natural com acúmulo de pigmentos metálicos em água de poço e ressecamento cuticular. Desejo de luminosidade sem quebra da fibra.",
-    intervention: "Detox capilar quelante para neutralização de metais pesados, teste de mecha prévio com leitura microscópica, aplicação de balayage livre com descoloração controlada a 20 volumes e infusão contínua de Plex reconstrutor.",
-    outcome: "Clareamento em 4 níveis com nuances avelã e pérola de alta luminosidade tridimensional sob luz natural, preservando a elasticidade e o toque aveludado da fibra.",
+    protocol: "Clareamento Fisiológico com Plex",
+    diagnosis: "Castanho escuro com ressecamento e histórico químico, demandando iluminação segura.",
+    intervention: "Detox quelante de metais, teste de mecha e balayage com infusão contínua de Plex.",
+    outcome: "Nuances luminosas em 4 níveis com toque sedoso e fibra capilar 100% íntegra.",
     metrics: [
-      { label: "Protocolo", value: "Balayage Freehand + Plex" },
-      { label: "Fundo de Clareamento", value: "Altura 8/9 Saudável" },
-      { label: "Teste de Mecha", value: "Aprovado com 100% de Força" },
-      { label: "Brilho Final", value: "Acabamento Espelhado" },
+      { label: "Protocolo", value: "Balayage + Plex" },
+      { label: "Fundo de Cor", value: "Altura 8/9 Saudável" },
+      { label: "Teste de Mecha", value: "100% Resistência" },
+      { label: "Acabamento", value: "Brilho Espelhado" },
     ],
   },
   {
     id: "caso-03",
     tag: "Visagismo & Harmonização do Olhar",
-    title: "Harmonização de Proporção Áurea Facial & Extensão Fio a Fio de Seda Ultra Leve",
-    specialist: "Rayssa Lash & Hillery Thauanne • Especialistas do Ateliê",
-    protocol: "Mapeamento Anatômico com Paquímetro & Isolamento Fio a Fio",
-    diagnosis: "Assimetria sutil no arco superciliar direito e cílios naturais finos com crescimento reto, demandando realce óptico sem sobrecarga folicular.",
-    intervention: "Mapeamento das linhas de força do rosto com paquímetro digital para definição do desenho das sobrancelhas, associado à extensão fio a fio de seda premium (curvatura D, espessura 0.07mm) com adesivo de secagem médica hipoalergênica.",
-    outcome: "Olhar aberto, simétrico e expressivo com efeito rímel de alta definição, mantendo a higienização fácil e sem queda prematura dos fios naturais.",
+    title: "Harmonização em Proporção Áurea & Extensão Fio a Fio de Seda",
+    specialist: "Rayssa Lash & Hillery Thauanne",
+    protocol: "Mapeamento Anatômico & Seda Ultra Leve",
+    diagnosis: "Fios naturais finos e assimetria sutil no arco superciliar.",
+    intervention: "Mapeamento facial com paquímetro digital e extensão fio a fio de seda 0.07mm.",
+    outcome: "Olhar aberto, simétrico e expressivo com alta retenção e zero sobrecarga.",
     metrics: [
-      { label: "Isolamento", value: "Fio a Fio Clássico de Seda" },
-      { label: "Espessura dos Fios", value: "0.07mm (Ultra Leve)" },
-      { label: "Simetria", value: "Proporção Áurea Facial" },
-      { label: "Manutenção", value: "21 a 28 dias" },
+      { label: "Isolamento", value: "Fio a Fio de Seda" },
+      { label: "Espessura", value: "0.07mm Ultra Leve" },
+      { label: "Simetria", value: "Proporção Áurea" },
+      { label: "Retorno", value: "21 a 28 dias" },
     ],
   },
   {
     id: "caso-04",
     tag: "Arquitetura Capilar & Camuflagem",
     title: "Preenchimento de Laterais & Nuca Anatômica para Penteados Altos",
-    specialist: "Dayane Lima • Especialista em Mega Hair",
-    protocol: "Distribuição Estratégica em Zonas de Segurança",
-    diagnosis: "Cabelos encurtados nas regiões laterais e occipitais por atrito de elásticos de prender e uso excessivo de fontes térmicas desprotegidas.",
-    intervention: "Mapeamento em ferradura nas zonas occipitais seguras, inserindo mechas com peso calibrado para não exercer tensão sobre o couro cabeludo. Acabamento especial de nuca limpa.",
-    outcome: "Camuflagem completa de emendas. Liberdade absoluta para prender o cabelo em rabo de cavalo alto ou coque sem que nenhuma nanocápsula fique visível.",
+    specialist: "Dayane Lima • Mega Hair",
+    protocol: "Distribuição Estratégica em Zonas Seguras",
+    diagnosis: "Laterais encurtadas por atrito mecânico e tração cotidiana.",
+    intervention: "Distribuição em zonas de segurança com peso calibrado e acabamento de nuca limpa.",
+    outcome: "Camuflagem imperceptível e liberdade total para coques e rabos de cavalo altos.",
     metrics: [
-      { label: "Origem dos Fios", value: "100% Humano Brasileiro do Sul" },
-      { label: "Penteados", value: "Liberdade Total 360°" },
-      { label: "Tração no Bulbo", value: "Zero Sobrecarga" },
-      { label: "Alinhamento", value: "Cutículas Unidirecionais (Remy)" },
+      { label: "Origem", value: "100% Humano Brasileiro" },
+      { label: "Penteados", value: "Liberdade 360°" },
+      { label: "Tração", value: "Zero Sobrecarga" },
+      { label: "Alinhamento", value: "Cutículas Intactas" },
     ],
   },
 ];
@@ -148,7 +148,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
             </h2>
             
             <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed [text-wrap:pretty]">
-              No Monte Carmelo, não realizamos procedimentos sem antes diagnosticar a biologia do seu fio. Conheça nossos protocolos documentados de preservação folicular e restauração capilar de alta precisão.
+              Protocolos documentados de preservação folicular, colorimetria de precisão e extensão capilar no Monte Carmelo.
             </p>
           </div>
 
@@ -280,7 +280,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               </h3>
 
               <p className="mt-4 text-base font-sans text-[#292524] leading-relaxed">
-                Recusamos categoricamente o formato industrial de salões que atendem três ou quatro clientes simultaneamente. No Monte Carmelo, seu horário é reservado exclusivamente para você. Nossa bancada, nossa especialista e nossa atenção plena são dedicadas a um único cabelo por vez, com café gourmet selecionado, ambiente climatizado e acústica serena.
+                Atendimento individual e exclusivo. Uma única cliente por horário, com atenção plena da especialista e atmosfera acolhedora e privativa no Monte Carmelo.
               </p>
             </div>
 

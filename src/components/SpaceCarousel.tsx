@@ -56,50 +56,50 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
 
         {/* ===================== 1. PILARES DE HOSPITALIDADE ===================== */}
         <div className="mb-14 sm:mb-18 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <MapPin className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Localização Nobre</h4>
               <p className="text-sm font-sans text-[#44403C] leading-relaxed">
-                Rua Calcedônia, 155, Bairro Monte Carmelo. Região residencial calma e de fácil acesso com estacionamento na porta.
+                Rua Calcedônia, 155, Monte Carmelo. Região residencial calma com fácil estacionamento.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <Wind className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Conforto Térmico</h4>
               <p className="text-sm font-sans text-[#44403C] leading-relaxed">
-                Ambientes climatizados suavemente e projetados com isolamento acústico para o seu descanso completo.
+                Ambientes climatizados suavemente e projetados com isolamento acústico para o seu descanso.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <Coffee className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Boas-Vindas Gourmet</h4>
               <p className="text-sm font-sans text-[#44403C] leading-relaxed">
-                Menu de café especial moído na hora, chás nobres e águas aromatizadas para seu acolhimento antes do ritual.
+                Café especial moído na hora, chás nobres e águas aromatizadas para seu acolhimento.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <ShieldCheck className="w-5 h-5 text-[#8F6E32]" />
               </div>
-              <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Biossegurança Rigorosa</h4>
+              <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Biossegurança Hospitalar</h4>
               <p className="text-sm font-sans text-[#44403C] leading-relaxed">
-                Instrumentais esterilizados em autoclave médica, toalhas higienizadas a vapor e materiais 100% descartáveis.
+                Autoclave médica, toalhas higienizadas a vapor e materiais 100% descartáveis.
               </p>
             </div>
           </div>

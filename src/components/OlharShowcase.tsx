@@ -37,7 +37,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            A sofisticação do ateliê não se limita a um único ritual: extensões de seda levíssimas aplicadas com isolamento fio a fio por Rayssa Lash e visagismo em proporção áurea por Hillery Thauanne — versatilidade e exclusividade absoluta em Monte Carmelo.
+            Extensões de seda ultraleves com isolamento anatômico e visagismo facial em proporção áurea exclusiva em Monte Carmelo.
           </p>
         </div>
 
@@ -45,11 +45,11 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         <div className="mb-16 sm:mb-20 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Card: Rayssa Lash (Cílios) */}
-          <div id="cilios" className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="cilios" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
-                  Especialista em Extensão de Cílios & Spa Ocular
+                  Extensão de Cílios & Spa Ocular
                 </span>
                 <span className="text-xs font-mono font-medium text-[#7A4237] shrink-0">Ateliê VIP</span>
               </div>
@@ -57,7 +57,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
                 Rayssa Lash
               </h3>
               <p className="text-sm text-[#44403C] font-sans mt-2.5 leading-relaxed">
-                Fios de seda com curvatura personalizada e diâmetro milimétrico que respeita a saúde folicular. Isolamento anatômico mecha a mecha com adesivos oftálmicos de alta pureza.
+                Fios de seda levíssimos com isolamento anatômico fio a fio, respeitando a curvatura e a saúde dos cílios naturais.
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           </div>
 
           {/* Card: Hillery Thauanne (Sobrancelhas) */}
-          <div id="sobrancelhas" className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="sobrancelhas" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
@@ -86,7 +86,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
                 Hillery Thauanne
               </h3>
               <p className="text-sm text-[#44403C] font-sans mt-2.5 leading-relaxed">
-                Mapeamento milimétrico calculado em proporção áurea facial de acordo com as linhas naturais do seu rosto. Pigmentação dosada para valorizar a arquitetura dos olhos com naturalidade.
+                Mapeamento facial em proporção áurea e pigmentação sob medida para realçar a arquitetura natural do seu olhar.
               </p>
             </div>
 

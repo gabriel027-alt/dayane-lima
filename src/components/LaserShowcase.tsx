@@ -60,7 +60,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Completando o ecossistema de beleza com exclusividade: pele lisa, sem foliculite e livre de pelos com tecnologia de ponteira super-resfriada a -10°C para máximo conforto e eficácia clínica em Monte Carmelo.
+            Pele lisa, sem foliculite e livre de pelos com tecnologia de ponteira super-resfriada a -10°C para máximo conforto em Monte Carmelo.
           </p>
         </div>
 

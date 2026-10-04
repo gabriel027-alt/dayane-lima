@@ -23,37 +23,37 @@ const RITUALS_INDEX: RitualIndexItem[] = [
     name: "Mega Hair Invisível & Nanocápsulas",
     category: "Alongamento & Densidade Imperceptível",
     duration: "Ritual Personalizado (3h a 5h)",
-    aspiration: "Fios 100% humanos brasileiros com fusão milimétrica biocompatível e total liberdade de movimento sob tração zero.",
+    aspiration: "Fios brasileiros virgens com fusão milimétrica e tração zero na raiz.",
     tag: "Especialidade Mestre",
   },
   {
     id: "mechas",
     anchorId: "mechas",
     number: "02",
-    name: "Ruivos, Loiros Nobres, Pretos & Balayage de Luxo",
+    name: "Ruivos, Loiros Nobres, Pretos & Balayage",
     category: "Colorimetria Avançada & Luz Natural",
-    duration: "Ritual de Iluminação & Cor (4h a 6h)",
-    aspiration: "Transição e preservação da fibra para ruivos vibrantes, pretos profundos e loiros nobres com infusão de Plex reconstrutor.",
+    duration: "Ritual de Iluminação (4h a 6h)",
+    aspiration: "Nuances de alta fidelidade com infusão de Plex e preservação da fibra.",
     tag: "Colorimetria Autoral",
   },
   {
     id: "cilios",
     anchorId: "olhar",
     number: "03",
-    name: "Harmonização do Olhar & Extensão Fio a Fio",
-    category: "Visagismo Facial & Fios de Seda",
+    name: "Harmonização do Olhar & Cílios de Seda",
+    category: "Visagismo Facial & Extensão",
     duration: "Sessão Fio a Fio (1h30 a 2h)",
-    aspiration: "Isolamento anatômico de seda levíssima e desenho milimétrico calculado pela proporção áurea facial de cada cliente.",
+    aspiration: "Extensões de seda ultraleves e simetria facial em proporção áurea.",
     tag: "Precisão Visagista",
   },
   {
     id: "unhas",
     anchorId: "unhas",
     number: "04",
-    name: "Alongamento em Fibra de Vidro & Gel Nobre",
+    name: "Alongamento em Fibra & Gel Nobre",
     category: "Arquitetura Ungueal & Blindagem",
     duration: "Estruturação (1h30 a 2h)",
-    aspiration: "Curvatura C impecável e acabamento ultrafino que aliam resistência mecânica incomparável à elegância natural.",
+    aspiration: "Curvatura estruturada e bordas ultrafinas para resistência e elegância natural.",
     tag: "Acabamento Joia",
   },
   {
@@ -63,17 +63,17 @@ const RITUALS_INDEX: RitualIndexItem[] = [
     name: "Bronzeamento em Cabine Tecnológica",
     category: "Cabine Privativa Climatizada",
     duration: "Sessão Rápida & Exclusiva",
-    aspiration: "Ambiente reservado com emissão calibrada, marquinha de fita sob medida e hidratação profunda aceleradora.",
+    aspiration: "Cabine privativa climatizada com dosimetria segura e marquinha perfeita.",
     tag: "Privacidade Total",
   },
   {
     id: "laser",
     anchorId: "laser",
     number: "06",
-    name: "Depilação a Laser Subzero & Estética Corporal",
-    category: "Tecnologia Hakon 4D Ice Comfort",
+    name: "Depilação a Laser Subzero",
+    category: "Tecnologia Ice Comfort",
     duration: "Sessões Rápidas (10 a 30 min)",
-    aspiration: "Eliminação definitiva dos pelos com ponteira ultra-resfriada a -5°C, tratando foliculite e clareando áreas sensíveis sem desconforto.",
+    aspiration: "Ponteira resfriada a -10°C para eliminação de pelos com conforto absoluto.",
     tag: "Zero Desconforto",
   },
   {
@@ -83,7 +83,7 @@ const RITUALS_INDEX: RitualIndexItem[] = [
     name: "Terapias Capilares & Lavatório Spa",
     category: "Regeneração Cuticular & Folicular",
     duration: "Sessão Spa (1h a 1h30)",
-    aspiration: "Reconstrução lipídica profunda e massagem craniana em lavatório climatizado para devolver massa e reflexo espelhado aos fios.",
+    aspiration: "Reconstrução lipídica profunda e massagem craniana relaxante.",
     tag: "Saúde da Fibra",
   },
 ];
@@ -133,7 +133,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
           </h2>
           
           <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
-            Navegue pelos protocolos autorais desenvolvidos sob rigor técnico de mais de 20 anos, preservação da raiz biológica e atendimento privativo com hora marcada.
+            Protocolos autorais desenvolvidos com rigor técnico de mais de 20 anos e atendimento privativo com hora marcada.
           </p>
         </div>
 

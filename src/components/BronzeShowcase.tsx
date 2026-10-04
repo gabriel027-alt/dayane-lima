@@ -37,19 +37,19 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            A experiência de autocuidado integra múltiplos universos: equipamentos com dosimetria rigorosamente controlada, sala privativa e montagem anatômica para um dourado radiante e saudável o ano todo em Monte Carmelo.
+            Equipamentos com dosimetria controlada, suíte privativa e marquinha milimétrica o ano todo em Monte Carmelo.
           </p>
         </div>
 
         {/* ===================== 1. PROTOCOLO DE BIOSSEGURANÇA & PRIVACIDADE ===================== */}
         <div className="mb-16 sm:mb-20 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-          <div className="p-5 sm:p-7 md:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
+          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
             <div className="flex items-center gap-3">
               <Sun className="w-5 h-5 text-[#8F6E32]" />
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">Controle Rigoroso de Exposição</h4>
             </div>
             <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-              Lâmpadas com dosimetria controlada para cada tipo de pele. Sessões confortáveis com ventilação direta e aceleradores biológicos com betacaroteno.
+              Dosimetria calibrada por fototipo para um bronzeado dourado, uniforme e saudável.
             </p>
             <div className="pt-2 flex items-center gap-2 text-sm font-sans text-[#6E501E]">
               <CheckCircle2 className="w-4 h-4 text-[#8F6E32]" />
@@ -57,13 +57,13 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
             </div>
           </div>
 
-          <div className="p-5 sm:p-7 md:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
+          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
             <div className="flex items-center gap-3">
               <Lock className="w-5 h-5 text-[#8F6E32]" />
-              <h4 className="font-serif font-bold text-lg text-[#1C1917]">Privacidade Absoluta em Monte Carmelo</h4>
+              <h4 className="font-serif font-bold text-lg text-[#1C1917]">Privacidade Total em Monte Carmelo</h4>
             </div>
             <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-              Você realiza o procedimento em suíte individual fechada com chave, toalhas descartáveis e higienização hospitalar a cada atendimento.
+              Suíte individual climatizada, toalhas descartáveis e higienização estrita a cada atendimento.
             </p>
             <div className="pt-2 flex items-center gap-2 text-sm font-sans text-[#6E501E]">
               <CheckCircle2 className="w-4 h-4 text-[#8F6E32]" />

@@ -12,17 +12,17 @@ const UNHAS_SPECS = [
   {
     code: "01",
     label: "Curvatura C Anatômica",
-    detail: "Equilíbrio exato de tensão mecânica sem espessura na borda livre para resistência natural.",
+    detail: "Equilíbrio de tensão estrutural com bordas ultrafinas e resistência ao impacto.",
   },
   {
     code: "02",
-    label: "Gel Tixotrópico & Fibra Pura",
-    detail: "Aderência molecular de alta tecnologia que não gera ardência sob a lâmpada UV.",
+    label: "Gel & Fibra Pura",
+    detail: "Aderência molecular de alta tecnologia e secagem confortável sem ardência sob a luz UV.",
   },
   {
     code: "03",
     label: "Blindagem Diamante",
-    detail: "Acabamento vitrificado resistente a riscos do cotidiano com durabilidade de mais de 25 dias.",
+    detail: "Acabamento vitrificado de alto brilho e durabilidade superior a 25 dias.",
   },
 ];
 
@@ -55,7 +55,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            A excelência do Ateliê Dayane Lima alcança a estética das mãos: ponto de tensão calibrado milimetricamente para unir máxima resistência mecânica a bordas ultrafinas por Emily Lima Nails — a sofisticação não se limita a um único ritual.
+            Ponto de tensão calibrado com máxima resistência mecânica e bordas ultrafinas por Emily Lima Nails.
           </p>
         </div>
 

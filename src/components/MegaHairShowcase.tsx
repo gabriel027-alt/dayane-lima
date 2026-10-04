@@ -11,24 +11,24 @@ interface MegaHairShowcaseProps {
 const MEGAHAIR_LEDGER = [
   {
     roman: "I",
-    title: "Preservação Rigorosa da Raiz",
-    meta: "Divisão Geométrica Folicular",
+    title: "Preservação da Raiz",
+    meta: "Tração Zero",
     description:
-      "A distribuição de peso é calculada mecha a mecha, sem tração no couro cabeludo. Suas raízes naturais continuam oxigenadas, respeitando o ciclo biológico de crescimento livre de danos mecânicos.",
+      "Distribuição de peso calculada mecha a mecha, mantendo os folículos livres de danos e com oxigenação natural plena.",
   },
   {
     roman: "II",
-    title: "Nanocápsulas Imperceptíveis",
-    meta: "Fusão Biocompatível 0.5mm",
+    title: "Nanocápsulas de 0.5mm",
+    meta: "Fusão Imperceptível",
     description:
-      "Junções milimétricas moldadas artesanalmente que se fundem ao caimento do cabelo. Totalmente invisíveis ao toque e imperceptíveis à visão, garantindo liberdade plena para amarrações e rotina ativa.",
+      "Junções milimétricas imperceptíveis ao toque e à visão, garantindo liberdade total para coques e penteados altos.",
   },
   {
     roman: "III",
-    title: "Cutícula Intacta na Mesma Direção",
-    meta: "Fios Humanos Brasileiros Virgens",
+    title: "Fios Brasileiros Nobres",
+    meta: "Cutícula Alinhada",
     description:
-      "Acervo exclusivo de cabelos selecionados mecha a mecha. Garantia de sedosidade extrema, balanço fluido e reflexo espelhado duradouro que não embaraça nem se deteriora após as lavagens.",
+      "Cabelos humanos virgens selecionados individualmente, com toque aveludado, caimento sedoso e reflexo espelhado duradouro.",
   },
 ];
 
@@ -61,12 +61,12 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Não adicionamos apenas comprimento ou densidade. Desenhamos uma união milimétrica que respeita a biologia folicular, permitindo nuca limpa, penteados altos e caimento indistinguível do seu cabelo natural.
+            União milimétrica que respeita a biologia folicular. Nuca limpa, penteados altos e caimento indistinguível do seu cabelo natural.
           </p>
         </div>
 
         {/* ===================== MANIFESTO TÉCNICO DE ENGENHARIA CAPILAR & DESTAQUE VISUAL ===================== */}
-        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-5 sm:p-8 md:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
+        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Coluna Visual de Destaque Fotográfico: Mega Hair */}
@@ -88,7 +88,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                     Fusão Invisível & Balanço Natural
                   </h4>
                   <p className="text-sm text-white/95 font-sans mt-1">
-                    Nanocápsulas de 0.5mm com distribuição milimétrica e preservação integral da raiz.
+                    Nanocápsulas de 0.5mm com caimento imperceptível e preservação da raiz.
                   </p>
                 </div>
               </div>
@@ -101,10 +101,10 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                   O Manifesto Técnico • Ateliê Dayane Lima
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917] leading-tight">
-                  A Fusão Milimétrica que Protege a Saúde da Sua Raiz
+                  Fusão Milimétrica que Protege a Saúde da Raiz
                 </h3>
                 <p className="mt-3 text-sm font-sans text-[#44403C] leading-relaxed">
-                  Cada mecha é calculada com paquímetro digital a 0.5cm do couro cabeludo, garantindo leveza absoluta e preservação do ciclo folicular biológico.
+                  Distribuição calculada com paquímetro digital para leveza absoluta e liberdade total de movimento.
                 </p>
               </div>
 

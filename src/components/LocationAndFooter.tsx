@@ -56,7 +56,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   Localização Privilegiada no Monte Carmelo
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-[#44403C] font-sans leading-relaxed">
-                  Projetado para oferecer discrição, calma e conforto integral. Desfrute de um ambiente climatizado e preparado para atendimentos de alta duração como mechas e mega hair.
+                  Ambiente discreto, climatizado e preparado para atendimentos exclusivos no Monte Carmelo.
                 </p>
               </div>
 
