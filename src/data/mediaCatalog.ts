@@ -58,6 +58,12 @@ export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
     alt: "Finalização com densidade nobre e preservação da raiz folicular",
     label: "Densidade Nobre & Preservação da Raiz",
   },
+  {
+    type: "video",
+    src: "/midias/megahair5-dayane.mp4",
+    alt: "Resultado e acabamento fluido em Mega Hair por Dayane Lima",
+    label: "Movimento Sedoso & Acabamento Invisível",
+  },
 ];
 
 // =========================================================================
@@ -433,6 +439,16 @@ export const MEDIA_CATALOG: MediaCatalogItem[] = [
     src: "/midias/foto-megahair4-dayane.jpg",
     title: "Fusão Invisível & Volume Nobre",
     subtitle: "Nanocápsulas de 0.5mm moldadas artesanalmente com preservação total da saúde capilar.",
+    category: "megahair",
+    categoryLabel: "Mega Hair de Nanocápsulas",
+    author: "Dayane Lima",
+  },
+  {
+    id: "mh-05",
+    type: "video",
+    src: "/midias/megahair5-dayane.mp4",
+    title: "Transformação & Movimento Sedoso",
+    subtitle: "Alongamento com caimento imperceptível e harmonia biológica com os fios naturais.",
     category: "megahair",
     categoryLabel: "Mega Hair de Nanocápsulas",
     author: "Dayane Lima",
