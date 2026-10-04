@@ -30,10 +30,10 @@ const RITUALS_INDEX: RitualIndexItem[] = [
     id: "mechas",
     anchorId: "mechas",
     number: "02",
-    name: "Mechas, Loiros Nobres & Balayage de Luxo",
+    name: "Ruivos, Loiros Nobres, Pretos & Balayage de Luxo",
     category: "Colorimetria Avançada & Luz Natural",
-    duration: "Ritual de Iluminação (4h a 6h)",
-    aspiration: "Degradê personalizado sob luz natural com infusão contínua de Plex reconstrutor para preservar a raiz e a elasticidade do fio.",
+    duration: "Ritual de Iluminação & Cor (4h a 6h)",
+    aspiration: "Transição e preservação da fibra para ruivos vibrantes, pretos profundos e loiros nobres com infusão de Plex reconstrutor.",
     tag: "Colorimetria Autoral",
   },
   {

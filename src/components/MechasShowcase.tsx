@@ -30,14 +30,14 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
             id="mechas-heading"
             className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#1C1917] tracking-tight leading-[1.1] [text-wrap:balance]"
           >
-            Mechas, Loiros Nobres, Cabelos Lisos &{" "}
+            Ruivos Luminosos, Loiros Nobres, Cabelos Pretos &{" "}
             <span className="italic font-normal font-serif text-[#C58B7E]">
               Balayage de Luxo
             </span>
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Clareamento estratégico, balayage personalizada e cabelos iluminados com máxima preservação da saúde da fibra capilar. Tons nobres e degradês sem marcação que acendem a beleza sob a luz natural de Montes Claros.
+            Dominamos a transição de cor e a integridade da fibra capilar para qualquer curvatura e tonalidade — de ruivos vibrantes e pretos profundos a castanhos nobres e loiros iluminados. Pigmentos de alta fidelidade e degradês sem marcação que revelam sua luminosidade autêntica sob a luz natural de Montes Claros.
           </p>
         </div>
 

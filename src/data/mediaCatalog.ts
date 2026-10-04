@@ -61,7 +61,7 @@ export const MEGAHAIR_GALLERY_ITEMS: GalleryItem[] = [
 ];
 
 // =========================================================================
-// 2. MECHAS, LOIROS NOBRES, CABELOS LISOS & BALAYAGE DE LUXO (12 mídias exclusivas)
+// 2. RUIVOS LUMINOSOS, LOIROS NOBRES, CABELOS PRETOS & BALAYAGE DE LUXO (12 mídias exclusivas)
 // =========================================================================
 export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -80,7 +80,7 @@ export const MECHAS_GALLERY_ITEMS: GalleryItem[] = [
     type: "image",
     src: "/midias/cabelo3-dayane.jpg",
     alt: "Balayage de luxo e cabelos iluminados com mechas douradas por Dayane Lima",
-    label: "Mechas, Loiros Nobres & Balayage de Luxo",
+    label: "Ruivos Luminosos, Loiros Nobres & Balayage de Luxo",
   },
   {
     type: "image",
