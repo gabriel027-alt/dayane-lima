@@ -235,8 +235,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
   };
 
   const handleGoToStep3 = () => {
-    const answeredCount = selectedProcedures.filter((p) => Boolean(diagnosticAnswers[p.id])).length;
-    if (answeredCount === 0) return;
+    if (selectedProcedures.length === 0) return;
     setStep(3);
   };
 
@@ -249,28 +248,32 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
   };
 
   const handleGenerateWhatsApp = () => {
-    const namePart = clientName.trim() ? `Meu nome é *${clientName.trim()}* e preenchi` : "Preenchi";
-    
-    const proceduresListText = selectedProcedures
-      .map((proc, index) => {
+    // Captura dinâmica dos procedimentos selecionados e seus diagnósticos
+    const proceduresList = selectedProcedures
+      .map((proc) => {
         const diag = diagnosticAnswers[proc.id];
         const sub = subAnswers[proc.id];
-        const lines = [
-          `✨ *${index + 1}. ${proc.name}*`,
-          diag ? `   • Diagnóstico: ${diag}` : `   • Diagnóstico: Avaliação personalizada`,
-          sub ? `   • Prioridade: ${sub}` : null,
-        ].filter(Boolean);
-        return lines.join("\n");
+        let itemText = `• *${proc.name}*`;
+        if (diag) {
+          itemText += `\n   - Diagnóstico: ${diag}`;
+        }
+        if (sub) {
+          itemText += `\n   - Prioridade: ${sub}`;
+        }
+        return itemText;
       })
       .join("\n\n");
 
+    const saudacao = clientName.trim()
+      ? `Olá, Ateliê Dayane Lima. Meu nome é *${clientName.trim()}*. Fiz a minha triagem VIP pelo site e gostaria de agendar uma avaliação para os seguintes rituais:`
+      : `Olá, Ateliê Dayane Lima. Fiz a minha triagem VIP pelo site e gostaria de agendar uma avaliação para os seguintes rituais:`;
+
     const message = [
-      `Olá, equipe Dayane Lima — Ateliê Boutique! ${namePart} a *Triagem Inteligente* no site oficial:`,
+      saudacao,
       ``,
-      `📋 *ESPECIALIDADES SELECIONADAS (${selectedProcedures.length}):*`,
-      proceduresListText,
+      proceduresList,
       ``,
-      `📍 Gostaria de saber sobre a disponibilidade de horários VIP para um atendimento integrado no Ateliê do Monte Carmelo!`,
+      `Poderia me orientar sobre os horários disponíveis na Rua Calcedônia, 155?`,
     ].join("\n");
 
     const encodedMessage = encodeURIComponent(message);
@@ -562,9 +565,9 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={handleGoToStep3}
-                  disabled={selectedProcedures.filter((p) => Boolean(diagnosticAnswers[p.id])).length === 0}
+                  disabled={selectedProcedures.length === 0}
                   className={`inline-flex items-center gap-2 min-h-[48px] px-8 rounded-full font-sans font-semibold text-sm transition-all ${
-                    selectedProcedures.filter((p) => Boolean(diagnosticAnswers[p.id])).length > 0
+                    selectedProcedures.length > 0
                       ? "bg-[#1C1917] hover:bg-[#8F6E32] text-white shadow-sm cursor-pointer"
                       : "bg-neutral-200 text-neutral-400 cursor-not-allowed"
                   }`}
@@ -581,13 +584,13 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
             <div className="space-y-6">
               <div>
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E] block">
-                  Etapa Final • Qualificação Concluída
+                  Concierge Digital VIP • Qualificação Concluída
                 </span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917] mt-1">
-                  3. Seu Resumo de Triagem Integrada está Pronto
+                  3. Seu Atendimento Concierge está Pronto
                 </h3>
                 <p className="text-sm text-[#44403C] font-sans mt-1">
-                  Ao clicar no botão abaixo, sua ficha com todas as especialidades escolhidas será enviada diretamente à recepção da Dayane Lima para priorização de agenda.
+                  Ao clicar no botão abaixo, sua mensagem pré-formatada será enviada diretamente à concierge da recepção para consulta de horários disponíveis na Rua Calcedônia, 155.
                 </p>
               </div>
 
@@ -595,10 +598,10 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
               <div className="p-5 sm:p-6 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] space-y-4 font-sans text-sm">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E8D0C8]">
                   <span className="font-bold text-[#1C1917] uppercase tracking-wider text-xs">
-                    Ficha Diagnóstica Prévia ({selectedProcedures.length} {selectedProcedures.length === 1 ? "Especialidade" : "Especialidades"})
+                    Rituais Selecionados para Avaliação ({selectedProcedures.length} {selectedProcedures.length === 1 ? "Especialidade" : "Especialidades"})
                   </span>
                   <span className="text-xs font-semibold text-[#6E501E] bg-white px-2.5 py-0.5 rounded-full border border-[#E8D0C8]">
-                    Triagem VIP
+                    Concierge VIP
                   </span>
                 </div>
 
@@ -658,7 +661,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 rounded-full bg-gradient-to-r from-[#C5A880] to-[#B8934A] hover:brightness-110 text-[#1C1917] font-sans font-bold text-sm tracking-wide shadow-lg transition-all active:scale-[0.98] cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4 text-[#1C1917]" />
-                    <span>Iniciar no WhatsApp com Ficha Pronta</span>
+                    <span>Conectar com Concierge via WhatsApp</span>
                   </button>
                 </div>
               </div>

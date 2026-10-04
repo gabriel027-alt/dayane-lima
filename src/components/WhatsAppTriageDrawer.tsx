@@ -299,22 +299,23 @@ export function WhatsAppTriageDrawer({
     
     let diagText = "";
     Object.entries(diagnosticAnswers).forEach(([q, a]) => {
-      diagText += `• *${q}:* ${a}\n`;
+      diagText += `   • ${q}: ${a}\n`;
     });
 
-    const notesText = additionalNotes.trim() ? `\n*Observações Adicionais:* ${additionalNotes.trim()}\n` : "";
+    const clientIntro = clientName.trim()
+      ? `Olá, Ateliê Dayane Lima. Meu nome é *${clientName.trim()}*. Fiz a minha triagem VIP pelo site e gostaria de agendar uma avaliação para o seguinte ritual:`
+      : `Olá, Ateliê Dayane Lima. Fiz a minha triagem VIP pelo site e gostaria de agendar uma avaliação para o seguinte ritual:`;
+
+    const notesText = additionalNotes.trim() ? `\nObservações: ${additionalNotes.trim()}\n` : "";
+    const periodText = selectedPeriod ? `⏰ Período de preferência: ${selectedPeriod}\n` : "";
 
     return (
-      `*SOLICITAÇÃO DE AGENDAMENTO & TRIAGEM VIP*\n` +
-      `*Dayane Lima — Ateliê Boutique • Alta Costura Capilar*\n` +
-      `-----------------------------------------\n` +
-      `👤 *Cliente:* ${clientName.trim() || "Não informado"}\n` +
-      `✨ *Procedimento de Interesse:* ${serviceName}\n` +
-      (diagText ? `\n📋 *Diagnóstico Prévio:*\n${diagText}` : "") +
-      `⏰ *Período Preferencial:* ${selectedPeriod || "A combinar"}\n` +
+      `${clientIntro}\n\n` +
+      `• *${serviceName}*\n` +
+      (diagText ? `\nDiagnóstico Prévio:\n${diagText}` : "") +
+      periodText +
       notesText +
-      `-----------------------------------------\n` +
-      `_Olá! Realizei a triagem prévia pelo site oficial e gostaria de verificar as datas disponíveis na agenda da Dayane._`
+      `\nPoderia me orientar sobre os horários disponíveis na Rua Calcedônia, 155?`
     );
   };
 
