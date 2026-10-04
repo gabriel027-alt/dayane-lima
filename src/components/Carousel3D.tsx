@@ -488,13 +488,13 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             loading="lazy"
           />
         )}
