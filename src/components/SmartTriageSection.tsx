@@ -273,7 +273,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className={`text-[10px] font-sans font-bold uppercase tracking-wider block ${
+                        <span className={`text-xs font-sans font-bold uppercase tracking-wider block ${
                           isSelected ? "text-[#C5A880]" : "text-[#6E501E]"
                         }`}>
                           {proc.tag}
@@ -413,29 +413,29 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
               </div>
 
               {/* Card de Ficha de Diagnóstico Gerada */}
-              <div className="p-5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] space-y-3 font-sans text-xs sm:text-sm">
+              <div className="p-5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] space-y-3 font-sans text-sm">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E8D0C8]">
-                  <span className="font-bold text-[#1C1917] uppercase tracking-wider text-[11px]">
+                  <span className="font-bold text-[#1C1917] uppercase tracking-wider text-xs">
                     Ficha Diagnóstica Prévia
                   </span>
-                  <span className="text-[11px] font-semibold text-[#6E501E] bg-white px-2 py-0.5 rounded-full border border-[#E8D0C8]">
+                  <span className="text-xs font-semibold text-[#6E501E] bg-white px-2.5 py-0.5 rounded-full border border-[#E8D0C8]">
                     Triagem VIP
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-[11px] text-[#6E501E] uppercase font-bold block">Procedimento:</span>
+                  <span className="text-xs text-[#6E501E] uppercase font-bold block">Procedimento:</span>
                   <p className="font-serif font-bold text-base text-[#1C1917]">{selectedProcedure.name}</p>
                 </div>
 
                 <div>
-                  <span className="text-[11px] text-[#6E501E] uppercase font-bold block">Diagnóstico Atual:</span>
+                  <span className="text-xs text-[#6E501E] uppercase font-bold block">Diagnóstico Atual:</span>
                   <p className="text-[#3D3835] font-medium">{diagnosticAnswer}</p>
                 </div>
 
                 {subAnswer && (
                   <div>
-                    <span className="text-[11px] text-[#6E501E] uppercase font-bold block">Prioridade:</span>
+                    <span className="text-xs text-[#6E501E] uppercase font-bold block">Prioridade:</span>
                     <p className="text-[#3D3835] font-medium">{subAnswer}</p>
                   </div>
                 )}

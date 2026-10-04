@@ -54,11 +54,11 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
               <Sun className="w-5 h-5 text-[#C5A880]" />
               <h4 className="font-serif font-bold text-lg text-white">Controle Rigoroso de Exposição</h4>
             </div>
-            <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+            <p className="text-sm text-neutral-200 font-sans leading-relaxed">
               Lâmpadas com dosimetria controlada para cada tipo de pele. Sessões confortáveis com ventilação direta e aceleradores biológicos com betacaroteno.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-sans text-[#C5A880]">
-              <CheckCircle2 className="w-4 h-4" />
+            <div className="pt-2 flex items-center gap-2 text-sm font-sans text-[#E6C99B]">
+              <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
               <span>Dourado homogêneo sem manchas</span>
             </div>
           </div>
@@ -68,11 +68,11 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
               <Lock className="w-5 h-5 text-[#C5A880]" />
               <h4 className="font-serif font-bold text-lg text-white">Privacidade Absoluta em Monte Carmelo</h4>
             </div>
-            <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+            <p className="text-sm text-neutral-200 font-sans leading-relaxed">
               Você realiza o procedimento em suíte individual fechada com chave, toalhas descartáveis e higienização hospitalar a cada atendimento.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-sans text-[#C5A880]">
-              <CheckCircle2 className="w-4 h-4" />
+            <div className="pt-2 flex items-center gap-2 text-sm font-sans text-[#E6C99B]">
+              <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
               <span>Ambiente 100% privativo com hora marcada</span>
             </div>
           </div>
@@ -88,7 +88,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
               <h4 className="font-serif font-bold text-lg text-white">
                 Agendamento de Bronzeamento Individual VIP
               </h4>
-              <p className="text-xs text-neutral-400 font-sans mt-0.5">
+              <p className="text-sm text-neutral-300 font-sans mt-0.5">
                 Escolha o horário mais conveniente na cabine Sol & Bronze na Rua Calcedônia, 155.
               </p>
             </div>
@@ -97,10 +97,10 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("bronze")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full bg-[#C5A880] hover:bg-[#b8976b] text-[#1C1917] font-sans font-bold text-xs tracking-wider uppercase transition-all shadow-md touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1C1917]"
+            className="shrink-0 inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full bg-[#C5A880] hover:bg-[#D4BC96] text-[#1C1917] font-sans font-bold text-sm tracking-wide uppercase transition-all shadow-md touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <span>Reservar Sessão no WhatsApp</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#1C1917]" />
+            <ArrowRight className="w-4 h-4 text-[#1C1917]" />
           </button>
         </div>
 

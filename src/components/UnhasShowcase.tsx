@@ -64,23 +64,23 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           {UNHAS_SPECS.map((spec) => (
             <div 
               key={spec.code}
-              className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/60 transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between"
             >
               <div>
-                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#C5A880]/40 block mb-3">
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#8F6E32]/35 block mb-3">
                   {spec.code}
                 </span>
                 <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
                   {spec.label}
                 </h4>
-                <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed">
+                <p className="text-sm text-[#3D3835] font-sans leading-relaxed">
                   {spec.detail}
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-[#F2DDD6] flex items-center gap-2 text-xs font-sans text-[#6E501E]">
-                <ShieldCheck className="w-4 h-4 text-[#C5A880]" />
-                <span>Padrão Emily Lima Nails</span>
+              <div className="mt-5 pt-3 border-t border-[#F2DDD6] flex items-center gap-2 text-sm font-sans text-[#6E501E]">
+                <ShieldCheck className="w-4 h-4 text-[#8F6E32]" />
+                <span className="font-medium">Padrão Emily Lima Nails</span>
               </div>
             </div>
           ))}
@@ -90,13 +90,13 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
         <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
-              <HandMetal className="w-5 h-5 text-[#C5A880]" />
+              <HandMetal className="w-5 h-5 text-[#8F6E32]" />
             </div>
             <div>
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Ateliê de Unhas com Emily Lima em Monte Carmelo
               </h4>
-              <p className="text-xs text-[#574F4A] font-sans mt-0.5">
+              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
                 Aplicação inicial ou manutenção privativa com hora marcada na Rua Calcedônia, 155.
               </p>
             </div>
@@ -105,10 +105,10 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("unhas")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="shrink-0 inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
           >
             <span>Agendar com Emily Lima</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+            <ArrowRight className="w-4 h-4 text-[#E6C99B]" />
           </button>
         </div>
 

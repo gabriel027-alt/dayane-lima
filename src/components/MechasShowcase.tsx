@@ -52,12 +52,12 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
             <p className="font-serif italic text-xl sm:text-2xl text-[#1C1917] leading-relaxed relative z-10 pl-6">
               A cor perfeita não deve transformar você em outra pessoa; ela deve acender os pontos de luz da sua arquitetura facial sob o sol.
             </p>
-            <div className="mt-6 pt-4 border-t border-[#F2DDD6] flex items-center justify-between text-xs font-sans">
+            <div className="mt-6 pt-4 border-t border-[#F2DDD6] flex items-center justify-between text-sm font-sans">
               <div>
                 <span className="font-bold text-[#1C1917] block">Dayane Lima</span>
-                <span className="text-[#6E501E] font-medium">Especialista em Colorimetria & Visagismo</span>
+                <span className="text-[#6E501E] font-medium text-xs">Especialista em Colorimetria & Visagismo</span>
               </div>
-              <span className="text-[11px] text-[#8C5448] font-mono">Monte Carmelo</span>
+              <span className="text-xs text-[#7A3E33] font-mono font-medium">Monte Carmelo</span>
             </div>
           </div>
 
@@ -67,23 +67,23 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
               Critérios Inegociáveis de Clareamento Seguro
             </h4>
             
-            <div className="space-y-3 pt-2 text-xs sm:text-sm font-sans text-[#44403C]">
+            <div className="space-y-3 pt-2 text-sm font-sans text-[#292524]">
               <div className="flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#6E501E] shrink-0 mt-0.5" />
                 <p>
-                  <strong>Teste de Mecha Prévio Obrigatório:</strong> Análise de elasticidade folicular para determinar com precisão a capacidade de abertura de tom sem riscos.
+                  <strong className="text-[#1C1917] font-semibold">Teste de Mecha Prévio Obrigatório:</strong> Análise de elasticidade folicular para determinar com precisão a capacidade de abertura de tom sem riscos.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#6E501E] shrink-0 mt-0.5" />
                 <p>
-                  <strong>Blindagem Lipídica Durante a Descoloração:</strong> Cosmecêuticos com aminoácidos que selam as pontes de enxofre em tempo real.
+                  <strong className="text-[#1C1917] font-semibold">Blindagem Lipídica Durante a Descoloração:</strong> Cosmecêuticos com aminoácidos que selam as pontes de enxofre em tempo real.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#6E501E] shrink-0 mt-0.5" />
                 <p>
-                  <strong>Pigmentos Nobres Sem Metais Pesados:</strong> Neutralização estável que não oxida para tons indesejados após as lavagens.
+                  <strong className="text-[#1C1917] font-semibold">Pigmentos Nobres Sem Metais Pesados:</strong> Neutralização estável que não oxida para tons indesejados após as lavagens.
                 </p>
               </div>
             </div>
@@ -94,14 +94,14 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         {/* ===================== CONVITE EDITORIAL ===================== */}
         <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
-              <Sun className="w-5 h-5 text-[#C5A880]" />
+            <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center text-[#6E501E] shrink-0">
+              <Sun className="w-5 h-5 text-[#6E501E]" />
             </div>
             <div>
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Diagnóstico de Mechas & Teste Prévio Obrigatório
               </h4>
-              <p className="text-xs text-[#574F4A] font-sans mt-0.5">
+              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
                 Avaliação minuciosa da resistência do fio antes de qualquer processo químico.
               </p>
             </div>
@@ -110,10 +110,10 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("mechas")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             <span>Agendar Teste de Mecha</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+            <ArrowRight className="w-4 h-4 text-[#C5A880]" />
           </button>
         </div>
 

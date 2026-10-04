@@ -22,49 +22,41 @@ export function Header({ onOpenTriage }: HeaderProps) {
           <SbLogo variant="dark" className="h-10 sm:h-12" />
         </a>
 
-        {/* Navegação Condensada Respeitando a Lei de Hick (WCAG 2.2 AA Compliant) */}
+        {/* Navegação Simplificada (Lei de Hick) - Apenas Links Essenciais */}
         <nav 
           aria-label="Navegação principal"
-          className="flex items-center gap-2 sm:gap-4 md:gap-6 text-xs sm:text-sm font-semibold text-[#1C1917] font-sans"
+          className="flex items-center gap-1 sm:gap-3 md:gap-5 text-sm font-semibold text-[#1C1917] font-sans"
         >
           <a 
             href="#megahair" 
-            className="inline-flex items-center min-h-[48px] px-3 rounded-lg text-[#3D3835] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="inline-flex items-center min-h-[48px] px-3 rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             Especialidades
           </a>
 
           <a 
-            href="#laser" 
-            className="hidden sm:inline-flex items-center min-h-[48px] px-3 rounded-lg text-[#3D3835] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-          >
-            Laser & Corporal
-          </a>
-
-          <a 
             href="#espaco" 
-            className="hidden md:inline-flex items-center min-h-[48px] px-3 rounded-lg text-[#3D3835] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="hidden sm:inline-flex items-center min-h-[48px] px-3 rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             O Ateliê
           </a>
 
           <a 
-            href="#triagem-inteligente" 
-            className="hidden lg:inline-flex items-center min-h-[48px] px-3 rounded-lg text-[#6E501E] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            href="#localizacao" 
+            className="hidden md:inline-flex items-center min-h-[48px] px-3 rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
-            <Sparkles className="w-3.5 h-3.5 mr-1.5 text-[#C5A880]" />
-            Triagem Online
+            Localização
           </a>
 
-          {/* CTA de Agendamento VIP - Min 48px Touch Target */}
+          {/* CTA de Destaque - Triagem VIP / WhatsApp */}
           <button
             type="button"
             onClick={onOpenTriage}
-            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-5 sm:px-6 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-xs sm:text-sm tracking-wide shadow-sm hover:shadow transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer touch-manipulation"
-            aria-label="Abrir triagem VIP com a recepção"
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-5 sm:px-6 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer touch-manipulation ml-1 sm:ml-2"
+            aria-label="Iniciar triagem VIP e agendamento pelo WhatsApp"
           >
             <Calendar className="w-4 h-4 text-[#C5A880]" aria-hidden="true" />
-            <span>Triagem VIP</span>
+            <span>Triagem VIP / WhatsApp</span>
           </button>
         </nav>
 

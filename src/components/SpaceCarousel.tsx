@@ -56,49 +56,49 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
 
         {/* ===================== 1. PILARES DE HOSPITALIDADE ===================== */}
         <div className="mb-14 sm:mb-18 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/60 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
-                <MapPin className="w-5 h-5 text-[#C5A880]" />
+                <MapPin className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Localização Nobre</h4>
-              <p className="text-xs font-sans text-[#574F4A] leading-relaxed">
+              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
                 Rua Calcedônia, 155, Bairro Monte Carmelo. Região residencial calma e de fácil acesso com estacionamento na porta.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/60 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
-                <Wind className="w-5 h-5 text-[#C5A880]" />
+                <Wind className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Conforto Térmico</h4>
-              <p className="text-xs font-sans text-[#574F4A] leading-relaxed">
+              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
                 Ambientes climatizados suavemente e projetados com isolamento acústico para o seu descanso completo.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/60 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
-                <Coffee className="w-5 h-5 text-[#C5A880]" />
+                <Coffee className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Boas-Vindas Gourmet</h4>
-              <p className="text-xs font-sans text-[#574F4A] leading-relaxed">
+              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
                 Menu de café especial moído na hora, chás nobres e águas aromatizadas para seu acolhimento antes do ritual.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/60 transition-all flex flex-col justify-between">
+          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
-                <ShieldCheck className="w-5 h-5 text-[#C5A880]" />
+                <ShieldCheck className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Biossegurança Rigorosa</h4>
-              <p className="text-xs font-sans text-[#574F4A] leading-relaxed">
+              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
                 Instrumentais esterilizados em autoclave médica, toalhas higienizadas a vapor e materiais 100% descartáveis.
               </p>
             </div>
@@ -111,7 +111,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
             <h4 className="font-serif font-bold text-lg text-[#1C1917]">
               Planeje sua Visita ao Ateliê Dayane Lima
             </h4>
-            <p className="text-xs sm:text-sm text-[#574F4A] font-sans">
+            <p className="text-sm text-[#3D3835] font-sans">
               Rua Calcedônia, 155 • Bairro Monte Carmelo, Montes Claros - MG
             </p>
           </div>
@@ -121,21 +121,21 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
             >
-              <Navigation className="w-3.5 h-3.5 text-[#C5A880]" />
+              <Navigation className="w-4 h-4 text-[#E6C99B]" />
               <span>Traçar Rota no Google Maps</span>
-              <ExternalLink className="w-3 h-3 text-[#C5A880]" />
+              <ExternalLink className="w-3.5 h-3.5 text-white/70" />
             </a>
 
             {onOpenTriage && (
               <button
                 type="button"
                 onClick={onOpenTriage}
-                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-white border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-xs transition-colors shadow-xs touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-white border border-[#E8D0C8] hover:border-[#8F6E32] hover:text-[#8F6E32] text-[#1C1917] font-sans font-semibold text-sm transition-colors shadow-xs touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
               >
                 <span>Agendar Recepção VIP</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                <ArrowRight className="w-4 h-4 text-[#8F6E32]" />
               </button>
             )}
           </div>

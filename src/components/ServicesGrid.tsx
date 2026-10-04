@@ -150,16 +150,16 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
               <div>
                 {/* Linha Superior: Número & Tag */}
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="font-mono text-xs font-bold text-[#C5A880] tracking-widest">
+                  <span className="font-mono text-sm font-bold text-[#8F6E32] tracking-widest">
                     {ritual.number}
                   </span>
-                  <span className="text-[10px] uppercase font-sans font-bold tracking-wider px-2.5 py-1 rounded-full bg-[#FAF3F0] text-[#6E501E] border border-[#E8D0C8]">
+                  <span className="text-xs uppercase font-sans font-bold tracking-wider px-2.5 py-1 rounded-full bg-[#FAF3F0] text-[#6E501E] border border-[#E8D0C8]">
                     {ritual.tag}
                   </span>
                 </div>
 
                 {/* Categoria */}
-                <p className="text-[11px] uppercase tracking-wider font-sans font-semibold text-[#6E501E] mb-1">
+                <p className="text-xs uppercase tracking-wider font-sans font-semibold text-[#6E501E] mb-1">
                   {ritual.category}
                 </p>
 
@@ -169,13 +169,13 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                 </h3>
 
                 {/* Duração */}
-                <div className="flex items-center gap-1.5 text-xs text-[#574F4A] font-sans mt-2 mb-3">
-                  <Clock className="w-3.5 h-3.5 text-[#C5A880]" />
+                <div className="flex items-center gap-1.5 text-sm text-[#3D3835] font-sans mt-2 mb-3">
+                  <Clock className="w-4 h-4 text-[#8F6E32]" />
                   <span>{ritual.duration}</span>
                 </div>
 
                 {/* Micro-copy Aspiracional */}
-                <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed pt-2 border-t border-[#F0EAE1]">
+                <p className="text-sm text-[#292524] font-sans leading-relaxed pt-2 border-t border-[#F0EAE1]">
                   {ritual.aspiration}
                 </p>
               </div>
@@ -185,21 +185,21 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                 <button
                   type="button"
                   onClick={() => handleScrollTo(ritual.anchorId)}
-                  className="inline-flex items-center gap-1.5 text-xs font-sans font-semibold text-[#1C1917] hover:text-[#6E501E] transition-colors cursor-pointer py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-lg"
+                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#1C1917] hover:text-[#6E501E] transition-colors cursor-pointer py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] rounded-lg min-h-[48px]"
                   aria-label={`Ver detalhes e galeria de ${ritual.name}`}
                 >
-                  <span>Ver Galeria</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#C5A880] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <span>Ver Detalhes</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#8F6E32] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </button>
 
                 <button
                   type="button"
                   onClick={() => onSelectService(ritual.id)}
-                  className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white text-xs font-sans font-semibold transition-all shadow-xs active:scale-95 cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                  className="inline-flex items-center justify-center gap-1.5 min-h-[48px] px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white text-sm font-sans font-semibold transition-all shadow-xs active:scale-95 cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
                   aria-label={`Agendar triagem para ${ritual.name}`}
                 >
                   <span>Agendar</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#E6C99B]" />
                 </button>
               </div>
 
@@ -217,7 +217,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Preservação Folicular & Teste de Mecha Obrigatório
               </h4>
-              <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed mt-0.5 max-w-xl">
+              <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-0.5 max-w-xl">
                 Nenhum procedimento químico ou de extensão é iniciado sem diagnóstico prévio. Sua saúde capilar é o nosso maior compromisso ético.
               </p>
             </div>
@@ -226,10 +226,10 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
           <button
             type="button"
             onClick={() => onSelectService("megahair")}
-            className="w-full md:w-auto inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl transition-all active:scale-95 cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
+            className="w-full md:w-auto inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide uppercase shadow-xl transition-all active:scale-95 cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] shrink-0"
           >
             <span>Iniciar Triagem VIP com a Recepção</span>
-            <ArrowRight className="w-4 h-4 text-[#C5A880]" />
+            <ArrowRight className="w-4 h-4 text-[#E6C99B]" />
           </button>
         </div>
 

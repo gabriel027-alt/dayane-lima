@@ -380,11 +380,11 @@ export function WhatsAppTriageDrawer({
                             <span className="font-sans font-bold text-sm text-brand-graphite-950">
                               {service.title}
                             </span>
-                            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-brand-champagne/15 text-brand-champagne-dark">
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-champagne/20 text-[#6E501E]">
                               {service.tag}
                             </span>
                           </div>
-                          <p className="text-xs text-brand-graphite-500 font-sans mt-0.5 line-clamp-1">
+                          <p className="text-sm text-[#44403C] font-sans mt-0.5 line-clamp-1">
                             {service.subtitle}
                           </p>
                         </div>

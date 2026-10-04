@@ -72,42 +72,42 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
             {/* O Manifesto de Autoridade: 3 Princípios Inegociáveis */}
             <div className="mt-8 divide-y divide-[#E8D0C8] border-y border-[#E8D0C8] w-full">
               <div className="py-4 flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <Sparkles className="w-4 h-4 text-[#C5A880]" />
+                <div className="w-9 h-9 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
+                  <Sparkles className="w-4 h-4 text-[#8F6E32]" />
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base text-[#1C1917]">
                     Atendimento Consultivo VIP Sem Esteira
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed mt-1">
+                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-1">
                     Agenda planejada com calma e dedicação exclusiva para diagnóstico e execução sem pressa.
                   </p>
                 </div>
               </div>
 
               <div className="py-4 flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <ShieldCheck className="w-4 h-4 text-[#C5A880]" />
+                <div className="w-9 h-9 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
+                  <ShieldCheck className="w-4 h-4 text-[#8F6E32]" />
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base text-[#1C1917]">
                     Fios 100% Humanos de Cutícula Intacta
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed mt-1">
+                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-1">
                     Trabalho exclusivo com cabelos brasileiros virgens de alta pureza, alinhados na mesma direção.
                   </p>
                 </div>
               </div>
 
               <div className="py-4 flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
+                <div className="w-9 h-9 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#8F6E32]" />
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base text-[#1C1917]">
                     Biossegurança Hospitalar & Anti-Tração Folicular
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#574F4A] font-sans leading-relaxed mt-1">
+                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-1">
                     Autoclave médica para esterilização de ferramentas, distribuição geométrica com peso calibrado anti-tração e preservação biológica integral do couro cabeludo.
                   </p>
                 </div>
@@ -117,15 +117,15 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
             {/* Chamada para Ação com Assinatura */}
             <div className="mt-8 pt-6 border-t border-[#E8D0C8] w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold text-[#1C1917] font-sans">Dayane Lima</p>
-                <p className="text-[11px] text-[#574F4A] font-sans">Atendimento exclusivo com hora marcada</p>
+                <p className="text-sm font-bold text-[#1C1917] font-sans">Dayane Lima</p>
+                <p className="text-xs text-[#574F4A] font-sans">Atendimento exclusivo com hora marcada</p>
               </div>
               <button
                 type="button"
                 onClick={onOpenTriage}
-                className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-xs tracking-wide shadow-sm hover:shadow transition-all duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer shrink-0"
+                className="inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-sm hover:shadow transition-all duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer shrink-0"
               >
-                <Calendar className="w-4 h-4 text-[#C5A880]" aria-hidden="true" />
+                <Calendar className="w-4 h-4 text-[#E6C99B]" aria-hidden="true" />
                 <span>Agendar Consulta com Dayane</span>
               </button>
             </div>

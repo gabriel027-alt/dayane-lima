@@ -79,21 +79,21 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
             {LASER_AREAS.map((area, idx) => (
               <div 
                 key={idx}
-                className="bg-white rounded-2xl p-6 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/60 transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl p-6 border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] font-sans font-bold text-[#6E501E] uppercase tracking-wider block mb-2">
+                  <span className="text-xs font-sans font-bold text-[#6E501E] uppercase tracking-wider block mb-2">
                     Área Corporal
                   </span>
                   <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
                     {area.name}
                   </h4>
-                  <p className="text-xs text-[#574F4A] font-sans leading-relaxed mb-4">
+                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mb-4">
                     {area.indication}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-[#F2DDD6] flex items-center justify-between text-[11px] font-sans text-[#8C5448] font-semibold">
+                <div className="pt-3 border-t border-[#F2DDD6] flex items-center justify-between text-xs font-sans text-[#7A4237] font-semibold">
                   <span>Plano sugerido:</span>
                   <span>{area.sessions}</span>
                 </div>
@@ -106,13 +106,13 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
         <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
-              <Zap className="w-5 h-5 text-[#C5A880]" />
+              <Zap className="w-5 h-5 text-[#8F6E32]" />
             </div>
             <div>
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Avaliação de Fototipo & Pacotes de Laser
               </h4>
-              <p className="text-xs text-[#574F4A] font-sans mt-0.5">
+              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
                 Consulte valores por sessão avulsa ou pacotes combinados com a recepção no WhatsApp.
               </p>
             </div>
@@ -121,10 +121,10 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("laser")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wider uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="shrink-0 inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
           >
             <span>Consultar Pacotes de Laser</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+            <ArrowRight className="w-4 h-4 text-[#E6C99B]" />
           </button>
         </div>
 

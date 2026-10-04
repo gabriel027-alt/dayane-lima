@@ -80,14 +80,14 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 {/* Horários de Atendimento */}
                 <div className="flex items-start gap-3 pt-3 border-t border-[#F0EAE1]">
                   <div className="p-2.5 rounded-xl bg-[#F4EFEA] text-[#44403C] shrink-0">
-                    <Clock className="w-5 h-5" aria-hidden="true" />
+                    <Clock className="w-5 h-5 text-[#6E501E]" aria-hidden="true" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs uppercase tracking-wide text-[#1C1917]">Horário de Atendimento</h4>
-                    <p className="text-xs text-[#574F4A] mt-0.5">
+                    <h4 className="font-bold text-sm text-[#1C1917]">Horário de Atendimento</h4>
+                    <p className="text-sm text-[#3D3835] mt-0.5">
                       Terça a Sexta-feira: 08:30 às 18:30
                     </p>
-                    <p className="text-xs text-[#574F4A]">
+                    <p className="text-sm text-[#3D3835]">
                       Sábado: 08:00 às 17:00 (Exclusivo com agendamento prévio)
                     </p>
                   </div>
@@ -95,17 +95,17 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
               </div>
 
               {/* Comodidades VIP */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 font-sans text-xs">
-                <div className="p-3 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#44403C]">
-                  <Car className="w-4 h-4 text-[#6E501E] shrink-0" aria-hidden="true" />
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 font-sans text-sm">
+                <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium">
+                  <Car className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
                   <span>Estacionamento</span>
                 </div>
-                <div className="p-3 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#44403C]">
-                  <Coffee className="w-4 h-4 text-[#6E501E] shrink-0" aria-hidden="true" />
+                <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium">
+                  <Coffee className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
                   <span>Café & Chás</span>
                 </div>
-                <div className="p-3 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#44403C] col-span-2 sm:col-span-1">
-                  <Wifi className="w-4 h-4 text-[#6E501E] shrink-0" aria-hidden="true" />
+                <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium col-span-2 sm:col-span-1">
+                  <Wifi className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
                   <span>Wi-Fi Alta Velocidade</span>
                 </div>
               </div>
@@ -116,22 +116,22 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[48px] px-5 py-2.5 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                  className="min-h-[48px] px-6 py-3 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm flex items-center justify-center gap-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
                   aria-label="Abrir rota no Google Maps para Rua Calcedônia, 155"
                 >
-                  <Navigation className="w-4 h-4 text-[#C5A880]" aria-hidden="true" />
+                  <Navigation className="w-4 h-4 text-[#E6C99B]" aria-hidden="true" />
                   <span>Traçar Rota no Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-white/60" aria-hidden="true" />
+                  <ExternalLink className="w-3.5 h-3.5 text-white/70" aria-hidden="true" />
                 </a>
 
                 <a
                   href={wazeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[48px] px-5 py-2.5 rounded-full bg-white hover:bg-neutral-50 border border-[#E5DDD0] text-[#1C1917] font-sans font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                  className="min-h-[48px] px-6 py-3 rounded-full bg-white hover:bg-neutral-50 border border-[#E5DDD0] text-[#1C1917] font-sans font-semibold text-sm flex items-center justify-center gap-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
                   aria-label="Abrir endereço no aplicativo Waze"
                 >
-                  <Car className="w-4 h-4 text-[#574F4A]" aria-hidden="true" />
+                  <Car className="w-4 h-4 text-[#7A4237]" aria-hidden="true" />
                   <span>Navegar via Waze</span>
                 </a>
               </div>
@@ -170,7 +170,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             <div className="lg:col-span-5 space-y-4">
               <SbLogo variant="light" className="h-10 sm:h-12" />
 
-              <p className="text-xs text-neutral-400 leading-relaxed max-w-sm pt-1">
+              <p className="text-sm text-neutral-300 leading-relaxed max-w-sm pt-1">
                 Duas décadas dedicadas à arte do Mega Hair invisível, mechas nobres sob medida e preservação biológica da raiz no Monte Carmelo, Montes Claros.
               </p>
 
@@ -179,7 +179,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   href="https://instagram.com/dayanelimaestetica"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-[#C5A880] hover:text-[#1C1917] text-neutral-300 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                  className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-[#8F6E32] hover:text-white text-neutral-200 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
                   aria-label="Perfil oficial de Dayane Lima no Instagram"
                 >
                   <Instagram className="w-5 h-5" />
@@ -188,7 +188,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 <button
                   type="button"
                   onClick={onOpenTriage}
-                  className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-emerald-600 hover:text-white text-neutral-300 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+                  className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-emerald-600 hover:text-white text-neutral-200 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
                   aria-label="Iniciar triagem via WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -198,43 +198,43 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
 
             {/* Coluna 2: Sumário Executivo de Navegação Rápida (Âncoras Diretas) */}
             <div className="lg:col-span-3 space-y-3">
-              <p className="text-xs font-bold uppercase tracking-wider text-[#C5A880]">
+              <p className="text-xs font-bold uppercase tracking-wider text-[#E6C99B]">
                 Sumário do Ateliê
               </p>
               <nav aria-label="Navegação secundária do rodapé">
-                <ul className="space-y-2 text-xs text-neutral-400">
+                <ul className="space-y-2.5 text-sm text-neutral-300">
                   <li>
-                    <a href="#procedimentos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#procedimentos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Rituais de Alta Costura
                     </a>
                   </li>
                   <li>
-                    <a href="#megahair" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#megahair" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Mega Hair & Nanocápsulas
                     </a>
                   </li>
                   <li>
-                    <a href="#mechas" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#mechas" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Mechas & Balayage de Luxo
                     </a>
                   </li>
                   <li>
-                    <a href="#autoridade" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#autoridade" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Autoridade & 20+ Anos
                     </a>
                   </li>
                   <li>
-                    <a href="#casos-clinicos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#casos-clinicos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Diagnóstico & Casos Clínicos
                     </a>
                   </li>
                   <li>
-                    <a href="#triagem-inteligente" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#triagem-inteligente" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Triagem Inteligente VIP
                     </a>
                   </li>
                   <li>
-                    <a href="#localizacao" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C5A880] rounded px-1 -mx-1">
+                    <a href="#localizacao" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
                       Localização no Monte Carmelo
                     </a>
                   </li>
@@ -243,16 +243,16 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             </div>
 
             {/* Coluna 3: Conformidade e Contato Formal */}
-            <div className="lg:col-span-4 space-y-2 text-xs text-neutral-400">
-              <p className="text-xs font-bold uppercase tracking-wider text-[#C5A880]">
+            <div className="lg:col-span-4 space-y-2.5 text-sm text-neutral-300">
+              <p className="text-xs font-bold uppercase tracking-wider text-[#E6C99B]">
                 Atendimento & Biossegurança
               </p>
-              <p className="text-neutral-200 font-medium">
+              <p className="text-neutral-100 font-medium">
                 Rua Calcedônia, 155 – Bairro Monte Carmelo, Montes Claros - MG
               </p>
-              <p>Recepção VIP: Atendimento com hora marcada</p>
-              <div className="pt-2 flex items-center gap-2 text-[11px] text-neutral-400">
-                <ShieldCheck className="w-4 h-4 text-[#C5A880] shrink-0" aria-hidden="true" />
+              <p className="text-neutral-300">Recepção VIP: Atendimento com hora marcada</p>
+              <div className="pt-2 flex items-center gap-2 text-xs text-neutral-300">
+                <ShieldCheck className="w-4 h-4 text-[#E6C99B] shrink-0" aria-hidden="true" />
                 <span>Esterilização hospitalar em autoclave médica e teste de mecha prévio.</span>
               </div>
             </div>
@@ -260,17 +260,17 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
           </div>
 
           {/* Rodapé Legal & Declaração de Acessibilidade WCAG 2.2 */}
-          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-neutral-400">
+          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-300">
             <p>
               © {new Date().getFullYear()} Dayane Lima — Ateliê Boutique • Alta Costura Capilar. Todos os direitos reservados.
             </p>
 
             <div className="flex items-center gap-4">
-              <span className="inline-flex items-center gap-1.5 text-[#C5A880]">
-                <span className="w-2 h-2 rounded-full bg-[#C5A880]" />
+              <span className="inline-flex items-center gap-1.5 text-[#E6C99B]">
+                <span className="w-2 h-2 rounded-full bg-[#E6C99B]" />
                 Conformidade WCAG 2.2 Nível AA Validada
               </span>
-              <span>•</span>
+              <span className="text-neutral-500">•</span>
               <span>Engenharia & Design Proprietários</span>
             </div>
           </div>
