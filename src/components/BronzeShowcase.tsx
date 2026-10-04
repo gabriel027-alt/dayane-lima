@@ -28,7 +28,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
             <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#C5A880]">
-              ESTÉTICA CORPORAL & BRONZE · SOL & BRONZE
+              ESTÉTICA CORPORAL & BRONZE · E MAIS!
             </span>
           </div>
 
@@ -43,7 +43,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-neutral-300 font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Equipamentos de alta performance com controle rigoroso de exposição, sala privativa e montagem anatômica com fita cirúrgica para um tom dourado uniforme e saudável o ano todo em Monte Carmelo.
+            A experiência de autocuidado integra múltiplos universos: equipamentos com dosimetria rigorosamente controlada, sala privativa e montagem anatômica para um dourado radiante e saudável o ano todo em Monte Carmelo.
           </p>
         </div>
 

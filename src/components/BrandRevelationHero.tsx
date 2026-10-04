@@ -26,7 +26,7 @@ export function BrandRevelationHero({
             
             {/* Badge de Posicionamento */}
             <div className="text-[10px] font-mono tracking-[0.3em] text-stone-700 bg-stone-200/70 font-semibold px-3.5 py-1.5 rounded-full w-max mb-6 uppercase">
-              ATELIÊ PRIVADO • ALTA COSTURA CAPILAR • 20+ ANOS
+              ATELIÊ PRIVADO • ALTA COSTURA & BELEZA INTEGRAL • E MAIS!
             </div>
 
             {/* Headline Editorial de Autoridade */}
@@ -34,16 +34,16 @@ export function BrandRevelationHero({
               id="brand-revelation-title"
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-serif font-bold text-[#1C1C1E] tracking-tight leading-[1.14] mb-5 [text-wrap:balance]"
             >
-              Excelência e arte em{" "}
+              Excelência em{" "}
               <span className="italic font-normal font-serif text-[#C58B7E]">
                 Mega Hair invisível
-              </span>{" "}
-              e mechas de luxo.
+              </span>
+              , mechas nobres — e mais!
             </h2>
 
             {/* Parágrafo Descritivo */}
-            <p className="text-stone-700 text-base font-normal leading-relaxed max-w-md mb-8 [text-wrap:pretty]">
-              Atendimento consultivo e personalizado no Monte Carmelo. Preservação biológica da sua raiz folicular, mechas iluminadas sob luz natural e acervo exclusivo de cabelos 100% humanos selecionados.
+            <p className="text-stone-700 text-base font-normal leading-relaxed max-w-xl mb-8 [text-wrap:pretty]">
+              Atendimento consultivo e privativo no Monte Carmelo. Do domínio artesanal do Mega Hair e mechas sob medida às extensões de cílios, engenharia ungueal, bronzeamento em cabine e estética avançada — <strong className="text-[#1C1C1E] font-semibold">E MAIS!</strong> Um ecossistema completo de alta costura e exclusividade para a sua melhor versão.
             </p>
 
             {/* Botões de Ação */}

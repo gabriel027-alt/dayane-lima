@@ -45,7 +45,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
             <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
-              TECNOLOGIA CLÍNICA · HAKON 4D SUBZERO
+              ESTÉTICA AVANÇADA · HAKON 4D · E MAIS!
             </span>
           </div>
 
@@ -60,7 +60,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Pele lisa, sem foliculite e livre de pelos com tecnologia de ponteira super-resfriada a -10°C para máximo conforto e rapidez em Monte Carmelo.
+            Completando o ecossistema de beleza com exclusividade: pele lisa, sem foliculite e livre de pelos com tecnologia de ponteira super-resfriada a -10°C para máximo conforto e eficácia clínica em Monte Carmelo.
           </p>
         </div>
 

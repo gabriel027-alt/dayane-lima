@@ -66,7 +66,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base text-[#44403C] leading-relaxed font-sans [text-wrap:pretty]">
-              Em um mercado de procedimentos rápidos e sem diagnóstico, a trajetória de mais de vinte anos de <strong className="text-[#1C1917] font-semibold">Dayane Lima</strong> foi consolidada com rigor técnico, honestidade com a saúde capilar e um compromisso inegociável: valorizar a beleza singular de cada cliente preservando a raiz biológica.
+              Em mais de vinte anos de trajetória, <strong className="text-[#1C1917] font-semibold">Dayane Lima</strong> consolidou uma autoridade que vai muito além de um único procedimento. Com rigor técnico e atendimento privativo no Monte Carmelo, sua expertise integra a alta costura em Mega Hair e mechas à harmonização do olhar, unhas em gel, bronzeamento tecnológico e estética avançada — <strong className="text-[#6E501E] font-semibold tracking-wider uppercase">E MAIS!</strong> Cada cliente encontra um santuário completo de transformação com padrão de excelência inegociável.
             </p>
 
             {/* O Manifesto de Autoridade: 3 Princípios Inegociáveis */}

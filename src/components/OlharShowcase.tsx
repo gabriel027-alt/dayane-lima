@@ -22,7 +22,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
             <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
-              VISAGISMO DO OLHAR · RAYSSA & HILLERY
+              VISAGISMO DO OLHAR · E MAIS!
             </span>
           </div>
 
@@ -37,7 +37,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Extensões levíssimas aplicadas com isolamento fio a fio por Rayssa Lash, combinadas ao mapeamento em proporção áurea facial de Hillery Thauanne no ateliê em Monte Carmelo.
+            A sofisticação do ateliê não se limita a um único ritual: extensões de seda levíssimas aplicadas com isolamento fio a fio por Rayssa Lash e visagismo em proporção áurea por Hillery Thauanne — versatilidade e exclusividade absoluta em Monte Carmelo.
           </p>
         </div>
 

@@ -226,8 +226,8 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
             </h1>
 
             {/* Assinatura Corporativa da Marca Mestre */}
-            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-white/75 mt-5 sm:mt-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.60)]">
-              DAYANE LIMA — ATELIÊ BOUTIQUE
+            <p className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase text-white/80 mt-5 sm:mt-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.60)]">
+              DAYANE LIMA — ATELIÊ BOUTIQUE · E MAIS!
             </p>
 
           </div>

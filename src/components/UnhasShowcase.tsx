@@ -40,7 +40,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
             <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
-              ENGENHARIA UNGUEAL · EMILY LIMA NAILS
+              ENGENHARIA UNGUEAL · E MAIS!
             </span>
           </div>
 
@@ -55,7 +55,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           </h2>
           
           <p className="mt-5 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Ponto de tensão calibrado milimetricamente para unir máxima resistência mecânica a bordas naturais imperceptíveis por Emily Lima Nails.
+            A excelência do Ateliê Dayane Lima alcança a estética das mãos: ponto de tensão calibrado milimetricamente para unir máxima resistência mecânica a bordas ultrafinas por Emily Lima Nails — a sofisticação não se limita a um único ritual.
           </p>
         </div>
 
