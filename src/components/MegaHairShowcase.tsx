@@ -45,7 +45,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
-            <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
+            <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
               HAUTE COIFFURE · DAYANE LIMA
             </span>
           </div>
@@ -81,7 +81,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" aria-hidden="true" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
-                  <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#C5A880] block mb-1">
+                  <span className="text-xs font-sans font-bold uppercase tracking-widest text-[#E6C99B] block mb-1">
                     Alta Costura Capilar • Monte Carmelo
                   </span>
                   <h4 className="font-serif font-bold text-lg sm:text-xl text-white leading-snug">
@@ -97,13 +97,13 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
             {/* Coluna com os Pilares Técnicos */}
             <div className="lg:col-span-7 flex flex-col justify-between">
               <div className="mb-6">
-                <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#6E501E] block mb-2">
+                <span className="text-xs font-sans font-bold uppercase tracking-widest text-[#6E501E] block mb-2">
                   O Manifesto Técnico • Ateliê Dayane Lima
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917] leading-tight">
                   A Fusão Milimétrica que Protege a Saúde da Sua Raiz
                 </h3>
-                <p className="mt-3 text-xs sm:text-sm font-sans text-[#44403C] leading-relaxed">
+                <p className="mt-3 text-sm font-sans text-[#3D3835] leading-relaxed">
                   Cada mecha é calculada com paquímetro digital a 0.5cm do couro cabeludo, garantindo leveza absoluta e preservação do ciclo folicular biológico.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                         <h4 className="font-serif font-bold text-base text-[#1C1917]">
                           {item.title}
                         </h4>
-                        <span className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#7A3E33]">
+                        <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#7A3E33]">
                           • {item.meta}
                         </span>
                       </div>

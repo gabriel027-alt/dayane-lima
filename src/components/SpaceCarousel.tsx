@@ -38,7 +38,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
         {/* Cabeçalho Editorial */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#E8D0C8] text-[#6E501E] text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" aria-hidden="true" />
+            <Sparkles className="w-3.5 h-3.5 text-[#8F6E32]" aria-hidden="true" />
             <span>Arquitetura do Ateliê • Monte Carmelo</span>
           </div>
 
@@ -49,7 +49,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
             </span>
           </h2>
           
-          <p className="mt-4 text-base sm:text-lg text-[#574F4A] font-sans leading-relaxed [text-wrap:pretty]">
+          <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed [text-wrap:pretty]">
             Explore cada ambiente projetado para acolher com discrição, conforto térmico e privacidade absoluta no Bairro Monte Carmelo, em Montes Claros.
           </p>
         </div>

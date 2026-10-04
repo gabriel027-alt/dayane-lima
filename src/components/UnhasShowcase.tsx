@@ -39,7 +39,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
-            <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
+            <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
               ENGENHARIA UNGUEAL · E MAIS!
             </span>
           </div>

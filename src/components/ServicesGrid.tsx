@@ -118,7 +118,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
         {/* Cabeçalho Editorial Minimalista */}
         <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E8D0C8] text-[#6E501E] text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" aria-hidden="true" />
+            <Sparkles className="w-3.5 h-3.5 text-[#8F6E32]" aria-hidden="true" />
             <span>Sumário de Rituais Oficiais • Dayane Lima Ateliê Boutique</span>
           </div>
 
@@ -132,7 +132,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
             </span>
           </h2>
           
-          <p className="mt-4 text-base sm:text-lg text-[#574F4A] font-sans leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
+          <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
             Navegue pelos protocolos autorais desenvolvidos sob rigor técnico de mais de 20 anos, preservação da raiz biológica e atendimento privativo com hora marcada.
           </p>
         </div>

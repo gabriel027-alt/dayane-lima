@@ -71,7 +71,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                     <p className="text-sm text-[#44403C] mt-0.5">
                       Rua Calcedônia, 155 – Bairro Monte Carmelo
                     </p>
-                    <p className="text-xs text-[#574F4A]">
+                    <p className="text-sm text-[#3D3835]">
                       Montes Claros – MG • CEP 39401-000
                     </p>
                   </div>

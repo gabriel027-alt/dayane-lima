@@ -118,7 +118,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
             <div className="mt-8 pt-6 border-t border-[#E8D0C8] w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold text-[#1C1917] font-sans">Dayane Lima</p>
-                <p className="text-xs text-[#574F4A] font-sans">Atendimento exclusivo com hora marcada</p>
+                <p className="text-sm text-[#44403C] font-sans">Atendimento exclusivo com hora marcada</p>
               </div>
               <button
                 type="button"

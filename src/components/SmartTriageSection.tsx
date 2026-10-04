@@ -247,7 +247,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917]">
                   1. Qual procedimento você deseja realizar no Monte Carmelo?
                 </h3>
-                <p className="text-sm text-[#4D4642] font-sans mt-1">
+                <p className="text-sm text-[#44403C] font-sans mt-1">
                   Selecione a especialidade que melhor atende o seu desejo de transformação:
                 </p>
               </div>
@@ -407,7 +407,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917] mt-1">
                   3. Seu Resumo de Triagem está Pronto
                 </h3>
-                <p className="text-sm text-[#4D4642] font-sans mt-1">
+                <p className="text-sm text-[#44403C] font-sans mt-1">
                   Ao clicar no botão abaixo, sua triagem será enviada diretamente à recepção da Dayane Lima para priorização de agenda.
                 </p>
               </div>

@@ -154,9 +154,9 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
 
           {/* Controles de Navegação */}
           <div className="flex items-center gap-4 self-start md:self-end">
-            <div className="text-xs font-sans text-[#574F4A] tracking-wider">
+            <div className="text-xs font-sans text-[#44403C] tracking-wider font-medium">
               <span className="font-bold text-[#1C1917]">0{selectedIndex + 1}</span>
-              <span className="mx-1 text-[#4D4642]">/</span>
+              <span className="mx-1 text-[#3D3835]">/</span>
               <span>0{CLINICAL_CASES.length}</span>
             </div>
 
@@ -164,7 +164,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <button
                 type="button"
                 onClick={scrollPrev}
-                className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-white hover:bg-neutral-100 text-[#1C1917] border border-[#E8D0C8] shadow-sm flex items-center justify-center transition-all duration-200 active:scale-95 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer"
+                className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-white hover:bg-neutral-100 text-[#1C1917] border border-[#E8D0C8] shadow-sm flex items-center justify-center transition-all duration-200 active:scale-95 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer"
                 aria-label="Caso clínico anterior"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -172,7 +172,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <button
                 type="button"
                 onClick={scrollNext}
-                className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-white hover:bg-neutral-100 text-[#1C1917] border border-[#E8D0C8] shadow-sm flex items-center justify-center transition-all duration-200 active:scale-95 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] cursor-pointer"
+                className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-white hover:bg-neutral-100 text-[#1C1917] border border-[#E8D0C8] shadow-sm flex items-center justify-center transition-all duration-200 active:scale-95 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer"
                 aria-label="Próximo caso clínico"
               >
                 <ChevronRight className="w-4 h-4" />

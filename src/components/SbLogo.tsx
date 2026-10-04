@@ -106,7 +106,7 @@ export function SbLogo({
 
         {showSubtitle && (
           <span
-            className="text-[9px] sm:text-[10px] font-sans font-medium tracking-[0.25em] uppercase mt-1 leading-tight"
+            className="text-xs font-sans font-medium tracking-[0.2em] uppercase mt-0.5 leading-tight"
             style={{ color: subtitleColor }}
           >
             Ateliê Boutique

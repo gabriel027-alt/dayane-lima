@@ -181,11 +181,11 @@ export default function HomePage() {
       >
         <div className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-[#E8D0C8] rounded-2xl p-2.5 shadow-lg flex items-center justify-between gap-3">
           <div className="pl-2">
-            <p className="text-[11px] font-serif font-bold text-[#1C1917]">
+            <p className="text-xs font-serif font-bold text-[#1C1917]">
               Dayane Lima • Monte Carmelo
             </p>
-            <p className="text-[10px] text-[#3D3835] flex items-center gap-1 font-sans">
-              <MapPin className="w-3 h-3 text-[#6E501E]" />
+            <p className="text-xs text-[#3D3835] flex items-center gap-1 font-sans">
+              <MapPin className="w-3.5 h-3.5 text-[#6E501E]" />
               Rua Calcedônia, 155
             </p>
           </div>
@@ -193,10 +193,10 @@ export default function HomePage() {
           <button
             type="button"
             onClick={handleOpenGeneralTriage}
-            className="min-h-[48px] px-5 py-2.5 rounded-xl bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-xs tracking-wide flex items-center gap-2 shadow-sm active:scale-[0.97] transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="min-h-[48px] px-5 py-2.5 rounded-xl bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide flex items-center gap-2 shadow-sm active:scale-[0.97] transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
             aria-label="Abrir triagem VIP no WhatsApp"
           >
-            <MessageCircle className="w-4 h-4 text-[#C5A880]" />
+            <MessageCircle className="w-4 h-4 text-[#E6C99B]" />
             <span>Triagem VIP</span>
           </button>
         </div>

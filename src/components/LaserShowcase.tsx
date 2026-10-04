@@ -44,7 +44,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
-            <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
+            <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
               ESTÉTICA AVANÇADA · HAKON 4D · E MAIS!
             </span>
           </div>
@@ -67,7 +67,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
         {/* ===================== 1. TABELA DE ÁREAS TRATADAS ===================== */}
         <div className="mb-16 sm:mb-20">
           <div className="mb-6">
-            <span className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#6E501E] block">
+            <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E] block">
               Zonas Corporais • Protocolos Sob Medida
             </span>
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917] mt-0.5">
