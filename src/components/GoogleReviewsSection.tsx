@@ -1,23 +1,151 @@
 "use client";
 
-import React from "react";
-import { Star, CheckCircle2, ExternalLink, ShieldCheck, Heart, Sparkles, MessageSquareHeart } from "lucide-react";
+import React, { useState } from "react";
+import { 
+  Star, 
+  CheckCircle2, 
+  ExternalLink, 
+  ShieldCheck, 
+  Heart, 
+  Sparkles, 
+  MessageSquareHeart, 
+  Video, 
+  MessageCircle, 
+  Maximize2, 
+  X,
+  Play
+} from "lucide-react";
 
 interface GoogleReviewsSectionProps {
   onOpenTriage?: () => void;
 }
 
+interface TestimonialItem {
+  id: string;
+  type: "video" | "image";
+  src: string;
+  title: string;
+  category: "video" | "print";
+  tag: string;
+}
+
 const GOOGLE_REVIEWS_URL =
   "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-16.7455823,-43.8647035,17z/data=!4m8!3m7!1s0x752dd71787d558b:0x7d0fa284ef755f11!8m2!3d-16.7455823!4d-43.8647035!9m1!1b1";
 
+const TESTIMONIALS: TestimonialItem[] = [
+  {
+    id: "dep-1",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane1.mp4",
+    title: "Relato de Transformação & Autoestima",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-2",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane2.mp4",
+    title: "Experiência de Aplicação & Conforto",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-3",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane3.mp4",
+    title: "Resultado Natural & Leveza dos Fios",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-4",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane4.mp4",
+    title: "Satisfação com o Atendimento VIP",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-5",
+    type: "image",
+    src: "/midias/depoimento-clientes-dayane5.jpg",
+    title: "Mensagem Espontânea no WhatsApp",
+    category: "print",
+    tag: "Print do WhatsApp",
+  },
+  {
+    id: "dep-6",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane6.mp4",
+    title: "Elogio ao Mega Hair e Fios Nobres",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-7",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane7.mp4",
+    title: "Preservação da Raiz e Confiança",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-8",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane8.mp4",
+    title: "Recomendação do Ateliê Monte Carmelo",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-9",
+    type: "image",
+    src: "/midias/depoimento-clientes-dayane9.jpg",
+    title: "Feedback de Carinho pós-Procedimento",
+    category: "print",
+    tag: "Print do WhatsApp",
+  },
+  {
+    id: "dep-10",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane10.mp4",
+    title: "Sensação de Leveza e Acabamento",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+  {
+    id: "dep-11",
+    type: "image",
+    src: "/midias/depoimento-clientes-dayane11.jpg",
+    title: "Reconhecimento do Atendimento Exclusivo",
+    category: "print",
+    tag: "Print do WhatsApp",
+  },
+  {
+    id: "dep-12",
+    type: "video",
+    src: "/midias/depoimento-clientes-dayane12.mp4",
+    title: "Fidelidade e Paixão pelo Resultado",
+    category: "video",
+    tag: "Vídeo Real",
+  },
+];
+
 export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps) {
+  const [activeFilter, setActiveFilter] = useState<"all" | "video" | "print">("all");
+  const [modalItem, setModalItem] = useState<TestimonialItem | null>(null);
+
+  const filteredItems = activeFilter === "all"
+    ? TESTIMONIALS
+    : TESTIMONIALS.filter((item) => item.category === activeFilter);
+
   return (
     <section
       id="avaliacoes"
       aria-labelledby="google-reviews-heading"
       className="relative z-10 py-16 md:py-24 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Divisor Decorativo Superior */}
         <div className="w-full flex items-center justify-center pb-8 sm:pb-10" aria-hidden="true">
@@ -32,7 +160,7 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
             <div className="flex items-center gap-1 text-[#C5A880]">
               <Star className="w-3.5 h-3.5 fill-[#C5A880] text-[#C5A880]" />
             </div>
-            <span>Reputação Oficial • Google Reviews 5.0</span>
+            <span>Prova Social Autêntica • Google 5.0 & Depoimentos</span>
           </div>
 
           <h2
@@ -46,12 +174,12 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed [text-wrap:pretty]">
-            Compromisso inegociável com atendimento individual, biossegurança rigorosa e alta costura capilar na Rua Calcedônia, 155.
+            Depoimentos espontâneos e mensagens reais de clientes atendidas por Dayane Lima e equipe na Rua Calcedônia, 155.
           </p>
         </div>
 
         {/* ===================== 2. HERO CARD CONSOLIDADO DE REPUTAÇÃO GOOGLE ===================== */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#E8D0C8] shadow-sm relative overflow-hidden">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#E8D0C8] shadow-sm mb-14 relative overflow-hidden">
           {/* Brilho decorativo sutil */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(ellipse_at_top_right,rgba(197,168,128,0.15),transparent_70%)] pointer-events-none" />
 
@@ -106,7 +234,7 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                 Padrão de Excelência Dayane Lima
               </h3>
               <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
-                Cada detalhe no ateliê reflete o nosso compromisso inegociável com horário exclusivo, atendimento sem pressa e técnicas avançadas com preservação biológica.
+                Cada transformação no ateliê reflete o compromisso com horário individual, produtos nobres e preservação biológica da raiz.
               </p>
 
               <div className="grid grid-cols-2 gap-2.5 pt-2 text-xs font-sans">
@@ -156,21 +284,197 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
           </div>
         </div>
 
-        {/* ===================== 3. AÇÃO DE AGENDAMENTO VIA CONCIERGE ===================== */}
+        {/* ===================== 3. FILTRO DOS DEPOIMENTOS REAIS ===================== */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          <div>
+            <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E] block">
+              Galeria de Depoimentos Reais
+            </span>
+            <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1C1917] mt-0.5">
+              O Que Nossas Clientes Dizem
+            </h3>
+          </div>
+
+          <div className="flex items-center gap-1.5 bg-white p-1 rounded-full border border-[#E8D0C8] shadow-xs">
+            <button
+              onClick={() => setActiveFilter("all")}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
+                activeFilter === "all"
+                  ? "bg-[#1C1917] text-white shadow-xs"
+                  : "text-[#6E501E] hover:text-[#1C1917]"
+              }`}
+            >
+              Todos ({TESTIMONIALS.length})
+            </button>
+            <button
+              onClick={() => setActiveFilter("video")}
+              className={`flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
+                activeFilter === "video"
+                  ? "bg-[#1C1917] text-white shadow-xs"
+                  : "text-[#6E501E] hover:text-[#1C1917]"
+              }`}
+            >
+              <Video className="w-3.5 h-3.5" />
+              <span>Vídeos (9)</span>
+            </button>
+            <button
+              onClick={() => setActiveFilter("print")}
+              className={`flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
+                activeFilter === "print"
+                  ? "bg-[#1C1917] text-white shadow-xs"
+                  : "text-[#6E501E] hover:text-[#1C1917]"
+              }`}
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>Prints WhatsApp (3)</span>
+            </button>
+          </div>
+        </div>
+
+        {/* ===================== 4. GRADE DOS DEPOIMENTOS REAIS (VÍDEOS & FOTOS) ===================== */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-3xl p-4 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880] hover:shadow-md transition-all flex flex-col justify-between group"
+            >
+              {/* Contêiner da Mídia (Vídeo ou Foto) */}
+              <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/20 shadow-inner">
+                {item.type === "video" ? (
+                  <video
+                    src={item.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div 
+                    onClick={() => setModalItem(item)}
+                    className="w-full h-full cursor-zoom-in relative group/img flex items-center justify-center bg-[#FAF3F0]"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="p-2 rounded-full bg-white/90 text-[#1C1917] shadow-lg">
+                        <Maximize2 className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Selo de Categoria Superior */}
+                <div className="absolute top-2.5 left-2.5 pointer-events-none">
+                  <span
+                    className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-sans font-bold uppercase tracking-wider backdrop-blur-md shadow-md ${
+                      item.type === "video"
+                        ? "bg-rose-950/80 text-rose-200 border border-rose-700/50"
+                        : "bg-emerald-950/80 text-emerald-200 border border-emerald-700/50"
+                    }`}
+                  >
+                    {item.type === "video" ? (
+                      <>
+                        <Video className="w-3 h-3" />
+                        <span>Vídeo Real</span>
+                      </>
+                    ) : (
+                      <>
+                        <MessageCircle className="w-3 h-3" />
+                        <span>Print WhatsApp</span>
+                      </>
+                    )}
+                  </span>
+                </div>
+              </div>
+
+              {/* Informações e Legenda de Veracidade */}
+              <div className="mt-3.5 space-y-1.5">
+                <h4 className="font-serif font-bold text-sm text-[#1C1917] leading-snug line-clamp-1">
+                  {item.title}
+                </h4>
+
+                {/* Legenda Sutil Atestando Veracidade */}
+                <div className="flex items-center gap-1.5 text-[11px] text-stone-600 font-sans pt-1 border-t border-[#F0EAE1]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span className="leading-tight">
+                    Print/Vídeo real de cliente atendida no Ateliê Dayane Lima
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ===================== 5. CALL TO ACTION CONCIERGE ===================== */}
         {onOpenTriage && (
-          <div className="mt-8 text-center">
+          <div className="mt-12 text-center">
             <button
               type="button"
               onClick={onOpenTriage}
-              className="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
             >
-              <MessageSquareHeart className="w-3.5 h-3.5 text-[#E6C99B]" />
+              <MessageSquareHeart className="w-4 h-4 text-[#E6C99B]" />
               <span>Agendar Minha Experiência VIP</span>
             </button>
           </div>
         )}
 
       </div>
+
+      {/* ===================== MODAL DE VISUALIZAÇÃO AMPLIADA (LIGHTBOX) ===================== */}
+      {modalItem && (
+        <div 
+          onClick={() => setModalItem(null)}
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-lg w-full bg-[#161412] border border-white/20 rounded-3xl overflow-hidden shadow-2xl p-4 flex flex-col items-center"
+          >
+            <button
+              onClick={() => setModalItem(null)}
+              className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 transition-colors cursor-pointer"
+              aria-label="Fechar ampliação"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="w-full max-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl bg-black">
+              {modalItem.type === "video" ? (
+                <video
+                  src={modalItem.src}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-h-[75vh] w-auto object-contain"
+                />
+              ) : (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={modalItem.src}
+                  alt={modalItem.title}
+                  className="max-h-[75vh] w-auto object-contain rounded-xl"
+                />
+              )}
+            </div>
+
+            <div className="w-full mt-3 text-center">
+              <h4 className="font-serif text-white text-base font-medium">
+                {modalItem.title}
+              </h4>
+              <p className="text-xs text-stone-400 font-sans mt-0.5 flex items-center justify-center gap-1">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Print/Vídeo real de cliente atendida no Ateliê Dayane Lima</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
