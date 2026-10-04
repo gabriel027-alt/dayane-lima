@@ -14,7 +14,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
     <section 
       id="espaco"
       aria-label="Atmosfera & Estrutura Física"
-      className="py-20 md:py-28 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24 relative"
+      className="py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24 relative"
     >
       {/* Detalhe Geométrico de Fundo */}
       <div 
@@ -29,7 +29,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/50 to-transparent" />
           <div className="mx-4 flex items-center gap-1.5 text-[#C5A880]">
             <span className="w-1 h-1 rounded-full bg-[#C5A880]" />
-            <span className="w-2 h-2 rotate-45 border border-[#C5A880] bg-[#F7EAE5]" />
+            <span className="w-2 h-2 rotate-45 border border-[#C5A880] bg-[#FAF3F0]" />
             <span className="w-1 h-1 rounded-full bg-[#C5A880]" />
           </div>
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/50 to-transparent" />

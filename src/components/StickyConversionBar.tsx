@@ -23,24 +23,24 @@ export function StickyConversionBar({
       <div className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-[#E8D0C8] rounded-2xl sm:rounded-full p-2.5 sm:px-6 sm:py-3.5 shadow-2xl flex items-center justify-between gap-3 sm:gap-6">
         
         {/* Informações Institucionais do Ateliê */}
-        <div className="pl-1 sm:pl-0 flex flex-col justify-center">
-          <div className="flex items-center gap-2">
+        <div className="pl-1 sm:pl-0 flex flex-col justify-center min-w-0">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <span 
-              className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" 
+              className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" 
               aria-hidden="true" 
             />
-            <p className="text-sm font-serif font-bold text-[#1C1917] tracking-tight">
-              Ateliê Dayane Lima • Monte Carmelo
+            <p className="text-xs sm:text-sm font-serif font-bold text-[#1C1917] tracking-tight truncate">
+              Ateliê Dayane Lima
             </p>
           </div>
 
           <p className="text-sm text-[#44403C] font-sans hidden sm:block mt-0.5">
-            Avaliação individual com teste de mecha e diagnóstico de preservação da raiz.
+            Avaliação VIP individual com diagnóstico prévio e preservação da raiz.
           </p>
 
-          <p className="text-sm text-[#44403C] flex items-center gap-1 font-sans sm:hidden">
-            <MapPin className="w-3.5 h-3.5 text-[#6E501E] shrink-0" aria-hidden="true" />
-            <span>Rua Calcedônia, 155</span>
+          <p className="text-xs text-[#44403C] flex items-center gap-1 font-sans sm:hidden truncate mt-0.5">
+            <MapPin className="w-3 h-3 text-[#6E501E] shrink-0" aria-hidden="true" />
+            <span>Monte Carmelo</span>
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export function StickyConversionBar({
         <button
           type="button"
           onClick={onOpenTriage}
-          className="min-h-[48px] px-5 sm:px-7 py-3 rounded-xl sm:rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide flex items-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] shrink-0 cursor-pointer"
+          className="min-h-[48px] px-4 sm:px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] shrink-0 cursor-pointer"
           aria-label="Agendar Avaliação VIP no WhatsApp"
         >
           <MessageCircle className="w-4 h-4 text-[#E6C99B] shrink-0" aria-hidden="true" />

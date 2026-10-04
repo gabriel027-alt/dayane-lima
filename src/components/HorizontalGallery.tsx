@@ -118,7 +118,7 @@ export default function HorizontalGallery({
       className={`py-16 md:py-20 border-b transition-colors duration-300 scroll-mt-20 ${
         isDark 
           ? 'bg-[#1C1917] border-[#C5A880]/30 text-white' 
-          : 'bg-[#F7EAE5] border-[#E8D0C8] text-[#1C1917]'
+          : 'bg-[#FAF3F0] border-[#E8D0C8] text-[#1C1917]'
       }`}
     >
       <div 

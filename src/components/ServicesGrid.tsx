@@ -104,14 +104,14 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
     <section 
       id="procedimentos"
       aria-labelledby="services-heading"
-      className="py-20 md:py-28 bg-[#F7EAE5] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24 select-none"
+      className="py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24 select-none"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Divisor Decorativo Superior */}
         <div className="w-full flex items-center justify-center pb-8 sm:pb-12" aria-hidden="true">
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
-          <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#F7EAE5]" />
+          <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#FAF3F0]" />
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
         </div>
 
@@ -142,7 +142,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
           {RITUALS_INDEX.map((ritual) => (
             <div
               key={ritual.id}
-              className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/70 hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+              className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/70 hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
             >
               {/* Acabamento de Luxo Acetinado */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#C5A880]/10 to-transparent rounded-bl-full pointer-events-none" />
@@ -208,7 +208,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
         </div>
 
         {/* Banner Inferior com Garantia Biológica e CTA */}
-        <div className="mt-14 sm:mt-16 bg-white rounded-3xl p-6 sm:p-10 border border-[#E8D0C8] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-6 sm:p-10 border border-[#E8D0C8] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-2xl bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-6 h-6 text-[#6E501E]" />

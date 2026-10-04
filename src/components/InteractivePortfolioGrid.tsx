@@ -32,7 +32,7 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="py-20 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden">
+    <section className="py-20 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>

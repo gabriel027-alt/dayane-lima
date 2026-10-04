@@ -29,14 +29,14 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
       <section 
         id="localizacao"
         aria-labelledby="location-heading"
-        className="py-20 md:py-28 bg-[#F7EAE5] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
+        className="py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {/* Divisor Decorativo Superior */}
           <div className="w-full flex items-center justify-center pb-8 sm:pb-12" aria-hidden="true">
             <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
-            <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#F7EAE5]" />
+            <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#FAF3F0]" />
             <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
           </div>
 
@@ -140,7 +140,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
 
             {/* Mapa Estilizado */}
             <div className="lg:col-span-6">
-              <div className="relative w-full h-[360px] sm:h-[420px] rounded-3xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
+              <div className="relative w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
                 <iframe
                   title="Localização do Ateliê Boutique Dayane Lima no Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.2372227188734!2d-43.8647035!3d-16.7455823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x752dd71787d558b%3A0x7d0fa284ef755f11!2sR.%20Calced%C3%B4nia%2C%20155%20-%20Monte%20Carmelo%2C%20Montes%20Claros%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"

@@ -12,14 +12,14 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
     <section 
       id="autoridade"
       aria-labelledby="authority-heading"
-      className="py-20 md:py-28 bg-[#F7EAE5] text-[#1C1917] relative overflow-hidden border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
+      className="py-20 md:py-28 bg-[#FAF3F0] text-[#1C1917] relative overflow-hidden border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Divisor Decorativo Superior */}
         <div className="w-full flex items-center justify-center pb-8 sm:pb-12" aria-hidden="true">
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
-          <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#F7EAE5]" />
+          <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#FAF3F0]" />
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
         </div>
 
@@ -30,7 +30,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Moldura Principal com Retrato Oficial da Especialista (Exclusivo, sem cortes e sem tarjas pretas) */}
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#C5A880]/50 shadow-2xl bg-[#1C1917] group">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#C5A880]/50 shadow-2xl bg-[#1C1917] group">
                 <div className="relative w-full h-full overflow-hidden">
                   <img 
                     src="/midias/segunda-foto-perfil-dayane.jpg" 
@@ -39,7 +39,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" aria-hidden="true" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
                   <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">Diretora Criativa & Master Educator</p>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">Dayane Lima</h3>
@@ -66,7 +66,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base text-[#44403C] leading-relaxed font-sans [text-wrap:pretty]">
-              Em mais de vinte anos de trajetória, <strong className="text-[#1C1917] font-semibold">Dayane Lima</strong> consolidou uma autoridade que vai muito além de um único procedimento. Com rigor técnico e atendimento privativo no Monte Carmelo, sua expertise integra a alta costura em Mega Hair e mechas à harmonização do olhar, unhas em gel, bronzeamento tecnológico e estética avançada — <strong className="text-[#6E501E] font-semibold tracking-wider uppercase">E MAIS!</strong> Cada cliente encontra um santuário completo de transformação com padrão de excelência inegociável.
+              Em mais de vinte anos de trajetória, <strong className="text-[#1C1917] font-semibold">Dayane Lima</strong> consolidou uma autoridade que vai muito além de um único procedimento. Com rigor técnico e atendimento privativo no Monte Carmelo, sua expertise integra a alta costura em Mega Hair e mechas à harmonização do olhar, unhas em gel, bronzeamento tecnológico e estética avançada. Cada cliente encontra um santuário completo de transformação com padrão de excelência inegociável.
             </p>
 
             {/* O Manifesto de Autoridade: 3 Princípios Inegociáveis (Grid Modular CRO) */}

@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export function Header({ onOpenTriage }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-40 bg-[#F7EAE5]/95 backdrop-blur-md border-b border-[#E8D0C8] transition-all">
+    <header className="sticky top-0 z-40 bg-[#FAF3F0]/95 backdrop-blur-md border-b border-[#E8D0C8] transition-all">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-20 flex items-center justify-between">
         
         {/* Logotipo Oficial Dayane Lima Ateliê Boutique */}

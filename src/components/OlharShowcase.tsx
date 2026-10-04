@@ -13,7 +13,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
     <section 
       id="olhar"
       aria-labelledby="olhar-heading"
-      className="py-20 md:py-32 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24 relative"
+      className="py-20 md:py-32 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24 relative"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         
@@ -22,7 +22,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
             <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
-              VISAGISMO DO OLHAR · E MAIS!
+              VISAGISMO DO OLHAR · CÍLIOS & SOBRANCELHAS
             </span>
           </div>
 
@@ -45,7 +45,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         <div className="mb-16 sm:mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Card: Rayssa Lash (Cílios) */}
-          <div id="cilios" className="bg-white rounded-3xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="cilios" className="bg-white rounded-2xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
@@ -74,7 +74,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           </div>
 
           {/* Card: Hillery Thauanne (Sobrancelhas) */}
-          <div id="sobrancelhas" className="bg-white rounded-3xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="sobrancelhas" className="bg-white rounded-2xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">

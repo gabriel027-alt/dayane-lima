@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { ServiceCategory } from "./WhatsAppTriageDrawer";
 
 interface MegaHairShowcaseProps {
@@ -37,7 +37,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
     <section 
       id="megahair"
       aria-labelledby="megahair-heading"
-      className="py-20 md:py-32 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24 relative"
+      className="py-20 md:py-32 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden scroll-mt-20 sm:scroll-mt-24 relative"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         
@@ -66,12 +66,12 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
         </div>
 
         {/* ===================== MANIFESTO TÉCNICO DE ENGENHARIA CAPILAR & DESTAQUE VISUAL ===================== */}
-        <div className="mb-16 sm:mb-20 bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
+        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Coluna Visual de Destaque Fotográfico: Mega Hair */}
             <div className="lg:col-span-5">
-              <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl group">
+              <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-2xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/50 shadow-2xl group">
                 <img 
                   src="/midias/foto-megahair4-dayane.jpg"
                   alt="Resultado de Mega Hair de Nanocápsulas por Dayane Lima"
@@ -79,7 +79,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" aria-hidden="true" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
                   <span className="text-xs font-sans font-bold uppercase tracking-widest text-[#E6C99B] block mb-1">
                     Alta Costura Capilar • Monte Carmelo
@@ -147,150 +147,6 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
             </div>
 
           </div>
-        </div>
-
-        {/* ===================== QUEBRA DE OBJEÇÕES CIRÚRGICAS & DIFERENCIAIS ===================== */}
-        <div className="mb-16 sm:mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-sans font-bold uppercase tracking-widest text-[#6E501E] block mb-2">
-              Transparência & Rigor Técnico
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917]">
-              Mitos Desmistificados: A Verdade Sobre o Mega Hair de Luxo
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-            {/* Card 1: Quebra da Raiz */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
-                    Objeção #1 • Saúde da Raiz
-                  </span>
-                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Protocolo Seguro</span>
-                </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
-                  "O Mega Hair danifica ou enfraquece a raiz natural?"
-                </h4>
-              </div>
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
-                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
-                    Preservação Folicular Biológica:
-                  </strong>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-                    Fixação milimétrica a 0.5cm do couro cabeludo com divisão geométrica anti-tração. O bulbo permanece 100% oxigenado e saudável.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Visibilidade das Cápsulas */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
-                    Objeção #2 • Discrição Total
-                  </span>
-                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Fusão 0.5mm</span>
-                </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
-                  "As cápsulas ficam visíveis ao prender ou sob o sol?"
-                </h4>
-              </div>
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
-                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
-                    Invisibilidade Óptica 360°:
-                  </strong>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-                    Nanocápsulas de queratina biocompatível de 0.5mm translúcidas que mimetizam a cor da raiz. Liberdade total para coques e rabos de cavalo.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3: Dor na Manutenção */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
-                    Objeção #3 • Conforto Físico
-                  </span>
-                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Remoção Suave</span>
-                </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
-                  "A manutenção é dolorosa ou repuxa os fios?"
-                </h4>
-              </div>
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
-                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
-                    Dissolução por Emulsão Orgânica:
-                  </strong>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-                    Uso de solvente nutritivo orgânico que amolece a fusão sem qualquer puxão mecânico. Os fios são desembaraçados e saem 100% íntegros.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4: Falta de Privacidade */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8D0C8] shadow-xs flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#881337] bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
-                    Objeção #4 • Exclusividade
-                  </span>
-                  <span className="text-xs font-mono font-semibold text-[#6E501E]">Monte Carmelo</span>
-                </div>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-3">
-                  "Terei privacidade ou terei que esperar com várias pessoas?"
-                </h4>
-              </div>
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3 mt-1">
-                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-sm font-bold text-[#1C1917] block mb-0.5">
-                    Atendimento Privativo VIP:
-                  </strong>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-                    Zero esteira coletiva. Atendimento em bancada única com hora marcada na Rua Calcedônia, 155: calma, conforto térmico e total discrição.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ===================== CONVITE EDITORIAL DISCRETO ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center text-[#6E501E] shrink-0">
-              <Sparkles className="w-5 h-5 text-[#6E501E]" />
-            </div>
-            <div>
-              <h4 className="font-serif font-bold text-lg text-[#1C1917]">
-                Atendimento Consultivo Privativo em Monte Carmelo
-              </h4>
-              <p className="text-sm text-[#44403C] font-sans mt-0.5">
-                Avaliação individual com teste de mecha, toque nos cabelos virgens e diagnóstico capilar completo.
-              </p>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => onSelectService("megahair")}
-            className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-          >
-            <span>Consultar Disponibilidade</span>
-            <ArrowRight className="w-4 h-4 text-[#C5A880]" />
-          </button>
         </div>
 
       </div>

@@ -22,7 +22,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[1px] bg-[#C5A880]" />
             <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-[#6E501E]">
-              ESTÉTICA CORPORAL & BRONZE · E MAIS!
+              ESTÉTICA CORPORAL & BRONZEAMENTO EM CABINE
             </span>
           </div>
 

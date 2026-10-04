@@ -45,7 +45,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         <div className="mb-16 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Box de Citação de Visagismo Solar */}
-          <div className="lg:col-span-6 p-8 sm:p-10 rounded-3xl bg-white border border-[#E8D0C8] shadow-xs relative">
+          <div className="lg:col-span-6 p-8 sm:p-10 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
             <span className="font-serif text-6xl text-[#C5A880]/30 absolute top-4 left-6 select-none pointer-events-none">
               “
             </span>
@@ -62,7 +62,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           </div>
 
           {/* Pilares Técnicos de Segurança Capilar & Terapias */}
-          <div id="terapia" className="lg:col-span-6 bg-white p-8 rounded-3xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
+          <div id="terapia" className="lg:col-span-6 bg-white p-8 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
             <h4 className="font-serif font-bold text-xl text-[#1C1917]">
               Critérios Inegociáveis de Clareamento Seguro
             </h4>

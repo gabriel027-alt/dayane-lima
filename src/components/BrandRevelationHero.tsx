@@ -25,8 +25,8 @@ export function BrandRevelationHero({
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Badge de Posicionamento */}
-            <div className="text-xs font-sans tracking-[0.2em] text-[#6E501E] bg-white border border-[#E8D0C8] font-bold px-4 py-2 rounded-full w-max mb-6 uppercase shadow-xs">
-              ATELIÊ PRIVADO • ALTA COSTURA & BELEZA INTEGRAL • E MAIS!
+            <div className="text-xs sm:text-sm font-sans tracking-[0.2em] text-[#6E501E] bg-white border border-[#E8D0C8] font-bold px-4 py-2 rounded-full w-max mb-6 uppercase shadow-xs">
+              ATELIÊ BOUTIQUE PRIVATIVO • MONTE CARMELO
             </div>
 
             {/* Headline Editorial de Autoridade */}
@@ -34,16 +34,16 @@ export function BrandRevelationHero({
               id="brand-revelation-title"
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-serif font-bold text-[#1C1917] tracking-tight leading-[1.14] mb-5 [text-wrap:balance]"
             >
-              Excelência em{" "}
-              <span className="italic font-normal font-serif text-[#C58B7E]">
-                Mega Hair invisível
-              </span>
-              , mechas nobres — e mais!
+              Alta Costura em{" "}
+              <span className="italic font-normal font-serif text-[#944234]">
+                Mega Hair Invisível
+              </span>{" "}
+              & Mechas Sob Medida.
             </h2>
 
             {/* Parágrafo Descritivo */}
             <p className="text-[#44403C] text-base sm:text-lg font-normal leading-relaxed max-w-xl mb-8 [text-wrap:pretty]">
-              Atendimento consultivo e privativo no Monte Carmelo. Do domínio artesanal do Mega Hair e mechas sob medida às extensões de cílios, engenharia ungueal, bronzeamento em cabine e estética avançada — <strong className="text-[#1C1917] font-semibold">E MAIS!</strong> Um ecossistema completo de alta costura e exclusividade para a sua melhor versão.
+              Atendimento consultivo e privativo com hora marcada no Monte Carmelo. Nanocápsulas de queratina imperceptíveis que protegem a raiz natural, colorimetria de precisão e rituais integrados de beleza exclusiva.
             </p>
 
             {/* Botões de Ação */}
@@ -90,14 +90,14 @@ export function BrandRevelationHero({
 
           {/* ===================== COLUNA DIREITA (RETRATO OFICIAL DA AUTORIDADE) ===================== */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <div className="w-full max-w-sm rounded-[32px] overflow-hidden shadow-2xl border border-[#C5A880]/50 bg-[#1C1917] relative aspect-[4/5] group">
+            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-[#C5A880]/50 bg-[#1C1917] relative aspect-[4/5] group">
               <img
                 src="/midias/foto-dayane-lima.png"
                 alt="Dayane Lima • Alta Costura Capilar e Mega Hair"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                 loading="eager"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[32px] pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
             </div>
           </div>
 

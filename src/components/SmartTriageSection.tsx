@@ -186,14 +186,14 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
     <section 
       id="triagem-inteligente"
       aria-labelledby="triage-quiz-heading"
-      className="py-20 md:py-28 bg-[#F7EAE5] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
+      className="py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         
         {/* Divisor Decorativo Superior */}
         <div className="w-full flex items-center justify-center pb-8 sm:pb-12" aria-hidden="true">
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
-          <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#F7EAE5]" />
+          <div className="mx-3 w-1.5 h-1.5 rotate-45 border border-[#C5A880]/60 bg-[#FAF3F0]" />
           <div className="h-[1px] w-24 sm:w-48 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent" />
         </div>
 
@@ -220,7 +220,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
         </div>
 
         {/* Card Principal da Triagem */}
-        <div className="bg-white rounded-3xl border border-[#E8D0C8] p-6 sm:p-10 shadow-md">
+        <div className="bg-white rounded-2xl border border-[#E8D0C8] p-6 sm:p-10 shadow-md">
           
           {/* Barra de Progresso dos 3 Passos */}
           <div className="mb-8">

@@ -258,7 +258,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
       role="region"
       aria-roledescription="carousel"
       aria-label={title ? `Galeria de ${title}` : "Galeria de procedimentos Dayane Lima Ateliê"}
-      className="py-16 md:py-20 bg-[#F7EAE5] border-b border-[#E8D0C8] overflow-hidden"
+      className="py-16 md:py-20 bg-[#FAF3F0] border-b border-[#E8D0C8] overflow-hidden"
     >
       {(title || subtitle) && (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-8 md:mb-12">
