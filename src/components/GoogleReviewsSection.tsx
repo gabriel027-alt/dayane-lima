@@ -27,7 +27,7 @@ interface TestimonialItem {
 }
 
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-16.7455823,-43.8647035,17z/data=!4m8!3m7!1s0x752dd71787d558b:0x7d0fa284ef755f11!8m2!3d-16.7455823!4d-43.8647035!9m1!1b1";
+  "https://www.google.com/maps/place/R.+Calced%C3%B4nia,+155+-+Monte+Carmelo,+Montes+Claros+-+MG";
 
 const TESTIMONIALS: TestimonialItem[] = [
   {
@@ -254,17 +254,32 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
               </div>
             </div>
 
-            {/* Botão de Destaque para Avaliar no Google Maps */}
+            {/* Botão de Destaque para Avaliar no Google Maps (High-Contrast & CRO) */}
             <div className="lg:col-span-3 flex flex-col items-center justify-center text-center pt-4 lg:pt-0">
               <a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#C5A880] to-[#B8934A] hover:from-[#D4B991] hover:to-[#C5A880] text-[#1C1917] font-sans font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all active:scale-[0.98] group"
+                className="w-full inline-flex flex-col items-center justify-center gap-2.5 p-5 sm:p-6 rounded-2xl bg-[#1C1917] hover:bg-[#28231E] border-2 border-[#C5A880] text-white shadow-2xl shadow-[#1C1917]/30 hover:shadow-[#C5A880]/25 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group ring-1 ring-[#C5A880]/30"
               >
-                <Star className="w-4 h-4 fill-[#1C1917] text-[#1C1917]" />
-                <span className="text-center leading-tight">Deixe sua Avaliação 5 Estrelas no Google</span>
-                <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-80 group-hover:translate-x-0.5 transition-transform" />
+                <div className="flex items-center gap-1 text-[#C5A880]">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-[#C5A880] text-[#C5A880] group-hover:scale-110 transition-transform duration-200"
+                      style={{ transitionDelay: `${i * 35}ms` }}
+                    />
+                  ))}
+                </div>
+
+                <span className="font-sans font-bold text-xs sm:text-sm uppercase tracking-wider text-[#FAF3F0] group-hover:text-[#E6C99B] transition-colors text-center leading-snug">
+                  Deixe sua Avaliação 5 Estrelas no Google
+                </span>
+
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-semibold text-[#E6C99B] group-hover:text-white transition-colors">
+                  <span>Avaliar no Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </span>
               </a>
 
               <a
@@ -273,7 +288,7 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                 rel="noopener noreferrer"
                 className="text-[11px] text-stone-500 hover:text-[#6E501E] font-sans mt-3 underline underline-offset-4 transition-colors flex items-center gap-1"
               >
-                <span>Conferir avaliações ao vivo no Google Maps</span>
+                <span>Conferir ficha na Rua Calcedônia, 155</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
