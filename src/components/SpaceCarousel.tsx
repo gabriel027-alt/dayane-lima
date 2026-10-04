@@ -55,8 +55,8 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
         </div>
 
         {/* ===================== 1. PILARES DE HOSPITALIDADE ===================== */}
-        <div className="mb-14 sm:mb-18 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+        <div className="mb-14 sm:mb-18 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <MapPin className="w-5 h-5 text-[#8F6E32]" />
@@ -68,7 +68,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <Wind className="w-5 h-5 text-[#8F6E32]" />
@@ -80,7 +80,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <Coffee className="w-5 h-5 text-[#8F6E32]" />
@@ -92,7 +92,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
+          <div className="bg-white p-5 sm:p-7 rounded-2xl border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <ShieldCheck className="w-5 h-5 text-[#8F6E32]" />
@@ -106,7 +106,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
         </div>
 
         {/* ===================== ROTA GOOGLE MAPS & AGENDAMENTO ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1">
             <h4 className="font-serif font-bold text-lg text-[#1C1917]">
               Planeje sua Visita ao Ateliê Dayane Lima

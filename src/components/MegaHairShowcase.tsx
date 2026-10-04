@@ -66,7 +66,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
         </div>
 
         {/* ===================== MANIFESTO TÉCNICO DE ENGENHARIA CAPILAR & DESTAQUE VISUAL ===================== */}
-        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
+        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-5 sm:p-8 md:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Coluna Visual de Destaque Fotográfico: Mega Hair */}

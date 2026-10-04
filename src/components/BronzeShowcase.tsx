@@ -42,8 +42,8 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
         </div>
 
         {/* ===================== 1. PROTOCOLO DE BIOSSEGURANÇA & PRIVACIDADE ===================== */}
-        <div className="mb-16 sm:mb-20 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
+        <div className="mb-16 sm:mb-20 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="p-5 sm:p-7 md:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
             <div className="flex items-center gap-3">
               <Sun className="w-5 h-5 text-[#8F6E32]" />
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">Controle Rigoroso de Exposição</h4>
@@ -57,7 +57,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
             </div>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
+          <div className="p-5 sm:p-7 md:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
             <div className="flex items-center gap-3">
               <Lock className="w-5 h-5 text-[#8F6E32]" />
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">Privacidade Absoluta em Monte Carmelo</h4>
@@ -73,7 +73,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white p-6 sm:p-8 border border-[#E8D0C8] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="rounded-2xl bg-white p-5 sm:p-7 md:p-8 border border-[#E8D0C8] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <Sun className="w-5 h-5 text-[#8F6E32]" />

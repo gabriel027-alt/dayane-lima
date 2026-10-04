@@ -42,14 +42,14 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         </div>
 
         {/* ===================== 1. FILOSOFIA DE VISAGISMO SOLAR & COMPROMISSO COM A FIBRA ===================== */}
-        <div className="mb-16 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="mb-16 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* Box de Citação de Visagismo Solar */}
-          <div className="lg:col-span-6 p-8 sm:p-10 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
+          <div className="lg:col-span-6 p-5 sm:p-8 md:p-10 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
             <span className="font-serif text-6xl text-[#C5A880]/30 absolute top-4 left-6 select-none pointer-events-none">
               “
             </span>
-            <p className="font-serif italic text-xl sm:text-2xl text-[#1C1917] leading-relaxed relative z-10 pl-6">
+            <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-[#1C1917] leading-relaxed relative z-10 pl-6">
               A cor perfeita não deve transformar você em outra pessoa; ela deve acender os pontos de luz da sua arquitetura facial sob o sol.
             </p>
             <div className="mt-6 pt-4 border-t border-[#F2DDD6] flex items-center justify-between text-sm font-sans">
@@ -62,8 +62,8 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           </div>
 
           {/* Pilares Técnicos de Segurança Capilar & Terapias */}
-          <div id="terapia" className="lg:col-span-6 bg-white p-8 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
-            <h4 className="font-serif font-bold text-xl text-[#1C1917]">
+          <div id="terapia" className="lg:col-span-6 bg-white p-5 sm:p-7 md:p-8 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
+            <h4 className="font-serif font-bold text-lg sm:text-xl text-[#1C1917]">
               Critérios Inegociáveis de Clareamento Seguro
             </h4>
             
@@ -95,7 +95,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center text-[#6E501E] shrink-0">
               <Sun className="w-5 h-5 text-[#6E501E]" />

@@ -42,21 +42,21 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         </div>
 
         {/* ===================== 1. APRESENTAÇÃO DAS ESPECIALISTAS ===================== */}
-        <div className="mb-16 sm:mb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mb-16 sm:mb-20 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Card: Rayssa Lash (Cílios) */}
-          <div id="cilios" className="bg-white rounded-2xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="cilios" className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
                   Especialista em Extensão de Cílios & Spa Ocular
                 </span>
-                <span className="text-xs font-mono font-medium text-[#7A4237]">Ateliê VIP</span>
+                <span className="text-xs font-mono font-medium text-[#7A4237] shrink-0">Ateliê VIP</span>
               </div>
-              <h3 className="font-serif font-bold text-2xl text-[#1C1917]">
+              <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1C1917] tracking-tight">
                 Rayssa Lash
               </h3>
-              <p className="text-sm text-[#44403C] font-sans mt-3 leading-relaxed">
+              <p className="text-sm text-[#44403C] font-sans mt-2.5 leading-relaxed">
                 Fios de seda com curvatura personalizada e diâmetro milimétrico que respeita a saúde folicular. Isolamento anatômico mecha a mecha com adesivos oftálmicos de alta pureza.
               </p>
             </div>
@@ -74,18 +74,18 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
           </div>
 
           {/* Card: Hillery Thauanne (Sobrancelhas) */}
-          <div id="sobrancelhas" className="bg-white rounded-2xl p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="sobrancelhas" className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
                   Visagismo & Proporção Áurea Facial
                 </span>
-                <span className="text-xs font-mono font-medium text-[#7A4237]">Monte Carmelo</span>
+                <span className="text-xs font-mono font-medium text-[#7A4237] shrink-0">Monte Carmelo</span>
               </div>
-              <h3 className="font-serif font-bold text-2xl text-[#1C1917]">
+              <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1C1917] tracking-tight">
                 Hillery Thauanne
               </h3>
-              <p className="text-sm text-[#44403C] font-sans mt-3 leading-relaxed">
+              <p className="text-sm text-[#44403C] font-sans mt-2.5 leading-relaxed">
                 Mapeamento milimétrico calculado em proporção áurea facial de acordo com as linhas naturais do seu rosto. Pigmentação dosada para valorizar a arquitetura dos olhos com naturalidade.
               </p>
             </div>
@@ -105,7 +105,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <Eye className="w-5 h-5 text-[#8F6E32]" />

@@ -189,7 +189,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
                 key={item.id}
                 className="flex-[0_0_100%] lg:flex-[0_0_50%] pl-5 sm:pl-6 min-w-0"
               >
-                <article className="bg-white rounded-2xl p-7 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between h-full select-none hover:border-[#C5A880]/60 transition-all duration-200">
+                <article className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between h-full select-none hover:border-[#C5A880]/60 transition-all duration-200">
                   <div>
                     {/* Tag Superior & Especialista */}
                     <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -262,7 +262,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
         </div>
 
         {/* ===================== MANIFESTO: ATENDIMENTO VIP SEM ESTEIRA NO MONTE CARMELO ===================== */}
-        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-8 sm:p-12 border border-[#E5DDD0] shadow-sm relative overflow-hidden">
+        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-5 sm:p-8 md:p-12 border border-[#E5DDD0] shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(ellipse_at_top_right,rgba(197,168,128,0.12),transparent_70%)] pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">

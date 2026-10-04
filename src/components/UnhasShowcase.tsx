@@ -64,7 +64,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           {UNHAS_SPECS.map((spec) => (
             <div 
               key={spec.code}
-              className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between"
             >
               <div>
                 <span className="font-serif text-3xl sm:text-4xl font-bold text-[#8F6E32]/35 block mb-3">
@@ -87,7 +87,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <HandMetal className="w-5 h-5 text-[#8F6E32]" />
