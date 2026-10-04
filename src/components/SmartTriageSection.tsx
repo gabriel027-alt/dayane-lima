@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, ArrowRight, ArrowLeft, Check, CheckCircle2, MessageCircle, RefreshCw, Scissors, Eye, HandMetal, Sun, Zap, User, Layers } from "lucide-react";
+import { Sparkles, ArrowRight, ArrowLeft, Check, CheckCircle2, MessageCircle, RefreshCw, Scissors, Eye, HandMetal, Sun, Zap, User, Layers, HeartPulse, Moon, Waves } from "lucide-react";
 
 interface SmartTriageSectionProps {
   whatsappPhone?: string;
@@ -125,13 +125,89 @@ const PROCEDURES: ProcedureConfig[] = [
       "Pernas Completas & Coxas",
       "Axilas & Virilha Íntima (com clareamento de atrito)",
       "Buço, Queixo & Face Visagista",
-      "Protocolos Corporais & Drenagem Linfática",
+      "Protocolos Corporais & Clareamento Íntimo",
     ],
     subQuestionLabel: "Qual o seu maior incômodo atualmente?",
     subQuestionOptions: [
       "Foliculite e pelos encravados após lâmina ou cera",
       "Manchas escuras causadas por atrito constante",
       "Desejo de praticidade e pele lisa definitiva sem dor",
+    ],
+  },
+  {
+    id: "massoterapia",
+    name: "Massoterapia & Drenagem Corporal",
+    tag: "Relaxamento & Detox",
+    icon: HeartPulse,
+    diagnosticLabel: "Qual o seu foco para o atendimento de massoterapia?",
+    diagnosticOptions: [
+      "Alívio de tensões, estresse acumulado e dores musculares",
+      "Drenagem Linfática corporal pós-operatória ou retenção",
+      "Massagem relaxante com óleos nobres e aromaterapia",
+      "Combo Integrado: Relaxamento profundo + Drenagem",
+    ],
+    subQuestionLabel: "Preferência de atendimento na cabine privativa:",
+    subQuestionOptions: [
+      "Pressão suave a moderada relaxante",
+      "Pressão firme com foco em pontos de tensão",
+      "Foco em pernas, abdômen e redução de edema",
+    ],
+  },
+  {
+    id: "banhodelua",
+    name: "Banho de Lua & Estética Corporal",
+    tag: "Pele Dourada & Maciez",
+    icon: Moon,
+    diagnosticLabel: "Qual o seu foco para o Banho de Lua e Spa Corporal?",
+    diagnosticOptions: [
+      "Clareamento suave e dourado dos pelos (fórmula sem pinicar)",
+      "Gomagem esfoliante corporal e renovação celular profunda",
+      "Nutrição e hidratação profunda pós-sol ou pré-evento",
+      "Combo VIP: Banho de Lua + Bronzeamento em Cabine",
+    ],
+    subQuestionLabel: "Sensibilidade da sua pele:",
+    subQuestionOptions: [
+      "Pele sensível (requer proteção extra prévia)",
+      "Pele normal sem histórico de irritação",
+      "Preparação rápida para viagem ou evento próximo",
+    ],
+  },
+  {
+    id: "realinhamento",
+    name: "Realinhamento Capilar Avançado",
+    tag: "Disciplina & Preservação da Fibra",
+    icon: Waves,
+    diagnosticLabel: "Qual o estado e textura atual do seu cabelo?",
+    diagnosticOptions: [
+      "Ondulado ou cacheado — desejo redução duradoura de volume e frizz",
+      "Fios rebeldes, porosos e com volume descontrolado",
+      "Já faço alinhamento e necessito de retoque seguro de raiz",
+      "Desejo disciplina máxima com preservação absoluta da fibra",
+    ],
+    subQuestionLabel: "Resultado desejado para o caimento:",
+    subQuestionOptions: [
+      "Efeito liso natural e sedoso com balanço e movimento",
+      "Apenas controle de frizz e disciplina térmica diária",
+      "Brilho espelhado com teste de mecha rigoroso",
+    ],
+  },
+  {
+    id: "maosepes",
+    name: "Manicure & Pedicure de Luxo (Mãos e Pés)",
+    tag: "Beleza nas Mãos e Pés",
+    icon: HandMetal,
+    diagnosticLabel: "Qual o cuidado ungueal desejado para as mãos e pés?",
+    diagnosticOptions: [
+      "Manicure e Pedicure tradicional completa de alto padrão",
+      "Cutilagem russa/combinada de precisão milimétrica",
+      "Spa dos pés com esfoliação, massagem e nutrição",
+      "Esmaltação em gel de longa duração para mãos e pés",
+    ],
+    subQuestionLabel: "Preferência de finalização:",
+    subQuestionOptions: [
+      "Nude clássico ou tons atemporais sofisticados",
+      "Vermelho nobre ou tons intensos de alta cobertura",
+      "Francesinha delicada com brilho espelhado",
     ],
   },
 ];

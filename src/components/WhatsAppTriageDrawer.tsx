@@ -15,10 +15,24 @@ import {
   HelpCircle,
   Feather,
   Sun,
-  HeartPulse
+  HeartPulse,
+  Moon,
+  Waves
 } from "lucide-react";
 
-export type ServiceCategory = "megahair" | "mechas" | "cilios" | "unhas" | "sobrancelhas" | "bronze" | "laser" | "terapia";
+export type ServiceCategory = 
+  | "megahair" 
+  | "mechas" 
+  | "cilios" 
+  | "unhas" 
+  | "sobrancelhas" 
+  | "bronze" 
+  | "laser" 
+  | "terapia"
+  | "massoterapia"
+  | "banhodelua"
+  | "realinhamento"
+  | "maosepes";
 
 interface ServiceOption {
   id: ServiceCategory;
@@ -150,6 +164,58 @@ export const SERVICE_CATALOG: ServiceOption[] = [
       {
         questionLabel: "Qual a necessidade principal do seu cabelo?",
         options: ["Cabelo ressecado / Necessita hidratação e brilho", "Cabelo danificado ou elástico (pós-química)", "Cronograma capilar intensivo completo"],
+      },
+    ],
+  },
+  {
+    id: "massoterapia",
+    title: "Massoterapia & Drenagem Corporal",
+    subtitle: "Foco em alívio do estresse, revitalização, drenagem linfática e bem-estar em cabine privativa.",
+    tag: "Cabine Privativa",
+    icon: HeartPulse,
+    diagnosticQuestions: [
+      {
+        questionLabel: "Qual o seu foco para o atendimento de massoterapia?",
+        options: ["Alívio de estresse e tensões musculares", "Drenagem Linfática corporal desintoxicante", "Massagem relaxante com aromaterapia", "Combo VIP: Relaxamento + Drenagem"],
+      },
+    ],
+  },
+  {
+    id: "banhodelua",
+    title: "Banho de Lua & Estética Corporal",
+    subtitle: "Clareamento suave de pelos sem pinicar, esfoliação aromática e hidratação profunda.",
+    tag: "Pele Macia & Dourada",
+    icon: Moon,
+    diagnosticQuestions: [
+      {
+        questionLabel: "Qual o seu objetivo para o Banho de Lua & Estética?",
+        options: ["Pelos perfeitamente dourados e descoloridos", "Gomagem esfoliante e renovação celular", "Nutrição profunda pós-exposição solar", "Banho de Lua integrado ao Bronzeamento"],
+      },
+    ],
+  },
+  {
+    id: "realinhamento",
+    title: "Realinhamento Capilar Avançado",
+    subtitle: "Tratamentos de alinhamento orgânico com preservação absoluta da fibra e brilho espelhado.",
+    tag: "Preservação da Fibra",
+    icon: Waves,
+    diagnosticQuestions: [
+      {
+        questionLabel: "Qual o estado e textura atual do seu cabelo?",
+        options: ["Cabelo com volume e frizz excessivo", "Necessidade de retoque de raiz sem dano às pontas", "Fios ressecados que necessitam de alinhamento e botox nobre"],
+      },
+    ],
+  },
+  {
+    id: "maosepes",
+    title: "Manicure & Pedicure de Luxo (Mãos e Pés)",
+    subtitle: "Cuidado detalhado ungueal, cutilagem milimétrica, spa de parafina e esmaltação duradoura.",
+    tag: "Beleza Mãos & Pés",
+    icon: HandMetal,
+    diagnosticQuestions: [
+      {
+        questionLabel: "Qual serviço você deseja agendar para mãos e pés?",
+        options: ["Manicure e Pedicure tradicional completa", "Cutilagem russa/combinada de precisão", "Spa dos pés com esfoliação e hidratação", "Esmaltação em gel de alta durabilidade"],
       },
     ],
   },
