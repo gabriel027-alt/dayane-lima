@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, ArrowRight, ArrowLeft, CheckCircle2, MessageCircle, RefreshCw, Scissors, Eye, HandMetal, Sun, Zap, User } from "lucide-react";
+import { Sparkles, ArrowRight, ArrowLeft, Check, CheckCircle2, MessageCircle, RefreshCw, Scissors, Eye, HandMetal, Sun, Zap, User, Layers } from "lucide-react";
 
 interface SmartTriageSectionProps {
   whatsappPhone?: string;
@@ -138,44 +138,64 @@ const PROCEDURES: ProcedureConfig[] = [
 
 export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDrawer }: SmartTriageSectionProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [selectedProcedure, setSelectedProcedure] = useState<ProcedureConfig>(PROCEDURES[0]);
-  const [diagnosticAnswer, setDiagnosticAnswer] = useState<string>("");
-  const [subAnswer, setSubAnswer] = useState<string>("");
+  const [selectedProcedureIds, setSelectedProcedureIds] = useState<string[]>(["megahair"]);
+  const [diagnosticAnswers, setDiagnosticAnswers] = useState<Record<string, string>>({});
+  const [subAnswers, setSubAnswers] = useState<Record<string, string>>({});
   const [clientName, setClientName] = useState<string>("");
 
-  const handleSelectProcedure = (proc: ProcedureConfig) => {
-    setSelectedProcedure(proc);
-    setDiagnosticAnswer("");
-    setSubAnswer("");
+  const toggleProcedure = (procId: string) => {
+    setSelectedProcedureIds((prev) =>
+      prev.includes(procId)
+        ? prev.filter((id) => id !== procId)
+        : [...prev, procId]
+    );
+  };
+
+  const selectedProcedures = PROCEDURES.filter((p) => selectedProcedureIds.includes(p.id));
+
+  const handleGoToStep2 = () => {
+    if (selectedProcedureIds.length === 0) return;
     setStep(2);
   };
 
   const handleGoToStep3 = () => {
-    if (!diagnosticAnswer) return;
+    const answeredCount = selectedProcedures.filter((p) => Boolean(diagnosticAnswers[p.id])).length;
+    if (answeredCount === 0) return;
     setStep(3);
   };
 
   const handleReset = () => {
     setStep(1);
-    setDiagnosticAnswer("");
-    setSubAnswer("");
+    setSelectedProcedureIds(["megahair"]);
+    setDiagnosticAnswers({});
+    setSubAnswers({});
     setClientName("");
   };
 
   const handleGenerateWhatsApp = () => {
     const namePart = clientName.trim() ? `Meu nome é *${clientName.trim()}* e preenchi` : "Preenchi";
     
+    const proceduresListText = selectedProcedures
+      .map((proc, index) => {
+        const diag = diagnosticAnswers[proc.id];
+        const sub = subAnswers[proc.id];
+        const lines = [
+          `✨ *${index + 1}. ${proc.name}*`,
+          diag ? `   • Diagnóstico: ${diag}` : `   • Diagnóstico: Avaliação personalizada`,
+          sub ? `   • Prioridade: ${sub}` : null,
+        ].filter(Boolean);
+        return lines.join("\n");
+      })
+      .join("\n\n");
+
     const message = [
       `Olá, equipe Dayane Lima — Ateliê Boutique! ${namePart} a *Triagem Inteligente* no site oficial:`,
       ``,
-      `✨ *Procedimento Selecionado:* ${selectedProcedure.name}`,
-      `📋 *Diagnóstico Atual:* ${diagnosticAnswer || "Não informado"}`,
-      subAnswer ? `🎯 *Prioridade do Resultado:* ${subAnswer}` : null,
+      `📋 *ESPECIALIDADES SELECIONADAS (${selectedProcedures.length}):*`,
+      proceduresListText,
       ``,
-      `📍 Gostaria de saber sobre os horários VIP disponíveis para atendimento no Ateliê do Monte Carmelo!`,
-    ]
-      .filter((line) => line !== null)
-      .join("\n");
+      `📍 Gostaria de saber sobre a disponibilidade de horários VIP para um atendimento integrado no Ateliê do Monte Carmelo!`,
+    ].join("\n");
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
@@ -215,7 +235,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed [text-wrap:pretty]">
-            Em 3 passos rápidos, identifique o protocolo ideal e inicie seu atendimento exclusivo no WhatsApp.
+            Em 3 passos rápidos, selecione um ou mais procedimentos e inicie seu atendimento exclusivo no WhatsApp.
           </p>
         </div>
 
@@ -227,9 +247,9 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
             <div className="flex items-center justify-between text-xs font-sans font-bold text-[#6E501E] mb-2.5">
               <span>Passo 0{step} de 03</span>
               <span>
-                {step === 1 && "Escolha do Procedimento"}
-                {step === 2 && "Diagnóstico da Fibra ou Pele"}
-                {step === 3 && "Expectativa & Direcionamento VIP"}
+                {step === 1 && "Escolha das Especialidades (Múltipla Seleção)"}
+                {step === 2 && "Diagnóstico Específico por Procedimento"}
+                {step === 3 && "Resumo & Orçamento Integrado VIP"}
               </span>
             </div>
             <div className="w-full h-2 bg-[#FAF3F0] rounded-full overflow-hidden border border-[#E8D0C8]">
@@ -240,58 +260,91 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
             </div>
           </div>
 
-          {/* ================= PASSO 1: SELEÇÃO DE PROCEDIMENTO ================= */}
+          {/* ================= PASSO 1: SELEÇÃO MÚLTIPLA DE PROCEDIMENTOS ================= */}
           {step === 1 && (
             <div className="space-y-6">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917]">
-                  1. Qual procedimento você deseja realizar no Monte Carmelo?
-                </h3>
-                <p className="text-sm text-[#44403C] font-sans mt-1">
-                  Selecione a especialidade que melhor atende o seu desejo de transformação:
-                </p>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917]">
+                    1. Quais procedimentos você deseja realizar no Monte Carmelo?
+                  </h3>
+                  <p className="text-sm text-[#44403C] font-sans mt-1">
+                    Selecione uma ou mais especialidades desejadas para atendimento integrado:
+                  </p>
+                </div>
+                <span className="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FAF3F0] text-[#6E501E] border border-[#E8D0C8]">
+                  <Layers className="w-3.5 h-3.5 text-[#8F6E32]" />
+                  Múltipla Escolha
+                </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {PROCEDURES.map((proc) => {
                   const Icon = proc.icon;
-                  const isSelected = selectedProcedure.id === proc.id;
+                  const isSelected = selectedProcedureIds.includes(proc.id);
                   return (
                     <button
                       key={proc.id}
                       type="button"
-                      onClick={() => handleSelectProcedure(proc)}
-                      className={`text-left p-4 rounded-2xl border transition-all flex items-start gap-3.5 min-h-[58px] touch-manipulation cursor-pointer ${
+                      onClick={() => toggleProcedure(proc.id)}
+                      className={`text-left p-4 rounded-2xl border transition-all flex items-start justify-between gap-3.5 min-h-[64px] touch-manipulation cursor-pointer ${
                         isSelected
-                          ? "bg-[#1C1917] text-white border-[#C5A880] shadow-sm"
+                          ? "bg-[#1C1917] text-white border-[#C5A880] shadow-md ring-1 ring-[#C5A880]"
                           : "bg-[#FAF3F0] text-[#1C1917] border-[#E8D0C8] hover:border-[#C5A880] hover:bg-white"
                       }`}
+                      aria-pressed={isSelected}
                     >
-                      <div className={`p-2.5 rounded-xl shrink-0 ${
-                        isSelected ? "bg-white/10 text-[#C5A880]" : "bg-white text-[#6E501E] border border-[#E8D0C8]"
-                      }`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className={`text-xs font-sans font-bold uppercase tracking-wider block ${
-                          isSelected ? "text-[#C5A880]" : "text-[#6E501E]"
+                      <div className="flex items-start gap-3.5">
+                        <div className={`p-2.5 rounded-xl shrink-0 ${
+                          isSelected ? "bg-white/10 text-[#C5A880]" : "bg-white text-[#6E501E] border border-[#E8D0C8]"
                         }`}>
-                          {proc.tag}
-                        </span>
-                        <h4 className="font-serif font-bold text-sm sm:text-base leading-snug mt-0.5">
-                          {proc.name}
-                        </h4>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <span className={`text-xs font-sans font-bold uppercase tracking-wider block ${
+                            isSelected ? "text-[#C5A880]" : "text-[#6E501E]"
+                          }`}>
+                            {proc.tag}
+                          </span>
+                          <h4 className="font-serif font-bold text-sm sm:text-base leading-snug mt-0.5">
+                            {proc.name}
+                          </h4>
+                        </div>
+                      </div>
+
+                      {/* Checkbox Visual com Estado Ativo */}
+                      <div className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 mt-1 transition-colors ${
+                        isSelected 
+                          ? "bg-[#8F6E32] text-white shadow-xs" 
+                          : "border-2 border-[#C5A880]/60 bg-white"
+                      }`}>
+                        {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                       </div>
                     </button>
                   );
                 })}
               </div>
 
-              <div className="pt-2 flex justify-end">
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#F0EAE1]">
+                <div className="text-sm font-sans text-[#6E501E]">
+                  {selectedProcedureIds.length === 0 ? (
+                    <span className="text-[#944234] font-medium">Selecione ao menos 1 procedimento para prosseguir</span>
+                  ) : (
+                    <span className="font-semibold">
+                      <strong>{selectedProcedureIds.length}</strong> {selectedProcedureIds.length === 1 ? "especialidade selecionada" : "especialidades selecionadas"}
+                    </span>
+                  )}
+                </div>
+
                 <button
                   type="button"
-                  onClick={() => setStep(2)}
-                  className="inline-flex items-center gap-2 min-h-[48px] px-8 rounded-full bg-[#1C1917] hover:bg-neutral-800 text-white font-sans font-semibold text-sm transition-all"
+                  onClick={handleGoToStep2}
+                  disabled={selectedProcedureIds.length === 0}
+                  className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-8 rounded-full font-sans font-semibold text-sm transition-all touch-manipulation cursor-pointer ${
+                    selectedProcedureIds.length > 0
+                      ? "bg-[#1C1917] hover:bg-[#8F6E32] text-white shadow-md active:scale-95"
+                      : "bg-neutral-200 text-neutral-400 cursor-not-allowed"
+                  }`}
                 >
                   <span>Continuar para Diagnóstico</span>
                   <ArrowRight className="w-4 h-4 text-[#C5A880]" />
@@ -306,75 +359,125 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E] block">
-                    Procedimento: {selectedProcedure.name}
+                    Etapa 02 • Diagnóstico Personalizado
                   </span>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917] mt-1">
-                    2. {selectedProcedure.diagnosticLabel}
+                    2. Responda o diagnóstico dos procedimentos escolhidos
                   </h3>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] shrink-0 min-h-[48px] px-2"
+                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] shrink-0 min-h-[48px] px-2 cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Trocar</span>
+                  <span>Ajustar Escolha</span>
                 </button>
               </div>
 
-              {/* Opções de Diagnóstico */}
-              <div className="space-y-2.5">
-                {selectedProcedure.diagnosticOptions.map((opt, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setDiagnosticAnswer(opt)}
-                    className={`w-full text-left p-4 rounded-xl border text-sm font-sans transition-all flex items-center justify-between gap-3 min-h-[48px] touch-manipulation cursor-pointer ${
-                      diagnosticAnswer === opt
-                        ? "bg-[#1C1917] text-white border-[#C5A880] shadow-sm"
-                        : "bg-[#FAF3F0] text-[#1C1917] border-[#E8D0C8] hover:border-[#C5A880] hover:bg-white"
-                    }`}
-                  >
-                    <span>{opt}</span>
-                    {diagnosticAnswer === opt && (
-                      <CheckCircle2 className="w-4 h-4 text-[#C5A880] shrink-0" />
-                    )}
-                  </button>
-                ))}
-              </div>
+              {/* Cards de Diagnóstico para cada procedimento selecionado */}
+              <div className="space-y-5">
+                {selectedProcedures.map((proc, index) => {
+                  const Icon = proc.icon;
+                  const currentDiag = diagnosticAnswers[proc.id] || "";
+                  const currentSub = subAnswers[proc.id] || "";
 
-              {/* Pergunta Secundária Opcional */}
-              {selectedProcedure.subQuestionLabel && selectedProcedure.subQuestionOptions && (
-                <div className="pt-4 border-t border-[#F0EAE1] space-y-3">
-                  <h4 className="font-serif font-bold text-base text-[#1C1917]">
-                    {selectedProcedure.subQuestionLabel}
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    {selectedProcedure.subQuestionOptions.map((sub, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setSubAnswer(sub)}
-                        className={`text-left p-3.5 rounded-xl border text-sm font-sans transition-all min-h-[48px] flex items-center justify-between ${
-                          subAnswer === sub
-                            ? "bg-[#C58B7E] text-white border-[#C58B7E] font-semibold"
-                            : "bg-white text-[#44403C] border-[#E8D0C8] hover:border-[#C5A880]"
-                        }`}
-                      >
-                        <span>{sub}</span>
-                        {subAnswer === sub && <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 ml-1.5" />}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
+                  return (
+                    <div 
+                      key={proc.id} 
+                      className="p-5 sm:p-6 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] space-y-4"
+                    >
+                      <div className="flex items-center justify-between gap-3 pb-3 border-b border-[#E8D0C8]">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-lg bg-white border border-[#E8D0C8] flex items-center justify-center text-[#6E501E]">
+                            <Icon className="w-4 h-4 text-[#8F6E32]" />
+                          </div>
+                          <div>
+                            <span className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#6E501E] block">
+                              Especialidade {index + 1} de {selectedProcedures.length}
+                            </span>
+                            <h4 className="font-serif font-bold text-base text-[#1C1917]">
+                              {proc.name}
+                            </h4>
+                          </div>
+                        </div>
+                        {currentDiag ? (
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#6E501E] bg-white px-2.5 py-1 rounded-full border border-[#E8D0C8]">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#8F6E32]" />
+                            Respondido
+                          </span>
+                        ) : (
+                          <span className="text-xs text-[#8F6E32] font-semibold bg-white/60 px-2.5 py-1 rounded-full">
+                            Pendente
+                          </span>
+                        )}
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-sans font-bold text-[#1C1917] mb-2.5">
+                          {proc.diagnosticLabel}
+                        </p>
+                        <div className="space-y-2">
+                          {proc.diagnosticOptions.map((opt, i) => (
+                            <button
+                              key={i}
+                              type="button"
+                              onClick={() => {
+                                setDiagnosticAnswers((prev) => ({ ...prev, [proc.id]: opt }));
+                              }}
+                              className={`w-full text-left p-3.5 rounded-xl border text-sm font-sans transition-all flex items-center justify-between gap-3 min-h-[48px] touch-manipulation cursor-pointer ${
+                                currentDiag === opt
+                                  ? "bg-[#1C1917] text-white border-[#C5A880] shadow-xs"
+                                  : "bg-white text-[#1C1917] border-[#E8D0C8] hover:border-[#C5A880]"
+                              }`}
+                            >
+                              <span>{opt}</span>
+                              {currentDiag === opt && (
+                                <CheckCircle2 className="w-4 h-4 text-[#C5A880] shrink-0" />
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Subpergunta Opcional */}
+                      {proc.subQuestionLabel && proc.subQuestionOptions && (
+                        <div className="pt-3 border-t border-[#E8D0C8] space-y-2.5">
+                          <p className="text-xs font-sans font-bold text-[#44403C] uppercase tracking-wider">
+                            {proc.subQuestionLabel}
+                          </p>
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            {proc.subQuestionOptions.map((sub, idx) => (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => {
+                                  setSubAnswers((prev) => ({ ...prev, [proc.id]: sub }));
+                                }}
+                                className={`text-left p-3 rounded-xl border text-xs font-sans transition-all min-h-[44px] flex items-center justify-between cursor-pointer ${
+                                  currentSub === sub
+                                    ? "bg-[#C58B7E] text-white border-[#C58B7E] font-semibold"
+                                    : "bg-white text-[#44403C] border-[#E8D0C8] hover:border-[#C5A880]"
+                                }`}
+                              >
+                                <span>{sub}</span>
+                                {currentSub === sub && <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 ml-1" />}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
 
               <div className="pt-4 flex items-center justify-between gap-4">
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="inline-flex items-center gap-2 min-h-[48px] px-5 rounded-full border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-sm transition-colors"
+                  className="inline-flex items-center gap-2 min-h-[48px] px-5 rounded-full border border-[#E8D0C8] hover:border-[#C5A880] text-[#1C1917] font-sans font-semibold text-sm transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Voltar</span>
@@ -383,10 +486,10 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={handleGoToStep3}
-                  disabled={!diagnosticAnswer}
+                  disabled={selectedProcedures.filter((p) => Boolean(diagnosticAnswers[p.id])).length === 0}
                   className={`inline-flex items-center gap-2 min-h-[48px] px-8 rounded-full font-sans font-semibold text-sm transition-all ${
-                    diagnosticAnswer
-                      ? "bg-[#1C1917] hover:bg-neutral-800 text-white shadow-sm cursor-pointer"
+                    selectedProcedures.filter((p) => Boolean(diagnosticAnswers[p.id])).length > 0
+                      ? "bg-[#1C1917] hover:bg-[#8F6E32] text-white shadow-sm cursor-pointer"
                       : "bg-neutral-200 text-neutral-400 cursor-not-allowed"
                   }`}
                 >
@@ -397,7 +500,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
             </div>
           )}
 
-          {/* ================= PASSO 3: EXPECTATIVA, NOME & ENCAMINHAMENTO ================= */}
+          {/* ================= PASSO 3: RESUMO INTEGRADO & ENCAMINHAMENTO ================= */}
           {step === 3 && (
             <div className="space-y-6">
               <div>
@@ -405,40 +508,44 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                   Etapa Final • Qualificação Concluída
                 </span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1C1917] mt-1">
-                  3. Seu Resumo de Triagem está Pronto
+                  3. Seu Resumo de Triagem Integrada está Pronto
                 </h3>
                 <p className="text-sm text-[#44403C] font-sans mt-1">
-                  Ao clicar no botão abaixo, sua triagem será enviada diretamente à recepção da Dayane Lima para priorização de agenda.
+                  Ao clicar no botão abaixo, sua ficha com todas as especialidades escolhidas será enviada diretamente à recepção da Dayane Lima para priorização de agenda.
                 </p>
               </div>
 
               {/* Card de Ficha de Diagnóstico Gerada */}
-              <div className="p-5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] space-y-3 font-sans text-sm">
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] space-y-4 font-sans text-sm">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E8D0C8]">
                   <span className="font-bold text-[#1C1917] uppercase tracking-wider text-xs">
-                    Ficha Diagnóstica Prévia
+                    Ficha Diagnóstica Prévia ({selectedProcedures.length} {selectedProcedures.length === 1 ? "Especialidade" : "Especialidades"})
                   </span>
                   <span className="text-xs font-semibold text-[#6E501E] bg-white px-2.5 py-0.5 rounded-full border border-[#E8D0C8]">
                     Triagem VIP
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-xs text-[#6E501E] uppercase font-bold block">Procedimento:</span>
-                  <p className="font-serif font-bold text-base text-[#1C1917]">{selectedProcedure.name}</p>
+                <div className="space-y-3">
+                  {selectedProcedures.map((proc, idx) => (
+                    <div key={proc.id} className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#E8D0C8] space-y-1.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold text-[#8F6E32]">0{idx + 1}.</span>
+                        <h4 className="font-serif font-bold text-sm sm:text-base text-[#1C1917]">{proc.name}</h4>
+                      </div>
+                      {diagnosticAnswers[proc.id] && (
+                        <p className="text-xs text-[#44403C] pl-6">
+                          <strong className="text-[#1C1917]">Diagnóstico:</strong> {diagnosticAnswers[proc.id]}
+                        </p>
+                      )}
+                      {subAnswers[proc.id] && (
+                        <p className="text-xs text-[#44403C] pl-6">
+                          <strong className="text-[#1C1917]">Prioridade:</strong> {subAnswers[proc.id]}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
-
-                <div>
-                  <span className="text-xs text-[#6E501E] uppercase font-bold block">Diagnóstico Atual:</span>
-                  <p className="text-[#44403C] font-medium">{diagnosticAnswer}</p>
-                </div>
-
-                {subAnswer && (
-                  <div>
-                    <span className="text-xs text-[#6E501E] uppercase font-bold block">Prioridade:</span>
-                    <p className="text-[#44403C] font-medium">{subAnswer}</p>
-                  </div>
-                )}
               </div>
 
               {/* Campo de Nome (Opcional) */}
@@ -462,7 +569,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] min-h-[48px] px-2"
+                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] min-h-[48px] px-2 cursor-pointer"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                   <span>Refazer Triagem</span>
