@@ -94,15 +94,20 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
               )}
             </div>
 
-            {/* Bloco Imponente de Instrução de Rolagem & Setinhas Contínuas (Luxury Minimal) */}
-            <div className="mt-6 inline-flex flex-col items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-black/75 backdrop-blur-xl border border-[#C5A880]/70 shadow-2xl">
-              <span className="font-serif italic text-base sm:text-lg md:text-xl text-[#FAF3F0] tracking-wide text-center drop-shadow-md">
-                Role a página <span className="font-sans font-normal not-italic text-xs sm:text-sm uppercase tracking-wider text-[#E8D0B3]">ou</span> deslize para explorar
+            {/* Instrução Solta e Limpa de Rolagem com Setinhas Contínuas (Sem Moldura) */}
+            <div className="mt-6 sm:mt-7 flex flex-col items-start gap-2">
+              <span className="font-sans font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-[#E8D0B3] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+                <span className="hidden sm:inline">Role a página para explorar</span>
+                <span className="sm:hidden">Deslize na tela para explorar</span>
               </span>
-              <div className="flex flex-col items-center -space-y-1.5 text-[#C5A880]">
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                className="flex flex-col items-center -space-y-1.5 text-[#C5A880] pl-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+              >
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
-              </div>
+              </motion.div>
             </div>
 
             {/* Micro-avaliações e Selos de Confiança (WCAG 2.2 AA) */}
