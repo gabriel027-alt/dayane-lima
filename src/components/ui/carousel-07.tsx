@@ -453,7 +453,11 @@ const Card = ({
       }}
       className="absolute w-56 h-72 sm:w-72 sm:h-96 lg:w-80 lg:h-[420px] rounded-3xl overflow-hidden bg-[#1C1917] border border-[#C5A880]/60 shadow-2xl pointer-events-none select-none"
     >
-      <div className="relative w-full h-full flex items-center justify-center bg-[#1C1917] rounded-3xl overflow-hidden">
+      {/* Wrapper principal inegociável do card com fundo escuro sólido, borda champagne e acabamento Haute Couture */}
+      <div
+        style={{ backgroundColor: "#1C1917" }}
+        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full flex items-center justify-center"
+      >
         {isVideo ? (
           <video
             ref={videoRef}
@@ -465,22 +469,23 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="w-full h-full object-cover object-center pointer-events-none bg-[#1C1917] block"
+            className="object-cover w-full h-full object-center pointer-events-none bg-[#1C1917] block"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-cover object-center pointer-events-none select-none bg-[#1C1917] block"
+            className="object-cover w-full h-full object-center pointer-events-none select-none bg-[#1C1917] block"
             loading="lazy"
           />
         )}
 
-        {/* Borda interna sutil para acabamento acetinado de joalheria, sem nenhuma camada de texto */}
+        {/* Anel de acabamento interno Haute Couture unificado em todos os cards */}
         <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
       </div>
     </motion.div>
   );
 };
 
+export { CarouselStacked as Carousel3D };
 export default CarouselStacked;
