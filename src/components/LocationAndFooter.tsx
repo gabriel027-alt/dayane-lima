@@ -20,7 +20,7 @@ interface LocationAndFooterProps {
 }
 
 export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
-  const googleMapsUrl = "https://maps.google.com/?q=Rua+Calcedônia,+155+-+Monte+Carmelo,+Montes+Claros+-+MG";
+  const googleMapsUrl = "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-16.7227869,-43.8399458,17z/data=!3m1!4b1!4m6!3m5!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455";
   const wazeUrl = "https://waze.com/ul?q=Rua%20Calcedônia,%20155%20Monte%20Carmelo%20Montes%20Claros";
 
   return (
@@ -142,15 +142,15 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             <div className="lg:col-span-6">
               <div className="relative w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
                 <iframe
-                  title="Localização do Ateliê Boutique Dayane Lima no Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.2372227188734!2d-43.8647035!3d-16.7455823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x752dd71787d558b%3A0x7d0fa284ef755f11!2sR.%20Calced%C3%B4nia%2C%20155%20-%20Monte%20Carmelo%2C%20Montes%20Claros%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                  title="Localização da Estética e beleza sol e bronze - Dayane Lima no Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15916195.429868456!2d-59.9635272!3d-13.1124923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab63ed56c501%3A0xbb6be6e8eee14360!2sEst%C3%A9tica%20e%20beleza%20sol%20e%20broze!5e0!3m2!1spt-BR!2sbr!4v1791157915522!5m2!1spt-BR!2sbr"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen={false}
+                  allowFullScreen
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full grayscale-[25%] contrast-[1.05]"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="w-full h-full grayscale-[15%] contrast-[1.05]"
                 />
               </div>
             </div>
