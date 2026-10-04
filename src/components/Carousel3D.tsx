@@ -140,6 +140,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   }, [scrollProgress, total]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (total <= 1) return;
     if (e.key === "ArrowRight") {
       e.preventDefault();
       handleNext();
@@ -319,11 +320,13 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             </div>
 
             <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
-              <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs">
-                <Sparkles className="w-4 h-4 text-[#C5A880]" />
-                <span className="hidden sm:inline">Arraste com o mouse ou use as setas</span>
-                <span className="sm:hidden">Deslize com o dedo para navegar</span>
-              </div>
+              {slides.length > 1 && (
+                <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs">
+                  <Sparkles className="w-4 h-4 text-[#C5A880]" />
+                  <span className="hidden sm:inline">Arraste com o mouse ou use as setas</span>
+                  <span className="sm:hidden">Deslize com o dedo para navegar</span>
+                </div>
+              )}
 
               {/* Botão de Áudio integrado no cabeçalho sem vazamento de z-index */}
               <button
@@ -385,54 +388,80 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
         )}
 
         <div className="relative w-full max-w-7xl h-80 sm:h-112 lg:h-128 flex items-center justify-center overflow-hidden [contain:paint] [clip-path:inset(0)]">
-          {/* Botão Lateral Esquerdo (Flutuante com Fundo Escuro Translúcido e Borda Champagne) */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              pauseAutoPlayTemporarily();
-              handlePrev();
-            }}
-            className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-            aria-label="Slide anterior"
-          >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+          {/* Botões Laterais (apenas se houver mais de 1 slide) */}
+          {slides.length > 1 && (
+            <>
+              {/* Botão Lateral Esquerdo (Flutuante com Fundo Escuro Translúcido e Borda Champagne) */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  pauseAutoPlayTemporarily();
+                  handlePrev();
+                }}
+                className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                aria-label="Slide anterior"
+              >
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
 
-          {/* Botão Lateral Direito (Flutuante com Fundo Escuro Translúcido e Borda Champagne) */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              pauseAutoPlayTemporarily();
-              handleNext();
-            }}
-            className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-            aria-label="Próximo slide"
-          >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-          </button>
+              {/* Botão Lateral Direito (Flutuante com Fundo Escuro Translúcido e Borda Champagne) */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  pauseAutoPlayTemporarily();
+                  handleNext();
+                }}
+                className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                aria-label="Próximo slide"
+              >
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+            </>
+          )}
 
-          <motion.div
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            tabIndex={0}
-            onKeyDown={handleKeyDown}
-            role="button"
-            aria-label="Controle interativo do carrossel: use as setas do teclado ou arraste"
-            onDragStart={handleDragStart}
-            onDrag={(_, info) => {
-              const delta = -info.delta.x / config.sensitivity;
-              scrollProgress.set(scrollProgress.get() + delta);
-            }}
-            onDragEnd={handleDragEnd}
-            onClick={() => {
-              if (!isDraggingRef.current && slides[currentIndex]) {
-                setSelectedModalSlide(slides[currentIndex]);
-              }
-            }}
-            className="absolute inset-0 z-20 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
-          />
+          {/* Controle Interativo: arraste se múltiplos, ou clique estático para zoom se item único */}
+          {slides.length > 1 ? (
+            <motion.div
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              tabIndex={0}
+              onKeyDown={handleKeyDown}
+              role="button"
+              aria-label="Controle interativo do carrossel: use as setas do teclado ou arraste"
+              onDragStart={handleDragStart}
+              onDrag={(_, info) => {
+                const delta = -info.delta.x / config.sensitivity;
+                scrollProgress.set(scrollProgress.get() + delta);
+              }}
+              onDragEnd={handleDragEnd}
+              onClick={() => {
+                if (!isDraggingRef.current && slides[currentIndex]) {
+                  setSelectedModalSlide(slides[currentIndex]);
+                }
+              }}
+              className="absolute inset-0 z-20 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
+            />
+          ) : (
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label="Clique para ampliar a mídia em tela cheia"
+              onClick={() => {
+                if (slides[0]) {
+                  setSelectedModalSlide(slides[0]);
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  if (slides[0]) setSelectedModalSlide(slides[0]);
+                }
+              }}
+              className="absolute inset-0 z-20 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
+            />
+          )}
 
           {slides.map((slide, i) => (
             <Card
@@ -570,6 +599,7 @@ const Card = ({
   }, [isMuted, isActive, isVideo, isInView]);
 
   const offset = useTransform(progress, (p) => {
+    if (total <= 1) return 0;
     let diff = (index - p) % total;
     if (diff > total / 2) diff -= total;
     if (diff < -total / 2) diff += total;
