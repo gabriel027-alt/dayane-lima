@@ -275,6 +275,25 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             </div>
           </div>
 
+          {/* Assinatura Profissional Discreta & Elegante */}
+          <div className="pt-6 mt-6 border-t border-neutral-800/70 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-400">
+            <span>
+              Design & Web Engineering por{' '}
+              <a
+                href="https://github.com/gabriel027-alt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-300 hover:text-[#E6C99B] transition-colors font-medium underline underline-offset-4 decoration-neutral-600 hover:decoration-[#E6C99B]"
+                aria-label="Perfil profissional de Gabriel Pereira"
+              >
+                Gabriel Pereira
+              </a>
+            </span>
+            <span className="text-neutral-500 text-[11px]">
+              Desenvolvimento & SEO Estratégico
+            </span>
+          </div>
+
         </div>
       </footer>
     </>
