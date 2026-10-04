@@ -472,37 +472,61 @@ const Card = ({
       }}
       className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none"
     >
-      {/* Container interno unificado com contenção estrita, proporção fixa aspect-[4/5] e borda champagne */}
+      {/* Container interno unificado com dimensões estritas e fundo escuro sólido fixo */}
       <div 
         style={{ backgroundColor: "#1C1917" }}
         className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center"
       >
-        {isVideo ? (
-          <video
-            ref={videoRef}
-            src={mediaSrc}
-            autoPlay={isActive}
-            loop={false}
-            muted={isMuted}
-            playsInline
-            preload="auto"
-            onEnded={handleEnded}
-            onError={handleError}
-            style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-cover object-center block"
-          />
-        ) : (
-          <img
-            src={mediaSrc}
-            alt={slide.title || "Procedimento Dayane Lima"}
-            style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-cover object-center block select-none pointer-events-none"
-            loading="lazy"
-          />
-        )}
+        {/* Fundo suave desfocado de respiro para harmonizar proporções de fotos/vídeos */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none">
+          {isVideo ? (
+            <video
+              src={mediaSrc}
+              muted
+              playsInline
+              preload="none"
+              className="w-full h-full object-cover scale-125 blur-2xl opacity-20 filter brightness-75"
+              aria-hidden="true"
+            />
+          ) : (
+            <img
+              src={mediaSrc}
+              alt=""
+              className="w-full h-full object-cover scale-125 blur-2xl opacity-20 filter brightness-75"
+              aria-hidden="true"
+            />
+          )}
+          {/* Overlay de preenchimento escuro de respiro basalto */}
+          <div className="absolute inset-0 bg-[#1C1917]/75" />
+        </div>
+
+        {/* Content-box centralizado com proporção geométrica fixa e object-contain */}
+        <div className="relative z-10 w-full h-full flex items-center justify-center overflow-hidden">
+          {isVideo ? (
+            <video
+              ref={videoRef}
+              src={mediaSrc}
+              autoPlay={isActive}
+              loop={false}
+              muted={isMuted}
+              playsInline
+              preload="auto"
+              onEnded={handleEnded}
+              onError={handleError}
+              className="w-full h-full object-contain object-center block"
+            />
+          ) : (
+            <img
+              src={mediaSrc}
+              alt={slide.title || "Procedimento Dayane Lima"}
+              className="w-full h-full object-contain object-center block select-none pointer-events-none"
+              loading="lazy"
+            />
+          )}
+        </div>
 
         {/* Anel de acabamento interno Haute Couture unificado em todos os cards */}
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none z-20" />
       </div>
     </motion.div>
   );
