@@ -192,14 +192,14 @@ export function EditorialArchiveGallery({
                     muted
                     playsInline
                     style={{ backgroundColor: "#1C1917" }}
-                    className="w-full h-full object-contain bg-[#1C1917] pointer-events-none"
+                    className="w-full h-full object-cover object-center pointer-events-none"
                   />
                 ) : (
                   <img
                     src={item.src}
                     alt={item.title}
                     style={{ backgroundColor: "#1C1917" }}
-                    className="w-full h-full object-contain bg-[#1C1917] pointer-events-none transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover object-center pointer-events-none transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                   />
                 )}

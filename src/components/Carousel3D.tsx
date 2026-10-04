@@ -489,14 +489,14 @@ const Card = ({
             onEnded={handleEnded}
             onError={handleError}
             style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-contain bg-[#1C1917]"
+            className="w-full h-full object-cover object-center"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
             style={{ backgroundColor: "#1C1917" }}
-            className="w-full h-full object-contain bg-[#1C1917] select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
             loading="lazy"
           />
         )}
