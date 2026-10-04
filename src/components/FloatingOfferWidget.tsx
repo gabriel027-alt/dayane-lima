@@ -23,7 +23,7 @@ export function FloatingOfferWidget({ onOpenTriage }: FloatingOfferWidgetProps) 
         <button
           type="button"
           onClick={() => setIsVisible(false)}
-          className="absolute top-2.5 right-2.5 p-1 text-neutral-400 hover:text-white rounded-full transition-colors"
+          className="absolute top-2.5 right-2.5 min-w-[32px] min-h-[32px] p-1.5 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 text-neutral-300 hover:text-white transition-all shadow-md flex items-center justify-center cursor-pointer"
           aria-label="Dispensar aviso de agenda"
         >
           <X className="w-4 h-4" />

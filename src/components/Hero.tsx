@@ -94,6 +94,13 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
               )}
             </div>
 
+            {/* Micro-orientação Sutil e Refinada de Interação (Luxury Minimal) */}
+            <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-[11px] font-sans text-neutral-300 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880] animate-pulse" />
+              <span className="hidden sm:inline">Role com o mouse para navegar pelo ateliê</span>
+              <span className="sm:hidden">Deslize com o dedo na tela para explorar</span>
+            </div>
+
             {/* Micro-avaliações e Selos de Confiança (WCAG 2.2 AA) */}
             <div className="mt-6 sm:mt-7 pt-4 border-t border-white/15 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-neutral-300 font-sans">
               <div className="flex items-center gap-2">

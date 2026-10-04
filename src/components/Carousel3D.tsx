@@ -6,11 +6,12 @@ import {
   useMotionValue,
   useTransform,
   animate,
+  AnimatePresence,
   type PanInfo,
   type MotionValue,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Volume2, VolumeX, Sparkles } from "lucide-react";
+import { Volume2, VolumeX, Sparkles, X } from "lucide-react";
 
 export interface Slide {
   type?: 'image' | 'video';
@@ -77,6 +78,8 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   const [windowWidth, setWindowWidth] = React.useState(0);
   const [isMuted, setIsMuted] = React.useState(true);
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [selectedModalSlide, setSelectedModalSlide] = React.useState<Slide | null>(null);
+  const isDraggingRef = React.useRef(false);
 
   const total = slides && slides.length > 0 ? slides.length : 1;
 
@@ -178,6 +181,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   );
 
   const handleDragStart = () => {
+    isDraggingRef.current = true;
     startProgress.current = scrollProgress.get();
   };
 
@@ -200,8 +204,25 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
       type: "spring",
       stiffness: 150,
       damping: 25,
+      onComplete: () => {
+        setTimeout(() => {
+          isDraggingRef.current = false;
+        }, 120);
+      },
     });
   };
+
+  // Fecha o modal ao pressionar Escape
+  React.useEffect(() => {
+    if (!selectedModalSlide) return;
+    const handleModalKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedModalSlide(null);
+      }
+    };
+    window.addEventListener("keydown", handleModalKey);
+    return () => window.removeEventListener("keydown", handleModalKey);
+  }, [selectedModalSlide]);
 
   const sectionRef = React.useRef<HTMLElement>(null);
   const [isInView, setIsInView] = React.useState(true);
@@ -281,7 +302,8 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
               <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs">
                 <Sparkles className="w-4 h-4 text-[#C5A880]" />
-                <span>Arraste ou use as setas</span>
+                <span className="hidden sm:inline">Arraste com o mouse ou use as setas</span>
+                <span className="sm:hidden">Deslize com o dedo para navegar</span>
               </div>
 
               {/* Botão de Áudio integrado no cabeçalho sem vazamento de z-index */}
@@ -357,6 +379,11 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               scrollProgress.set(scrollProgress.get() + delta);
             }}
             onDragEnd={handleDragEnd}
+            onClick={() => {
+              if (!isDraggingRef.current && slides[currentIndex]) {
+                setSelectedModalSlide(slides[currentIndex]);
+              }
+            }}
             className="absolute inset-0 z-20 cursor-grab active:cursor-grabbing focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] rounded-3xl"
           />
 
@@ -376,6 +403,56 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
           ))}
         </div>
       </div>
+
+      {/* ===================== MODAL DE MÍDIA EM FOCO COM BOTÃO X REFINADO ===================== */}
+      <AnimatePresence>
+        {selectedModalSlide && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/85 backdrop-blur-md p-4 sm:p-6 select-none"
+            onClick={() => setSelectedModalSlide(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-sm sm:max-w-md w-full aspect-[4/5] bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Botão de Fechar (X) Refinado no Canto Superior Direito com fundo translúcido e borda sutil */}
+              <button
+                type="button"
+                onClick={() => setSelectedModalSlide(null)}
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50 min-w-[40px] min-h-[40px] p-2 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 text-white transition-all shadow-lg flex items-center justify-center cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                aria-label="Fechar visualização de mídia"
+              >
+                <X className="w-5 h-5 text-white" />
+              </button>
+
+              {(selectedModalSlide.type === "video" || (selectedModalSlide.src || selectedModalSlide.image || "").endsWith(".mp4")) ? (
+                <video
+                  src={selectedModalSlide.src || selectedModalSlide.image}
+                  autoPlay
+                  loop
+                  controls
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <img
+                  src={selectedModalSlide.src || selectedModalSlide.image}
+                  alt={selectedModalSlide.title || "Dayane Lima • Ateliê Boutique"}
+                  className="w-full h-full object-cover"
+                />
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
