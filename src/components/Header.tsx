@@ -52,11 +52,11 @@ export function Header({ onOpenTriage }: HeaderProps) {
           <button
             type="button"
             onClick={onOpenTriage}
-            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-5 sm:px-6 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer touch-manipulation ml-1 sm:ml-2"
+            className="inline-flex items-center justify-center gap-2 min-h-[48px] px-4 sm:px-6 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer touch-manipulation ml-1 sm:ml-2"
             aria-label="Iniciar triagem VIP e agendamento pelo WhatsApp"
           >
             <Calendar className="w-4 h-4 text-[#E6C99B]" aria-hidden="true" />
-            <span>Triagem VIP<span className="hidden sm:inline"> / WhatsApp</span></span>
+            <span>Triagem VIP</span>
           </button>
         </nav>
 
