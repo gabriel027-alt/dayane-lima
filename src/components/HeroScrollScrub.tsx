@@ -2,15 +2,16 @@
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { ChevronDown, Sparkles } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export interface HeroScrollScrubProps {
   onExplore?: () => void;
+  onOpenTriage?: () => void;
 }
 
 const TOTAL_FRAMES = 120;
 
-export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
+export function HeroScrollScrub({ onExplore, onOpenTriage }: HeroScrollScrubProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -162,17 +163,6 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
     };
   }, [frameIndex, drawFrame]);
 
-  const handleScrollDown = () => {
-    if (onExplore) {
-      onExplore();
-      return;
-    }
-    if (containerRef.current) {
-      const target = containerRef.current.offsetTop + containerRef.current.offsetHeight;
-      window.scrollTo({ top: target, behavior: "smooth" });
-    }
-  };
-
   return (
     <div
       ref={containerRef}
@@ -230,22 +220,34 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
               DAYANE LIMA — ATELIÊ BOUTIQUE · MONTE CARMELO
             </p>
 
+            {/* Botões de Ação Principais da Hero */}
+            <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5 pointer-events-auto">
+              {onOpenTriage && (
+                <button
+                  type="button"
+                  onClick={onOpenTriage}
+                  className="min-h-[48px] px-8 py-3.5 bg-[#C5A880] hover:bg-[#b8976b] text-[#1C1917] font-sans font-bold text-xs sm:text-sm tracking-wider uppercase rounded-full shadow-2xl transition-all cursor-pointer inline-flex items-center gap-2 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  aria-label="Agendar Avaliação VIP no WhatsApp"
+                >
+                  <span>Agendar Avaliação VIP</span>
+                  <ArrowRight className="w-4 h-4 text-[#1C1917]" />
+                </button>
+              )}
+
+              {onExplore && (
+                <button
+                  type="button"
+                  onClick={onExplore}
+                  className="min-h-[48px] px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/25 font-sans font-semibold text-xs tracking-wider uppercase rounded-full transition-all cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+                  aria-label="Explorar Procedimentos do Ateliê"
+                >
+                  <span>Explorar Procedimentos</span>
+                </button>
+              )}
+            </div>
+
           </div>
         </motion.div>
-
-        {/* ===================== INDICADOR INFERIOR DE SCRUBBING ===================== */}
-        <motion.button
-          type="button"
-          onClick={handleScrollDown}
-          style={{ opacity: textOpacity }}
-          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-white/70 hover:text-white transition-colors cursor-pointer group pointer-events-auto px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/15 hover:border-white/30 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-          aria-label="Rolar para controlar a linha do tempo do vídeo"
-        >
-          <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-white/80 group-hover:text-white transition-colors">
-            Role para folhear frames
-          </span>
-          <ChevronDown className="w-4 h-4 text-white/70 animate-bounce group-hover:text-white transition-colors" />
-        </motion.button>
 
         {/* ===================== NÉVOA DE TRANSIÇÃO INFERIOR ===================== */}
         <motion.div

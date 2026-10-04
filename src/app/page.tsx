@@ -68,6 +68,7 @@ export default function HomePage() {
       
       {/* ===================== 0. ULTRA-PREMIUM SCROLL-LINKED FRAME SCRUBBING (CANVAS HERO) ===================== */}
       <HeroScrollScrub 
+        onOpenTriage={handleOpenGeneralTriage}
         onExplore={() => {
           const target = document.getElementById("revelacao") || document.getElementById("procedimentos");
           target?.scrollIntoView({ behavior: "smooth" });

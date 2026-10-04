@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 export interface HeroVideoIntroProps {
   onExplore?: () => void;
@@ -32,18 +31,6 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
 
   // 5. Névoa gradiente inferior de transição invisível entre 80% e 100% do scroll
   const bottomFogOpacity = useTransform(scrollYProgress, [0.75, 1], [0, 1]);
-
-  // Rolagem suave até o término da intro ao clicar na indicação
-  const handleScrollDown = () => {
-    if (onExplore) {
-      onExplore();
-      return;
-    }
-    if (containerRef.current) {
-      const topOffset = containerRef.current.offsetTop + containerRef.current.offsetHeight;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }
-  };
 
   return (
     <div
@@ -134,20 +121,6 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
 
           </div>
         </motion.div>
-
-        {/* ===================== INDICADOR INFERIOR DE ROLAGEM ===================== */}
-        <motion.button
-          type="button"
-          onClick={handleScrollDown}
-          style={{ opacity: contentOpacity }}
-          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-[#1C1917] hover:text-[#8F6E32] transition-colors cursor-pointer group pointer-events-auto"
-          aria-label="Rolar para explorar o ateliê"
-        >
-          <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#44403C] group-hover:text-[#1C1917] transition-colors font-semibold">
-            Role para explorar
-          </span>
-          <ChevronDown className="w-4 h-4 text-[#6E501E] animate-bounce group-hover:text-[#1C1917] transition-colors" />
-        </motion.button>
 
         {/* ===================== NÉVOA DE TRANSIÇÃO INVISÍVEL (BOTTOM FOG) ===================== */}
         <motion.div
