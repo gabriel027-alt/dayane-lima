@@ -471,12 +471,12 @@ const Card = ({
         opacity: 1,
         display: displayValue,
       }}
-      className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none opacity-100"
+      className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none"
     >
       {/* Container interno unificado com dimensões estritas aspect-[4/5] e fundo escuro sólido fixo */}
       <div 
         style={{ backgroundColor: "#1C1917" }}
-        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center opacity-100"
+        className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-full h-full aspect-[4/5] flex items-center justify-center"
       >
         {isVideo ? (
           <video
