@@ -27,7 +27,7 @@ interface TestimonialItem {
 }
 
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/maps/place/R.+Calced%C3%B4nia,+155+-+Monte+Carmelo,+Montes+Claros+-+MG";
+  "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-16.7227869,-43.8399458,17z/data=!3m1!4b1!4m6!3m5!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455";
 
 const TESTIMONIALS: TestimonialItem[] = [
   {
@@ -260,9 +260,9 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex flex-col items-center justify-center gap-2.5 p-5 sm:p-6 rounded-2xl bg-[#1C1917] hover:bg-[#28231E] border-2 border-[#C5A880] text-white shadow-2xl shadow-[#1C1917]/30 hover:shadow-[#C5A880]/25 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group ring-1 ring-[#C5A880]/30"
+                className="w-full inline-flex flex-col items-center justify-center gap-2.5 p-5 sm:p-6 rounded-2xl bg-[#1C1917] hover:bg-[#25201B] border-2 border-[#C5A880] text-white shadow-2xl shadow-[#1C1917]/35 hover:shadow-[#C5A880]/30 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group ring-2 ring-[#C5A880]/30 hover:ring-[#C5A880]/60 cursor-pointer"
               >
-                <div className="flex items-center gap-1 text-[#C5A880]">
+                <div className="flex items-center gap-1.5 text-[#C5A880]">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
@@ -272,13 +272,13 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                   ))}
                 </div>
 
-                <span className="font-sans font-bold text-xs sm:text-sm uppercase tracking-wider text-[#FAF3F0] group-hover:text-[#E6C99B] transition-colors text-center leading-snug">
+                <span className="font-sans font-bold text-xs sm:text-sm uppercase tracking-wider text-[#E6C99B] group-hover:text-white transition-colors text-center leading-snug">
                   Deixe sua Avaliação 5 Estrelas no Google
                 </span>
 
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-semibold text-[#E6C99B] group-hover:text-white transition-colors">
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-sans font-semibold text-[#E6C99B] group-hover:text-white transition-colors bg-white/5 group-hover:bg-white/10 px-3 py-1 rounded-full border border-[#C5A880]/40">
                   <span>Avaliar no Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#C5A880] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </span>
               </a>
 
@@ -288,7 +288,7 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                 rel="noopener noreferrer"
                 className="text-[11px] text-stone-500 hover:text-[#6E501E] font-sans mt-3 underline underline-offset-4 transition-colors flex items-center gap-1"
               >
-                <span>Conferir ficha na Rua Calcedônia, 155</span>
+                <span>Conferir ficha oficial no Google Maps</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
