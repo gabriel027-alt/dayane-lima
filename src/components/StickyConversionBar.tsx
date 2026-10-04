@@ -15,7 +15,7 @@ export function StickyConversionBar({
   return (
     <aside
       aria-label="Barra de ação rápida e agendamento VIP"
-      className={`fixed bottom-4 inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-none sm:w-full sm:max-w-2xl lg:max-w-3xl select-none transition-all duration-300 ${
+      className={`fixed bottom-4 inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-50 pb-[env(safe-area-inset-bottom)] pointer-events-none sm:w-full sm:max-w-2xl lg:max-w-3xl select-none transition-all duration-300 ${
         isTriageOpen ? "opacity-0 translate-y-8 pointer-events-none" : "opacity-100 translate-y-0"
       }`}
       aria-hidden={isTriageOpen}

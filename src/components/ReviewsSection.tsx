@@ -284,36 +284,36 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               </p>
             </div>
 
-            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
-                <Clock className="w-5 h-5 text-[#6E501E] mb-2" />
-                <h4 className="font-sans font-bold text-base text-[#1C1917]">Hora Marcada com Rigor</h4>
-                <p className="text-sm font-sans text-[#44403C] mt-1">
-                  Atendimento sem atrasos e sem clientes sobrepostas na mesma bancada.
+            <div className="lg:col-span-5 grid grid-cols-2 gap-2.5 sm:gap-4">
+              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
+                <Clock className="w-4 h-4 text-[#8F6E32] mb-1.5" />
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Zero Atrasos</h4>
+                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
+                  Horário reservado com dedicação exclusiva sem esteira.
                 </p>
               </div>
 
-              <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
-                <Microscope className="w-5 h-5 text-[#6E501E] mb-2" />
-                <h4 className="font-sans font-bold text-base text-[#1C1917]">Diagnóstico Pré-Procedimento</h4>
-                <p className="text-sm font-sans text-[#44403C] mt-1">
-                  Teste de mecha obrigatório e análise tricoscópica da densidade biológica.
+              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
+                <Microscope className="w-4 h-4 text-[#8F6E32] mb-1.5" />
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Diagnóstico Prévio</h4>
+                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
+                  Teste de mecha obrigatório e análise tricoscópica.
                 </p>
               </div>
 
-              <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
-                <ShieldCheck className="w-5 h-5 text-[#6E501E] mb-2" />
-                <h4 className="font-sans font-bold text-base text-[#1C1917]">Saúde Folicular Inegociável</h4>
-                <p className="text-sm font-sans text-[#44403C] mt-1">
-                  Se o fio não estiver apto quimicamente, priorizamos o tratamento à química.
+              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
+                <ShieldCheck className="w-4 h-4 text-[#8F6E32] mb-1.5" />
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Saúde Folicular</h4>
+                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
+                  Preservação biológica da raiz e peso calibrado.
                 </p>
               </div>
 
-              <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
-                <UserCheck className="w-5 h-5 text-[#6E501E] mb-2" />
-                <h4 className="font-sans font-bold text-base text-[#1C1917]">Acompanhamento Pós-Aplicação</h4>
-                <p className="text-sm font-sans text-[#44403C] mt-1">
-                  Suporte direto com orientações de lavagem e manutenção domiciliar.
+              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
+                <UserCheck className="w-4 h-4 text-[#8F6E32] mb-1.5" />
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Pós-Aplicação VIP</h4>
+                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
+                  Suporte direto com protocolo de manutenção.
                 </p>
               </div>
             </div>

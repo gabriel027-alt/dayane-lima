@@ -118,17 +118,17 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
             </div>
 
             {/* Micro-tag Editorial */}
-            <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] uppercase text-stone-500 mb-3 sm:mb-4 drop-shadow-xs">
+            <span className="font-mono text-xs sm:text-sm tracking-[0.4em] uppercase text-[#6E501E] font-bold mb-3 sm:mb-4 drop-shadow-xs">
               ALTA COSTURA CAPILAR
             </span>
 
             {/* Headline Principal */}
-            <h1 className="font-light tracking-tighter text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1C1C1E] text-center leading-[1.12] [text-wrap:balance] max-w-3xl drop-shadow-xs">
+            <h1 className="font-serif font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1C1917] text-center leading-[1.12] [text-wrap:balance] max-w-3xl drop-shadow-xs">
               A arquitetura da densidade imperceptível.
             </h1>
 
             {/* Subtítulo da Marca Mestre */}
-            <p className="font-light text-[11px] sm:text-[13px] tracking-[0.2em] uppercase text-stone-500 sm:text-stone-400 mt-5 sm:mt-6 drop-shadow-xs">
+            <p className="font-sans text-xs sm:text-sm tracking-[0.2em] uppercase text-[#44403C] font-semibold mt-5 sm:mt-6 drop-shadow-xs">
               Dayane Lima • Ateliê Boutique
             </p>
 
@@ -140,13 +140,13 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
           type="button"
           onClick={handleScrollDown}
           style={{ opacity: contentOpacity }}
-          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-[#1C1C1E]/60 hover:text-[#1C1C1E] transition-colors cursor-pointer group pointer-events-auto"
+          className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center gap-1.5 text-[#1C1917] hover:text-[#8F6E32] transition-colors cursor-pointer group pointer-events-auto"
           aria-label="Rolar para explorar o ateliê"
         >
-          <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-stone-500 group-hover:text-stone-700 transition-colors">
+          <span className="font-sans text-xs tracking-[0.25em] uppercase text-[#44403C] group-hover:text-[#1C1917] transition-colors font-semibold">
             Role para explorar
           </span>
-          <ChevronDown className="w-4 h-4 text-stone-500 animate-bounce group-hover:text-stone-800 transition-colors" />
+          <ChevronDown className="w-4 h-4 text-[#6E501E] animate-bounce group-hover:text-[#1C1917] transition-colors" />
         </motion.button>
 
         {/* ===================== NÉVOA DE TRANSIÇÃO INVISÍVEL (BOTTOM FOG) ===================== */}

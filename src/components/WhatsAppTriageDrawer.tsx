@@ -264,7 +264,7 @@ export function WhatsAppTriageDrawer({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-end md:items-center justify-center"
+      className="fixed inset-0 z-[70] flex items-end md:items-center justify-center"
       role="dialog"
       aria-modal="true"
       aria-labelledby="triage-title"

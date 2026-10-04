@@ -283,7 +283,7 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
                 </span>
 
                 {/* Barra de Progresso Minimalista */}
-                <div className="w-48 h-[2px] bg-stone-200 overflow-hidden rounded-full mb-3">
+                <div className="w-48 h-[2px] bg-[#E8D0C8] overflow-hidden rounded-full mb-3">
                   <div
                     className="h-full bg-[#C5A880] transition-all duration-150 ease-out"
                     style={{ width: `${loadProgress}%` }}
@@ -291,9 +291,9 @@ export function HeroScrollScrub({ onExplore }: HeroScrollScrubProps) {
                 </div>
 
                 {/* Contador Numérico */}
-                <div className="flex items-center justify-between w-48 text-[11px] font-mono tracking-widest text-stone-400">
+                <div className="flex items-center justify-between w-48 text-xs font-mono tracking-widest text-[#44403C]">
                   <span>CARREGANDO</span>
-                  <span className="text-[#1C1C1E] font-medium">{loadProgress.toString().padStart(3, "0")}%</span>
+                  <span className="text-[#1C1917] font-semibold">{loadProgress.toString().padStart(3, "0")}%</span>
                 </div>
               </div>
             </motion.div>
