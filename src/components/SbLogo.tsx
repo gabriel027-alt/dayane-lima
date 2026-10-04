@@ -97,7 +97,7 @@ export function SbLogo({
       <div className="flex flex-col justify-center">
         <div className="flex items-baseline gap-1.5">
           <span
-            className="font-serif font-bold tracking-tight text-lg sm:text-xl leading-none"
+            className="font-serif font-bold tracking-tight text-base sm:text-lg md:text-xl leading-none"
             style={{ color: primaryColor }}
           >
             Dayane Lima
@@ -106,7 +106,7 @@ export function SbLogo({
 
         {showSubtitle && (
           <span
-            className="text-xs font-sans font-medium tracking-[0.2em] uppercase mt-0.5 leading-tight"
+            className="text-[10px] sm:text-xs font-sans font-medium tracking-[0.18em] uppercase mt-0.5 leading-tight"
             style={{ color: subtitleColor }}
           >
             Ateliê Boutique

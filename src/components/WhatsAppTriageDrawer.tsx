@@ -296,7 +296,7 @@ export function WhatsAppTriageDrawer({
           <button
             type="button"
             onClick={handleCloseAndReset}
-            className="p-2 -mr-2 text-brand-graphite-500 hover:text-brand-graphite-950 rounded-full hover:bg-brand-nude-200/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne-600"
+            className="min-w-[48px] min-h-[48px] flex items-center justify-center p-2 text-brand-graphite-500 hover:text-brand-graphite-950 rounded-full hover:bg-brand-nude-200/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne-600 touch-manipulation cursor-pointer"
             aria-label="Fechar janela de triagem"
           >
             <X className="w-5 h-5" />

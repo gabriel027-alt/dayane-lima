@@ -202,39 +202,39 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 Sumário do Ateliê
               </p>
               <nav aria-label="Navegação secundária do rodapé">
-                <ul className="space-y-2.5 text-sm text-neutral-300">
+                <ul className="space-y-1 text-sm text-neutral-300">
                   <li>
-                    <a href="#procedimentos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#procedimentos" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Rituais de Alta Costura
                     </a>
                   </li>
                   <li>
-                    <a href="#megahair" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#megahair" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Mega Hair & Nanocápsulas
                     </a>
                   </li>
                   <li>
-                    <a href="#mechas" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#mechas" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Mechas & Balayage de Luxo
                     </a>
                   </li>
                   <li>
-                    <a href="#autoridade" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#autoridade" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Autoridade & 20+ Anos
                     </a>
                   </li>
                   <li>
-                    <a href="#casos-clinicos" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#casos-clinicos" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Diagnóstico & Casos Clínicos
                     </a>
                   </li>
                   <li>
-                    <a href="#triagem-inteligente" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#triagem-inteligente" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Triagem Inteligente VIP
                     </a>
                   </li>
                   <li>
-                    <a href="#localizacao" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded px-1 -mx-1">
+                    <a href="#localizacao" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Localização no Monte Carmelo
                     </a>
                   </li>

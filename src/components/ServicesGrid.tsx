@@ -185,7 +185,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                 <button
                   type="button"
                   onClick={() => handleScrollTo(ritual.anchorId)}
-                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#1C1917] hover:text-[#6E501E] transition-colors cursor-pointer py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] rounded-lg min-h-[48px]"
+                  className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#1C1917] hover:text-[#6E501E] transition-colors cursor-pointer px-3 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] rounded-lg min-h-[48px] touch-manipulation"
                   aria-label={`Ver detalhes e galeria de ${ritual.name}`}
                 >
                   <span>Ver Detalhes</span>

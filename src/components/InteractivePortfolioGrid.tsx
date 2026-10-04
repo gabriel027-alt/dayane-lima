@@ -78,7 +78,7 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
                           e.stopPropagation();
                           setIsMuted(!isMuted);
                         }}
-                        className="absolute bottom-4 right-4 z-20 p-2.5 rounded-full bg-black/60 hover:bg-[#C5A880] text-white backdrop-blur-md border border-white/20 transition-all shadow-md"
+                        className="absolute bottom-4 right-4 z-20 min-w-[48px] min-h-[48px] p-2.5 rounded-full bg-black/60 hover:bg-[#C5A880] text-white backdrop-blur-md border border-white/20 transition-all shadow-md flex items-center justify-center touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
                         aria-label="Controlar som do vídeo"
                       >
                         {isMuted ? <VolumeX className="w-4 h-4"/> : <Volume2 className="w-4 h-4 text-[#1C1917]"/>}
