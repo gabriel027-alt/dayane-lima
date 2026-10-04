@@ -449,41 +449,6 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             />
           ))}
         </div>
-
-        {/* Barra de Navegação Inferior (Mobile & Desktop) com Setas e Contador de Slides */}
-        <div className="mt-4 sm:mt-5 flex items-center justify-center gap-3 z-30 pointer-events-auto">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              pauseAutoPlayTemporarily();
-              handlePrev();
-            }}
-            className="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-md flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-            aria-label="Slide anterior"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#E8D0C8] text-xs font-mono font-bold text-[#6E501E] shadow-2xs">
-            <span>0{currentIndex + 1}</span>
-            <span className="text-[#C5A880]">/</span>
-            <span className="text-neutral-400">0{total}</span>
-          </div>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              pauseAutoPlayTemporarily();
-              handleNext();
-            }}
-            className="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-md flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-            aria-label="Próximo slide"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
       </div>
 
       {/* ===================== MODAL DE MÍDIA EM FOCO COM BOTÃO X REFINADO ===================== */}
