@@ -73,7 +73,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
                 <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
                   {spec.label}
                 </h4>
-                <p className="text-sm text-[#3D3835] font-sans leading-relaxed">
+                <p className="text-sm text-[#44403C] font-sans leading-relaxed">
                   {spec.detail}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Ateliê de Unhas com Emily Lima em Monte Carmelo
               </h4>
-              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
+              <p className="text-sm text-[#44403C] font-sans mt-0.5">
                 Aplicação inicial ou manutenção privativa com hora marcada na Rua Calcedônia, 155.
               </p>
             </div>

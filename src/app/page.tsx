@@ -16,9 +16,9 @@ import SpaceCarousel from "@/components/SpaceCarousel";
 import AuthoritySection from "@/components/AuthoritySection";
 import ReviewsSection from "@/components/ReviewsSection";
 import LocationAndFooter from "@/components/LocationAndFooter";
+import StickyConversionBar from "@/components/StickyConversionBar";
 import { CarouselStacked, Slide } from "@/components/ui/carousel-07";
 import WhatsAppTriageDrawer, { ServiceCategory } from "@/components/WhatsAppTriageDrawer";
-import { MessageCircle, MapPin } from "lucide-react";
 import {
   GalleryItem,
   MEGAHAIR_GALLERY_ITEMS,
@@ -175,40 +175,10 @@ export default function HomePage() {
       <LocationAndFooter onOpenTriage={handleOpenGeneralTriage} />
 
       {/* ===================== BARRA DE CONVERSÃO FLUTUANTE PERSISTENTE (DESKTOP & MOBILE) ===================== */}
-      <aside 
-        aria-label="Barra de conversão rápida e agendamento VIP"
-        className="fixed bottom-4 inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-40 pb-[env(safe-area-inset-bottom)] pointer-events-none sm:w-full sm:max-w-2xl lg:max-w-3xl"
-        aria-hidden={isTriageOpen}
-      >
-        <div className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-[#E8D0C8] rounded-2xl sm:rounded-full p-2.5 sm:px-6 sm:py-3 shadow-2xl flex items-center justify-between gap-3 sm:gap-6">
-          <div className="pl-1 sm:pl-0 flex flex-col justify-center">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" aria-hidden="true" />
-              <p className="text-sm font-serif font-bold text-[#1C1917] tracking-tight">
-                Ateliê Dayane Lima • Monte Carmelo
-              </p>
-            </div>
-            <p className="text-sm text-[#44403C] font-sans hidden sm:block mt-0.5">
-              Avaliação VIP com teste prévio de mechas & diagnóstico capilar.
-            </p>
-            <p className="text-sm text-[#44403C] flex items-center gap-1 font-sans sm:hidden">
-              <MapPin className="w-3.5 h-3.5 text-[#6E501E] shrink-0" />
-              Rua Calcedônia, 155
-            </p>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleOpenGeneralTriage}
-            className="min-h-[48px] px-5 sm:px-6 py-2.5 rounded-xl sm:rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide flex items-center gap-2 shadow-md active:scale-[0.98] transition-all touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] shrink-0 cursor-pointer"
-            aria-label="Agendar Avaliação VIP no WhatsApp"
-          >
-            <MessageCircle className="w-4 h-4 text-[#E6C99B] shrink-0" />
-            <span className="sm:hidden">Iniciar Triagem VIP</span>
-            <span className="hidden sm:inline">Agendar Avaliação VIP no WhatsApp</span>
-          </button>
-        </div>
-      </aside>
+      <StickyConversionBar 
+        onOpenTriage={handleOpenGeneralTriage} 
+        isTriageOpen={isTriageOpen} 
+      />
 
       {/* ===================== GAVETA DE TRIAGEM PRÉVIA PARA WHATSAPP ===================== */}
       <WhatsAppTriageDrawer

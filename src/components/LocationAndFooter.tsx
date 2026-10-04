@@ -71,7 +71,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                     <p className="text-sm text-[#44403C] mt-0.5">
                       Rua Calcedônia, 155 – Bairro Monte Carmelo
                     </p>
-                    <p className="text-sm text-[#3D3835]">
+                    <p className="text-sm text-[#44403C]">
                       Montes Claros – MG • CEP 39401-000
                     </p>
                   </div>
@@ -84,10 +84,10 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm text-[#1C1917]">Horário de Atendimento</h4>
-                    <p className="text-sm text-[#3D3835] mt-0.5">
+                    <p className="text-sm text-[#44403C] mt-0.5">
                       Terça a Sexta-feira: 08:30 às 18:30
                     </p>
-                    <p className="text-sm text-[#3D3835]">
+                    <p className="text-sm text-[#44403C]">
                       Sábado: 08:00 às 17:00 (Exclusivo com agendamento prévio)
                     </p>
                   </div>

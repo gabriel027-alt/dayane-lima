@@ -62,7 +62,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
                 <MapPin className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Localização Nobre</h4>
-              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
+              <p className="text-sm font-sans text-[#44403C] leading-relaxed">
                 Rua Calcedônia, 155, Bairro Monte Carmelo. Região residencial calma e de fácil acesso com estacionamento na porta.
               </p>
             </div>
@@ -74,7 +74,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
                 <Wind className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Conforto Térmico</h4>
-              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
+              <p className="text-sm font-sans text-[#44403C] leading-relaxed">
                 Ambientes climatizados suavemente e projetados com isolamento acústico para o seu descanso completo.
               </p>
             </div>
@@ -86,7 +86,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
                 <Coffee className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Boas-Vindas Gourmet</h4>
-              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
+              <p className="text-sm font-sans text-[#44403C] leading-relaxed">
                 Menu de café especial moído na hora, chás nobres e águas aromatizadas para seu acolhimento antes do ritual.
               </p>
             </div>
@@ -98,7 +98,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
                 <ShieldCheck className="w-5 h-5 text-[#8F6E32]" />
               </div>
               <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Biossegurança Rigorosa</h4>
-              <p className="text-sm font-sans text-[#3D3835] leading-relaxed">
+              <p className="text-sm font-sans text-[#44403C] leading-relaxed">
                 Instrumentais esterilizados em autoclave médica, toalhas higienizadas a vapor e materiais 100% descartáveis.
               </p>
             </div>
@@ -111,7 +111,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
             <h4 className="font-serif font-bold text-lg text-[#1C1917]">
               Planeje sua Visita ao Ateliê Dayane Lima
             </h4>
-            <p className="text-sm text-[#3D3835] font-sans">
+            <p className="text-sm text-[#44403C] font-sans">
               Rua Calcedônia, 155 • Bairro Monte Carmelo, Montes Claros - MG
             </p>
           </div>

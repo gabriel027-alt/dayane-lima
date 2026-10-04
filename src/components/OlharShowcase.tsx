@@ -56,7 +56,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
               <h3 className="font-serif font-bold text-2xl text-[#1C1917]">
                 Rayssa Lash
               </h3>
-              <p className="text-sm text-[#3D3835] font-sans mt-3 leading-relaxed">
+              <p className="text-sm text-[#44403C] font-sans mt-3 leading-relaxed">
                 Fios de seda com curvatura personalizada e diâmetro milimétrico que respeita a saúde folicular. Isolamento anatômico mecha a mecha com adesivos oftálmicos de alta pureza.
               </p>
             </div>
@@ -85,7 +85,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
               <h3 className="font-serif font-bold text-2xl text-[#1C1917]">
                 Hillery Thauanne
               </h3>
-              <p className="text-sm text-[#3D3835] font-sans mt-3 leading-relaxed">
+              <p className="text-sm text-[#44403C] font-sans mt-3 leading-relaxed">
                 Mapeamento milimétrico calculado em proporção áurea facial de acordo com as linhas naturais do seu rosto. Pigmentação dosada para valorizar a arquitetura dos olhos com naturalidade.
               </p>
             </div>
@@ -114,7 +114,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Harmonização Ocular Completa em Sessão VIP
               </h4>
-              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
+              <p className="text-sm text-[#44403C] font-sans mt-0.5">
                 Reserve atendimento com Rayssa Lash e Hillery Thauanne no mesmo horário na Rua Calcedônia, 155.
               </p>
             </div>

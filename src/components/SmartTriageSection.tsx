@@ -214,7 +214,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
             </span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-[#3D3835] font-sans leading-relaxed [text-wrap:pretty]">
+          <p className="mt-4 text-base sm:text-lg text-[#44403C] font-sans leading-relaxed [text-wrap:pretty]">
             Em apenas 3 passos rápidos, identifique o protocolo ideal para o seu perfil e chegue ao WhatsApp com seu plano de atendimento preparado para a especialista.
           </p>
         </div>
@@ -359,7 +359,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                         className={`text-left p-3.5 rounded-xl border text-sm font-sans transition-all min-h-[48px] flex items-center justify-between ${
                           subAnswer === sub
                             ? "bg-[#C58B7E] text-white border-[#C58B7E] font-semibold"
-                            : "bg-white text-[#3D3835] border-[#E8D0C8] hover:border-[#C5A880]"
+                            : "bg-white text-[#44403C] border-[#E8D0C8] hover:border-[#C5A880]"
                         }`}
                       >
                         <span>{sub}</span>
@@ -430,13 +430,13 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
 
                 <div>
                   <span className="text-xs text-[#6E501E] uppercase font-bold block">Diagnóstico Atual:</span>
-                  <p className="text-[#3D3835] font-medium">{diagnosticAnswer}</p>
+                  <p className="text-[#44403C] font-medium">{diagnosticAnswer}</p>
                 </div>
 
                 {subAnswer && (
                   <div>
                     <span className="text-xs text-[#6E501E] uppercase font-bold block">Prioridade:</span>
-                    <p className="text-[#3D3835] font-medium">{subAnswer}</p>
+                    <p className="text-[#44403C] font-medium">{subAnswer}</p>
                   </div>
                 )}
               </div>

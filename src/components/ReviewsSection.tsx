@@ -156,7 +156,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
           <div className="flex items-center gap-4 self-start md:self-end">
             <div className="text-xs font-sans text-[#44403C] tracking-wider font-medium">
               <span className="font-bold text-[#1C1917]">0{selectedIndex + 1}</span>
-              <span className="mx-1 text-[#3D3835]">/</span>
+              <span className="mx-1 text-[#44403C]">/</span>
               <span>0{CLINICAL_CASES.length}</span>
             </div>
 
@@ -213,7 +213,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
                     {/* Ficha Diagnóstico vs Intervenção */}
                     <div className="space-y-4 pt-4 border-t border-[#F0EAE1]">
                       <div>
-                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#3D3835] block mb-1">
+                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#44403C] block mb-1">
                           Diagnóstico & Desafio Fisiológico:
                         </span>
                         <p className="text-sm font-sans text-[#292524] leading-relaxed">
@@ -222,7 +222,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
                       </div>
 
                       <div>
-                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#3D3835] block mb-1">
+                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#44403C] block mb-1">
                           Intervenção Técnica & Protocolo:
                         </span>
                         <p className="text-sm font-sans text-[#292524] leading-relaxed">
@@ -246,7 +246,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
                   <div className="mt-6 pt-5 border-t border-[#F0EAE1] grid grid-cols-2 gap-3 sm:gap-4">
                     {item.metrics.map((metric, idx) => (
                       <div key={idx} className="bg-[#F8F5F0] rounded-xl p-2.5 border border-[#EBE4D8]">
-                        <span className="text-xs uppercase font-sans font-semibold tracking-wider text-[#3D3835] block">
+                        <span className="text-xs uppercase font-sans font-semibold tracking-wider text-[#44403C] block">
                           {metric.label}
                         </span>
                         <span className="text-sm font-sans font-bold text-[#1C1917] mt-0.5 block">
@@ -288,7 +288,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
                 <Clock className="w-5 h-5 text-[#6E501E] mb-2" />
                 <h4 className="font-sans font-bold text-base text-[#1C1917]">Hora Marcada com Rigor</h4>
-                <p className="text-sm font-sans text-[#3D3835] mt-1">
+                <p className="text-sm font-sans text-[#44403C] mt-1">
                   Atendimento sem atrasos e sem clientes sobrepostas na mesma bancada.
                 </p>
               </div>
@@ -296,7 +296,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
                 <Microscope className="w-5 h-5 text-[#6E501E] mb-2" />
                 <h4 className="font-sans font-bold text-base text-[#1C1917]">Diagnóstico Pré-Procedimento</h4>
-                <p className="text-sm font-sans text-[#3D3835] mt-1">
+                <p className="text-sm font-sans text-[#44403C] mt-1">
                   Teste de mecha obrigatório e análise tricoscópica da densidade biológica.
                 </p>
               </div>
@@ -304,7 +304,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
                 <ShieldCheck className="w-5 h-5 text-[#6E501E] mb-2" />
                 <h4 className="font-sans font-bold text-base text-[#1C1917]">Saúde Folicular Inegociável</h4>
-                <p className="text-sm font-sans text-[#3D3835] mt-1">
+                <p className="text-sm font-sans text-[#44403C] mt-1">
                   Se o fio não estiver apto quimicamente, priorizamos o tratamento à química.
                 </p>
               </div>
@@ -312,7 +312,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E5DDD0]">
                 <UserCheck className="w-5 h-5 text-[#6E501E] mb-2" />
                 <h4 className="font-sans font-bold text-base text-[#1C1917]">Acompanhamento Pós-Aplicação</h4>
-                <p className="text-sm font-sans text-[#3D3835] mt-1">
+                <p className="text-sm font-sans text-[#44403C] mt-1">
                   Suporte direto com orientações de lavagem e manutenção domiciliar.
                 </p>
               </div>

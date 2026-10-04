@@ -88,7 +88,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
                   <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
                     {area.name}
                   </h4>
-                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mb-4">
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mb-4">
                     {area.indication}
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Avaliação de Fototipo & Pacotes de Laser
               </h4>
-              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
+              <p className="text-sm text-[#44403C] font-sans mt-0.5">
                 Consulte valores por sessão avulsa ou pacotes combinados com a recepção no WhatsApp.
               </p>
             </div>

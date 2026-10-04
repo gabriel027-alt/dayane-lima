@@ -103,27 +103,27 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                 <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917] leading-tight">
                   A Fusão Milimétrica que Protege a Saúde da Sua Raiz
                 </h3>
-                <p className="mt-3 text-sm font-sans text-[#3D3835] leading-relaxed">
+                <p className="mt-3 text-sm font-sans text-[#44403C] leading-relaxed">
                   Cada mecha é calculada com paquímetro digital a 0.5cm do couro cabeludo, garantindo leveza absoluta e preservação do ciclo folicular biológico.
                 </p>
               </div>
 
-              <div className="divide-y divide-[#F0EAE1]">
+              <div className="grid grid-cols-1 gap-3.5">
                 {MEGAHAIR_LEDGER.map((item, idx) => (
-                  <div key={idx} className="py-4 first:pt-0 last:pb-0 flex items-start gap-3 sm:gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center shrink-0 mt-0.5">
-                      <Sparkles className="w-4 h-4 text-[#6E501E]" />
+                  <div key={idx} className="p-4 sm:p-5 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] shadow-xs flex items-start gap-3.5 sm:gap-4 transition-all hover:bg-white hover:border-[#C5A880]/60">
+                    <div className="w-9 h-9 rounded-full bg-white border border-[#C5A880]/40 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                      <Sparkles className="w-4 h-4 text-[#8F6E32]" />
                     </div>
                     <div>
                       <div className="flex flex-wrap items-baseline gap-2 mb-1">
-                        <h4 className="font-serif font-bold text-base text-[#1C1917]">
+                        <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
                           {item.title}
                         </h4>
                         <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#7A3E33]">
                           • {item.meta}
                         </span>
                       </div>
-                      <p className="text-sm text-[#3D3835] font-sans leading-relaxed">
+                      <p className="text-sm text-[#44403C] font-sans leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -132,7 +132,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
               </div>
 
               <div className="pt-6 mt-6 border-t border-[#F0EAE1] flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-sm text-[#3D3835] font-sans">
+                <p className="text-sm text-[#44403C] font-sans">
                   Atendimento privativo com hora marcada e diagnóstico com teste de mecha prévio.
                 </p>
                 <button
@@ -277,7 +277,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Atendimento Consultivo Privativo em Monte Carmelo
               </h4>
-              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
+              <p className="text-sm text-[#44403C] font-sans mt-0.5">
                 Avaliação individual com teste de mecha, toque nos cabelos virgens e diagnóstico capilar completo.
               </p>
             </div>

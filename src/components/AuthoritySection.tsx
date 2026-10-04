@@ -43,7 +43,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                 <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
                   <p className="text-[#C5A880] text-xs font-semibold uppercase tracking-wider font-sans">Diretora Criativa & Master Educator</p>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-0.5">Dayane Lima</h3>
-                  <p className="text-xs text-white/90 mt-1 font-sans">Dayane Lima — Ateliê Boutique • Montes Claros - MG</p>
+                  <p className="text-sm text-white/90 mt-1 font-sans">Dayane Lima — Ateliê Boutique • Montes Claros - MG</p>
                 </div>
               </div>
 
@@ -79,7 +79,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
                     Atendimento Consultivo VIP Sem Esteira
                   </h4>
-                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-1">
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
                     Agenda planejada com calma e dedicação exclusiva para diagnóstico e execução sem pressa no Monte Carmelo.
                   </p>
                 </div>
@@ -93,7 +93,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
                     Fios 100% Humanos de Cutícula Intacta
                   </h4>
-                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-1">
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
                     Trabalho exclusivo com cabelos brasileiros virgens de alta pureza, alinhados na mesma direção anatômica.
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
                     Biossegurança Hospitalar & Anti-Tração Folicular
                   </h4>
-                  <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-1">
+                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
                     Autoclave médica para esterilização de ferramentas, distribuição com peso calibrado anti-tração e preservação biológica da raiz.
                   </p>
                 </div>

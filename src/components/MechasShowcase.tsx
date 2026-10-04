@@ -104,7 +104,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Diagnóstico de Mechas & Teste Prévio Obrigatório
               </h4>
-              <p className="text-sm text-[#3D3835] font-sans mt-0.5">
+              <p className="text-sm text-[#44403C] font-sans mt-0.5">
                 Avaliação minuciosa da resistência do fio antes de qualquer processo químico.
               </p>
             </div>

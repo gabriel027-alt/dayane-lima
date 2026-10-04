@@ -29,21 +29,21 @@ export function Header({ onOpenTriage }: HeaderProps) {
         >
           <a 
             href="#megahair" 
-            className="inline-flex items-center min-h-[48px] px-3 rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="inline-flex items-center min-h-[48px] px-2.5 sm:px-3 text-xs sm:text-sm rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             Especialidades
           </a>
 
           <a 
             href="#espaco" 
-            className="hidden sm:inline-flex items-center min-h-[48px] px-3 rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="hidden min-[480px]:inline-flex items-center min-h-[48px] px-2.5 sm:px-3 text-xs sm:text-sm rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             O Ateliê
           </a>
 
           <a 
             href="#localizacao" 
-            className="hidden md:inline-flex items-center min-h-[48px] px-3 rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            className="hidden min-[640px]:inline-flex items-center min-h-[48px] px-2.5 sm:px-3 text-xs sm:text-sm rounded-full text-[#292524] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
           >
             Localização
           </a>

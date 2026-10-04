@@ -169,7 +169,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                 </h3>
 
                 {/* Duração */}
-                <div className="flex items-center gap-1.5 text-sm text-[#3D3835] font-sans mt-2 mb-3">
+                <div className="flex items-center gap-1.5 text-sm text-[#44403C] font-sans mt-2 mb-3">
                   <Clock className="w-4 h-4 text-[#8F6E32]" />
                   <span>{ritual.duration}</span>
                 </div>
@@ -217,7 +217,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
               <h4 className="font-serif font-bold text-lg text-[#1C1917]">
                 Preservação Folicular & Teste de Mecha Obrigatório
               </h4>
-              <p className="text-sm text-[#3D3835] font-sans leading-relaxed mt-0.5 max-w-xl">
+              <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-0.5 max-w-xl">
                 Nenhum procedimento químico ou de extensão é iniciado sem diagnóstico prévio. Sua saúde capilar é o nosso maior compromisso ético.
               </p>
             </div>
