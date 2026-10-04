@@ -191,13 +191,15 @@ export function EditorialArchiveGallery({
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover pointer-events-none"
+                    style={{ backgroundColor: "#1C1917" }}
+                    className="w-full h-full object-contain bg-[#1C1917] pointer-events-none"
                   />
                 ) : (
                   <img
                     src={item.src}
                     alt={item.title}
-                    className="w-full h-full object-cover pointer-events-none transition-transform duration-500 hover:scale-105"
+                    style={{ backgroundColor: "#1C1917" }}
+                    className="w-full h-full object-contain bg-[#1C1917] pointer-events-none transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                   />
                 )}

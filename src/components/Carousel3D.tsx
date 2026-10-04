@@ -488,13 +488,15 @@ const Card = ({
             preload="auto"
             onEnded={handleEnded}
             onError={handleError}
-            className="w-full h-full object-contain"
+            style={{ backgroundColor: "#1C1917" }}
+            className="w-full h-full object-contain bg-[#1C1917]"
           />
         ) : (
           <img
             src={mediaSrc}
             alt={slide.title || "Procedimento Dayane Lima"}
-            className="w-full h-full object-contain"
+            style={{ backgroundColor: "#1C1917" }}
+            className="w-full h-full object-contain bg-[#1C1917] select-none pointer-events-none"
             loading="lazy"
           />
         )}
