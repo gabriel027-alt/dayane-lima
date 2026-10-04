@@ -171,6 +171,9 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     };
   }, []);
 
+  // Autoplay inteligente sincronizado com a duração dos vídeos:
+  // - Para vídeos (<video>): aguarda o término natural do vídeo (onEnded) para avançar
+  // - Para imagens: mantém o tempo padrão de 4.5 segundos
   React.useEffect(() => {
     if (!slides || slides.length === 0 || total <= 1 || !isInView || isPaused || selectedModalSlide) return;
 
@@ -179,22 +182,30 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
       currentSlide?.type === "video" ||
       (currentSlide?.src || currentSlide?.image || "").endsWith(".mp4");
 
-    const duration = isVideo ? 5500 : 4200;
+    // Se for vídeo, aguarda o evento onEnded do vídeo ativo (com fallback de segurança de 60s)
+    if (isVideo) {
+      const fallbackTimer = setTimeout(() => {
+        handleNext();
+      }, 60000);
 
+      return () => clearTimeout(fallbackTimer);
+    }
+
+    // Se for imagem estática, avança após 4.5 segundos
     const timer = setTimeout(() => {
       handleNext();
-    }, duration);
+    }, 4500);
 
     return () => clearTimeout(timer);
   }, [currentIndex, slides, total, isInView, isPaused, selectedModalSlide, handleNext]);
 
   const handleVideoEnded = React.useCallback(
     (index: number) => {
-      if (index === currentIndex && !isPaused) {
+      if (index === currentIndex && !isPaused && total > 1) {
         handleNext();
       }
     },
-    [currentIndex, isPaused, handleNext]
+    [currentIndex, isPaused, handleNext, total]
   );
 
   const config = React.useMemo(
@@ -679,7 +690,9 @@ const Card = ({
             playsInline 
             preload="auto" 
             autoPlay 
-            loop 
+            loop={total <= 1}
+            onEnded={handleEnded}
+            onError={handleError}
             className="w-full h-full object-cover object-center block pointer-events-none" 
             style={{ backgroundColor: '#1C1917' }}
           />
