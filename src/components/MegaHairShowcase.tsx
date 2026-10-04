@@ -13,22 +13,19 @@ const MEGAHAIR_LEDGER = [
     roman: "I",
     title: "Preservação da Raiz",
     meta: "Tração Zero",
-    description:
-      "Distribuição de peso calculada mecha a mecha, mantendo os folículos livres de danos e com oxigenação natural plena.",
+    description: "Distribuição calculada mecha a mecha, sem peso e com oxigenação folicular plena.",
   },
   {
     roman: "II",
-    title: "Nanocápsulas de 0.5mm",
+    title: "Nanocápsulas 0.5mm",
     meta: "Fusão Imperceptível",
-    description:
-      "Junções milimétricas imperceptíveis ao toque e à visão, garantindo liberdade total para coques e penteados altos.",
+    description: "Junções milimétricas imperceptíveis ao toque, livres para coques e penteados altos.",
   },
   {
     roman: "III",
-    title: "Fios Brasileiros Nobres",
+    title: "Fios Nobres Brasileiros",
     meta: "Cutícula Alinhada",
-    description:
-      "Cabelos humanos virgens selecionados individualmente, com toque aveludado, caimento sedoso e reflexo espelhado duradouro.",
+    description: "Cabelos virgens selecionados, caimento sedoso e brilho espelhado duradouro.",
   },
 ];
 
@@ -66,7 +63,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
         </div>
 
         {/* ===================== MANIFESTO TÉCNICO DE ENGENHARIA CAPILAR & DESTAQUE VISUAL ===================== */}
-        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 border border-[#E8D0C8] shadow-xs">
+        <div className="mb-16 sm:mb-20 bg-white rounded-2xl p-5 sm:p-6 md:p-8 border border-[#E8D0C8] shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Coluna Visual de Destaque Fotográfico: Mega Hair */}

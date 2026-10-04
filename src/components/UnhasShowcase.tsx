@@ -12,17 +12,17 @@ const UNHAS_SPECS = [
   {
     code: "01",
     label: "Curvatura C Anatômica",
-    detail: "Equilíbrio de tensão estrutural com bordas ultrafinas e resistência ao impacto.",
+    detail: "Equilíbrio de tensão estrutural com bordas ultrafinas.",
   },
   {
     code: "02",
     label: "Gel & Fibra Pura",
-    detail: "Aderência molecular de alta tecnologia e secagem confortável sem ardência sob a luz UV.",
+    detail: "Secagem confortável e aderência de alta pureza sem ardência.",
   },
   {
     code: "03",
     label: "Blindagem Diamante",
-    detail: "Acabamento vitrificado de alto brilho e durabilidade superior a 25 dias.",
+    detail: "Acabamento vitrificado de alto brilho e durabilidade 25+ dias.",
   },
 ];
 
@@ -64,21 +64,21 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
           {UNHAS_SPECS.map((spec) => (
             <div 
               key={spec.code}
-              className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D0C8] shadow-xs hover:border-[#8F6E32]/50 transition-all flex flex-col justify-between"
             >
               <div>
-                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#8F6E32]/35 block mb-3">
+                <span className="font-serif text-3xl sm:text-4xl font-bold text-[#8F6E32]/35 block mb-2">
                   {spec.code}
                 </span>
-                <h4 className="font-serif font-bold text-lg text-[#1C1917] mb-2">
+                <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917] mb-1.5">
                   {spec.label}
                 </h4>
-                <p className="text-sm text-[#44403C] font-sans leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
                   {spec.detail}
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-[#F2DDD6] flex items-center gap-2 text-sm font-sans text-[#6E501E]">
+              <div className="mt-4 pt-3 border-t border-[#F2DDD6] flex items-center gap-2 text-xs sm:text-sm font-sans text-[#6E501E]">
                 <ShieldCheck className="w-4 h-4 text-[#8F6E32]" />
                 <span className="font-medium">Padrão Emily Lima Nails</span>
               </div>
@@ -87,7 +87,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <HandMetal className="w-5 h-5 text-[#8F6E32]" />

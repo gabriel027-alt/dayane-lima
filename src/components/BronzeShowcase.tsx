@@ -43,29 +43,29 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
 
         {/* ===================== 1. PROTOCOLO DE BIOSSEGURANÇA & PRIVACIDADE ===================== */}
         <div className="mb-16 sm:mb-20 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-2.5">
             <div className="flex items-center gap-3">
               <Sun className="w-5 h-5 text-[#8F6E32]" />
-              <h4 className="font-serif font-bold text-lg text-[#1C1917]">Controle Rigoroso de Exposição</h4>
+              <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">Dosimetria Segura</h4>
             </div>
-            <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-              Dosimetria calibrada por fototipo para um bronzeado dourado, uniforme e saudável.
+            <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
+              Controle calibrado por fototipo para um bronzeado dourado, uniforme e saudável.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-sm font-sans text-[#6E501E]">
+            <div className="pt-1.5 flex items-center gap-2 text-xs sm:text-sm font-sans text-[#6E501E]">
               <CheckCircle2 className="w-4 h-4 text-[#8F6E32]" />
               <span>Dourado homogêneo sem manchas</span>
             </div>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-3">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs space-y-2.5">
             <div className="flex items-center gap-3">
               <Lock className="w-5 h-5 text-[#8F6E32]" />
-              <h4 className="font-serif font-bold text-lg text-[#1C1917]">Privacidade Total em Monte Carmelo</h4>
+              <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">Privacidade Total</h4>
             </div>
-            <p className="text-sm text-[#44403C] font-sans leading-relaxed">
-              Suíte individual climatizada, toalhas descartáveis e higienização estrita a cada atendimento.
+            <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed">
+              Suíte individual climatizada com higienização estrita a cada atendimento.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-sm font-sans text-[#6E501E]">
+            <div className="pt-1.5 flex items-center gap-2 text-xs sm:text-sm font-sans text-[#6E501E]">
               <CheckCircle2 className="w-4 h-4 text-[#8F6E32]" />
               <span>Ambiente 100% privativo com hora marcada</span>
             </div>
@@ -73,7 +73,7 @@ export function BronzeShowcase({ onSelectService }: BronzeShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white p-5 sm:p-7 md:p-8 border border-[#E8D0C8] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="rounded-2xl bg-white p-5 sm:p-6 border border-[#E8D0C8] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <Sun className="w-5 h-5 text-[#8F6E32]" />

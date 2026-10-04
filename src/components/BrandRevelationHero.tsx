@@ -43,7 +43,7 @@ export function BrandRevelationHero({
 
             {/* Parágrafo Descritivo */}
             <p className="text-[#44403C] text-base sm:text-lg font-normal leading-relaxed max-w-xl mb-8 [text-wrap:pretty]">
-              Atendimento consultivo e privativo com hora marcada no Monte Carmelo. Nanocápsulas de queratina imperceptíveis que protegem a raiz natural, colorimetria de precisão e rituais integrados de beleza exclusiva.
+              Atendimento privativo com hora marcada no Monte Carmelo. Fusão invisível, proteção folicular e rituais exclusivos sob medida.
             </p>
 
             {/* Botões de Ação */}

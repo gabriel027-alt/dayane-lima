@@ -142,7 +142,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
           {RITUALS_INDEX.map((ritual) => (
             <div
               key={ritual.id}
-              className="bg-white rounded-2xl p-5 sm:p-7 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/70 hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+              className="bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880]/70 hover:shadow-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
             >
               {/* Acabamento de Luxo Acetinado */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#C5A880]/10 to-transparent rounded-bl-full pointer-events-none" />
@@ -208,7 +208,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
         </div>
 
         {/* Banner Inferior com Garantia Biológica e CTA */}
-        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-5 sm:p-8 md:p-10 border border-[#E8D0C8] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D0C8] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-2xl bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-6 h-6 text-[#6E501E]" />
@@ -218,7 +218,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
                 Preservação Folicular & Teste de Mecha Obrigatório
               </h4>
               <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-0.5 max-w-xl">
-                Nenhum procedimento químico ou de extensão é iniciado sem diagnóstico prévio. Sua saúde capilar é o nosso maior compromisso ético.
+                Diagnóstico prévio e teste de mecha rigoroso antes de qualquer procedimento químico ou de extensão.
               </p>
             </div>
           </div>

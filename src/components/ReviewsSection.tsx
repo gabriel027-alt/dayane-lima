@@ -189,67 +189,52 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
                 key={item.id}
                 className="flex-[0_0_100%] lg:flex-[0_0_50%] pl-5 sm:pl-6 min-w-0"
               >
-                <article className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between h-full select-none hover:border-[#C5A880]/60 transition-all duration-200">
+                <article className="bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D0C8] shadow-xs flex flex-col justify-between h-full select-none hover:border-[#C5A880]/60 transition-all duration-200">
                   <div>
                     {/* Tag Superior & Especialista */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-sans font-bold bg-[#F4EFEA] text-[#6E501E] border border-[#E8D0C8]">
                         <Sparkles className="w-3.5 h-3.5 text-[#8F6E32]" />
                         {item.tag}
                       </span>
                       <span className="text-xs font-sans font-semibold text-[#44403C]">
-                        Registro Clínico Documentado
+                        Registro Clínico
                       </span>
                     </div>
 
-                    <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1C1917] leading-snug mb-3">
+                    <h3 className="font-serif font-bold text-lg sm:text-xl text-[#1C1917] leading-snug mb-2">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm font-sans font-semibold text-[#6E501E] mb-5">
-                      Responsável: {item.specialist}
+                    <p className="text-xs font-sans font-semibold text-[#6E501E] mb-4">
+                      {item.specialist}
                     </p>
 
-                    {/* Ficha Diagnóstico vs Intervenção */}
-                    <div className="space-y-4 pt-4 border-t border-[#F0EAE1]">
-                      <div>
-                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#44403C] block mb-1">
-                          Diagnóstico & Desafio Fisiológico:
-                        </span>
-                        <p className="text-sm font-sans text-[#292524] leading-relaxed">
-                          {item.diagnosis}
-                        </p>
+                    {/* Resumo Clínico Condensado */}
+                    <div className="space-y-2.5 pt-3 border-t border-[#F0EAE1] text-xs sm:text-sm font-sans">
+                      <div className="flex items-start gap-2">
+                        <span className="font-bold text-[#1C1917] shrink-0">Desafio:</span>
+                        <span className="text-[#44403C]">{item.diagnosis}</span>
                       </div>
-
-                      <div>
-                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#44403C] block mb-1">
-                          Intervenção Técnica & Protocolo:
-                        </span>
-                        <p className="text-sm font-sans text-[#292524] leading-relaxed">
-                          {item.intervention}
-                        </p>
+                      <div className="flex items-start gap-2">
+                        <span className="font-bold text-[#1C1917] shrink-0">Protocolo:</span>
+                        <span className="text-[#44403C]">{item.intervention}</span>
                       </div>
-
-                      <div className="bg-[#FAF8F5] p-3.5 rounded-2xl border border-[#E8D0C8]">
-                        <span className="text-xs uppercase tracking-wider font-sans font-bold text-[#6E501E] flex items-center gap-1.5 mb-1">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
-                          Desfecho & Preservação Folicular:
-                        </span>
-                        <p className="text-sm font-sans font-medium text-[#1C1917] leading-relaxed">
-                          {item.outcome}
-                        </p>
+                      <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#E8D0C8] flex items-start gap-2 text-[#1C1917]">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                        <span className="font-medium text-xs sm:text-sm">{item.outcome}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Grade de Metadados Clínicos */}
-                  <div className="mt-6 pt-5 border-t border-[#F0EAE1] grid grid-cols-2 gap-3 sm:gap-4">
-                    {item.metrics.map((metric, idx) => (
+                  <div className="mt-5 pt-4 border-t border-[#F0EAE1] grid grid-cols-2 gap-2.5">
+                    {item.metrics.slice(0, 2).map((metric, idx) => (
                       <div key={idx} className="bg-[#F8F5F0] rounded-xl p-2.5 border border-[#EBE4D8]">
-                        <span className="text-xs uppercase font-sans font-semibold tracking-wider text-[#44403C] block">
+                        <span className="text-[11px] uppercase font-sans font-semibold tracking-wider text-[#44403C] block">
                           {metric.label}
                         </span>
-                        <span className="text-sm font-sans font-bold text-[#1C1917] mt-0.5 block">
+                        <span className="text-xs sm:text-sm font-sans font-bold text-[#1C1917] mt-0.5 block">
                           {metric.value}
                         </span>
                       </div>
@@ -262,7 +247,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
         </div>
 
         {/* ===================== MANIFESTO: ATENDIMENTO VIP SEM ESTEIRA NO MONTE CARMELO ===================== */}
-        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-5 sm:p-8 md:p-12 border border-[#E5DDD0] shadow-sm relative overflow-hidden">
+        <div className="mt-14 sm:mt-16 bg-white rounded-2xl p-5 sm:p-6 md:p-8 border border-[#E5DDD0] shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(ellipse_at_top_right,rgba(197,168,128,0.12),transparent_70%)] pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
@@ -275,46 +260,38 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
               <h3 className="font-serif font-bold text-2xl sm:text-3xl text-[#1C1917] leading-snug">
                 Seu Horário é Sagrado:{" "}
                 <span className="italic font-normal font-serif text-[#6E501E]">
-                  Sem Esteira, Sem Espera, Sem Tumulto.
+                  Sem Esteira, Sem Espera.
                 </span>
               </h3>
 
-              <p className="mt-4 text-base font-sans text-[#292524] leading-relaxed">
-                Atendimento individual e exclusivo. Uma única cliente por horário, com atenção plena da especialista e atmosfera acolhedora e privativa no Monte Carmelo.
+              <p className="mt-3 text-sm sm:text-base font-sans text-[#292524] leading-relaxed">
+                Atendimento individual e exclusivo. Uma única cliente por horário, com atenção plena da especialista e atmosfera privativa no Monte Carmelo.
               </p>
             </div>
 
-            <div className="lg:col-span-5 grid grid-cols-2 gap-2.5 sm:gap-4">
-              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
-                <Clock className="w-4 h-4 text-[#8F6E32] mb-1.5" />
+            <div className="lg:col-span-5 grid grid-cols-2 gap-2.5 sm:gap-3.5">
+              <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#E5DDD0]">
+                <Clock className="w-4 h-4 text-[#8F6E32] mb-1" />
                 <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Zero Atrasos</h4>
-                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
-                  Horário reservado com dedicação exclusiva sem esteira.
-                </p>
+                <p className="text-xs text-[#44403C] mt-0.5">Dedicação exclusiva por horário.</p>
               </div>
 
-              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
-                <Microscope className="w-4 h-4 text-[#8F6E32] mb-1.5" />
-                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Diagnóstico Prévio</h4>
-                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
-                  Teste de mecha obrigatório e análise tricoscópica.
-                </p>
+              <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#E5DDD0]">
+                <Microscope className="w-4 h-4 text-[#8F6E32] mb-1" />
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Diagnóstico</h4>
+                <p className="text-xs text-[#44403C] mt-0.5">Teste de mecha obrigatório.</p>
               </div>
 
-              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
-                <ShieldCheck className="w-4 h-4 text-[#8F6E32] mb-1.5" />
+              <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#E5DDD0]">
+                <ShieldCheck className="w-4 h-4 text-[#8F6E32] mb-1" />
                 <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Saúde Folicular</h4>
-                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
-                  Preservação biológica da raiz e peso calibrado.
-                </p>
+                <p className="text-xs text-[#44403C] mt-0.5">Preservação biológica da raiz.</p>
               </div>
 
-              <div className="bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-[#E5DDD0]">
-                <UserCheck className="w-4 h-4 text-[#8F6E32] mb-1.5" />
-                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Pós-Aplicação VIP</h4>
-                <p className="text-xs sm:text-sm text-[#44403C] mt-0.5 leading-snug">
-                  Suporte direto com protocolo de manutenção.
-                </p>
+              <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#E5DDD0]">
+                <UserCheck className="w-4 h-4 text-[#8F6E32] mb-1" />
+                <h4 className="font-sans font-bold text-xs sm:text-sm text-[#1C1917]">Pós-Aplicação</h4>
+                <p className="text-xs text-[#44403C] mt-0.5">Suporte direto de manutenção.</p>
               </div>
             </div>
           </div>

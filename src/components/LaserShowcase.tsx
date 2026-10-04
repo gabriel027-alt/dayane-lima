@@ -103,7 +103,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <Zap className="w-5 h-5 text-[#8F6E32]" />

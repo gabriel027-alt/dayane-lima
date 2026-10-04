@@ -79,8 +79,8 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
                     Atendimento VIP Sem Esteira
                   </h4>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
-                    Dedicação exclusiva a uma cliente por horário, com diagnóstico calmo e sem pressa.
+                  <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed mt-0.5">
+                    Dedicação a uma cliente por vez, com diagnóstico calmo e sem pressa.
                   </p>
                 </div>
               </div>
@@ -91,10 +91,10 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
-                    Fios 100% Humanos Selecionados
+                    Fios Humanos Selecionados
                   </h4>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
-                    Cabelos brasileiros virgens de alta pureza com cutícula intacta e caimento sedoso.
+                  <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed mt-0.5">
+                    Cabelos brasileiros virgens com cutícula intacta e caimento sedoso.
                   </p>
                 </div>
               </div>
@@ -107,8 +107,8 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
                   <h4 className="font-serif font-bold text-base sm:text-lg text-[#1C1917]">
                     Biossegurança Hospitalar
                   </h4>
-                  <p className="text-sm text-[#44403C] font-sans leading-relaxed mt-1">
-                    Autoclave médica, dosimetria segura e distribuição milimétrica anti-tração folicular.
+                  <p className="text-xs sm:text-sm text-[#44403C] font-sans leading-relaxed mt-0.5">
+                    Autoclave médica e distribuição milimétrica anti-tração.
                   </p>
                 </div>
               </div>

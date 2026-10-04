@@ -220,7 +220,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
         </div>
 
         {/* Card Principal da Triagem */}
-        <div className="bg-white rounded-2xl border border-[#E8D0C8] p-5 sm:p-8 md:p-10 shadow-md">
+        <div className="bg-white rounded-2xl border border-[#E8D0C8] p-5 sm:p-6 shadow-md">
           
           {/* Barra de Progresso dos 3 Passos */}
           <div className="mb-8">

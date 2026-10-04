@@ -45,7 +45,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         <div className="mb-16 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* Box de Citação de Visagismo Solar */}
-          <div className="lg:col-span-6 p-6 sm:p-8 md:p-10 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
+          <div className="lg:col-span-6 p-5 sm:p-6 rounded-2xl bg-white border border-[#E8D0C8] shadow-xs relative">
             <span className="font-serif text-6xl text-[#C5A880]/30 absolute top-4 left-6 select-none pointer-events-none">
               “
             </span>
@@ -62,7 +62,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
           </div>
 
           {/* Pilares Técnicos de Segurança Capilar & Terapias */}
-          <div id="terapia" className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-4 scroll-mt-24 sm:scroll-mt-28">
+          <div id="terapia" className="lg:col-span-6 bg-white p-5 sm:p-6 rounded-2xl border border-[#E8D0C8] shadow-xs space-y-3.5 scroll-mt-24 sm:scroll-mt-28">
             <div>
               <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E] block mb-1">
                 Segurança Folicular • Monte Carmelo
@@ -72,26 +72,26 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
               </h4>
             </div>
             
-            <div className="space-y-3 pt-2 text-sm font-sans">
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
+            <div className="space-y-2.5 pt-1 text-xs sm:text-sm font-sans">
+              <div className="p-3.5 rounded-xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-[#8F6E32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#1C1917] font-bold block mb-0.5">Teste de Mecha Prévio:</strong>
-                  <p className="text-[#44403C] leading-relaxed">Diagnóstico de resistência e elasticidade para clareamento 100% seguro.</p>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Teste de Mecha:</strong>
+                  <p className="text-[#44403C]">Diagnóstico de elasticidade para clareamento 100% seguro.</p>
                 </div>
               </div>
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
+              <div className="p-3.5 rounded-xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-[#8F6E32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#1C1917] font-bold block mb-0.5">Blindagem Lipídica com Plex:</strong>
-                  <p className="text-[#44403C] leading-relaxed">Proteção profunda das pontes de queratina durante todo o processo químico.</p>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Blindagem Plex:</strong>
+                  <p className="text-[#44403C]">Preservação profunda das pontes de queratina.</p>
                 </div>
               </div>
-              <div className="p-4 rounded-2xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#8F6E32] shrink-0 mt-0.5" />
+              <div className="p-3.5 rounded-xl bg-[#FAF3F0] border border-[#E8D0C8] flex items-start gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-[#8F6E32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#1C1917] font-bold block mb-0.5">Pigmentos Nobres Estáveis:</strong>
-                  <p className="text-[#44403C] leading-relaxed">Nuances luminosas de alta fidelidade sem oxidação indesejada pós-lavagem.</p>
+                  <strong className="text-[#1C1917] font-bold block mb-0.5">Pigmentos Nobres:</strong>
+                  <p className="text-[#44403C]">Nuances luminosas de alta fidelidade sem oxidação.</p>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/40 flex items-center justify-center text-[#6E501E] shrink-0">
               <Sun className="w-5 h-5 text-[#6E501E]" />

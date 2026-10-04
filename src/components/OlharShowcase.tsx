@@ -45,7 +45,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         <div className="mb-16 sm:mb-20 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Card: Rayssa Lash (Cílios) */}
-          <div id="cilios" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="cilios" className="bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
@@ -56,25 +56,25 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
               <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1C1917] tracking-tight">
                 Rayssa Lash
               </h3>
-              <p className="text-sm text-[#44403C] font-sans mt-2.5 leading-relaxed">
-                Fios de seda levíssimos com isolamento anatômico fio a fio, respeitando a curvatura e a saúde dos cílios naturais.
+              <p className="text-xs sm:text-sm text-[#44403C] font-sans mt-2 leading-relaxed">
+                Fios de seda ultraleves com isolamento anatômico fio a fio e conforto absoluto.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#F2DDD6] space-y-2.5 text-sm font-sans text-[#292524]">
+            <div className="mt-5 pt-3.5 border-t border-[#F2DDD6] space-y-2 text-xs sm:text-sm font-sans text-[#292524]">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8F6E32] shrink-0" />
                 <span>Higienização prévia com espuma micelar calmante</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8F6E32] shrink-0" />
-                <span>Zero ardência e conforto total para olhos sensíveis</span>
+                <span>Zero ardência e conforto para olhos sensíveis</span>
               </div>
             </div>
           </div>
 
           {/* Card: Hillery Thauanne (Sobrancelhas) */}
-          <div id="sobrancelhas" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
+          <div id="sobrancelhas" className="bg-white rounded-2xl p-5 sm:p-6 border border-[#E8D0C8] shadow-xs flex flex-col justify-between scroll-mt-24 sm:scroll-mt-28">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#6E501E]">
@@ -85,19 +85,19 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
               <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#1C1917] tracking-tight">
                 Hillery Thauanne
               </h3>
-              <p className="text-sm text-[#44403C] font-sans mt-2.5 leading-relaxed">
-                Mapeamento facial em proporção áurea e pigmentação sob medida para realçar a arquitetura natural do seu olhar.
+              <p className="text-xs sm:text-sm text-[#44403C] font-sans mt-2 leading-relaxed">
+                Mapeamento em proporção áurea para valorizar a arquitetura natural do seu olhar.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#F2DDD6] space-y-2.5 text-sm font-sans text-[#292524]">
+            <div className="mt-5 pt-3.5 border-t border-[#F2DDD6] space-y-2 text-xs sm:text-sm font-sans text-[#292524]">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8F6E32] shrink-0" />
-                <span>Mapeamento simétrico com paquímetro digital</span>
+                <span>Simetria calculada com paquímetro digital</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8F6E32] shrink-0" />
-                <span>Tinturas e pigmentos hipoalergênicos de alta retenção</span>
+                <span>Pigmentos hipoalergênicos de alta retenção</span>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ export function OlharShowcase({ onSelectService }: OlharShowcaseProps) {
         </div>
 
         {/* ===================== CONVITE EDITORIAL ===================== */}
-        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-7 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl bg-white border border-[#E8D0C8] p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] shrink-0">
               <Eye className="w-5 h-5 text-[#8F6E32]" />
