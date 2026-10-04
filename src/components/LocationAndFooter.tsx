@@ -229,6 +229,11 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                     </a>
                   </li>
                   <li>
+                    <a href="#avaliacoes" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Avaliações Google 5.0
+                    </a>
+                  </li>
+                  <li>
                     <a href="#autocuidado" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
                       Autocuidado & Spa Privativo
                     </a>

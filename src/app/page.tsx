@@ -16,6 +16,7 @@ import ServicesGrid from "@/components/ServicesGrid";
 import SpaceCarousel from "@/components/SpaceCarousel";
 import AuthoritySection from "@/components/AuthoritySection";
 import ReviewsSection from "@/components/ReviewsSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import LocationAndFooter from "@/components/LocationAndFooter";
 import StickyConversionBar from "@/components/StickyConversionBar";
 import { CarouselStacked, Slide } from "@/components/ui/carousel-07";
@@ -233,6 +234,9 @@ export default function HomePage() {
 
       {/* ===================== CASOS CLÍNICOS & RELATOS REAIS ===================== */}
       <ReviewsSection onOpenTriage={handleOpenGeneralTriage} />
+
+      {/* ===================== PROVA SOCIAL & AVALIAÇÕES GOOGLE 5.0 ===================== */}
+      <GoogleReviewsSection onOpenTriage={handleOpenGeneralTriage} />
 
       {/* ===================== LOCALIZAÇÃO NO MONTE CARMELO & FOOTER INSTITUCIONAL ===================== */}
       <LocationAndFooter onOpenTriage={handleOpenGeneralTriage} />
