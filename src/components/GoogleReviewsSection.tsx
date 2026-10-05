@@ -27,7 +27,7 @@ interface TestimonialItem {
 }
 
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-16.7227869,-43.8399458,17z/data=!3m1!4b1!4m6!3m5!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455";
+  "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-13.1124923,-59.9635272,5z/data=!4m10!1m2!2m1!1sSB+Est%C3%A9tica+%26+Beleza+-+MG!3m6!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455!15sChpTQiBFc3TDqXRpY2EgJiBCZWxlemEgLSBNR5IBDGJlYXV0eV_zYWxvbuABAA!16s%2Fg%2F11vwktnkpr?entry=ttu";
 
 const TESTIMONIALS: TestimonialItem[] = [
   {

@@ -20,7 +20,7 @@ interface LocationAndFooterProps {
 }
 
 export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
-  const googleMapsUrl = "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-16.7227869,-43.8399458,17z/data=!3m1!4b1!4m6!3m5!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455";
+  const googleMapsUrl = "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-13.1124923,-59.9635272,5z/data=!4m10!1m2!2m1!1sSB+Est%C3%A9tica+%26+Beleza+-+MG!3m6!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455!15sChpTQiBFc3TDqXRpY2EgJiBCZWxlemEgLSBNR5IBDGJlYXV0eV_zYWxvbuABAA!16s%2Fg%2F11vwktnkpr?entry=ttu";
   const wazeUrl = "https://waze.com/ul?q=Rua%20Calcedônia,%20155%20Monte%20Carmelo%20Montes%20Claros";
 
   return (
@@ -140,7 +140,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
 
             {/* Mapa Estilizado */}
             <div className="lg:col-span-6">
-              <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
+              <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100 group">
                 <iframe
                   title="Estética e beleza sol e broze - Dayane Lima no Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15916195.429868456!2d-59.9635272!3d-13.1124923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab63ed56c501%3A0xbb6be6e8eee14360!2sEst%C3%A9tica%20e%20beleza%20sol%20e%20broze!5e0!3m2!1spt-BR!2sbr!4v1791157915522!5m2!1spt-BR!2sbr"
@@ -152,6 +152,19 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   referrerPolicy="strict-origin-when-cross-origin"
                   className="w-full h-full"
                 />
+
+                {/* Botão de Acesso Direto à Ficha Oficial */}
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 z-10 px-4 py-2.5 rounded-xl bg-[#1C1917]/95 hover:bg-[#8F6E32] text-white text-xs font-semibold backdrop-blur-md shadow-lg flex items-center gap-2 transition-all border border-[#C5A880]/40 hover:border-[#C5A880] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
+                  aria-label="Abrir ficha oficial no Google Maps"
+                >
+                  <Navigation className="w-3.5 h-3.5 text-[#E6C99B]" aria-hidden="true" />
+                  <span>Abrir no Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-white/70" aria-hidden="true" />
+                </a>
               </div>
             </div>
 
