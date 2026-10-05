@@ -648,6 +648,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                 <button
                   type="button"
                   onClick={handleReset}
+                  aria-label="Refazer questionário de triagem estética"
                   className="inline-flex items-center gap-1.5 text-sm font-sans font-semibold text-[#6E501E] hover:text-[#1C1917] min-h-[48px] px-2 cursor-pointer"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
@@ -658,6 +659,7 @@ export function SmartTriageSection({ whatsappPhone = "5538999999999", onOpenDraw
                   <button
                     type="button"
                     onClick={handleGenerateWhatsApp}
+                    aria-label="Conectar com a concierge do Ateliê Dayane Lima via WhatsApp com a ficha de triagem preenchida"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 rounded-full bg-gradient-to-r from-[#C5A880] to-[#B8934A] hover:brightness-110 text-[#1C1917] font-sans font-bold text-sm tracking-wide shadow-lg transition-all active:scale-[0.98] cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4 text-[#1C1917]" />

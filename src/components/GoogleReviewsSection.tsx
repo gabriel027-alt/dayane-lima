@@ -179,18 +179,29 @@ function TestimonialVideoCard({ item }: TestimonialVideoCardProps) {
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       onClick={handleTogglePlay}
-      className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/20 shadow-inner cursor-pointer group/vid select-none"
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleTogglePlay(e as unknown as React.MouseEvent);
+        }
+      }}
+      aria-label={isPlaying ? `Pausar depoimento em vídeo: ${item.title}` : `Reproduzir depoimento em vídeo: ${item.title}`}
+      className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/20 shadow-inner cursor-pointer group/vid select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
     >
       <video
         ref={videoRef}
         src={item.src}
         playsInline
         preload="metadata"
+        loading="lazy"
         onEnded={() => setIsPlaying(false)}
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
         className="w-full h-full object-cover"
+        aria-label={`Depoimento em vídeo de cliente: ${item.title}`}
       />
 
       {/* Botão de Som Flutuante no Canto Superior Direito (1 Toque) */}
@@ -198,7 +209,7 @@ function TestimonialVideoCard({ item }: TestimonialVideoCardProps) {
         type="button"
         onClick={handleToggleMute}
         className="absolute top-3 right-3 z-30 p-2.5 rounded-full bg-black/75 hover:bg-black/90 backdrop-blur-md border border-white/20 text-white transition-all shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-        aria-label={isMuted ? "Ativar áudio do depoimento" : "Silenciar áudio do depoimento"}
+        aria-label={isMuted ? `Ativar áudio do depoimento: ${item.title}` : `Silenciar áudio do depoimento: ${item.title}`}
       >
         {isMuted ? (
           <VolumeX className="w-4 h-4 text-white/90" />
@@ -565,14 +576,17 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
                   controls
                   autoPlay
                   playsInline
+                  preload="metadata"
                   className="max-h-[75vh] w-auto object-contain"
+                  aria-label={`Vídeo ampliado do relato de cliente: ${modalItem.title}`}
                 />
               ) : (
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                   src={modalItem.src}
-                  alt={modalItem.title}
+                  alt={`Comprovante de avaliação: ${modalItem.title}`}
                   className="max-h-[75vh] w-auto object-contain rounded-xl"
+                  loading="lazy"
                 />
               )}
             </div>

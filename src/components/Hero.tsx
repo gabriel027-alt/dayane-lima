@@ -24,6 +24,7 @@ export function Hero({ onOpenTriage, onExploreServices }: HeroProps) {
           muted 
           playsInline 
           preload="auto"
+          aria-hidden="true"
           className="w-full h-full object-cover opacity-45 filter brightness-95 contrast-105"
         />
         {/* Overlays escuros de contraste cinematográfico e atmosfera de luxo */}

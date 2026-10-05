@@ -135,6 +135,7 @@ export function MegaHairShowcase({ onSelectService }: MegaHairShowcaseProps) {
                 <button
                   type="button"
                   onClick={() => onSelectService("megahair")}
+                  aria-label="Agendar avaliação de Mega Hair de nanocápsulas no WhatsApp"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] touch-manipulation cursor-pointer"
                 >
                   <span>Agendar Avaliação de Mega Hair</span>

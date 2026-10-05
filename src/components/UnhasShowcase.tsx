@@ -106,6 +106,7 @@ export function UnhasShowcase({ onSelectService }: UnhasShowcaseProps) {
             type="button"
             onClick={() => onSelectService("unhas")}
             className="shrink-0 inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
+            aria-label="Agendar atendimento de unhas em fibra e gel com Emily Lima no WhatsApp"
           >
             <span>Agendar com Emily Lima</span>
             <ArrowRight className="w-4 h-4 text-[#E6C99B]" />

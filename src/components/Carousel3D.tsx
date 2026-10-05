@@ -372,7 +372,6 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                     className="relative text-[#C5A880] flex items-center justify-center"
                   >
                     <Hand className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
-                    <span className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-[#C5A880] animate-ping opacity-60" />
                   </motion.div>
                   <span className="hidden sm:inline">Arraste para os lados ou use as setas</span>
                   <span className="sm:hidden">Deslize para o lado para navegar</span>
@@ -454,7 +453,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                   handlePrev();
                 }}
                 className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-                aria-label="Slide anterior"
+                aria-label={`Slide anterior na galeria de ${title || "procedimentos"}`}
               >
                 <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -469,7 +468,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                   handleNext();
                 }}
                 className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 min-w-[44px] min-h-[44px] sm:min-w-[48px] sm:min-h-[48px] p-2.5 sm:p-3 rounded-full bg-[#1C1917]/85 hover:bg-[#1C1917] backdrop-blur-md border border-[#C5A880]/60 hover:border-[#C5A880] text-[#E6C99B] hover:text-white transition-all shadow-xl flex items-center justify-center cursor-pointer active:scale-90 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-                aria-label="Próximo slide"
+                aria-label={`Próximo slide na galeria de ${title || "procedimentos"}`}
               >
                 <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -492,7 +491,6 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                     className="relative text-[#C5A880] flex items-center justify-center"
                   >
                     <Hand className="w-3.5 h-3.5 stroke-[2]" />
-                    <span className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-[#E8D0B3] animate-ping opacity-75" />
                   </motion.div>
                   <span>Deslize para ver transformações</span>
                   <span className="text-[#C5A880]/70 text-[10px]">↔</span>
@@ -508,8 +506,9 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               dragConstraints={{ left: 0, right: 0 }}
               tabIndex={0}
               onKeyDown={handleKeyDown}
-              role="button"
-              aria-label="Controle interativo do carrossel: use as setas do teclado ou arraste"
+              role="region"
+              aria-roledescription="carrossel interativo"
+              aria-label={`Navegação interativa por gestos da galeria de ${title || "procedimentos"}: use as setas do teclado ou arraste para alternar fotos e vídeos`}
               onDragStart={handleDragStart}
               onDrag={(_, info) => {
                 const delta = -info.delta.x / config.sensitivity;
@@ -529,7 +528,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
             <div
               role="button"
               tabIndex={0}
-              aria-label="Clique para ampliar a mídia em tela cheia"
+              aria-label={`Clique para ampliar ${slides[0]?.title || title || "mídia"} em tela cheia`}
               onClick={() => {
                 if (slides[0]) {
                   stopAllPreviousAudio();
@@ -590,7 +589,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                 type="button"
                 onClick={() => setSelectedModalSlide(null)}
                 className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50 min-w-[40px] min-h-[40px] p-2 rounded-full bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 text-white transition-all shadow-lg flex items-center justify-center cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
-                aria-label="Fechar visualização de mídia"
+                aria-label="Fechar ampliação de mídia em tela cheia"
               >
                 <X className="w-5 h-5 text-white" />
               </button>
@@ -602,13 +601,16 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                   loop
                   controls
                   playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover"
+                  aria-label={selectedModalSlide.title || "Vídeo ampliado em alta resolução"}
                 />
               ) : (
                 <img
                   src={selectedModalSlide.src || selectedModalSlide.image}
                   alt={selectedModalSlide.title || "Dayane Lima • Ateliê Boutique"}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               )}
             </motion.div>
@@ -752,13 +754,11 @@ const Card = ({
         y,
         scale,
         zIndex,
-        backgroundColor: "#1C1917",
-        opacity: 1,
         display: displayValue,
       }}
       className="bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative w-56 sm:w-72 lg:w-80 aspect-[4/5] pointer-events-none select-none"
     >
-      <div className="w-full h-full bg-[#1C1917] rounded-3xl overflow-hidden border border-[#C5A880]/60 shadow-2xl relative flex items-center justify-center" style={{ backgroundColor: '#1C1917' }}>
+      <div className="w-full h-full relative flex items-center justify-center">
         {item.type === 'video' ? (
           <video 
             ref={videoRef}
@@ -766,24 +766,23 @@ const Card = ({
             data-active={isActive ? "true" : "false"}
             muted={isMuted} 
             playsInline 
-            preload="auto" 
-            autoPlay 
+            preload={isActive ? "metadata" : "none"}
+            loading="lazy"
             loop={total <= 1}
             onEnded={handleEnded}
             onError={handleError}
             className="w-full h-full object-cover object-center block pointer-events-none" 
-            style={{ backgroundColor: '#1C1917' }}
+            aria-label={slide.title || "Vídeo demonstrativo de procedimento"}
           />
         ) : (
           <img 
             src={item.src} 
-            alt="Dayane Lima • Ateliê Boutique" 
+            alt={slide.title || slide.description || "Dayane Lima • Ateliê Boutique"} 
             className="w-full h-full object-cover object-center block select-none pointer-events-none" 
-            style={{ backgroundColor: '#1C1917' }}
             loading="lazy" 
           />
         )}
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none z-20"></div>
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none z-20" aria-hidden="true" />
       </div>
     </motion.div>
   );

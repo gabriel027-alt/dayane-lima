@@ -123,6 +123,7 @@ export function AuthoritySection({ onOpenTriage }: AuthoritySectionProps) {
               <button
                 type="button"
                 onClick={onOpenTriage}
+                aria-label="Agendar consulta personalizada com Dayane Lima no WhatsApp"
                 className="inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-sm hover:shadow transition-all duration-200 touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer shrink-0"
               >
                 <Calendar className="w-4 h-4 text-[#E6C99B]" aria-hidden="true" />

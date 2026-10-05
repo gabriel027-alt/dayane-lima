@@ -69,7 +69,9 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
                         loop 
                         muted={isMuted} 
                         playsInline 
-                        preload="auto" 
+                        preload="metadata" 
+                        loading="lazy"
+                        aria-label={item.label || "Vídeo demonstrativo de transformação"}
                         className="w-full h-full object-cover pointer-events-none transition-transform duration-700 group-hover:scale-105"
                       />
                       <button 
@@ -79,7 +81,7 @@ export default function InteractivePortfolioGrid({ title, subtitle, items }: Int
                           setIsMuted(!isMuted);
                         }}
                         className="absolute bottom-4 right-4 z-20 min-w-[48px] min-h-[48px] p-2.5 rounded-full bg-black/60 hover:bg-[#C5A880] text-white backdrop-blur-md border border-white/20 transition-all shadow-md flex items-center justify-center touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
-                        aria-label="Controlar som do vídeo"
+                        aria-label={isMuted ? "Ativar som do vídeo demonstrativo" : "Silenciar áudio do vídeo demonstrativo"}
                       >
                         {isMuted ? <VolumeX className="w-4 h-4"/> : <Volume2 className="w-4 h-4 text-[#1C1917]"/>}
                       </button>

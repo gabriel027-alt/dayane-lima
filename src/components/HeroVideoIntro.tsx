@@ -99,6 +99,8 @@ export function HeroVideoIntro({ onExplore }: HeroVideoIntroProps) {
                 loop
                 muted
                 playsInline
+                preload="metadata"
+                aria-hidden="true"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-[#C5A880]/20 pointer-events-none" />

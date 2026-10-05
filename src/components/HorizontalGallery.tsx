@@ -197,14 +197,15 @@ export default function HorizontalGallery({
                     loop 
                     muted 
                     playsInline 
-                    style={{ backgroundColor: "#1C1917" }}
+                    preload="none"
+                    loading="lazy"
+                    aria-label={item.label || "Vídeo demonstrativo"}
                     className="w-full h-full object-cover object-center pointer-events-none" 
                   />
                 ) : (
                   <img 
                     src={item.src} 
-                    alt={item.alt} 
-                    style={{ backgroundColor: "#1C1917" }}
+                    alt={item.alt || item.label || "Dayane Lima • Galeria"} 
                     className="w-full h-full object-cover object-center pointer-events-none transition-transform duration-500 hover:scale-105" 
                     loading="lazy" 
                   />

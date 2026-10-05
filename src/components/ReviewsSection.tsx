@@ -303,6 +303,7 @@ export function ReviewsSection({ onOpenTriage }: ReviewsSectionProps = {}) {
             <button
               type="button"
               onClick={onOpenTriage}
+              aria-label="Agendar diagnóstico clínico capilar com teste de mecha no WhatsApp"
               className="inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide uppercase shadow-xl transition-all active:scale-95 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
             >
               <span>Agendar Diagnóstico Clínico no WhatsApp</span>

@@ -63,6 +63,7 @@ export function BrandRevelationHero({
                   type="button"
                   onClick={onExploreServices}
                   className="min-h-[48px] px-6 py-3.5 bg-white border border-[#E8D0C8] text-[#1C1917] hover:border-[#8F6E32] font-sans text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-neutral-50 transition-all cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
+                  aria-label="Explorar procedimentos e serviços do ateliê"
                 >
                   Explorar Procedimentos
                 </button>

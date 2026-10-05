@@ -33,6 +33,8 @@ export function SbLogo({
             loop
             muted
             playsInline
+            preload="metadata"
+            aria-hidden="true"
             className="w-full h-full object-cover"
           />
         </div>

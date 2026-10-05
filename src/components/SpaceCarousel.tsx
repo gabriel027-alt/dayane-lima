@@ -121,6 +121,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Traçar rota até o Ateliê Dayane Lima na Rua Calcedônia, 155 no Google Maps"
               className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
             >
               <Navigation className="w-4 h-4 text-[#E6C99B]" />
@@ -132,6 +133,7 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
               <button
                 type="button"
                 onClick={onOpenTriage}
+                aria-label="Agendar recepção VIP no Ateliê Dayane Lima no WhatsApp"
                 className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-full bg-white border border-[#E8D0C8] hover:border-[#8F6E32] hover:text-[#8F6E32] text-[#1C1917] font-sans font-semibold text-sm transition-colors shadow-xs touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
               >
                 <span>Agendar Recepção VIP</span>

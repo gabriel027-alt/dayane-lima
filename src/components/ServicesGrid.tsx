@@ -276,6 +276,7 @@ export function ServicesGrid({ onSelectService }: ServicesGridProps) {
           <button
             type="button"
             onClick={() => onSelectService("megahair")}
+            aria-label="Iniciar triagem VIP com a recepção do Ateliê Dayane Lima no WhatsApp"
             className="w-full md:w-auto inline-flex items-center justify-center gap-2.5 min-h-[50px] px-8 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide uppercase shadow-xl transition-all active:scale-95 cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] shrink-0"
           >
             <span>Iniciar Triagem VIP com a Recepção</span>

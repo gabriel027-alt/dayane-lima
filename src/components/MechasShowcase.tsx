@@ -119,6 +119,7 @@ export function MechasShowcase({ onSelectService }: MechasShowcaseProps) {
             type="button"
             onClick={() => onSelectService("mechas")}
             className="shrink-0 inline-flex items-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+            aria-label="Agendar teste de mecha e diagnóstico capilar no WhatsApp"
           >
             <span>Agendar Teste de Mecha</span>
             <ArrowRight className="w-4 h-4 text-[#C5A880]" />

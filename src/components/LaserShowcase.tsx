@@ -121,6 +121,7 @@ export function LaserShowcase({ onSelectService }: LaserShowcaseProps) {
           <button
             type="button"
             onClick={() => onSelectService("laser")}
+            aria-label="Consultar pacotes e valores de depilação a laser subzero no WhatsApp"
             className="shrink-0 inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide uppercase transition-colors touch-manipulation cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
           >
             <span>Consultar Pacotes de Laser</span>
