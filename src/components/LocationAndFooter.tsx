@@ -29,7 +29,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
       <section 
         id="localizacao"
         aria-labelledby="location-heading"
-        className="relative z-10 py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
+        className="relative z-10 py-20 md:py-28 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-28 sm:scroll-mt-32"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
@@ -139,31 +139,36 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             </div>
 
             {/* Mapa Estilizado */}
-            <div className="lg:col-span-6">
-              <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100 group">
+            <div className="lg:col-span-6 space-y-3">
+              <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
                 <iframe
                   title="Estética e beleza sol e broze - Dayane Lima no Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15916195.429868456!2d-59.9635272!3d-13.1124923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab63ed56c501%3A0xbb6be6e8eee14360!2sEst%C3%A9tica%20e%20beleza%20sol%20e%20broze!5e0!3m2!1spt-BR!2sbr!4v1791157915522!5m2!1spt-BR!2sbr"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1900.5!2d-43.8399455!3d-16.7227922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab63ed56c501%3A0xbb6be6e8eee14360!2sEst%C3%A9tica%20e%20beleza%20sol%20e%20broze!5e0!3m2!1spt-BR!2sbr!4v1791157915522!5m2!1spt-BR!2sbr&z=17"
                   width="600"
                   height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
-                  className="w-full h-full"
+                  className="w-full h-full relative z-0 pointer-events-auto border-0"
                 />
+              </div>
 
-                {/* Botão de Acesso Direto à Ficha Oficial */}
+              {/* Barra de Acesso e Expansão Oficial */}
+              <div className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs text-xs font-sans">
+                <div className="flex items-center gap-2 font-medium text-[#1C1917]">
+                  <MapPin className="w-3.5 h-3.5 text-[#8F6E32] shrink-0" aria-hidden="true" />
+                  <span>Rua Calcedônia, 155 • Bairro Monte Carmelo</span>
+                </div>
                 <a
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-3 right-3 z-10 px-4 py-2.5 rounded-xl bg-[#1C1917]/95 hover:bg-[#8F6E32] text-white text-xs font-semibold backdrop-blur-md shadow-lg flex items-center gap-2 transition-all border border-[#C5A880]/40 hover:border-[#C5A880] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
-                  aria-label="Abrir ficha oficial no Google Maps"
+                  className="inline-flex items-center gap-1.5 font-semibold text-[#8F6E32] hover:text-[#1C1917] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5"
+                  aria-label="Abrir ficha oficial no Google Maps em nova aba"
                 >
-                  <Navigation className="w-3.5 h-3.5 text-[#E6C99B]" aria-hidden="true" />
                   <span>Abrir no Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-white/70" aria-hidden="true" />
+                  <ExternalLink className="w-3 h-3 text-[#8F6E32]" aria-hidden="true" />
                 </a>
               </div>
             </div>
