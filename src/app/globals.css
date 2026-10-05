@@ -124,3 +124,31 @@
   width: 1px;
   transform: translateX(-50%);
 }
+
+/* ==========================================================================
+   ANIMAÇÃO DIDÁTICA DE SCROLL / SWIPE UP (GESTO DE ROLAGEM MOBILE & DESKTOP)
+   Movimento contínuo e fluído de baixo para cima com fade-in/fade-out
+   ========================================================================== */
+@keyframes swipeUpGesture {
+  0% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+}
+
+.animate-swipe-up {
+  animation: swipeUpGesture 1.9s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  will-change: transform, opacity;
+}
