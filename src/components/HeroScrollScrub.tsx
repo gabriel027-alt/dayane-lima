@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, ChevronDown } from "lucide-react";
+import { Sparkles, ArrowRight, ChevronDown, Hand } from "lucide-react";
 
 export interface HeroScrollScrubProps {
   onExplore?: () => void;
@@ -246,19 +246,33 @@ export function HeroScrollScrub({ onExplore, onOpenTriage }: HeroScrollScrubProp
               )}
             </div>
 
-            {/* Instrução Solta e Limpa de Rolagem com Setinhas Contínuas (Sem Moldura) */}
-            <div className="mt-10 sm:mt-14 flex flex-col items-center justify-center gap-2.5 pointer-events-auto">
-              <span className="font-sans font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-[#E8D0B3] drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-                <span className="hidden sm:inline">ROLE A PÁGINA PARA EXPLORAR</span>
-                <span className="sm:hidden">DESLIZE NA TELA PARA EXPLORAR</span>
-              </span>
+            {/* Indicador Didático de Rolagem / Gesto com Mão Animada (Loop Suave) */}
+            <div className="mt-10 sm:mt-14 flex flex-col items-center justify-center gap-3 pointer-events-auto">
+              <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-black/50 hover:bg-black/60 backdrop-blur-md border border-[#C5A880]/50 shadow-2xl transition-all">
+                {/* Ícone de Mão Animada Deslizando Suavemente para Baixo */}
+                <motion.div
+                  animate={{ y: [0, 6, 0], opacity: [0.75, 1, 0.75] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative flex items-center justify-center text-[#E8D0B3]"
+                >
+                  <Hand className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.8] rotate-[-12deg]" />
+                  <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#C5A880] animate-ping opacity-75" />
+                </motion.div>
+
+                <span className="font-sans font-bold text-xs sm:text-sm tracking-[0.2em] uppercase text-[#E8D0B3] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                  <span className="hidden sm:inline">Role a página para explorar</span>
+                  <span className="sm:hidden">Deslize para baixo para explorar</span>
+                </span>
+              </div>
+
+              {/* Setinhas Duplas Deslizando em Harmonia */}
               <motion.div
-                animate={{ y: [0, 7, 0], opacity: [0.65, 1, 0.65] }}
-                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ y: [0, 6, 0], opacity: [0.6, 1, 0.6] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}
                 className="flex flex-col items-center -space-y-2 text-[#C5A880] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
               >
-                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
-                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
+                <ChevronDown className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2.5]" />
+                <ChevronDown className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2.5]" />
               </motion.div>
             </div>
 

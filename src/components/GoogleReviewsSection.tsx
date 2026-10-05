@@ -13,7 +13,8 @@ import {
   X,
   Play,
   Volume2,
-  VolumeX
+  VolumeX,
+  Hand
 } from "lucide-react";
 import { stopAllPreviousAudio, unlockAndPlayDirect } from "@/lib/audioManager";
 
@@ -212,9 +213,10 @@ function TestimonialVideoCard({ item }: TestimonialVideoCardProps) {
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1C1917]/90 border border-[#C5A880] text-[#E6C99B] flex items-center justify-center shadow-2xl transform transition-transform group-hover/vid:scale-110 active:scale-95">
             <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-[#E6C99B] translate-x-0.5" />
           </div>
-          <span className="mt-3 px-3.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[11px] font-sans font-semibold text-neutral-100 border border-white/15 shadow-md">
-            Toque para Ouvir Relato
-          </span>
+          <div className="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[11px] font-sans font-semibold text-neutral-100 border border-white/15 shadow-md">
+            <Hand className="w-3 h-3 text-[#C5A880] animate-bounce" />
+            <span>Toque para Ouvir Relato</span>
+          </div>
         </div>
       )}
 

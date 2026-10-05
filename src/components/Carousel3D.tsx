@@ -11,7 +11,7 @@ import {
   type MotionValue,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Volume2, VolumeX, Sparkles, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Volume2, VolumeX, Sparkles, X, ChevronLeft, ChevronRight, Hand } from "lucide-react";
 import { stopAllPreviousAudio, unlockAndPlayDirect } from "@/lib/audioManager";
 
 export interface Slide {
@@ -83,6 +83,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   const isDraggingRef = React.useRef(false);
   const sectionRef = React.useRef<HTMLElement>(null);
   const [isInView, setIsInView] = React.useState(true);
+  const [hasInteracted, setHasInteracted] = React.useState(false);
 
   const total = slides && slides.length > 0 ? slides.length : 1;
 
@@ -215,6 +216,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   );
 
   const handleDragStart = () => {
+    setHasInteracted(true);
     pauseAutoPlayTemporarily();
     isDraggingRef.current = true;
     startProgress.current = scrollProgress.get();
@@ -358,10 +360,17 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
 
             <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
               {slides.length > 1 && (
-                <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-4 py-2 rounded-full border border-[#E8D0C8] shadow-xs">
-                  <Sparkles className="w-4 h-4 text-[#C5A880]" />
-                  <span className="hidden sm:inline">Arraste com o mouse ou use as setas</span>
-                  <span className="sm:hidden">Deslize com o dedo para navegar</span>
+                <div className="inline-flex items-center gap-2 text-xs font-sans text-[#6E501E] bg-white px-3.5 py-1.5 sm:py-2 rounded-full border border-[#E8D0C8] shadow-xs">
+                  <motion.div
+                    animate={{ x: [-4, 4, -4], rotate: [-8, 8, -8] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                    className="relative text-[#C5A880] flex items-center justify-center"
+                  >
+                    <Hand className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2]" />
+                    <span className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-[#C5A880] animate-ping opacity-60" />
+                  </motion.div>
+                  <span className="hidden sm:inline">Arraste para os lados ou use as setas</span>
+                  <span className="sm:hidden">Deslize para o lado para navegar</span>
                 </div>
               )}
 
@@ -433,6 +442,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
+                  setHasInteracted(true);
                   pauseAutoPlayTemporarily();
                   handlePrev();
                 }}
@@ -447,6 +457,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
+                  setHasInteracted(true);
                   pauseAutoPlayTemporarily();
                   handleNext();
                 }}
@@ -457,6 +468,31 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               </button>
             </>
           )}
+
+          {/* Indicador Didático Flutuante de Gesto (Mão Animada em Loop Suave) */}
+          <AnimatePresence>
+            {slides.length > 1 && !hasInteracted && (
+              <motion.div
+                initial={{ opacity: 0, y: -6, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.35 } }}
+                className="absolute top-3 sm:top-5 z-30 pointer-events-none flex items-center justify-center"
+              >
+                <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#1C1917]/85 backdrop-blur-md border border-[#C5A880]/60 text-[#E6C99B] text-[11px] sm:text-xs font-sans font-medium shadow-2xl">
+                  <motion.div
+                    animate={{ x: [-5, 5, -5], rotate: [-10, 10, -10] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                    className="relative text-[#C5A880] flex items-center justify-center"
+                  >
+                    <Hand className="w-3.5 h-3.5 stroke-[2]" />
+                    <span className="absolute -top-0.5 -right-0.5 w-1 h-1 rounded-full bg-[#E8D0B3] animate-ping opacity-75" />
+                  </motion.div>
+                  <span>Deslize para ver transformações</span>
+                  <span className="text-[#C5A880]/70 text-[10px]">↔</span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Controle Interativo: arraste se múltiplos, ou clique estático para zoom se item único */}
           {slides.length > 1 ? (
@@ -474,6 +510,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               }}
               onDragEnd={handleDragEnd}
               onClick={() => {
+                setHasInteracted(true);
                 if (!isDraggingRef.current && slides[currentIndex]) {
                   stopAllPreviousAudio();
                   setSelectedModalSlide(slides[currentIndex]);
