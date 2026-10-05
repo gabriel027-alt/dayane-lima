@@ -8,7 +8,7 @@ interface SpaceCarouselProps {
 }
 
 export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
-  const googleMapsUrl = "https://maps.google.com/?q=Rua+Calcedônia,+155+-+Monte+Carmelo,+Montes+Claros+-+MG";
+  const googleMapsUrl = "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-13.1124923,-59.9635272,5z/data=!4m10!1m2!2m1!1sSB+Est%C3%A9tica+%26+Beleza+-+MG!3m6!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455!15sChpTQiBFc3TDqXRpY2EgJiBCZWxlemEgLSBNR5IBDGJlYXV0eV_zYWxvbuABAA!16s%2Fg%2F11vwktnkpr?entry=ttu";
 
   return (
     <section 
@@ -85,9 +85,9 @@ export function SpaceCarousel({ onOpenTriage }: SpaceCarouselProps = {}) {
               <div className="w-10 h-10 rounded-full bg-[#FAF3F0] border border-[#C5A880]/30 flex items-center justify-center text-[#6E501E] mb-4">
                 <Coffee className="w-5 h-5 text-[#8F6E32]" />
               </div>
-              <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Boas-Vindas Gourmet</h4>
+              <h4 className="font-serif font-bold text-base text-[#1C1917] mb-1">Boas-Vindas Gourmet & Drinks</h4>
               <p className="text-xs sm:text-sm font-sans text-[#44403C] leading-relaxed">
-                Café especial moído na hora, chás nobres e águas aromatizadas de cortesia.
+                Desfrute de café especial moído na hora, chás nobres e drinks selecionados com todo o carinho durante os seus rituais de beleza e bem-estar no Monte Carmelo.
               </p>
             </div>
           </div>

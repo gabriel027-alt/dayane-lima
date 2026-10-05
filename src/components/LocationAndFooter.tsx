@@ -102,7 +102,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                 </div>
                 <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium">
                   <Coffee className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
-                  <span>Café & Chás</span>
+                  <span>Café, Chás & Drinks</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium col-span-2 sm:col-span-1">
                   <Wifi className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
