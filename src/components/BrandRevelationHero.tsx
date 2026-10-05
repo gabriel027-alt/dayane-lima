@@ -25,7 +25,7 @@ export function BrandRevelationHero({
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Badge de Posicionamento */}
-            <div className="text-xs sm:text-sm font-sans tracking-[0.2em] text-[#6E501E] bg-white border border-[#E8D0C8] font-bold px-4 py-2 rounded-full w-max mb-6 uppercase shadow-xs">
+            <div className="text-xs sm:text-sm font-sans tracking-[0.2em] text-[#6E501E] bg-white border border-[#E8D0C8] font-bold px-4 py-2 rounded-full max-w-full inline-block text-center break-words mb-6 uppercase shadow-xs">
               ATELIÊ BOUTIQUE PRIVATIVO • MONTE CARMELO
             </div>
 
