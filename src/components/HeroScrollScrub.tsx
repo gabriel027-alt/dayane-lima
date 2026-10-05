@@ -248,18 +248,25 @@ export function HeroScrollScrub({ onExplore, onOpenTriage }: HeroScrollScrubProp
 
             {/* ===================== ANIMAÇÃO DIDÁTICA DE SCROLL REFINADA (SWIPE UP / GESTO DE ROLAGEM) ===================== */}
             <div 
-              className="mt-8 sm:mt-12 flex flex-col items-center justify-center gap-2 pointer-events-auto select-none"
+              className="mt-8 sm:mt-12 flex flex-col items-center justify-center gap-3 pointer-events-auto select-none"
               aria-label="Instrução de navegação: deslize para baixo para explorar"
             >
-              {/* Ícone de Mão/Toque com Movimento Fluído de Baixo para Cima (CSS Keyframes) */}
-              <div className="relative w-8 h-9 flex items-center justify-center overflow-visible">
-                <div className="animate-swipe-up text-[#E8D0B3] drop-shadow-[0_2px_10px_rgba(197,168,128,0.5)]">
-                  <Pointer className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.7] rotate-[-6deg]" />
+              {/* Canal de Movimento com Ícone Estilizado de Toque Deslizando de Baixo para Cima */}
+              <div className="relative w-10 h-11 sm:h-12 flex items-center justify-center">
+                {/* Linha guia vertical sutil e ultrafina de direção */}
+                <div 
+                  className="absolute w-[1.5px] h-7 rounded-full bg-gradient-to-t from-transparent via-[#C5A880]/35 to-transparent pointer-events-none" 
+                  aria-hidden="true" 
+                />
+
+                {/* Ícone de Mão/Toque com Movimento Fluído de Baixo para Cima (CSS Keyframes) */}
+                <div className="animate-swipe-up text-[#E8D0B3] drop-shadow-[0_2px_12px_rgba(197,168,128,0.55)]">
+                  <Pointer className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8] rotate-[-6deg]" />
                 </div>
               </div>
 
-              {/* Texto Minimalista e Sofisticado em Ouro Champagne */}
-              <span className="font-sans font-bold text-[10px] sm:text-xs tracking-[0.25em] uppercase text-[#E8D0B3] drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+              {/* Frase Guia Minimalista e Nítida em Ouro Champagne */}
+              <span className="font-sans font-bold text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[#E8D0B3] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                 DESLIZE PARA BAIXO PARA EXPLORAR
               </span>
             </div>

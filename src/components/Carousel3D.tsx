@@ -86,6 +86,11 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
   const [hasInteracted, setHasInteracted] = React.useState(false);
 
   const total = slides && slides.length > 0 ? slides.length : 1;
+  const hasAnyVideo = React.useMemo(() => {
+    return slides.some(
+      (s) => s.type === "video" || (s.src || s.image || "").endsWith(".mp4")
+    );
+  }, [slides]);
 
   React.useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -374,27 +379,29 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
                 </div>
               )}
 
-              {/* Botão de Áudio integrado no cabeçalho sem vazamento de z-index */}
-              <button
-                type="button"
-                onClick={handleToggleAudio}
-                className={cn(
-                  "inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-sans font-medium transition-all shadow-xs cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]",
-                  isMuted
-                    ? "bg-white hover:bg-neutral-50 text-[#1C1917] border border-[#E8D0C8]"
-                    : "bg-[#1C1917] text-[#C5A880] border border-[#C5A880] shadow-[0_0_12px_rgba(197,168,128,0.3)]"
-                )}
-                aria-label={isMuted ? "Ativar áudio dos vídeos" : "Silenciar áudio dos vídeos"}
-              >
-                {isMuted ? (
-                  <VolumeX className="w-3.5 h-3.5 text-[#6E501E]" />
-                ) : (
-                  <Volume2 className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
-                )}
-                <span className={isMuted ? "text-[#1C1917]" : "text-[#C5A880] font-semibold"}>
-                  {isMuted ? "Ativar Som" : "Som Ativado"}
-                </span>
-              </button>
+              {/* Botão de Áudio Único Integrado no Topo */}
+              {hasAnyVideo && (
+                <button
+                  type="button"
+                  onClick={handleToggleAudio}
+                  className={cn(
+                    "inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-sans font-medium transition-all shadow-xs cursor-pointer touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]",
+                    isMuted
+                      ? "bg-white hover:bg-neutral-50 text-[#1C1917] border border-[#E8D0C8]"
+                      : "bg-[#1C1917] text-[#C5A880] border border-[#C5A880] shadow-[0_0_12px_rgba(197,168,128,0.3)]"
+                  )}
+                  aria-label={isMuted ? "Ativar áudio dos vídeos" : "Silenciar áudio dos vídeos"}
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-3.5 h-3.5 text-[#6E501E]" />
+                  ) : (
+                    <Volume2 className="w-3.5 h-3.5 text-[#C5A880] animate-pulse" />
+                  )}
+                  <span className={isMuted ? "text-[#1C1917]" : "text-[#C5A880] font-semibold"}>
+                    {isMuted ? "Ativar Som" : "Som Ativado"}
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -408,7 +415,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
         )}
       >
         {/* Fallback de Botão de Áudio caso não haja título nem subtítulo */}
-        {!(title || subtitle) && (
+        {!(title || subtitle) && hasAnyVideo && (
           <div className="absolute top-2 right-4 sm:top-2 sm:right-6 z-30 pointer-events-auto">
             <button
               type="button"
@@ -556,38 +563,6 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               onVideoEnded={handleVideoEnded}
             />
           ))}
-
-          {/* Botão de Som Flutuante Direto no Card Ativo (1 Toque sem fricção) */}
-          {slides[currentIndex] && (slides[currentIndex].type === "video" || (slides[currentIndex].src || slides[currentIndex].image || "").endsWith(".mp4")) && (
-            <div className="absolute bottom-3 sm:bottom-4 z-30 pointer-events-auto">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleToggleAudio();
-                }}
-                className={cn(
-                  "inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-sans font-semibold transition-all shadow-xl cursor-pointer active:scale-95 border",
-                  isMuted
-                    ? "bg-[#1C1917]/90 hover:bg-[#1C1917] text-white border-white/20 backdrop-blur-md"
-                    : "bg-[#1C1917] text-[#C5A880] border-[#C5A880] shadow-[0_0_16px_rgba(197,168,128,0.4)] backdrop-blur-md"
-                )}
-                aria-label={isMuted ? "Ativar som deste vídeo" : "Silenciar áudio"}
-              >
-                {isMuted ? (
-                  <>
-                    <VolumeX className="w-4 h-4 text-white/90" />
-                    <span>Toque para Ouvir com Som</span>
-                  </>
-                ) : (
-                  <>
-                    <Volume2 className="w-4 h-4 text-[#C5A880] animate-pulse" />
-                    <span>Som Ativado • Toque para Silenciar</span>
-                  </>
-                )}
-              </button>
-            </div>
-          )}
         </div>
       </div>
 
