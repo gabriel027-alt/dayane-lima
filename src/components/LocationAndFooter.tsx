@@ -140,17 +140,17 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
 
             {/* Mapa Estilizado */}
             <div className="lg:col-span-6">
-              <div className="relative w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
+              <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
                 <iframe
-                  title="Localização da Estética e beleza sol e bronze - Dayane Lima no Google Maps"
+                  title="Estética e beleza sol e broze - Dayane Lima no Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15916195.429868456!2d-59.9635272!3d-13.1124923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab63ed56c501%3A0xbb6be6e8eee14360!2sEst%C3%A9tica%20e%20beleza%20sol%20e%20broze!5e0!3m2!1spt-BR!2sbr!4v1791157915522!5m2!1spt-BR!2sbr"
-                  width="100%"
-                  height="100%"
+                  width="600"
+                  height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
-                  className="w-full h-full grayscale-[15%] contrast-[1.05]"
+                  className="w-full h-full"
                 />
               </div>
             </div>
