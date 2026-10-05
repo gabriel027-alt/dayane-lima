@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { 
   Star, 
   CheckCircle2, 
@@ -10,8 +10,12 @@ import {
   Sparkles, 
   MessageSquareHeart, 
   Maximize2, 
-  X 
+  X,
+  Play,
+  Volume2,
+  VolumeX
 } from "lucide-react";
+import { stopAllPreviousAudio, unlockAndPlayDirect } from "@/lib/audioManager";
 
 interface GoogleReviewsSectionProps {
   onOpenTriage?: () => void;
@@ -128,9 +132,137 @@ const TESTIMONIALS: TestimonialItem[] = [
   },
 ];
 
+interface TestimonialVideoCardProps {
+  item: TestimonialItem;
+}
+
+function TestimonialVideoCard({ item }: TestimonialVideoCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+
+  const handleTogglePlay = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      stopAllPreviousAudio(video);
+      unlockAndPlayDirect(video, !isMuted);
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const handleToggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+
+    if (!nextMuted) {
+      stopAllPreviousAudio(video);
+      video.muted = false;
+      video.volume = 1.0;
+      if (video.paused) {
+        video.play().then(() => setIsPlaying(true)).catch(() => {});
+      }
+    } else {
+      video.muted = true;
+    }
+  };
+
+  return (
+    <div
+      onClick={handleTogglePlay}
+      className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/20 shadow-inner cursor-pointer group/vid select-none"
+    >
+      <video
+        ref={videoRef}
+        src={item.src}
+        playsInline
+        preload="metadata"
+        onEnded={() => setIsPlaying(false)}
+        onPause={() => setIsPlaying(false)}
+        onPlay={() => setIsPlaying(true)}
+        className="w-full h-full object-cover"
+      />
+
+      {/* Botão de Som Flutuante no Canto Superior Direito (1 Toque) */}
+      <button
+        type="button"
+        onClick={handleToggleMute}
+        className="absolute top-3 right-3 z-30 p-2.5 rounded-full bg-black/75 hover:bg-black/90 backdrop-blur-md border border-white/20 text-white transition-all shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880]"
+        aria-label={isMuted ? "Ativar áudio do depoimento" : "Silenciar áudio do depoimento"}
+      >
+        {isMuted ? (
+          <VolumeX className="w-4 h-4 text-white/90" />
+        ) : (
+          <Volume2 className="w-4 h-4 text-[#C5A880] animate-pulse" />
+        )}
+      </button>
+
+      {/* Overlay Flutuante com Botão Play Central (Visível quando pausado) */}
+      {!isPlaying && (
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/40 group-hover/vid:bg-black/25 transition-all">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1C1917]/90 border border-[#C5A880] text-[#E6C99B] flex items-center justify-center shadow-2xl transform transition-transform group-hover/vid:scale-110 active:scale-95">
+            <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-[#E6C99B] translate-x-0.5" />
+          </div>
+          <span className="mt-3 px-3.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[11px] font-sans font-semibold text-neutral-100 border border-white/15 shadow-md">
+            Toque para Ouvir Relato
+          </span>
+        </div>
+      )}
+
+      {/* Indicador sutil de reprodução ativa no rodapé */}
+      {isPlaying && (
+        <div className="absolute bottom-2.5 left-3 right-3 z-20 flex items-center justify-between text-[11px] text-white/90 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full pointer-events-none border border-white/10">
+          <div className="flex items-center gap-1.5 font-medium">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Reproduzindo</span>
+          </div>
+          <span className="text-[10px] text-neutral-300">Toque para pausar</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps) {
   const [activeFilter, setActiveFilter] = useState<"all" | "video" | "print">("all");
   const [modalItem, setModalItem] = useState<TestimonialItem | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Monitoramento de visibilidade por IntersectionObserver: pausa o áudio suavemente ao rolar
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || entry.intersectionRatio < 0.15) {
+            const videos = section.querySelectorAll<HTMLVideoElement>("video");
+            videos.forEach((v) => {
+              if (!v.paused) {
+                v.pause();
+                v.muted = true;
+              }
+            });
+            stopAllPreviousAudio();
+          }
+        });
+      },
+      { threshold: [0, 0.15, 0.4] }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   const filteredItems = activeFilter === "all"
     ? TESTIMONIALS
@@ -138,6 +270,7 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
 
   return (
     <section
+      ref={sectionRef}
       id="avaliacoes"
       aria-labelledby="google-reviews-heading"
       className="relative z-10 py-16 md:py-24 bg-[#FAF3F0] border-b border-[#E8D0C8] scroll-mt-20 sm:scroll-mt-24"
@@ -349,35 +482,27 @@ export function GoogleReviewsSection({ onOpenTriage }: GoogleReviewsSectionProps
               className="bg-white rounded-3xl p-4 border border-[#E8D0C8] shadow-xs hover:border-[#C5A880] hover:shadow-md transition-all flex flex-col justify-between group"
             >
               {/* Contêiner da Mídia Pura (Vídeo ou Foto) */}
-              <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/20 shadow-inner">
-                {item.type === "video" ? (
-                  <video
+              {item.type === "video" ? (
+                <TestimonialVideoCard item={item} />
+              ) : (
+                <div 
+                  onClick={() => setModalItem(item)}
+                  className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-zoom-in group/img flex items-center justify-center bg-[#FAF3F0] border border-white/20 shadow-inner"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={item.src}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover"
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-105"
                   />
-                ) : (
-                  <div 
-                    onClick={() => setModalItem(item)}
-                    className="w-full h-full cursor-zoom-in relative group/img flex items-center justify-center bg-[#FAF3F0]"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="p-2 rounded-full bg-white/90 text-[#1C1917] shadow-lg">
-                        <Maximize2 className="w-4 h-4" />
-                      </span>
-                    </div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="p-2 rounded-full bg-white/90 text-[#1C1917] shadow-lg">
+                      <Maximize2 className="w-4 h-4" />
+                    </span>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
 
               {/* Informações e Legenda de Veracidade */}
               <div className="mt-3.5 space-y-1.5">

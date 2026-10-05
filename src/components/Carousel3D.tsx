@@ -12,46 +12,7 @@ import {
 } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Volume2, VolumeX, Sparkles, X, ChevronLeft, ChevronRight } from "lucide-react";
-
-// ============================================================================
-// GESTÃO GLOBAL DE INSTÂNCIA ÚNICA DE ÁUDIO E CONTROLE DE DEBOUNCE (Cards 3D)
-// ============================================================================
-let globalActiveMediaElement: HTMLMediaElement | null = null;
-let globalAudioDebounceTimer: NodeJS.Timeout | null = null;
-
-/**
- * Pausa imediatamente qualquer instância anterior de áudio/vídeo e reinicia
- * o tempo de reprodução (audio.currentTime = 0), prevenindo sobreposição de sons.
- */
-export function stopAllPreviousAudio(except?: HTMLMediaElement | null) {
-  // 1. Pausa e reinicia a instância global registrada anteriormente
-  if (globalActiveMediaElement && globalActiveMediaElement !== except) {
-    try {
-      globalActiveMediaElement.pause();
-      globalActiveMediaElement.currentTime = 0;
-    } catch {
-      // safe fallback
-    }
-  }
-
-  // 2. Garante que qualquer outro vídeo em reprodução com som no documento seja pausado e resetado
-  if (typeof document !== "undefined") {
-    const allVideos = document.querySelectorAll<HTMLVideoElement>("video");
-    allVideos.forEach((v) => {
-      if (v !== except && !v.muted) {
-        try {
-          v.pause();
-          v.currentTime = 0;
-          v.muted = true;
-        } catch {
-          // safe fallback
-        }
-      }
-    });
-  }
-
-  globalActiveMediaElement = except || null;
-}
+import { stopAllPreviousAudio, unlockAndPlayDirect } from "@/lib/audioManager";
 
 export interface Slide {
   type?: 'image' | 'video';
@@ -306,21 +267,23 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsInView(entry.isIntersecting);
-          if (!entry.isIntersecting) {
+          const isMostlyInView = entry.isIntersecting && entry.intersectionRatio >= 0.15;
+          setIsInView(isMostlyInView);
+          if (!isMostlyInView) {
+            // Ao rolar para fora da seção, pausa e muta imediatamente de forma suave
             setIsMuted(true);
             stopAllPreviousAudio();
           }
         });
       },
-      { threshold: 0.05, rootMargin: "60px 0px 60px 0px" }
+      { threshold: [0, 0.15, 0.4] }
     );
 
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
-  // Alterna o estado de áudio do carrossel garantindo instância única
+  // Alterna o estado de áudio do carrossel garantindo instância única e desbloqueio direto
   const handleToggleAudio = React.useCallback(() => {
     setIsMuted((prev) => {
       const nextMuted = !prev;
@@ -329,19 +292,25 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
         // Antes de disparar um novo áudio, interrompe e zera qualquer instância anterior
         stopAllPreviousAudio();
 
-        // Localiza e reproduz exclusivamente o vídeo do card ativo deste carrossel
+        // Localiza e reproduz diretamente o vídeo do card ativo deste carrossel
         if (sectionRef.current) {
           const activeVideo = sectionRef.current.querySelector<HTMLVideoElement>(
             "video[data-active='true']"
           );
           if (activeVideo) {
-            stopAllPreviousAudio(activeVideo);
-            activeVideo.muted = false;
-            activeVideo.volume = 1;
-            activeVideo.currentTime = 0;
-            const playPromise = activeVideo.play();
-            if (playPromise !== undefined) {
-              playPromise.catch(() => {});
+            unlockAndPlayDirect(activeVideo, true);
+          } else {
+            // Se o card ativo for uma imagem, avança suavemente para o primeiro vídeo se disponível
+            const firstVideoIndex = slides.findIndex(
+              (s) => s.type === "video" || (s.src || s.image || "").endsWith(".mp4")
+            );
+            if (firstVideoIndex !== -1 && firstVideoIndex !== currentIndex) {
+              const current = scrollProgress.get();
+              animate(scrollProgress, current + (firstVideoIndex - currentIndex), {
+                type: "spring",
+                stiffness: 150,
+                damping: 25,
+              });
             }
           }
         }
@@ -358,7 +327,7 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
 
       return nextMuted;
     });
-  }, []);
+  }, [currentIndex, scrollProgress, slides]);
 
   if (!slides || slides.length === 0) return null;
 
@@ -550,6 +519,38 @@ export const CarouselStacked = ({ slides, title, subtitle }: CarouselStackedProp
               onVideoEnded={handleVideoEnded}
             />
           ))}
+
+          {/* Botão de Som Flutuante Direto no Card Ativo (1 Toque sem fricção) */}
+          {slides[currentIndex] && (slides[currentIndex].type === "video" || (slides[currentIndex].src || slides[currentIndex].image || "").endsWith(".mp4")) && (
+            <div className="absolute bottom-3 sm:bottom-4 z-30 pointer-events-auto">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleAudio();
+                }}
+                className={cn(
+                  "inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-sans font-semibold transition-all shadow-xl cursor-pointer active:scale-95 border",
+                  isMuted
+                    ? "bg-[#1C1917]/90 hover:bg-[#1C1917] text-white border-white/20 backdrop-blur-md"
+                    : "bg-[#1C1917] text-[#C5A880] border-[#C5A880] shadow-[0_0_16px_rgba(197,168,128,0.4)] backdrop-blur-md"
+                )}
+                aria-label={isMuted ? "Ativar som deste vídeo" : "Silenciar áudio"}
+              >
+                {isMuted ? (
+                  <>
+                    <VolumeX className="w-4 h-4 text-white/90" />
+                    <span>Toque para Ouvir com Som</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="w-4 h-4 text-[#C5A880] animate-pulse" />
+                    <span>Som Ativado • Toque para Silenciar</span>
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -637,80 +638,30 @@ const Card = ({
     type: isVideo ? ("video" as const) : ("image" as const),
   };
   const videoRef = React.useRef<HTMLVideoElement>(null);
-  const debounceTimerRef = React.useRef<NodeJS.Timeout | null>(null);
 
   // Controla reprodução do vídeo: se for o card ativo E a seção estiver visível,
-  // reproduz do início com trava de debounce e garantia de instância única; caso contrário, pausa imediatamente e zera
+  // reproduz com sincronização limpa; caso contrário, pausa imediatamente e zera
   React.useEffect(() => {
     if (!isVideo || !videoRef.current) return;
 
-    if (debounceTimerRef.current) {
-      clearTimeout(debounceTimerRef.current);
-      debounceTimerRef.current = null;
-    }
-
     if (isActive && isInView) {
-      // Se estiver com áudio ativado, interrompe imediatamente qualquer áudio anterior
       if (!isMuted) {
-        stopAllPreviousAudio(videoRef.current);
-      }
-
-      // Trava de debounce suave (75ms) para que hover/navegação rápida não sobreponha disparos
-      debounceTimerRef.current = setTimeout(() => {
-        if (!videoRef.current) return;
-
-        if (!isMuted) {
-          stopAllPreviousAudio(videoRef.current);
-          videoRef.current.muted = false;
-          videoRef.current.volume = 1;
-        } else {
-          videoRef.current.muted = true;
-        }
-
-        videoRef.current.currentTime = 0;
+        unlockAndPlayDirect(videoRef.current, true);
+      } else {
+        videoRef.current.muted = true;
         const playPromise = videoRef.current.play();
         if (playPromise !== undefined) {
           playPromise.catch(() => {});
         }
-      }, 75);
+      }
     } else {
-      // Card inativo ou fora de visualização: pausa imediatamente e reinicia o tempo
       if (videoRef.current) {
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
-        if (globalActiveMediaElement === videoRef.current) {
-          globalActiveMediaElement = null;
-        }
+        videoRef.current.muted = true;
       }
     }
-
-    return () => {
-      if (debounceTimerRef.current) {
-        clearTimeout(debounceTimerRef.current);
-        debounceTimerRef.current = null;
-      }
-    };
   }, [isActive, isVideo, isMuted, isInView]);
-
-  // Sincroniza dinamicamente o status de áudio (mutado/desmutado) quando o card já é o ativo
-  React.useEffect(() => {
-    if (!isVideo || !videoRef.current || !isActive || !isInView) return;
-
-    if (!isMuted) {
-      stopAllPreviousAudio(videoRef.current);
-      videoRef.current.muted = false;
-      videoRef.current.volume = 1;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
-      }
-    } else {
-      videoRef.current.muted = true;
-      if (globalActiveMediaElement === videoRef.current) {
-        globalActiveMediaElement = null;
-      }
-    }
-  }, [isMuted, isActive, isVideo, isInView]);
 
   // Cleanup na desmontagem do card
   React.useEffect(() => {
@@ -718,9 +669,7 @@ const Card = ({
       if (videoRef.current) {
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
-        if (globalActiveMediaElement === videoRef.current) {
-          globalActiveMediaElement = null;
-        }
+        videoRef.current.muted = true;
       }
     };
   }, []);

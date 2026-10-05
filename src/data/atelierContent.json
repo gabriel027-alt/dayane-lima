@@ -1,16 +1,16 @@
 {
   "megahair": [
     {
-      "type": "image",
-      "src": "/midias/foto-megahair4-dayane.jpg",
-      "alt": "Resultado de Mega Hair de Nanocápsulas com fusão invisível por Dayane Lima",
-      "label": "Mega Hair de Nanocápsulas • Resultado Fotográfico Real"
-    },
-    {
       "type": "video",
       "src": "/midias/video-megahair-dayane1.mp4",
       "alt": "Aplicação técnica de Mega Hair de Nanocápsulas por Dayane Lima",
       "label": "Mega Hair de Nanocápsulas • Aplicação Artesanal"
+    },
+    {
+      "type": "image",
+      "src": "/midias/foto-megahair4-dayane.jpg",
+      "alt": "Resultado de Mega Hair de Nanocápsulas com fusão invisível por Dayane Lima",
+      "label": "Mega Hair de Nanocápsulas • Resultado Fotográfico Real"
     },
     {
       "type": "video",
@@ -51,6 +51,18 @@
   ],
   "mechas": [
     {
+      "type": "video",
+      "src": "/midias/cabelo-dayane10.mp4",
+      "alt": "Morena iluminada com balanço sedoso sob luz natural",
+      "label": "Mechas Iluminadas & Movimento Natural"
+    },
+    {
+      "type": "video",
+      "src": "/midias/cabelo4-dayane.mp4",
+      "alt": "Ondas sofisticadas e reflexo vitrificado pós-mechas",
+      "label": "Ondas Nobres & Brilho Acetinado"
+    },
+    {
       "type": "image",
       "src": "/midias/cabelo-dayane11.jpg",
       "alt": "Cabelos lisos e alinhamento nobre com brilho espelhado no Ateliê Dayane Lima",
@@ -76,21 +88,9 @@
     },
     {
       "type": "video",
-      "src": "/midias/cabelo-dayane10.mp4",
-      "alt": "Morena iluminada com balanço sedoso sob luz natural",
-      "label": "Mechas Iluminadas & Movimento Natural"
-    },
-    {
-      "type": "video",
-      "src": "/midias/cabelo4-dayane.mp4",
-      "alt": "Ondas sofisticadas e reflexo vitrificado pós-mechas",
-      "label": "Ondas Nobres & Brilho Acetinado"
-    },
-    {
-      "type": "video",
-      "src": "/midias/cabelo5-dayane.mp4",
-      "alt": "Loiro perolado nobre com integridade elástica da fibra capilar",
-      "label": "Loiro Nobre com Preservação da Fibra"
+      "src": "/midias/video-cabelo-hidratação-lavagem-dayane1.mp4",
+      "alt": "Tratamento profundo e lavagem com rituais de luxo no Ateliê Dayane Lima",
+      "label": "Lavagem & Hidratação Profunda de Alta Costura"
     },
     {
       "type": "video",
