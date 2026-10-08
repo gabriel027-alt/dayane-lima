@@ -11,8 +11,7 @@ import {
   MessageCircle, 
   Coffee, 
   Wifi,
-  ExternalLink,
-  Sparkles
+  ExternalLink
 } from "lucide-react";
 import { SbLogo } from "./SbLogo";
 
@@ -21,8 +20,8 @@ interface LocationAndFooterProps {
 }
 
 export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
-  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Av.+Nonoai,+151,+Sala+205+-+Porto+Alegre+-+RS";
-  const wazeUrl = "https://waze.com/ul?q=Av.%20Nonoai,%20151%20Porto%20Alegre";
+  const googleMapsUrl = "https://www.google.com/maps/place/Est%C3%A9tica+e+beleza+sol+e+broze/@-13.1124923,-59.9635272,5z/data=!4m10!1m2!2m1!1sSB+Est%C3%A9tica+%26+Beleza+-+MG!3m6!1s0x754ab63ed56c501:0xbb6be6e8eee14360!8m2!3d-16.7227922!4d-43.8399455!15sChpTQiBFc3TDqXRpY2EgJiBCZWxlemEgLSBNR5IBDGJlYXV0eV_zYWxvbuABAA!16s%2Fg%2F11vwktnkpr?entry=ttu";
+  const wazeUrl = "https://waze.com/ul?q=Rua%20Calcedônia,%20155%20Monte%20Carmelo%20Montes%20Claros";
 
   return (
     <>
@@ -48,16 +47,16 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
               
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#6E501E] font-sans">
-                  Espaço Exclusivo • Porto Alegre / RS
+                  Espaço Exclusivo • Monte Carmelo
                 </span>
                 <h2 
                   id="location-heading"
                   className="font-serif text-3xl sm:text-4xl font-bold text-[#1C1917] mt-1 [text-wrap:balance]"
                 >
-                  Atendimento Personalizado em Porto Alegre
+                  Localização Privilegiada no Monte Carmelo
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-[#44403C] font-sans leading-relaxed">
-                  Ambiente acolhedor, climatizado e preparado para atendimentos visagistas exclusivos, com privacidade e dedicação total ao seu cabelo.
+                  Ambiente discreto, climatizado e preparado para atendimentos exclusivos no Monte Carmelo.
                 </p>
               </div>
 
@@ -68,12 +67,12 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                     <MapPin className="w-5 h-5" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-sm text-[#1C1917]">Fernanda Garroni — Cabeleireira & Visagista</h3>
+                    <h3 className="font-bold text-sm text-[#1C1917]">Dayane Lima — Ateliê Boutique</h3>
                     <p className="text-sm text-[#44403C] mt-0.5">
-                      Av. Nonoai, nº 151, Sala 205
+                      Rua Calcedônia, 155 – Bairro Monte Carmelo
                     </p>
                     <p className="text-sm text-[#44403C]">
-                      Bairro Nonoai — Porto Alegre / RS • CEP 91720-000
+                      Montes Claros – MG • CEP 39401-000
                     </p>
                   </div>
                 </div>
@@ -86,10 +85,10 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   <div>
                     <h4 className="font-bold text-sm text-[#1C1917]">Horário de Atendimento</h4>
                     <p className="text-sm text-[#44403C] mt-0.5">
-                      Terça a Sexta-feira: 09:00 às 19:00
+                      Terça a Sexta-feira: 08:30 às 18:30
                     </p>
                     <p className="text-sm text-[#44403C]">
-                      Sábado: 08:30 às 17:30 (Atendimento exclusivo com agendamento prévio)
+                      Sábado: 08:00 às 17:00 (Exclusivo com agendamento prévio)
                     </p>
                   </div>
                 </div>
@@ -99,11 +98,11 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 font-sans text-sm">
                 <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium">
                   <Car className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
-                  <span>Fácil Acesso & Estacionamento</span>
+                  <span>Estacionamento</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium">
                   <Coffee className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
-                  <span>Café & Chás Especiais</span>
+                  <span>Café, Chás & Drinks</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs flex items-center gap-2 text-[#292524] font-medium col-span-2 sm:col-span-1">
                   <Wifi className="w-4 h-4 text-[#8F6E32] shrink-0" aria-hidden="true" />
@@ -118,7 +117,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="min-h-[48px] px-6 py-3 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm flex items-center justify-center gap-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
-                  aria-label="Abrir rota no Google Maps para Av. Nonoai, 151, Sala 205"
+                  aria-label="Abrir rota no Google Maps para Rua Calcedônia, 155"
                 >
                   <Navigation className="w-4 h-4 text-[#E6C99B]" aria-hidden="true" />
                   <span>Traçar Rota no Google Maps</span>
@@ -143,8 +142,8 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             <div className="lg:col-span-6 space-y-3">
               <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E5DDD0] shadow-md bg-neutral-100">
                 <iframe
-                  title="Fernanda Garroni na Av. Nonoai, 151 - Porto Alegre no Google Maps"
-                  src="https://maps.google.com/maps?q=Av.+Nonoai,+151+-+Nonoai,+Porto+Alegre+-+RS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  title="Estética e beleza sol e broze - Dayane Lima no Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1900.5!2d-43.8399455!3d-16.7227922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab63ed56c501%3A0xbb6be6e8eee14360!2sEst%C3%A9tica%20e%20beleza%20sol%20e%20broze!5e0!3m2!1spt-BR!2sbr!4v1791157915522!5m2!1spt-BR!2sbr&z=17"
                   width="600"
                   height="450"
                   style={{ border: 0 }}
@@ -159,7 +158,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
               <div className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-white border border-[#E8D0C8] shadow-xs text-xs font-sans">
                 <div className="flex items-center gap-2 font-medium text-[#1C1917]">
                   <MapPin className="w-3.5 h-3.5 text-[#8F6E32] shrink-0" aria-hidden="true" />
-                  <span>Av. Nonoai, 151, Sala 205 • Porto Alegre / RS</span>
+                  <span>Rua Calcedônia, 155 • Bairro Monte Carmelo</span>
                 </div>
                 <a
                   href={googleMapsUrl}
@@ -185,21 +184,21 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-neutral-800">
             
-            {/* Coluna 1: Logotipo Oficial Fernanda Garroni & Propósito */}
+            {/* Coluna 1: Logotipo Oficial Dayane Lima & Propósito */}
             <div className="lg:col-span-5 space-y-4">
               <SbLogo variant="light" className="h-10 sm:h-12" />
 
               <p className="text-sm text-neutral-300 leading-relaxed max-w-sm pt-1">
-                Especialista em Morenas Iluminadas & Cabelos com Curvaturas em Porto Alegre. Técnica personalizada, visagismo e preservação rigorosa da fibra capilar.
+                Duas décadas dedicadas à arte do Mega Hair invisível, mechas nobres sob medida e preservação biológica da raiz no Monte Carmelo, Montes Claros.
               </p>
 
               <div className="pt-2 flex items-center gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/dayanelimaestetica"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-[#8F6E32] hover:text-white text-neutral-200 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32]"
-                  aria-label="Perfil de Fernanda Garroni no Instagram"
+                  aria-label="Perfil oficial de Dayane Lima no Instagram"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
@@ -208,7 +207,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
                   type="button"
                   onClick={onOpenTriage}
                   className="min-w-[48px] min-h-[48px] w-12 h-12 rounded-full bg-neutral-800 hover:bg-emerald-600 hover:text-white text-neutral-200 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
-                  aria-label="Agendar avaliação via WhatsApp"
+                  aria-label="Iniciar triagem via WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>
@@ -218,38 +217,53 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             {/* Coluna 2: Sumário Executivo de Navegação Rápida (Âncoras Diretas) */}
             <div className="lg:col-span-3 space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-[#E6C99B]">
-                Serviços & Especialidades
+                Sumário do Ateliê
               </p>
               <nav aria-label="Navegação secundária do rodapé">
                 <ul className="space-y-1 text-sm text-neutral-300">
                   <li>
-                    <a href="#triade" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
-                      Tríade de Morenas Iluminadas
+                    <a href="#procedimentos" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Rituais de Alta Costura
                     </a>
                   </li>
                   <li>
-                    <a href="#curvaturas" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
-                      Cortes Femininos & Curvaturas
+                    <a href="#megahair" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Mega Hair & Nanocápsulas
                     </a>
                   </li>
                   <li>
-                    <a href="#tratamentos" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
-                      Cronograma Capilar & Recuperação
+                    <a href="#mechas" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Mechas & Balayage de Luxo
                     </a>
                   </li>
                   <li>
-                    <a href="#video-transformacao" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
-                      Transformação Moça Mousse
+                    <a href="#autoridade" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Autoridade & 20+ Anos
                     </a>
                   </li>
                   <li>
-                    <a href="#depoimentos" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
-                      Resultados & Depoimentos
+                    <a href="#casos-clinicos" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Diagnóstico & Casos Clínicos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#avaliacoes" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Avaliações Google 5.0
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#autocuidado" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Autocuidado & Spa Privativo
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#triagem-inteligente" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
+                      Triagem Inteligente VIP
                     </a>
                   </li>
                   <li>
                     <a href="#localizacao" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#8F6E32] rounded py-1 px-1.5 -mx-1.5">
-                      Localização na Av. Nonoai, 151
+                      Localização no Monte Carmelo
                     </a>
                   </li>
                 </ul>
@@ -259,37 +273,37 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
             {/* Coluna 3: Conformidade e Contato Formal */}
             <div className="lg:col-span-4 space-y-2.5 text-sm text-neutral-300">
               <p className="text-xs font-bold uppercase tracking-wider text-[#E6C99B]">
-                Atendimento & Localização
+                Atendimento & Biossegurança
               </p>
               <p className="text-neutral-100 font-medium">
-                Av. Nonoai, nº 151, Sala 205 — Bairro Nonoai, Porto Alegre - RS
+                Rua Calcedônia, 155 – Bairro Monte Carmelo, Montes Claros - MG
               </p>
-              <p className="text-neutral-300">Atendimento personalizado com hora marcada</p>
+              <p className="text-neutral-300">Recepção VIP: Atendimento com hora marcada</p>
               <div className="pt-2 flex items-center gap-2 text-sm text-neutral-300">
                 <ShieldCheck className="w-4 h-4 text-[#E6C99B] shrink-0" aria-hidden="true" />
-                <span>Diagnóstico individualizado e teste de mecha prévio para máxima segurança capilar.</span>
+                <span>Esterilização hospitalar em autoclave médica e teste de mecha prévio.</span>
               </div>
             </div>
 
           </div>
 
-          {/* Rodapé Legal */}
+          {/* Rodapé Legal & Declaração de Acessibilidade WCAG 2.2 */}
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-300">
             <p>
-              © {new Date().getFullYear()} Fernanda Garroni — Cabeleireira & Visagista. Todos os direitos reservados.
+              © {new Date().getFullYear()} Dayane Lima — Ateliê Boutique • Alta Costura Capilar. Todos os direitos reservados.
             </p>
 
             <div className="flex items-center gap-4">
               <span className="inline-flex items-center gap-1.5 text-[#E6C99B]">
-                <Sparkles className="w-3.5 h-3.5 text-[#E6C99B]" />
-                Morenas Iluminadas & Cabelos com Curvaturas
+                <span className="w-2 h-2 rounded-full bg-[#E6C99B]" />
+                Conformidade WCAG 2.2 Nível AA Validada
               </span>
               <span className="text-neutral-500">•</span>
-              <span>Porto Alegre / RS</span>
+              <span>Engenharia & Design Proprietários</span>
             </div>
           </div>
 
-          {/* Assinatura Profissional */}
+          {/* Assinatura Profissional Discreta & Elegante */}
           <div className="pt-6 mt-6 border-t border-neutral-800/70 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-400">
             <span>
               Design & Web Engineering por{' '}
@@ -311,7 +325,7 @@ export function LocationAndFooter({ onOpenTriage }: LocationAndFooterProps) {
               <a
                 href="/admin"
                 className="text-neutral-500 hover:text-[#E6C99B] transition-colors text-[11px] flex items-center gap-1"
-                title="Gestão de Mídias"
+                title="Gestão de Mídias e Galerias"
               >
                 <span>🔒</span>
                 <span>Painel</span>
