@@ -153,10 +153,17 @@ const config: Config = {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
           "50%": { opacity: "0.85", transform: "scale(1.04)" },
         },
+        swipeUp: {
+          "0%": { transform: "translateY(10px)", opacity: "0" },
+          "30%": { opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": { transform: "translateY(-12px)", opacity: "0" },
+        },
       },
       animation: {
         marquee: "marquee 35s linear infinite",
         "pulse-slow": "pulseSlow 4s ease-in-out infinite",
+        swipeUp: "swipeUp 1.8s ease-in-out infinite",
       },
     },
   },

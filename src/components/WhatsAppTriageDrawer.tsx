@@ -10,24 +10,24 @@ import {
   Check, 
   User, 
   Scissors,
-  Eye,
-  HandMetal,
-  HelpCircle,
-  Feather,
   Sun,
-  HeartPulse,
-  Moon,
-  Waves
+  ShieldCheck,
+  Waves,
+  HeartPulse
 } from "lucide-react";
 
 export type ServiceCategory = 
-  | "megahair" 
-  | "mechas" 
-  | "cilios" 
-  | "unhas" 
-  | "sobrancelhas" 
-  | "bronze" 
-  | "laser" 
+  | "morenailuminada" 
+  | "curvaturas" 
+  | "cronograma" 
+  | "cortes"
+  | "mechas"
+  | "megahair"
+  | "cilios"
+  | "unhas"
+  | "sobrancelhas"
+  | "bronze"
+  | "laser"
   | "terapia"
   | "massoterapia"
   | "banhodelua"
@@ -48,197 +48,99 @@ interface ServiceOption {
 
 export const SERVICE_CATALOG: ServiceOption[] = [
   {
-    id: "megahair",
-    title: "Mega Hair de Alta Precisão",
-    subtitle: "Nanocápsulas imperceptíveis, fita adesiva invisível e ponto americano.",
-    tag: "Alto Padrão",
+    id: "morenailuminada",
+    title: "Morena Iluminada (Tríade Autoral)",
+    subtitle: "Marrom Marcante / Acobreado, Dourado Solar no fio liso, e Cachos Mel / Caramelo.",
+    tag: "Carro-Chefe",
     icon: Sparkles,
     diagnosticQuestions: [
       {
-        questionLabel: "Qual o comprimento atual do seu cabelo?",
-        options: ["Curto (acima do ombro)", "Médio (altura do busto)", "Longo (já longo, busco volume)"],
+        questionLabel: "Qual nuance ou estilo da Tríade mais te encanta?",
+        options: [
+          "Marrom Marcante / Acobreado (Profundo e sofisticado)",
+          "Dourado Solar (Luminosidade nobre e contrastes suaves)",
+          "Cachos Mel / Caramelo (Definição tridimensional para curvaturas)",
+          "Transformação Moça Mousse (Contour avelã e transição sem marcas)",
+        ],
       },
       {
-        questionLabel: "Qual é o seu objetivo principal?",
-        options: ["Alongamento total de comprimento", "Volume e densidade capilar", "Preenchimento de pontas ralas"],
+        questionLabel: "Qual o histórico químico do seu cabelo?",
+        options: [
+          "Natural sem química prévia",
+          "Já faço mechas ou iluminação periódica",
+          "Possuo coloração escura ou tonalizante",
+          "Possuo progressiva ou alinhamento térmico",
+        ],
       },
     ],
   },
   {
-    id: "mechas",
-    title: "Mechas & Loiras de Luxo",
-    subtitle: "Loiro personalizado, morena iluminada e preservação total da fibra capilar.",
-    tag: "Especialidade",
-    icon: Scissors,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Histórico químico nos últimos 6 meses:",
-        options: ["Cabelo natural sem química", "Já faço mechas/descoloração", "Possuo progressiva, botox ou coloração escura"],
-      },
-      {
-        questionLabel: "Qual resultado você busca?",
-        options: ["Loiro Claríssimo / Pérola", "Morena Iluminada Natural", "Retoque de Raiz & Correção de Cor"],
-      },
-    ],
-  },
-  {
-    id: "cilios",
-    title: "Extensão de Cílios de Precisão",
-    subtitle: "Extensão fio a fio, volume russo, efeito molhado e isolamento milimétrico.",
-    tag: "Harmonização do Olhar",
-    icon: Eye,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Tipo de atendimento para Cílios:",
-        options: ["Primeira aplicação / Novo set", "Manutenção periódica", "Remoção e aplicação de novo estilo"],
-      },
-    ],
-  },
-  {
-    id: "sobrancelhas",
-    title: "Design de Sobrancelhas & Visagismo",
-    subtitle: "Alinhamento estratégico facial, tintura personalizada, brow lamination e nanopigmentação.",
-    tag: "Expressão Facial",
-    icon: Feather,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual procedimento você busca para as sobrancelhas?",
-        options: ["Design Estratégico com Tintura/Henna", "Brow Lamination (Alinhamento)", "Nanopigmentação / Fio a Fio"],
-      },
-    ],
-  },
-  {
-    id: "unhas",
-    title: "Unhas em Fibra de Vidro & Gel",
-    subtitle: "Alongamento com acabamento ultrafino, naturalidade e blindagem estruturada.",
-    tag: "Durabilidade & Estética",
-    icon: HandMetal,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual procedimento você deseja?",
-        options: ["Alongamento em Fibra de Vidro (Novo)", "Manutenção de Alongamento", "Blindagem Diamante / Esmaltação em Gel"],
-      },
-    ],
-  },
-  {
-    id: "bronze",
-    title: "Bronzeamento Tecnológico em Cabine",
-    subtitle: "Lâmpadas calibradas, marquinha milimétrica de fita cirúrgica e aceleradores.",
-    tag: "Sol & Bronze",
-    icon: Sun,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual o seu objetivo com o bronzeamento?",
-        options: ["Marquinha de Fita Perfeita (Biquíni)", "Tom Dourado Homogêneo e Hidratado", "Bronze Express para Evento Próximo"],
-      },
-      {
-        questionLabel: "Como sua pele costuma reagir ao sol?",
-        options: ["Muito clara (costuma queimar)", "Clara a morena (bronzeia gradualmente)", "Morena (bronzeia facilmente)"],
-      },
-    ],
-  },
-  {
-    id: "laser",
-    title: "Depilação a Laser & Estética Corporal",
-    subtitle: "Ponteira subzero indolor, clareamento dérmico e protocolos corporais.",
-    tag: "Alta Tecnologia",
-    icon: Sparkles,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual área corporal você deseja tratar?",
-        options: ["Pernas Completas", "Axilas & Virilha Íntima", "Rosto / Buço", "Protocolos Corporais & Clareamento"],
-      },
-      {
-        questionLabel: "Qual o seu histórico com laser ou tratamentos?",
-        options: ["Primeira vez fazendo laser", "Já fiz sessões anteriormente", "Sofro com foliculite e pelos encravados"],
-      },
-    ],
-  },
-  {
-    id: "terapia",
-    title: "Terapias Capilares & Cronograma",
-    subtitle: "Cauterizações, hidratações profundas, ozonioterapia e cronograma reconstrutor.",
-    tag: "Saúde & Brilho",
-    icon: HeartPulse,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual a necessidade principal do seu cabelo?",
-        options: ["Cabelo ressecado / Necessita hidratação e brilho", "Cabelo danificado ou elástico (pós-química)", "Cronograma capilar intensivo completo"],
-      },
-    ],
-  },
-  {
-    id: "massoterapia",
-    title: "Massoterapia & Drenagem Corporal",
-    subtitle: "Foco em alívio do estresse, revitalização, drenagem linfática e bem-estar em cabine privativa.",
-    tag: "Cabine Privativa",
-    icon: HeartPulse,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual o seu foco para o atendimento de massoterapia?",
-        options: ["Alívio de estresse e tensões musculares", "Drenagem Linfática corporal desintoxicante", "Massagem relaxante com aromaterapia", "Combo VIP: Relaxamento + Drenagem"],
-      },
-    ],
-  },
-  {
-    id: "banhodelua",
-    title: "Banho de Lua & Estética Corporal",
-    subtitle: "Clareamento suave de pelos sem pinicar, esfoliação aromática e hidratação profunda.",
-    tag: "Pele Macia & Dourada",
-    icon: Moon,
-    diagnosticQuestions: [
-      {
-        questionLabel: "Qual o seu objetivo para o Banho de Lua & Estética?",
-        options: ["Pelos perfeitamente dourados e descoloridos", "Gomagem esfoliante e renovação celular", "Nutrição profunda pós-exposição solar", "Banho de Lua integrado ao Bronzeamento"],
-      },
-    ],
-  },
-  {
-    id: "realinhamento",
-    title: "Realinhamento Capilar Avançado",
-    subtitle: "Tratamentos de alinhamento orgânico com preservação absoluta da fibra e brilho espelhado.",
-    tag: "Preservação da Fibra",
+    id: "curvaturas",
+    title: "Cortes Femininos & Curvaturas",
+    subtitle: "Corte visagista a seco para onduladas, cacheadas e crespas com valorização da forma.",
+    tag: "Visagismo Especializado",
     icon: Waves,
     diagnosticQuestions: [
       {
-        questionLabel: "Qual o estado e textura atual do seu cabelo?",
-        options: ["Cabelo com volume e frizz excessivo", "Necessidade de retoque de raiz sem dano às pontas", "Fios ressecados que necessitam de alinhamento e botox nobre"],
+        questionLabel: "Qual a curvatura predominante do seu cabelo?",
+        options: [
+          "2A / 2B / 2C (Ondulado com ondas suaves a definidas)",
+          "3A / 3B / 3C (Cacheado com molas médias a fechadas)",
+          "4A / 4B / 4C (Crespo com textura densa e fator encolhimento)",
+          "Liso / Em transição capilar",
+        ],
+      },
+      {
+        questionLabel: "Qual o objetivo com o corte?",
+        options: [
+          "Definição e distribuição harmoniosa de volume em camadas",
+          "Manter comprimento eliminando pontas ressecadas",
+          "Corte visagista com leveza e movimento frontal",
+          "Transição capilar e corte de recuperação (Big Chop)",
+        ],
       },
     ],
   },
   {
-    id: "maosepes",
-    title: "Manicure & Pedicure de Luxo (Mãos e Pés)",
-    subtitle: "Cuidado detalhado ungueal, cutilagem milimétrica, spa de parafina e esmaltação duradoura.",
-    tag: "Beleza Mãos & Pés",
-    icon: HandMetal,
+    id: "cronograma",
+    title: "Cronograma Capilar & Recuperação",
+    subtitle: "Regeneração da fibra, reposição de massa lipídica e rituais no lavatório spa.",
+    tag: "Saúde da Fibra",
+    icon: HeartPulse,
     diagnosticQuestions: [
       {
-        questionLabel: "Qual serviço você deseja agendar para mãos e pés?",
-        options: ["Manicure e Pedicure tradicional completa", "Cutilagem russa/combinada de precisão", "Spa dos pés com esfoliação e hidratação", "Esmaltação em gel de alta durabilidade"],
+        questionLabel: "Como está o estado atual da fibra capilar?",
+        options: [
+          "Ressecamento e opacidade (precisa de hidratação e nutrição)",
+          "Porosidade e quebra pós-química (precisa de reconstrução)",
+          "Sensibilidade no couro cabeludo e fios desvitalizados",
+          "Manutenção preventiva de brilho e elasticidade",
+        ],
+      },
+      {
+        questionLabel: "Qual a sua frequência de cuidados no salão?",
+        options: [
+          "Busco um tratamento intensivo de choque hoje",
+          "Quero acompanhamento com plano de sessões de cronograma",
+          "Quero tratamento de preparação para futura iluminação",
+        ],
       },
     ],
   },
-];
-
-const PERIOD_OPTIONS = [
-  { id: "manha", label: "Manhã", time: "08:00 às 12:00" },
-  { id: "tarde", label: "Tarde", time: "13:00 às 18:00" },
-  { id: "sabado", label: "Sábado VIP", time: "Horário sob consulta prévia" },
 ];
 
 interface WhatsAppTriageDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   initialServiceId?: ServiceCategory | null;
-  whatsappPhone?: string; // Formato internacional: 5538999999999
+  whatsappPhone?: string; // Formato internacional: 5551999999999
 }
 
 export function WhatsAppTriageDrawer({
   isOpen,
   onClose,
   initialServiceId = null,
-  whatsappPhone = "5538999999999",
+  whatsappPhone = "5551999999999",
 }: WhatsAppTriageDrawerProps) {
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3>(1);
   const [selectedServiceId, setSelectedServiceId] = useState<ServiceCategory | null>(null);
@@ -247,14 +149,20 @@ export function WhatsAppTriageDrawer({
   const [selectedPeriod, setSelectedPeriod] = useState("");
   const [additionalNotes, setAdditionalNotes] = useState("");
 
-  const selectedService = SERVICE_CATALOG.find((s) => s.id === selectedServiceId);
+  const selectedService = SERVICE_CATALOG.find((s) => s.id === selectedServiceId) || SERVICE_CATALOG[0];
 
   // Inicializa com o serviço pré-selecionado se fornecido
   useEffect(() => {
     if (isOpen) {
       if (initialServiceId) {
-        setSelectedServiceId(initialServiceId);
-        setCurrentStep(2); // Avança direto para o diagnóstico do serviço selecionado
+        // Map old IDs to appropriate new ones if needed
+        const mappedId: ServiceCategory = 
+          initialServiceId === "mechas" || initialServiceId === "megahair" ? "morenailuminada" :
+          initialServiceId === "terapia" || initialServiceId === "realinhamento" ? "cronograma" :
+          SERVICE_CATALOG.some(s => s.id === initialServiceId) ? initialServiceId : "morenailuminada";
+        
+        setSelectedServiceId(mappedId);
+        setCurrentStep(2);
       } else {
         setCurrentStep(1);
       }
@@ -295,7 +203,7 @@ export function WhatsAppTriageDrawer({
   };
 
   const generateWhatsAppMessage = () => {
-    const serviceName = selectedService ? selectedService.title : "Consulta de Procedimento";
+    const serviceName = selectedService ? selectedService.title : "Avaliação Capilar";
     
     let diagText = "";
     Object.entries(diagnosticAnswers).forEach(([q, a]) => {
@@ -303,19 +211,19 @@ export function WhatsAppTriageDrawer({
     });
 
     const clientIntro = clientName.trim()
-      ? `Olá, Ateliê Dayane Lima. Meu nome é *${clientName.trim()}*. Fiz a minha triagem VIP pelo site e gostaria de agendar uma avaliação para o seguinte ritual:`
-      : `Olá, Ateliê Dayane Lima. Fiz a minha triagem VIP pelo site e gostaria de agendar uma avaliação para o seguinte ritual:`;
+      ? `Olá Fernanda Garroni! Meu nome é *${clientName.trim()}*. Fiz a triagem no seu site e gostaria de agendar uma avaliação:`
+      : `Olá Fernanda Garroni! Gostaria de agendar uma avaliação no seu espaço na Av. Nonoai, 151:`;
 
     const notesText = additionalNotes.trim() ? `\nObservações: ${additionalNotes.trim()}\n` : "";
-    const periodText = selectedPeriod ? `⏰ Período de preferência: ${selectedPeriod}\n` : "";
+    const periodText = selectedPeriod ? `⏰ Preferência de horário: ${selectedPeriod}\n` : "";
 
     return (
       `${clientIntro}\n\n` +
-      `• *${serviceName}*\n` +
-      (diagText ? `\nDiagnóstico Prévio:\n${diagText}` : "") +
+      `• *Serviço de Interesse:* ${serviceName}\n` +
+      (diagText ? `\nDiagnóstico Inicial:\n${diagText}` : "") +
       periodText +
       notesText +
-      `\nPoderia me orientar sobre os horários disponíveis na Rua Calcedônia, 155?`
+      `\nPoderia me informar sobre os horários disponíveis na Av. Nonoai, nº 151, Sala 205 (Porto Alegre)?`
     );
   };
 
@@ -330,137 +238,97 @@ export function WhatsAppTriageDrawer({
   if (!isOpen) return null;
 
   return (
-    <div 
-      className="fixed inset-0 z-[70] flex items-end md:items-center justify-center"
+    <div
       role="dialog"
       aria-modal="true"
-      aria-labelledby="triage-title"
+      aria-labelledby="triage-drawer-title"
+      className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs transition-opacity duration-300"
     >
       <div 
-        className="fixed inset-0 bg-brand-graphite-950/80 backdrop-blur-sm transition-opacity"
-        onClick={handleCloseAndReset}
-        aria-hidden="true"
+        className="fixed inset-0" 
+        onClick={handleCloseAndReset} 
+        aria-hidden="true" 
       />
 
-      <div className="relative w-full max-w-xl max-h-[92vh] flex flex-col bg-brand-offwhite rounded-t-3xl md:rounded-3xl border border-brand-nude-300 shadow-drawer-up overflow-hidden z-10 [overscroll-behavior:contain]">
+      <div className="relative z-10 w-full max-w-lg bg-[#FAF3F0] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-[#E8D0C8]">
         
-        {/* Cabeçalho */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-brand-nude-200 bg-brand-cream/60">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-brand-champagne/20 flex items-center justify-center border border-brand-champagne/40">
-              <Sparkles className="w-4 h-4 text-brand-champagne-600" aria-hidden="true" />
-            </div>
-            <div>
-              <p className="text-xs font-sans font-bold uppercase tracking-widest text-brand-champagne-dark">
-                Dayane Lima — Ateliê Boutique
-              </p>
-              <h2 id="triage-title" className="text-base sm:text-lg font-serif font-bold text-brand-graphite-950 leading-tight">
-                Triagem Prévia de Agendamento
-              </h2>
-            </div>
+        {/* Top Header */}
+        <div className="px-6 py-5 bg-white border-b border-[#E8D0C8] flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-sans font-bold tracking-[0.16em] uppercase text-[#6E501E]">
+              Fernanda Garroni • Porto Alegre / RS
+            </span>
+            <h2 id="triage-drawer-title" className="text-xl font-serif font-bold text-[#1C1917]">
+              Agendamento de Avaliação
+            </h2>
           </div>
-
           <button
             type="button"
             onClick={handleCloseAndReset}
-            className="min-w-[48px] min-h-[48px] flex items-center justify-center p-2 text-brand-graphite-500 hover:text-brand-graphite-950 rounded-full hover:bg-brand-nude-200/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne-600 touch-manipulation cursor-pointer"
-            aria-label="Fechar janela de triagem"
+            className="p-2 rounded-full hover:bg-neutral-100 text-[#44403C] hover:text-[#1C1917] transition-colors cursor-pointer"
+            aria-label="Fechar gaveta"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Indicador de Passos */}
-        <div className="px-6 py-2.5 bg-brand-nude-100/60 border-b border-brand-nude-200 flex items-center justify-between text-xs font-sans">
-          <div className="flex items-center gap-2">
-            <span className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
-              currentStep >= 1 ? "bg-brand-champagne text-brand-graphite-950" : "bg-brand-nude-300 text-brand-graphite-500"
-            }`}>1</span>
-            <span className={currentStep === 1 ? "font-bold text-brand-graphite-900" : "text-brand-graphite-500"}>
-              Procedimento
-            </span>
-          </div>
-          <div className="w-6 h-[1px] bg-brand-nude-300" aria-hidden="true" />
-          <div className="flex items-center gap-2">
-            <span className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
-              currentStep >= 2 ? "bg-brand-champagne text-brand-graphite-950" : "bg-brand-nude-300 text-brand-graphite-500"
-            }`}>2</span>
-            <span className={currentStep === 2 ? "font-bold text-brand-graphite-900" : "text-brand-graphite-500"}>
-              Diagnóstico
-            </span>
-          </div>
-          <div className="w-6 h-[1px] bg-brand-nude-300" aria-hidden="true" />
-          <div className="flex items-center gap-2">
-            <span className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
-              currentStep >= 3 ? "bg-brand-champagne text-brand-graphite-950" : "bg-brand-nude-300 text-brand-graphite-500"
-            }`}>3</span>
-            <span className={currentStep === 3 ? "font-bold text-brand-graphite-900" : "text-brand-graphite-500"}>
-              Finalização
-            </span>
-          </div>
+        {/* Step Progress Indicator */}
+        <div className="px-6 py-3 bg-[#FAF3F0] border-b border-[#E8D0C8]/60 flex items-center justify-between text-xs font-semibold text-[#44403C]">
+          <span className={currentStep === 1 ? "text-[#1C1917] font-bold" : ""}>
+            1. Serviço
+          </span>
+          <ChevronRight className="w-3.5 h-3.5 text-[#C5A880]" />
+          <span className={currentStep === 2 ? "text-[#1C1917] font-bold" : ""}>
+            2. Diagnóstico
+          </span>
+          <ChevronRight className="w-3.5 h-3.5 text-[#C5A880]" />
+          <span className={currentStep === 3 ? "text-[#1C1917] font-bold" : ""}>
+            3. Finalização
+          </span>
         </div>
 
-        {/* Corpo com Rolagem */}
+        {/* Drawer Content */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
-
-          {/* ETAPA 1: Procedimento */}
+          
+          {/* STEP 1: Selecionar Especialidade */}
           {currentStep === 1 && (
             <div className="space-y-4">
-              <div>
-                <h3 className="font-serif text-lg font-bold text-brand-graphite-950">
-                  Para qual procedimento você deseja atendimento exclusivo?
-                </h3>
-                <p className="text-sm text-[#44403C] mt-1 font-sans">
-                  Selecione a especialidade principal para reservar o tempo adequado de consultoria.
-                </p>
-              </div>
-
-              <div className="space-y-2.5 pt-1" role="radiogroup" aria-label="Catálogo de procedimentos">
-                {SERVICE_CATALOG.map((service) => {
-                  const Icon = service.icon;
-                  const isSelected = selectedServiceId === service.id;
-
+              <p className="text-sm text-[#44403C]">
+                Selecione o serviço para o qual deseja realizar a sua avaliação personalizada:
+              </p>
+              <div className="space-y-3">
+                {SERVICE_CATALOG.map((srv) => {
+                  const Icon = srv.icon;
+                  const isSelected = selectedServiceId === srv.id;
                   return (
                     <button
-                      key={service.id}
+                      key={srv.id}
                       type="button"
-                      role="radio"
-                      aria-checked={isSelected}
                       onClick={() => {
-                        setSelectedServiceId(service.id);
-                        setDiagnosticAnswers({});
+                        setSelectedServiceId(srv.id);
+                        setCurrentStep(2);
                       }}
-                      className={`w-full min-h-[64px] p-4 rounded-2xl border text-left flex items-center justify-between gap-3.5 transition-all duration-200 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne-600 ${
+                      className={`w-full p-4 rounded-xl border text-left transition-all cursor-pointer flex items-start gap-4 ${
                         isSelected 
-                          ? "bg-brand-cream border-brand-champagne shadow-sm ring-1 ring-brand-champagne" 
-                          : "bg-white border-brand-nude-200 hover:border-brand-champagne/60 hover:bg-brand-nude-50/50"
+                          ? "bg-white border-[#C5A880] ring-2 ring-[#C5A880]/30 shadow-sm"
+                          : "bg-white border-[#E8D0C8] hover:border-[#C5A880]/70 hover:shadow-xs"
                       }`}
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className={`p-2.5 rounded-xl shrink-0 ${
-                          isSelected ? "bg-brand-champagne text-brand-graphite-950" : "bg-brand-nude-100 text-brand-graphite-700"
-                        }`}>
-                          <Icon className="w-5 h-5" aria-hidden="true" />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <span className="font-sans font-bold text-sm text-brand-graphite-950">
-                              {service.title}
-                            </span>
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-champagne/20 text-[#6E501E]">
-                              {service.tag}
-                            </span>
-                          </div>
-                          <p className="text-sm text-[#44403C] font-sans mt-0.5 line-clamp-1">
-                            {service.subtitle}
-                          </p>
-                        </div>
+                      <div className="p-2.5 rounded-lg bg-[#FAF3F0] text-[#6E501E] shrink-0 mt-0.5">
+                        <Icon className="w-5 h-5 text-[#8F6E32]" />
                       </div>
-
-                      <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 ${
-                        isSelected ? "border-brand-champagne bg-brand-champagne text-brand-graphite-950" : "border-brand-nude-300 bg-white"
-                      }`}>
-                        {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <h3 className="font-serif font-bold text-base text-[#1C1917]">
+                            {srv.title}
+                          </h3>
+                          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#6E501E] bg-[#FAF3F0] px-2 py-0.5 rounded-full border border-[#E8D0C8]">
+                            {srv.tag}
+                          </span>
+                        </div>
+                        <p className="text-xs text-[#44403C] mt-1 leading-relaxed">
+                          {srv.subtitle}
+                        </p>
                       </div>
                     </button>
                   );
@@ -469,183 +337,161 @@ export function WhatsAppTriageDrawer({
             </div>
           )}
 
-          {/* ETAPA 2: Diagnóstico */}
+          {/* STEP 2: Diagnóstico Rápido */}
           {currentStep === 2 && selectedService && (
             <div className="space-y-5">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-champagne-dark">
-                  {selectedService.title}
-                </span>
-                <h3 className="font-serif text-lg font-bold text-[#1C1917] mt-0.5">
-                  Diagnóstico Técnico Pré-Atendimento
-                </h3>
-                <p className="text-sm text-[#44403C] mt-1 font-sans">
-                  Permite planejar produtos, teste de mechas ou a quantidade ideal de gramas de cabelo.
-                </p>
+              <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-[#6E501E]">Serviço Escolhido</span>
+                  <h3 className="font-serif font-bold text-[#1C1917]">{selectedService.title}</h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setCurrentStep(1)}
+                  className="text-xs text-[#8F6E32] font-semibold underline underline-offset-2 hover:text-[#1C1917]"
+                >
+                  Alterar
+                </button>
               </div>
 
-              {selectedService.diagnosticQuestions.map((diag, idx) => (
+              {selectedService.diagnosticQuestions.map((q, idx) => (
                 <div key={idx} className="space-y-2">
-                  <label className="block text-sm font-semibold text-[#1C1917] font-sans">
-                    {diag.questionLabel}
+                  <label className="block text-xs font-bold text-[#1C1917] uppercase tracking-wide">
+                    {q.questionLabel}
                   </label>
                   <div className="space-y-2">
-                    {diag.options.map((opt) => {
-                      const isChosen = diagnosticAnswers[diag.questionLabel] === opt;
+                    {q.options.map((opt, optIdx) => {
+                      const isChosen = diagnosticAnswers[q.questionLabel] === opt;
                       return (
                         <button
-                          key={opt}
+                          key={optIdx}
                           type="button"
                           onClick={() => {
-                            setDiagnosticAnswers((prev) => ({ ...prev, [diag.questionLabel]: opt }));
+                            setDiagnosticAnswers((prev) => ({
+                              ...prev,
+                              [q.questionLabel]: opt,
+                            }));
                           }}
-                          className={`w-full min-h-touch px-4 py-2.5 rounded-xl border text-left text-sm font-sans flex items-center justify-between transition-all ${
+                          className={`w-full text-left p-3 rounded-xl border text-xs sm:text-sm font-sans transition-all flex items-center justify-between cursor-pointer ${
                             isChosen
-                              ? "bg-brand-cream border-brand-champagne text-[#1C1917] font-semibold ring-1 ring-brand-champagne"
-                              : "bg-white border-brand-nude-200 text-[#44403C] hover:border-brand-nude-300"
+                              ? "bg-white border-[#C5A880] ring-1 ring-[#C5A880] font-semibold text-[#1C1917] shadow-xs"
+                              : "bg-white/80 border-[#E8D0C8] hover:bg-white text-[#44403C]"
                           }`}
                         >
                           <span>{opt}</span>
-                          {isChosen && <Check className="w-4 h-4 text-brand-champagne-dark shrink-0" />}
+                          {isChosen && <Check className="w-4 h-4 text-[#8F6E32] shrink-0 ml-2" />}
                         </button>
                       );
                     })}
                   </div>
                 </div>
               ))}
-
-              <div className="space-y-1.5 pt-1">
-                <label htmlFor="additional-notes" className="block text-sm font-semibold text-[#1C1917] font-sans">
-                  Observações ou histórico recente adicional (Opcional):
-                </label>
-                <textarea
-                  id="additional-notes"
-                  rows={2}
-                  value={additionalNotes}
-                  onChange={(e) => setAdditionalNotes(e.target.value)}
-                  placeholder="Ex: Fiz selagem há 4 meses, cabelo com pontas finas..."
-                  className="w-full rounded-xl border border-brand-nude-300 bg-white p-3 text-sm text-[#1C1917] placeholder-[#78716C] focus:border-brand-champagne focus:ring-1 focus:ring-brand-champagne focus:outline-none"
-                />
-              </div>
             </div>
           )}
 
-          {/* ETAPA 3: Finalização */}
+          {/* STEP 3: Preferências de Contato */}
           {currentStep === 3 && (
-            <div className="space-y-5">
+            <div className="space-y-4">
               <div>
-                <h3 className="font-serif text-lg font-bold text-[#1C1917]">
-                  Preferência de Horário & Contato
-                </h3>
-                <p className="text-sm text-[#44403C] mt-1 font-sans">
-                  A equipe de recepção confirmará os horários exatos no WhatsApp.
-                </p>
+                <label className="block text-xs font-bold text-[#1C1917] uppercase tracking-wide mb-1">
+                  Seu Nome (Opcional)
+                </label>
+                <input
+                  type="text"
+                  value={clientName}
+                  onChange={(e) => setClientName(e.target.value)}
+                  placeholder="Como você gostaria de ser chamada?"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E8D0C8] bg-white text-sm text-[#1C1917] focus:outline-none focus:border-[#C5A880]"
+                />
               </div>
 
-              <div className="space-y-1.5">
-                <label htmlFor="client-name" className="block text-sm font-semibold text-[#1C1917] font-sans">
-                  Como Dayane Lima e a equipe podem te chamar? *
+              <div>
+                <label className="block text-xs font-bold text-[#1C1917] uppercase tracking-wide mb-1">
+                  Melhor período para atendimento
                 </label>
-                <div className="relative">
-                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-graphite-400" />
-                  <input
-                    id="client-name"
-                    type="text"
-                    required
-                    value={clientName}
-                    onChange={(e) => setClientName(e.target.value)}
-                    placeholder="Seu nome completo"
-                    className="w-full min-h-touch pl-10 pr-4 rounded-xl border border-brand-nude-300 bg-white text-sm text-[#1C1917] placeholder-[#78716C] focus:border-brand-champagne focus:ring-1 focus:ring-brand-champagne focus:outline-none"
-                  />
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  {["Manhã (09h - 12h)", "Tarde (13h - 17h)", "Final do Dia (17h - 19h)", "Sábado"].map((per) => (
+                    <button
+                      key={per}
+                      type="button"
+                      onClick={() => setSelectedPeriod(per)}
+                      className={`p-2.5 rounded-lg border text-center transition-all cursor-pointer ${
+                        selectedPeriod === per
+                          ? "bg-white border-[#C5A880] ring-1 ring-[#C5A880] font-bold text-[#1C1917]"
+                          : "bg-white/80 border-[#E8D0C8] text-[#44403C] hover:bg-white"
+                      }`}
+                    >
+                      {per}
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-semibold text-[#1C1917] font-sans">
-                  Melhor período para seu atendimento: *
+              <div>
+                <label className="block text-xs font-bold text-[#1C1917] uppercase tracking-wide mb-1">
+                  Alguma dúvida ou observação especial?
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  {PERIOD_OPTIONS.map((period) => {
-                    const isSelected = selectedPeriod === period.label;
-                    return (
-                      <button
-                        key={period.id}
-                        type="button"
-                        onClick={() => setSelectedPeriod(period.label)}
-                        className={`min-h-touch p-3 rounded-xl border text-left sm:text-center transition-all ${
-                          isSelected
-                            ? "bg-brand-cream border-brand-champagne ring-1 ring-brand-champagne text-[#1C1917] font-semibold"
-                            : "bg-white border-brand-nude-200 text-[#44403C] hover:border-brand-nude-300"
-                        }`}
-                      >
-                        <p className="text-sm font-bold text-[#1C1917]">{period.label}</p>
-                        <p className="text-sm text-[#44403C] mt-0.5">{period.time}</p>
-                      </button>
-                    );
-                  })}
-                </div>
+                <textarea
+                  value={additionalNotes}
+                  onChange={(e) => setAdditionalNotes(e.target.value)}
+                  placeholder="Ex: Cabelo com histórico de coloração, desejo manter o comprimento, etc."
+                  rows={3}
+                  className="w-full p-3 rounded-xl border border-[#E8D0C8] bg-white text-xs sm:text-sm text-[#1C1917] focus:outline-none focus:border-[#C5A880]"
+                />
               </div>
 
-              {/* Preview Transparente */}
-              <div className="p-3.5 rounded-xl bg-brand-nude-100/70 border border-brand-nude-200/80">
-                <p className="text-sm font-bold uppercase tracking-wider text-[#1C1917] mb-1 flex items-center gap-1.5">
-                  <HelpCircle className="w-3.5 h-3.5" />
-                  Mensagem que será enviada para a recepção:
-                </p>
-                <div className="bg-white p-3 rounded-lg border border-brand-nude-200 text-xs font-mono text-[#1C1917] whitespace-pre-wrap leading-relaxed max-h-32 overflow-y-auto">
+              {/* Resumo da Mensagem formatada */}
+              <div className="p-3.5 rounded-xl bg-white border border-[#E8D0C8] space-y-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#6E501E] block">
+                  Prévia da Mensagem para o WhatsApp:
+                </span>
+                <p className="text-xs text-[#44403C] font-mono whitespace-pre-wrap bg-[#FAF3F0] p-2.5 rounded-lg border border-[#E8D0C8]/60">
                   {generateWhatsAppMessage()}
-                </div>
+                </p>
               </div>
             </div>
           )}
 
         </div>
 
-        {/* Rodapé Fixo */}
-        <div className="px-6 py-4 border-t border-brand-nude-200 bg-brand-cream/40 flex items-center gap-3">
-          {currentStep > 1 && (
+        {/* Footer Actions */}
+        <div className="p-6 bg-white border-t border-[#E8D0C8] flex items-center justify-between gap-3">
+          {currentStep > 1 ? (
             <button
               type="button"
-              onClick={() => setCurrentStep((prev) => (prev - 1) as 1 | 2)}
-              className="inline-flex items-center justify-center min-h-touch px-4 rounded-xl border border-brand-nude-300 bg-white text-brand-graphite-800 text-xs sm:text-sm font-semibold hover:bg-brand-nude-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-graphite-700"
+              onClick={() => setCurrentStep((prev) => (prev > 1 ? (prev - 1) as 1 | 2 : 1))}
+              className="px-4 py-3 rounded-full border border-[#E8D0C8] text-[#44403C] hover:text-[#1C1917] hover:bg-[#FAF3F0] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <ChevronLeft className="w-4 h-4 mr-1" />
-              Voltar
+              <ChevronLeft className="w-4 h-4" />
+              <span>Voltar</span>
             </button>
+          ) : (
+            <div />
           )}
 
-          {currentStep === 1 && (
+          {currentStep < 3 ? (
             <button
               type="button"
-              disabled={!selectedServiceId}
-              onClick={() => setCurrentStep(2)}
-              className="flex-1 inline-flex items-center justify-center gap-2 min-h-touch px-6 rounded-xl bg-brand-champagne hover:bg-brand-champagne-400 text-brand-graphite-950 text-sm font-bold tracking-editorial shadow-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne-600"
+              disabled={currentStep === 1 && !selectedServiceId}
+              onClick={() => {
+                if (currentStep === 1 && !selectedServiceId) {
+                  setSelectedServiceId("morenailuminada");
+                }
+                setCurrentStep((prev) => (prev < 3 ? (prev + 1) as 2 | 3 : 3));
+              }}
+              className="px-6 py-3 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white text-xs font-semibold tracking-wide flex items-center gap-2 transition-all cursor-pointer ml-auto disabled:opacity-50"
             >
-              <span>Avançar para Diagnóstico</span>
-              <ChevronRight className="w-4 h-4" />
+              <span>Avançar</span>
+              <ChevronRight className="w-4 h-4 text-[#C5A880]" />
             </button>
-          )}
-
-          {currentStep === 2 && (
+          ) : (
             <button
               type="button"
-              onClick={() => setCurrentStep(3)}
-              className="flex-1 inline-flex items-center justify-center gap-2 min-h-touch px-6 rounded-xl bg-brand-champagne hover:bg-brand-champagne-400 text-brand-graphite-950 text-sm font-bold tracking-editorial shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne-600"
-            >
-              <span>Definir Horário & Finalizar</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          )}
-
-          {currentStep === 3 && (
-            <button
-              type="button"
-              disabled={!clientName.trim() || !selectedPeriod}
               onClick={handleSendToWhatsApp}
-              className="flex-1 inline-flex items-center justify-center gap-2.5 min-h-touch px-6 rounded-xl bg-brand-emerald hover:bg-brand-emerald-hover text-white text-sm font-bold tracking-wide shadow-md shadow-emerald-950/20 transition-all disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-emerald-dark"
+              className="px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ml-auto"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
-              <span>Enviar Triagem via WhatsApp</span>
+              <MessageCircle className="w-4 h-4" />
+              <span>Enviar via WhatsApp</span>
             </button>
           )}
         </div>

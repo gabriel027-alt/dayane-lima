@@ -19,7 +19,7 @@ export function Header({ onOpenTriage }: HeaderProps) {
             <a 
               href="#" 
               className="flex items-center group rounded-xl p-1 transition-transform hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] min-h-[44px] sm:min-h-[48px] shrink-0"
-              aria-label="Página inicial Dayane Lima — Ateliê Boutique"
+              aria-label="Página inicial Fernanda Garroni — Cabeleireira & Visagista"
             >
               <SbLogo variant="dark" className="h-8 sm:h-10 md:h-12" />
             </a>
@@ -30,10 +30,10 @@ export function Header({ onOpenTriage }: HeaderProps) {
                 type="button"
                 onClick={onOpenTriage}
                 className="inline-flex items-center justify-center gap-1.5 min-h-[42px] px-4 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-xs tracking-wide shadow-md transition-all active:scale-[0.98] cursor-pointer whitespace-nowrap"
-                aria-label="Iniciar triagem VIP e agendamento pelo WhatsApp"
+                aria-label="Agendar avaliação pelo WhatsApp"
               >
                 <Calendar className="w-3.5 h-3.5 text-[#E6C99B] shrink-0" aria-hidden="true" />
-                <span>Triagem VIP</span>
+                <span>Avaliação VIP</span>
               </button>
             </div>
           </div>
@@ -41,25 +41,32 @@ export function Header({ onOpenTriage }: HeaderProps) {
           {/* Navegação de Âncoras: Compacta e centralizada abaixo no Mobile, em linha no Desktop */}
           <nav 
             aria-label="Navegação principal"
-            className="flex items-center justify-center sm:justify-end gap-2.5 sm:gap-4 md:gap-6 text-xs sm:text-sm font-semibold text-[#1C1917] font-sans pt-1.5 pb-0.5 sm:py-0 border-t border-[#E8D0C8]/40 sm:border-0 mt-1 sm:mt-0"
+            className="flex items-center justify-center sm:justify-end gap-2 sm:gap-3 md:gap-5 text-xs sm:text-sm font-semibold text-[#1C1917] font-sans pt-1.5 pb-0.5 sm:py-0 border-t border-[#E8D0C8]/40 sm:border-0 mt-1 sm:mt-0"
           >
             <a 
-              href="#megahair" 
-              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2.5 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
+              href="#triade" 
+              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
             >
-              Especialidades
+              Morenas Iluminadas
             </a>
 
             <a 
-              href="#espaco" 
-              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2.5 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
+              href="#curvaturas" 
+              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
             >
-              O Ateliê
+              Curvaturas & Cortes
+            </a>
+
+            <a 
+              href="#tratamentos" 
+              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
+            >
+              Tratamentos
             </a>
 
             <a 
               href="#localizacao" 
-              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2.5 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
+              className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[48px] px-2 sm:px-3 rounded-full text-[#44403C] hover:text-[#1C1917] hover:bg-black/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A880] shrink-0"
             >
               Localização
             </a>
@@ -68,11 +75,11 @@ export function Header({ onOpenTriage }: HeaderProps) {
             <button
               type="button"
               onClick={onOpenTriage}
-              className="hidden sm:inline-flex items-center justify-center gap-2 min-h-[48px] px-5 md:px-6 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer touch-manipulation whitespace-nowrap shrink-0 ml-2"
-              aria-label="Iniciar triagem VIP e agendamento pelo WhatsApp"
+              className="hidden sm:inline-flex items-center justify-center gap-2 min-h-[48px] px-5 md:px-6 rounded-full bg-[#1C1917] hover:bg-[#8F6E32] text-white font-sans font-semibold text-sm tracking-wide shadow-md transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8F6E32] cursor-pointer touch-manipulation whitespace-nowrap shrink-0 ml-1"
+              aria-label="Agendar avaliação pelo WhatsApp"
             >
               <Calendar className="w-4 h-4 text-[#E6C99B] shrink-0" aria-hidden="true" />
-              <span>Triagem VIP</span>
+              <span>Agendar Avaliação</span>
             </button>
           </nav>
 
